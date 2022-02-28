@@ -1,0 +1,81 @@
+name: Satis Build via Webhook
+
+on: 
+  repository_dispatch:
+    types: ['satis-build']
+  workflow_dispatch:
+
+env:
+  COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.TOKEN }}"}}'
+
+jobs:
+  satisBuild:
+    name: Satis Build
+    runs-on: ubuntu-latest
+    if: github.event.action == 'Trigger Satis Build'
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          coverage: none
+          tools: composer, cs2pr
+
+      - name: PHP version
+        run: php --version
+
+      - name: Validate Composer files
+        run: composer validate
+
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: Cache Composer vendor directory
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
+      - name: Install PHP dependencies
+        run: composer install
+
+      - name: Checkout GitHub pages branch
+        uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+          path: ./dist
+
+      - name: Run Build
+        run: composer run build
+
+      - name: List files
+        run: ls -lah ./dist
+
+      - name: Commit web files
+        env:
+          PACKAGE: ${{ github.event.client_payload.package }}
+          VENDOR: ${{ github.event.client_payload.vendor }}
+          VERSION: ${{ github.event.client_payload.version }}
+        run: |
+          cd ./dist
+          git config --local user.name "Newfold WordPress Team"
+          git config --local user.email "wordpress-team@endurance.com"
+          git remote -v
+          git add -A
+          git commit -m "Satis build triggered by release $VERSION of $VENDOR/$PACKAGE"
+          git status
+          cd -
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: gh-pages
+          directory: ./dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
