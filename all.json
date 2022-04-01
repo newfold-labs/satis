@@ -357,18 +357,18 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-coming-soon.git",
-                    "reference": "9b4eb65a2a735a337346c7e259658e9253b60914"
+                    "reference": "c1a75f2263d08e41da3efac6d931993f58af9aa4"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-coming-soon/zipball/9b4eb65a2a735a337346c7e259658e9253b60914",
-                    "reference": "9b4eb65a2a735a337346c7e259658e9253b60914",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-coming-soon/zipball/c1a75f2263d08e41da3efac6d931993f58af9aa4",
+                    "reference": "c1a75f2263d08e41da3efac6d931993f58af9aa4",
                     "shasum": ""
                 },
                 "require-dev": {
                     "bluehost/wp-php-standards": "^1.1"
                 },
-                "time": "2022-03-28T21:25:30+00:00",
+                "time": "2022-03-30T14:57:16+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -398,7 +398,7 @@
                 ],
                 "description": "Coming Soon module for WordPress sites.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-coming-soon/tree/1.0.7",
+                    "source": "https://github.com/newfold-labs/wp-module-coming-soon/tree/trunk",
                     "issues": "https://github.com/newfold-labs/wp-module-coming-soon/issues"
                 }
             }
@@ -1851,6 +1851,172 @@
                 "support": {
                     "source": "https://github.com/newfold-labs/wp-module-sso/tree/master",
                     "issues": "https://github.com/newfold-labs/wp-module-sso/issues"
+                }
+            }
+        },
+        "newfold-labs/wp-plugin-web": {
+            "0.9.0": {
+                "name": "newfold-labs/wp-plugin-web",
+                "version": "0.9.0",
+                "version_normalized": "0.9.0.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-plugin-web.git",
+                    "reference": "0598806a24047530aa33a8589af13ce04d556718"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-web/zipball/0598806a24047530aa33a8589af13ce04d556718",
+                    "reference": "0598806a24047530aa33a8589af13ce04d556718",
+                    "shasum": ""
+                },
+                "require": {
+                    "bluehost/endurance-wp-module-loader": "^1.1",
+                    "endurance/wp-module-data": "^1.8.3",
+                    "wp-forge/wp-update-handler": "^1.0"
+                },
+                "require-dev": {
+                    "bluehost/wp-php-standards": "^1.1",
+                    "wp-cli/i18n-command": "^2.2",
+                    "wp-phpunit/wp-phpunit": "^5.8"
+                },
+                "time": "2022-03-04T00:30:44+00:00",
+                "type": "wordpress-plugin",
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-plugin-web.pot --headers=Report-Msgid-Bugs-To:https://github.com/newfold-labs/wp-plugin-web/issues --exclude=assets,storybook,tests",
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-plugin-web.pot --headers=POT-Creation-Date:null --exclude=assets,storybook,tests"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Evan Mullins",
+                        "email": "evanrm@gmail.com"
+                    }
+                ],
+                "description": "WordPress plugin that integrates your WordPress site with the Web.com control panel, including performance, security, and update features.",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-plugin-web/tree/0.9.0",
+                    "issues": "https://github.com/newfold-labs/wp-plugin-web/issues"
+                }
+            },
+            "0.9.1": {
+                "name": "newfold-labs/wp-plugin-web",
+                "version": "0.9.1",
+                "version_normalized": "0.9.1.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-plugin-web.git",
+                    "reference": "e6200842891a43c728a55010fc6b8696d863ba2a"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-web/zipball/e6200842891a43c728a55010fc6b8696d863ba2a",
+                    "reference": "e6200842891a43c728a55010fc6b8696d863ba2a",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-coming-soon": "^1.0.7",
+                    "newfold-labs/wp-module-data": "^2.0.0.beta1",
+                    "newfold-labs/wp-module-loader": "^1.0",
+                    "wp-forge/wp-update-handler": "^1.0"
+                },
+                "require-dev": {
+                    "bluehost/wp-php-standards": "^1.1",
+                    "wp-cli/i18n-command": "^2.2",
+                    "wp-phpunit/wp-phpunit": "^5.8"
+                },
+                "time": "2022-03-28T22:18:58+00:00",
+                "type": "wordpress-plugin",
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-plugin-web.pot --headers=Report-Msgid-Bugs-To:https://github.com/newfold-labs/wp-plugin-web/issues --exclude=assets,storybook,tests",
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-plugin-web.pot --headers=POT-Creation-Date:null --exclude=assets,storybook,tests"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Evan Mullins",
+                        "email": "evanrm@gmail.com"
+                    }
+                ],
+                "description": "WordPress plugin that integrates your WordPress site with the Web.com control panel, including performance, security, and update features.",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-plugin-web/tree/0.9.1",
+                    "issues": "https://github.com/newfold-labs/wp-plugin-web/issues"
+                }
+            },
+            "dev-main": {
+                "name": "newfold-labs/wp-plugin-web",
+                "version": "dev-main",
+                "version_normalized": "dev-main",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-plugin-web.git",
+                    "reference": "7c1e29f6b0738abc22c784d2b820d179aad2e86d"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-web/zipball/7c1e29f6b0738abc22c784d2b820d179aad2e86d",
+                    "reference": "7c1e29f6b0738abc22c784d2b820d179aad2e86d",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-coming-soon": "^1.0.7",
+                    "newfold-labs/wp-module-data": "^2.0.0",
+                    "newfold-labs/wp-module-loader": "^1.0",
+                    "wp-forge/wp-update-handler": "^1.0"
+                },
+                "require-dev": {
+                    "bluehost/wp-php-standards": "^1.1",
+                    "wp-cli/i18n-command": "^2.2",
+                    "wp-phpunit/wp-phpunit": "^5.8"
+                },
+                "time": "2022-04-01T16:06:09+00:00",
+                "type": "wordpress-plugin",
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-plugin-web.pot --headers=Report-Msgid-Bugs-To:https://github.com/newfold-labs/wp-plugin-web/issues --exclude=assets,storybook,tests",
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-plugin-web.pot --headers=POT-Creation-Date:null --exclude=assets,storybook,tests"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Evan Mullins",
+                        "email": "evanrm@gmail.com"
+                    }
+                ],
+                "description": "WordPress plugin that integrates your WordPress site with the Web.com control panel, including performance, security, and update features.",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-plugin-web/tree/main",
+                    "issues": "https://github.com/newfold-labs/wp-plugin-web/issues"
                 }
             }
         }
