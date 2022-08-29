@@ -2766,6 +2766,62 @@
                     "issues": "https://github.com/newfold-labs/wp-module-ecommerce/issues"
                 }
             },
+            "dev-bugfix/fixing-php-lint-errors": {
+                "name": "newfold-labs/wp-module-ecommerce",
+                "version": "dev-bugfix/fixing-php-lint-errors",
+                "version_normalized": "dev-bugfix/fixing-php-lint-errors",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-ecommerce.git",
+                    "reference": "b99b609eb524741661778c7820d68cfd3b4e3425"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/b99b609eb524741661778c7820d68cfd3b4e3425",
+                    "reference": "b99b609eb524741661778c7820d68cfd3b4e3425",
+                    "shasum": ""
+                },
+                "require-dev": {
+                    "bluehost/wp-php-standards": "@stable",
+                    "wp-cli/i18n-command": "@stable",
+                    "wp-cli/wp-cli-bundle": "@stable"
+                },
+                "time": "2022-08-26T10:29:54+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\ECommerce\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "i18n": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-ecommerce.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/aulisius/bluehost-wordpress-plugin/issues\",\"POT-Creation-Date\":null}' --exclude=node_modules,src,tests"
+                    ],
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Beyond",
+                        "email": "team-spartans@newfold.com"
+                    }
+                ],
+                "description": "Brand Agnostic eCommerce Experience",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-ecommerce/tree/v0.4.7",
+                    "issues": "https://github.com/newfold-labs/wp-module-ecommerce/issues"
+                }
+            },
             "dev-bugfix/removing-phcs.xml": {
                 "name": "newfold-labs/wp-module-ecommerce",
                 "version": "dev-bugfix/removing-phcs.xml",
@@ -4295,6 +4351,53 @@
                     "source": "https://github.com/newfold-labs/wp-module-onboarding/tree/0.0.1"
                 }
             },
+            "0.0.10": {
+                "name": "newfold-labs/wp-module-onboarding",
+                "version": "0.0.10",
+                "version_normalized": "0.0.10.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-onboarding.git",
+                    "reference": "4b164cf9d17d6c6e424645af02564269dda58b06"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/4b164cf9d17d6c6e424645af02564269dda58b06",
+                    "reference": "4b164cf9d17d6c6e424645af02564269dda58b06",
+                    "shasum": ""
+                },
+                "require": {
+                    "mustache/mustache": "~2.5",
+                    "wp-cli/wp-config-transformer": "~1.3.0"
+                },
+                "require-dev": {
+                    "wp-phpunit/wp-phpunit": "^5.9",
+                    "yoast/phpunit-polyfills": "^1.0"
+                },
+                "time": "2022-08-29T08:17:55+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Onboarding\\": "includes/"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Dave Ryan",
+                        "email": "dave@bluehost.com"
+                    }
+                ],
+                "description": "Next-generation WordPress Onboarding for WordPress sites at Newfold Digital.",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-onboarding/tree/0.0.10"
+                }
+            },
             "0.0.3": {
                 "name": "newfold-labs/wp-module-onboarding",
                 "version": "0.0.3",
@@ -4631,12 +4734,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-onboarding.git",
-                    "reference": "da91b83e2905fa8d6e5c541bde684005e988d24b"
+                    "reference": "4b164cf9d17d6c6e424645af02564269dda58b06"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/da91b83e2905fa8d6e5c541bde684005e988d24b",
-                    "reference": "da91b83e2905fa8d6e5c541bde684005e988d24b",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/4b164cf9d17d6c6e424645af02564269dda58b06",
+                    "reference": "4b164cf9d17d6c6e424645af02564269dda58b06",
                     "shasum": ""
                 },
                 "require": {
@@ -4647,7 +4750,7 @@
                     "wp-phpunit/wp-phpunit": "^5.9",
                     "yoast/phpunit-polyfills": "^1.0"
                 },
-                "time": "2022-08-25T20:43:32+00:00",
+                "time": "2022-08-29T08:17:55+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -4668,7 +4771,7 @@
                 ],
                 "description": "Next-generation WordPress Onboarding for WordPress sites at Newfold Digital.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-onboarding/tree/trunk"
+                    "source": "https://github.com/newfold-labs/wp-module-onboarding/tree/0.0.10"
                 }
             },
             "dev-POC/login-redirect": {
