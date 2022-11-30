@@ -2,25 +2,29 @@ name: Satis Build via Webhook
 
 on: 
   repository_dispatch:
-    types: ['satis-build']
+    types:
+      - 'satis-build'
   workflow_dispatch:
 
 env:
+  VENDOR: ${{ github.event.client_payload.vendor }}
+  PACKAGE: ${{ github.event.client_payload.package }}
+  VERSION: ${{ github.event.client_payload.version }}
   COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.TOKEN }}"}}'
 
 jobs:
-  satisBuild:
+  satis-build:
     name: Satis Build
     runs-on: ubuntu-latest
     steps:
 
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4'
+          php-version: '8.1'
           coverage: none
           tools: composer, cs2pr
 
@@ -32,10 +36,10 @@ jobs:
 
       - name: Get Composer cache directory
         id: composer-cache
-        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
       - name: Cache Composer vendor directory
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
@@ -46,7 +50,7 @@ jobs:
         run: composer install
 
       - name: Checkout GitHub pages branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           ref: gh-pages
           path: ./dist
@@ -58,14 +62,10 @@ jobs:
         run: ls -lah ./dist
 
       - name: Commit web files
-        env:
-          PACKAGE: ${{ github.event.client_payload.package }}
-          VENDOR: ${{ github.event.client_payload.vendor }}
-          VERSION: ${{ github.event.client_payload.version }}
         run: |
           cd ./dist
           git config --local user.name "Newfold WordPress Team"
-          git config --local user.email "wordpress-team@endurance.com"
+          git config --local user.email "wordpress-coe@newfold.com"
           git remote -v
           git add -A
           git commit -m "Satis build triggered by release $VERSION of $VENDOR/$PACKAGE"
@@ -78,3 +78,14 @@ jobs:
           branch: gh-pages
           directory: ./dist
           github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          event-type: 'package-released'
+          client-payload: >-
+            {
+              "vendor": "$VENDOR",
+              "package": "$PACKAGE",
+              "version": "$VENDOR"
+            }
