@@ -6307,22 +6307,29 @@
             }
         },
         "newfold-labs/wp-module-maestro": {
-            "dev-main": {
+            "1.0.0": {
                 "name": "newfold-labs/wp-module-maestro",
-                "version": "dev-main",
-                "version_normalized": "dev-main",
+                "version": "1.0.0",
+                "version_normalized": "1.0.0.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-maestro.git",
-                    "reference": "be970259ddd7312be2ebaf2927ea2df563aec1ca"
+                    "reference": "43ccfa3936f74b2a981ed0b057e18f778848b925"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/be970259ddd7312be2ebaf2927ea2df563aec1ca",
-                    "reference": "be970259ddd7312be2ebaf2927ea2df563aec1ca",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/43ccfa3936f74b2a981ed0b057e18f778848b925",
+                    "reference": "43ccfa3936f74b2a981ed0b057e18f778848b925",
                     "shasum": ""
                 },
-                "time": "2022-12-01T19:07:55+00:00",
+                "require": {
+                    "firebase/php-jwt": "^5.0",
+                    "newfold-labs/wp-module-loader": "^1.0.10"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "@stable"
+                },
+                "time": "2023-01-31T16:24:25+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -6330,6 +6337,14 @@
                     },
                     "files": [
                         "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
                     ]
                 },
                 "license": [
@@ -6343,7 +6358,62 @@
                 ],
                 "description": "Maestro Newfold module for WordPress",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-maestro/tree/main",
+                    "source": "https://github.com/newfold-labs/wp-module-maestro/tree/1.0.0",
+                    "issues": "https://github.com/newfold-labs/wp-module-maestro/issues"
+                }
+            },
+            "dev-main": {
+                "name": "newfold-labs/wp-module-maestro",
+                "version": "dev-main",
+                "version_normalized": "dev-main",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-maestro.git",
+                    "reference": "43ccfa3936f74b2a981ed0b057e18f778848b925"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/43ccfa3936f74b2a981ed0b057e18f778848b925",
+                    "reference": "43ccfa3936f74b2a981ed0b057e18f778848b925",
+                    "shasum": ""
+                },
+                "require": {
+                    "firebase/php-jwt": "^5.0",
+                    "newfold-labs/wp-module-loader": "^1.0.10"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "@stable"
+                },
+                "time": "2023-01-31T16:24:25+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Maestro\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Micah Wood",
+                        "email": "micah.wood@newfold.com"
+                    }
+                ],
+                "description": "Maestro Newfold module for WordPress",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-maestro/tree/1.0.0",
                     "issues": "https://github.com/newfold-labs/wp-module-maestro/issues"
                 }
             },
@@ -6354,22 +6424,22 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-maestro.git",
-                    "reference": "56a0b448e0b0d2358ba590ff6ee9a883deb17832"
+                    "reference": "83b5a6f6f7aa038307ec449e0f45345f1cbb9977"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/56a0b448e0b0d2358ba590ff6ee9a883deb17832",
-                    "reference": "56a0b448e0b0d2358ba590ff6ee9a883deb17832",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/83b5a6f6f7aa038307ec449e0f45345f1cbb9977",
+                    "reference": "83b5a6f6f7aa038307ec449e0f45345f1cbb9977",
                     "shasum": ""
                 },
                 "require": {
-                    "firebase/php-jwt": "^5.0"
+                    "firebase/php-jwt": "^5.0",
+                    "newfold-labs/wp-module-loader": "^1.0.10"
                 },
                 "require-dev": {
-                    "newfold-labs/wp-module-loader": "^1.0.10",
                     "newfold-labs/wp-php-standards": "@stable"
                 },
-                "time": "2023-01-30T18:44:38+00:00",
+                "time": "2023-01-31T16:12:54+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -9046,12 +9116,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-onboarding.git",
-                    "reference": "99e88aca71970a91a86e08f59115ffdc012b55b1"
+                    "reference": "8d85d3c4171ee72792bfbcde826fe6760616b1cb"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/99e88aca71970a91a86e08f59115ffdc012b55b1",
-                    "reference": "99e88aca71970a91a86e08f59115ffdc012b55b1",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/8d85d3c4171ee72792bfbcde826fe6760616b1cb",
+                    "reference": "8d85d3c4171ee72792bfbcde826fe6760616b1cb",
                     "shasum": ""
                 },
                 "require": {
@@ -9063,7 +9133,7 @@
                     "wp-phpunit/wp-phpunit": "^5.9",
                     "yoast/phpunit-polyfills": "^1.0"
                 },
-                "time": "2023-01-25T12:18:36+00:00",
+                "time": "2023-01-31T14:25:42+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -9355,12 +9425,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-onboarding.git",
-                    "reference": "aa9d0600adc159a9f932e0dcdeb43f7d4c150140"
+                    "reference": "a9fcb955862a2a9963442bd0dd615f644e649440"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/aa9d0600adc159a9f932e0dcdeb43f7d4c150140",
-                    "reference": "aa9d0600adc159a9f932e0dcdeb43f7d4c150140",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/a9fcb955862a2a9963442bd0dd615f644e649440",
+                    "reference": "a9fcb955862a2a9963442bd0dd615f644e649440",
                     "shasum": ""
                 },
                 "require": {
@@ -9372,7 +9442,7 @@
                     "wp-phpunit/wp-phpunit": "^5.9",
                     "yoast/phpunit-polyfills": "^1.0"
                 },
-                "time": "2023-01-25T12:15:53+00:00",
+                "time": "2023-01-31T10:01:05+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -9673,12 +9743,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-onboarding.git",
-                    "reference": "d7e81f3b05675babf1753b246d354a6d71c2e639"
+                    "reference": "093ebfb8d2546f87cfc211ed75a13e232a453d83"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/d7e81f3b05675babf1753b246d354a6d71c2e639",
-                    "reference": "d7e81f3b05675babf1753b246d354a6d71c2e639",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/093ebfb8d2546f87cfc211ed75a13e232a453d83",
+                    "reference": "093ebfb8d2546f87cfc211ed75a13e232a453d83",
                     "shasum": ""
                 },
                 "require": {
@@ -9690,7 +9760,7 @@
                     "wp-phpunit/wp-phpunit": "^5.9",
                     "yoast/phpunit-polyfills": "^1.0"
                 },
-                "time": "2023-01-26T21:51:01+00:00",
+                "time": "2023-01-31T13:48:51+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
