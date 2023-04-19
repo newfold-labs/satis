@@ -89,3 +89,9 @@ jobs:
               "package": "$PACKAGE",
               "version": "$VENDOR"
             }
+
+      - name: Send message to ms teams
+        uses: dhollerbach/actions.send-message-to-ms-teams@1.0.10
+        with:
+          webhook: '${{ secrets.INCOMING_WEBHOOK_URL }}'
+          message: 'Satis updates deployed! Visit https://newfold-labs.github.io/satis/'
