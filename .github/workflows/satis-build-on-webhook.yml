@@ -94,4 +94,4 @@ jobs:
         uses: dhollerbach/actions.send-message-to-ms-teams@1.0.10
         with:
           webhook: '${{ secrets.INCOMING_WEBHOOK_URL }}'
-          message: "Release $VERSION of $VENDOR/$PACKAGE on satis is complete!\nVisit https://newfold-labs.github.io/satis/"
+          message: "Release ${{ github.event.client_payload.version }} of ${{ github.event.client_payload.vendor }}/${{ github.event.client_payload.package }} on satis is complete!\nVisit https://newfold-labs.github.io/satis/"
