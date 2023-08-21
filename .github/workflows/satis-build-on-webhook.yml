@@ -6,6 +6,10 @@ on:
       - 'satis-build'
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.repository }}-build
+  cancel-in-progress: false
+
 env:
   VENDOR: ${{ github.event.client_payload.vendor }}
   PACKAGE: ${{ github.event.client_payload.package }}
