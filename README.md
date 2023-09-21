@@ -39,7 +39,7 @@ jobs:
       id: package
       env:
         REPO: ${{ github.repository }}
-      run: echo ::set-output name=PACKAGE::${REPO##*/}
+      run: echo "PACKAGE=${REPO##*/}" >> $GITHUB_OUTPUT
 
     - name: Set Version
       id: tag
