@@ -6,11 +6,11 @@
     "authors": [
         {
             "name": "Micah Wood",
-            "email": "micah.wood@newfold.com"
+            "homepage": "https://wpscholar.com"
         }
     ],
     "require": {
-        "composer/satis": "^1.0"
+        "composer/satis": "dev-main#c2e014530a5b625c759c9e84931ae0b8e8b9f9a2"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest"
@@ -18,5 +18,10 @@
     "scripts": {
         "satis": "vendor/bin/satis",
         "build": "@php -dmemory_limit=-1 vendor/bin/satis build ./satis.json ./dist"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/satis": true
+        }
     }
 }

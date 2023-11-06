@@ -23,12 +23,12 @@ jobs:
     steps:
 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4'
+          php-version: '8.1'
           coverage: none
           tools: composer, cs2pr
 
@@ -54,7 +54,7 @@ jobs:
         run: composer install
 
       - name: Checkout GitHub pages branch
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: gh-pages
           path: ./dist
@@ -77,7 +77,7 @@ jobs:
           cd -
 
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@v0.8.0
         with:
           branch: gh-pages
           directory: ./dist
