@@ -305,24 +305,24 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-ecommerce.git",
-                    "reference": "448ead4bd45dd73a4b90a560e1cf7ddb75c5df6d"
+                    "reference": "c734cdcaa81fc8aab7f497c0fdeb4c6dc424a91b"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/448ead4bd45dd73a4b90a560e1cf7ddb75c5df6d",
-                    "reference": "448ead4bd45dd73a4b90a560e1cf7ddb75c5df6d",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/c734cdcaa81fc8aab7f497c0fdeb4c6dc424a91b",
+                    "reference": "c734cdcaa81fc8aab7f497c0fdeb4c6dc424a91b",
                     "shasum": ""
                 },
                 "require": {
                     "newfold-labs/wp-module-installer": "^1.1",
-                    "newfold-labs/wp-module-onboarding-data": "^0.0"
+                    "newfold-labs/wp-module-onboarding-data": "^0.1"
                 },
                 "require-dev": {
                     "newfold-labs/wp-php-standards": "@stable",
                     "wp-cli/i18n-command": "@stable",
                     "wp-cli/wp-cli-bundle": "@stable"
                 },
-                "time": "2023-12-15T11:34:17+00:00",
+                "time": "2024-02-01T10:01:11+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -888,6 +888,66 @@
                 "description": "Brand Agnostic eCommerce Experience",
                 "support": {
                     "source": "https://github.com/newfold-labs/wp-module-ecommerce/tree/fix/copy-changes",
+                    "issues": "https://github.com/newfold-labs/wp-module-ecommerce/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-ecommerce",
+                "version": "dev-fix/home-commerce-home-page-test",
+                "version_normalized": "dev-fix/home-commerce-home-page-test",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-ecommerce.git",
+                    "reference": "0da48fc6f70e565288dbf4d5d5c99fef682fe7cf"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/0da48fc6f70e565288dbf4d5d5c99fef682fe7cf",
+                    "reference": "0da48fc6f70e565288dbf4d5d5c99fef682fe7cf",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-installer": "^1.1",
+                    "newfold-labs/wp-module-onboarding-data": "^0.1"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "@stable",
+                    "wp-cli/i18n-command": "@stable",
+                    "wp-cli/wp-cli-bundle": "@stable"
+                },
+                "time": "2024-01-31T20:58:36+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\ECommerce\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "i18n": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-ecommerce.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-ecommerce/issues\",\"POT-Creation-Date\":null}' --exclude=node_modules,src,tests"
+                    ],
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Beyond",
+                        "email": "team-spartans@newfold.com"
+                    }
+                ],
+                "description": "Brand Agnostic eCommerce Experience",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-ecommerce/tree/fix/home-commerce-home-page-test",
                     "issues": "https://github.com/newfold-labs/wp-module-ecommerce/issues"
                 }
             },
