@@ -3,23 +3,27 @@
         "newfold-labs/wp-module-staging": [
             {
                 "name": "newfold-labs/wp-module-staging",
-                "version": "dev-develop",
-                "version_normalized": "dev-develop",
+                "version": "dev-add/staging-feature",
+                "version_normalized": "dev-add/staging-feature",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-staging.git",
-                    "reference": "498a01958be9f47fbc7c0befa5db723b4b1905b3"
+                    "reference": "079390d91200c0d12c2d537baca7a1c7ba7ca29c"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-staging/zipball/498a01958be9f47fbc7c0befa5db723b4b1905b3",
-                    "reference": "498a01958be9f47fbc7c0befa5db723b4b1905b3",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-staging/zipball/079390d91200c0d12c2d537baca7a1c7ba7ca29c",
+                    "reference": "079390d91200c0d12c2d537baca7a1c7ba7ca29c",
                     "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-context": "^1.0",
+                    "newfold-labs/wp-module-features": "dev-main"
                 },
                 "require-dev": {
                     "newfold-labs/wp-php-standards": "^1.2"
                 },
-                "time": "2023-08-28T15:22:37+00:00",
+                "time": "2024-04-25T21:19:11+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -48,7 +52,62 @@
                 ],
                 "description": "Newfold module for staging functionality in brand plugins",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-staging/tree/1.1.0",
+                    "source": "https://github.com/newfold-labs/wp-module-staging/tree/add/staging-feature",
+                    "issues": "https://github.com/newfold-labs/wp-module-staging/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-staging",
+                "version": "dev-develop",
+                "version_normalized": "dev-develop",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-staging.git",
+                    "reference": "079390d91200c0d12c2d537baca7a1c7ba7ca29c"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-staging/zipball/079390d91200c0d12c2d537baca7a1c7ba7ca29c",
+                    "reference": "079390d91200c0d12c2d537baca7a1c7ba7ca29c",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-context": "^1.0",
+                    "newfold-labs/wp-module-features": "dev-main"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^1.2"
+                },
+                "time": "2024-04-25T21:19:11+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Staging\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Evan Mullins",
+                        "homepage": "https://evanmullins.com"
+                    }
+                ],
+                "description": "Newfold module for staging functionality in brand plugins",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-staging/tree/add/staging-feature",
                     "issues": "https://github.com/newfold-labs/wp-module-staging/issues"
                 }
             },
