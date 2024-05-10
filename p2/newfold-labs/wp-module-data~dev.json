@@ -3,64 +3,6 @@
         "newfold-labs/wp-module-data": [
             {
                 "name": "newfold-labs/wp-module-data",
-                "version": "dev-Fix/PRESS0-1147-500-error-on-duplicate-site-name-reconnect-site",
-                "version_normalized": "dev-Fix/PRESS0-1147-500-error-on-duplicate-site-name-reconnect-site",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-data.git",
-                    "reference": "afa3efc8998f4aa47824aa7ae853eafaecf59981"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/afa3efc8998f4aa47824aa7ae853eafaecf59981",
-                    "reference": "afa3efc8998f4aa47824aa7ae853eafaecf59981",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-loader": "^1.0",
-                    "wp-forge/helpers": "^2.0",
-                    "wp-forge/wp-query-builder": "^1.0",
-                    "wp-forge/wp-upgrade-handler": "^1.0",
-                    "wpscholar/url": "^1.2"
-                },
-                "require-dev": {
-                    "10up/wp_mock": "^0.4.2",
-                    "newfold-labs/wp-php-standards": "^1.2"
-                },
-                "time": "2024-05-07T22:18:07+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Data\\": "includes/"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "autoload-dev": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Data\\": "tests/phpunit/includes/"
-                    }
-                },
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf . --standard=phpcs.xml"
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "description": "Newfold Data Module",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-data/tree/Fix/PRESS0-1147-500-error-on-duplicate-site-name-reconnect-site",
-                    "issues": "https://github.com/newfold-labs/wp-module-data/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-data",
                 "version": "dev-PRESS4-401-Updated",
                 "version_normalized": "dev-PRESS4-401-Updated",
                 "source": {
@@ -226,6 +168,69 @@
             },
             {
                 "name": "newfold-labs/wp-module-data",
+                "version": "dev-add/wb-hiive-token-header",
+                "version_normalized": "dev-add/wb-hiive-token-header",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-data.git",
+                    "reference": "1a53facd57266ef300319cb1b2266be512c92b6e"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/1a53facd57266ef300319cb1b2266be512c92b6e",
+                    "reference": "1a53facd57266ef300319cb1b2266be512c92b6e",
+                    "shasum": ""
+                },
+                "require": {
+                    "ext-json": "*",
+                    "newfold-labs/wp-module-loader": "^1.0",
+                    "wp-forge/helpers": "^2.0",
+                    "wp-forge/wp-query-builder": "^1.0",
+                    "wp-forge/wp-upgrade-handler": "^1.0",
+                    "wpscholar/url": "^1.2"
+                },
+                "require-dev": {
+                    "10up/wp_mock": "^0.4.2",
+                    "johnpbloch/wordpress": "*",
+                    "newfold-labs/wp-php-standards": "^1.2"
+                },
+                "time": "2024-05-10T00:04:10+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Data\\": "includes/"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "autoload-dev": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Data\\": "tests/phpunit/includes/"
+                    }
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "cs-changes": [
+                        "updated_files=$( git status | grep '\\(new file\\|modified\\):\\s.*.php$' | cut -c14- | awk '{ printf(\"%s \", $0) }' ); echo \"\\nChecking\"$(git status | grep '\\(new file\\|modified\\):\\s.*.php$' | tail -n+2 | wc -l)\" files\"; phpcbf $(echo $updated_files); phpcs $(echo $updated_files);"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "description": "Newfold Data Module",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-data/tree/add/wb-hiive-token-header",
+                    "issues": "https://github.com/newfold-labs/wp-module-data/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-data",
                 "version": "dev-feature/collect-dropin-plugins",
                 "version_normalized": "dev-feature/collect-dropin-plugins",
                 "source": {
@@ -329,12 +334,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-data.git",
-                    "reference": "177d1662b5b38d6921d8e661603e4f57436e3955"
+                    "reference": "58f9f534d8e02ede341296da501c436f004823d8"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/177d1662b5b38d6921d8e661603e4f57436e3955",
-                    "reference": "177d1662b5b38d6921d8e661603e4f57436e3955",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/58f9f534d8e02ede341296da501c436f004823d8",
+                    "reference": "58f9f534d8e02ede341296da501c436f004823d8",
                     "shasum": ""
                 },
                 "require": {
@@ -346,9 +351,10 @@
                 },
                 "require-dev": {
                     "10up/wp_mock": "^0.4.2",
+                    "johnpbloch/wordpress": "*",
                     "newfold-labs/wp-php-standards": "^1.2"
                 },
-                "time": "2024-04-18T19:17:37+00:00",
+                "time": "2024-05-09T18:44:11+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -377,7 +383,7 @@
                 ],
                 "description": "Newfold Data Module",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-data/tree/2.4.24",
+                    "source": "https://github.com/newfold-labs/wp-module-data/tree/main",
                     "issues": "https://github.com/newfold-labs/wp-module-data/issues"
                 }
             }
