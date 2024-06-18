@@ -8,12 +8,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-data.git",
-                    "reference": "27bd7b9f0f5d11390255a62720a2513b642a0e47"
+                    "reference": "21c63c35315dc5b4fa20ee288f2947ee74349998"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/27bd7b9f0f5d11390255a62720a2513b642a0e47",
-                    "reference": "27bd7b9f0f5d11390255a62720a2513b642a0e47",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/21c63c35315dc5b4fa20ee288f2947ee74349998",
+                    "reference": "21c63c35315dc5b4fa20ee288f2947ee74349998",
                     "shasum": ""
                 },
                 "require": {
@@ -34,7 +34,7 @@
                     "lucatume/wp-browser": "^3",
                     "newfold-labs/wp-php-standards": "^1.2"
                 },
-                "time": "2024-06-13T20:52:18+00:00",
+                "time": "2024-06-14T20:33:19+00:00",
                 "type": "library",
                 "extra": {
                     "symlinks": {
@@ -58,6 +58,17 @@
                     },
                     "classmap": [
                         "wordpress"
+                    ]
+                },
+                "archive": {
+                    "exclude": [
+                        ".github",
+                        "tests",
+                        ".editorconfig",
+                        ".gitignore",
+                        "patchwork.json",
+                        "phpcs.xml",
+                        "phpunit.xml.dist"
                     ]
                 },
                 "scripts": {
@@ -142,6 +153,163 @@
                 "description": "Newfold Data Module",
                 "support": {
                     "source": "https://github.com/newfold-labs/wp-module-data/tree/PRESS4-401-Updated",
+                    "issues": "https://github.com/newfold-labs/wp-module-data/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-data",
+                "version": "dev-add/gitattributes",
+                "version_normalized": "dev-add/gitattributes",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-data.git",
+                    "reference": "a6ca9acccc6b4c7ce62e48ea42e718d1ace85d30"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/a6ca9acccc6b4c7ce62e48ea42e718d1ace85d30",
+                    "reference": "a6ca9acccc6b4c7ce62e48ea42e718d1ace85d30",
+                    "shasum": ""
+                },
+                "require": {
+                    "ext-json": "*",
+                    "newfold-labs/wp-module-loader": "^1.0",
+                    "wp-forge/helpers": "^2.0",
+                    "wp-forge/wp-query-builder": "^1.0",
+                    "wp-forge/wp-upgrade-handler": "^1.0",
+                    "wpscholar/url": "^1.2"
+                },
+                "require-dev": {
+                    "10up/wp_mock": "^0.4.2",
+                    "bluehost/bluehost-wordpress-plugin": "*",
+                    "brianhenryie/composer-fallback-to-git": "^0.5",
+                    "brianhenryie/composer-phpstorm": "*",
+                    "johnpbloch/wordpress": "*",
+                    "kporras07/composer-symlinks": "^1.2",
+                    "lucatume/wp-browser": "^3",
+                    "newfold-labs/wp-php-standards": "^1.2"
+                },
+                "time": "2024-06-14T20:51:56+00:00",
+                "type": "library",
+                "extra": {
+                    "symlinks": {
+                        ".": "wp-content/plugins/bluehost-wordpress-plugin/vendor/newfold-labs/wp-module-data"
+                    }
+                },
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Data\\": "includes/"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "autoload-dev": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Data\\": [
+                            "tests/phpunit/includes/",
+                            "tests/wpunit/includes"
+                        ]
+                    },
+                    "classmap": [
+                        "wordpress"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "cs-changes": [
+                        "updated_files=$( git status | grep '\\(new file\\|modified\\):\\s.*.php$' | cut -c14- | awk '{ printf(\"%s \", $0) }' ); echo \"\\nChecking\"$(git status | grep '\\(new file\\|modified\\):\\s.*.php$' | tail -n+2 | wc -l)\" files\"; phpcbf $(echo $updated_files); phpcs $(echo $updated_files);"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "create-symlinks": [
+                        "Kporras07\\ComposerSymlinks\\ScriptHandler::createSymlinks"
+                    ],
+                    "post-install-cmd": [
+                        "@create-symlinks",
+                        "@configure-phpstorm"
+                    ],
+                    "post-update-cmd": [
+                        "@create-symlinks",
+                        "@configure-phpstorm"
+                    ],
+                    "configure-phpstorm": [
+                        "BrianHenryIE\\ComposerPhpStorm\\ExcludeFolders::update",
+                        "BrianHenryIE\\ComposerPhpStorm\\PHPUnitRunConfigurations::update"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "description": "Newfold Data Module",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-data/tree/add/gitattributes",
+                    "issues": "https://github.com/newfold-labs/wp-module-data/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-data",
+                "version": "dev-add/gitattributes-file",
+                "version_normalized": "dev-add/gitattributes-file",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-data.git",
+                    "reference": "4c5852dfa58d7a471cdbb1a216576400c2d53e08"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/4c5852dfa58d7a471cdbb1a216576400c2d53e08",
+                    "reference": "4c5852dfa58d7a471cdbb1a216576400c2d53e08",
+                    "shasum": ""
+                },
+                "require": {
+                    "ext-json": "*",
+                    "newfold-labs/wp-module-loader": "^1.0",
+                    "wp-forge/helpers": "^2.0",
+                    "wp-forge/wp-query-builder": "^1.0",
+                    "wp-forge/wp-upgrade-handler": "^1.0",
+                    "wpscholar/url": "^1.2"
+                },
+                "require-dev": {
+                    "10up/wp_mock": "^0.4.2",
+                    "johnpbloch/wordpress": "*",
+                    "newfold-labs/wp-php-standards": "^1.2"
+                },
+                "time": "2024-06-14T21:05:08+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Data\\": "includes/"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "autoload-dev": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Data\\": "tests/phpunit/includes/"
+                    }
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "cs-changes": [
+                        "updated_files=$( git status | grep '\\(new file\\|modified\\):\\s.*.php$' | cut -c14- | awk '{ printf(\"%s \", $0) }' ); echo \"\\nChecking\"$(git status | grep '\\(new file\\|modified\\):\\s.*.php$' | tail -n+2 | wc -l)\" files\"; phpcbf $(echo $updated_files); phpcs $(echo $updated_files);"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "description": "Newfold Data Module",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-data/tree/add/gitattributes-file",
                     "issues": "https://github.com/newfold-labs/wp-module-data/issues"
                 }
             },
@@ -440,12 +608,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-data.git",
-                    "reference": "63e5ac0a7c11f04136d6ea9146f0e00bd7df50dc"
+                    "reference": "8d080fe3a12672269c01aa8e8543bbab48123b0b"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/63e5ac0a7c11f04136d6ea9146f0e00bd7df50dc",
-                    "reference": "63e5ac0a7c11f04136d6ea9146f0e00bd7df50dc",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/8d080fe3a12672269c01aa8e8543bbab48123b0b",
+                    "reference": "8d080fe3a12672269c01aa8e8543bbab48123b0b",
                     "shasum": ""
                 },
                 "require": {
@@ -461,7 +629,7 @@
                     "johnpbloch/wordpress": "*",
                     "newfold-labs/wp-php-standards": "^1.2"
                 },
-                "time": "2024-06-13T13:16:08+00:00",
+                "time": "2024-06-17T06:39:50+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
