@@ -3,105 +3,6 @@
         "newfold-labs/wp-module-data": [
             {
                 "name": "newfold-labs/wp-module-data",
-                "version": "dev-Add/test-env",
-                "version_normalized": "dev-Add/test-env",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-data.git",
-                    "reference": "4598cc5c510a4f315ad102bab719cdd9f5be50e1"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/4598cc5c510a4f315ad102bab719cdd9f5be50e1",
-                    "reference": "4598cc5c510a4f315ad102bab719cdd9f5be50e1",
-                    "shasum": ""
-                },
-                "require": {
-                    "ext-json": "*",
-                    "newfold-labs/wp-module-loader": "^1.0",
-                    "wp-forge/helpers": "^2.0",
-                    "wp-forge/wp-query-builder": "^1.0",
-                    "wp-forge/wp-upgrade-handler": "^1.0",
-                    "wpscholar/url": "^1.2"
-                },
-                "require-dev": {
-                    "10up/wp_mock": "^0.4.2",
-                    "bluehost/bluehost-wordpress-plugin": "*",
-                    "brianhenryie/composer-phpstorm": "*",
-                    "johnpbloch/wordpress": "*",
-                    "kporras07/composer-symlinks": "^1.2",
-                    "lucatume/wp-browser": "^3",
-                    "newfold-labs/wp-php-standards": "^1.2",
-                    "phpunit/phpcov": "^5.0",
-                    "wpackagist-plugin/woocommerce": "*"
-                },
-                "time": "2024-06-18T22:13:59+00:00",
-                "type": "library",
-                "extra": {
-                    "symlinks": {
-                        ".": "wp-content/plugins/bluehost-wordpress-plugin/vendor/newfold-labs/wp-module-data"
-                    }
-                },
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Data\\": "includes/"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "autoload-dev": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Data\\": [
-                            "tests/phpunit/includes/",
-                            "tests/wpunit/includes"
-                        ]
-                    },
-                    "classmap": [
-                        "wordpress"
-                    ]
-                },
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf . --standard=phpcs.xml"
-                    ],
-                    "cs-changes": [
-                        "updated_files=$( git status | grep '\\(new file\\|modified\\):\\s.*.php$' | cut -c14- | awk '{ printf(\"%s \", $0) }' ); echo \"\\nChecking\"$(git status | grep '\\(new file\\|modified\\):\\s.*.php$' | tail -n+2 | wc -l)\" files\"; phpcbf $(echo $updated_files); phpcs $(echo $updated_files);"
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
-                    ],
-                    "create-symlinks": [
-                        "Kporras07\\ComposerSymlinks\\ScriptHandler::createSymlinks"
-                    ],
-                    "test": [
-                        "phpunit --bootstrap tests/phpunit/bootstrap.php",
-                        "codecept run wpunit"
-                    ],
-                    "test-coverage": [
-                        "phpunit --bootstrap tests/phpunit/bootstrap.php --coverage-php tests/_output/unit.cov",
-                        "codecept run wpunit --coverage wpunit.cov",
-                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
-                        "echo \"open tests/_output/html/index.html\" to view the report"
-                    ],
-                    "post-install-cmd": [
-                        "@create-symlinks"
-                    ],
-                    "post-update-cmd": [
-                        "@create-symlinks"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "description": "Newfold Data Module",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-data/tree/Add/test-env",
-                    "issues": "https://github.com/newfold-labs/wp-module-data/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-data",
                 "version": "dev-add/gitattributes",
                 "version_normalized": "dev-add/gitattributes",
                 "source": {
@@ -425,12 +326,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-data.git",
-                    "reference": "6c0941bc9ac3d18820f924de8c4afe58bb421782"
+                    "reference": "dca88f501677ab886b12e92ea375ebfc3bcf18dd"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/6c0941bc9ac3d18820f924de8c4afe58bb421782",
-                    "reference": "6c0941bc9ac3d18820f924de8c4afe58bb421782",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/dca88f501677ab886b12e92ea375ebfc3bcf18dd",
+                    "reference": "dca88f501677ab886b12e92ea375ebfc3bcf18dd",
                     "shasum": ""
                 },
                 "require": {
@@ -449,9 +350,10 @@
                     "kporras07/composer-symlinks": "^1.2",
                     "lucatume/wp-browser": "^3",
                     "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "^5.0",
                     "wpackagist-plugin/woocommerce": "*"
                 },
-                "time": "2024-06-19T17:34:08+00:00",
+                "time": "2024-06-19T19:53:49+00:00",
                 "default-branch": true,
                 "type": "library",
                 "extra": {
@@ -491,6 +393,16 @@
                     "create-symlinks": [
                         "Kporras07\\ComposerSymlinks\\ScriptHandler::createSymlinks"
                     ],
+                    "test": [
+                        "phpunit --bootstrap tests/phpunit/bootstrap.php",
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "phpunit --bootstrap tests/phpunit/bootstrap.php --coverage-php tests/_output/unit.cov",
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+                        "echo \"open tests/_output/html/index.html\" to view the report"
+                    ],
                     "post-install-cmd": [
                         "@create-symlinks"
                     ],
@@ -503,7 +415,7 @@
                 ],
                 "description": "Newfold Data Module",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-data/tree/2.5.3",
+                    "source": "https://github.com/newfold-labs/wp-module-data/tree/main",
                     "issues": "https://github.com/newfold-labs/wp-module-data/issues"
                 }
             },
@@ -514,12 +426,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-data.git",
-                    "reference": "8d080fe3a12672269c01aa8e8543bbab48123b0b"
+                    "reference": "b4d9523ec06d2d8ef5ff8218afbacd02418bb3c2"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/8d080fe3a12672269c01aa8e8543bbab48123b0b",
-                    "reference": "8d080fe3a12672269c01aa8e8543bbab48123b0b",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/b4d9523ec06d2d8ef5ff8218afbacd02418bb3c2",
+                    "reference": "b4d9523ec06d2d8ef5ff8218afbacd02418bb3c2",
                     "shasum": ""
                 },
                 "require": {
@@ -532,11 +444,22 @@
                 },
                 "require-dev": {
                     "10up/wp_mock": "^0.4.2",
+                    "bluehost/bluehost-wordpress-plugin": "*",
+                    "brianhenryie/composer-phpstorm": "*",
                     "johnpbloch/wordpress": "*",
-                    "newfold-labs/wp-php-standards": "^1.2"
+                    "kporras07/composer-symlinks": "^1.2",
+                    "lucatume/wp-browser": "^3",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "^5.0",
+                    "wpackagist-plugin/woocommerce": "*"
                 },
-                "time": "2024-06-17T06:39:50+00:00",
+                "time": "2024-06-19T20:07:42+00:00",
                 "type": "library",
+                "extra": {
+                    "symlinks": {
+                        ".": "wp-content/plugins/bluehost-wordpress-plugin/vendor/newfold-labs/wp-module-data"
+                    }
+                },
                 "autoload": {
                     "psr-4": {
                         "NewfoldLabs\\WP\\Module\\Data\\": "includes/"
@@ -547,8 +470,14 @@
                 },
                 "autoload-dev": {
                     "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Data\\": "tests/phpunit/includes/"
-                    }
+                        "NewfoldLabs\\WP\\Module\\Data\\": [
+                            "tests/phpunit/includes/",
+                            "tests/wpunit/includes"
+                        ]
+                    },
+                    "classmap": [
+                        "wordpress"
+                    ]
                 },
                 "scripts": {
                     "fix": [
@@ -559,6 +488,25 @@
                     ],
                     "lint": [
                         "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "create-symlinks": [
+                        "Kporras07\\ComposerSymlinks\\ScriptHandler::createSymlinks"
+                    ],
+                    "test": [
+                        "phpunit --bootstrap tests/phpunit/bootstrap.php",
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "phpunit --bootstrap tests/phpunit/bootstrap.php --coverage-php tests/_output/unit.cov",
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+                        "echo \"open tests/_output/html/index.html\" to view the report"
+                    ],
+                    "post-install-cmd": [
+                        "@create-symlinks"
+                    ],
+                    "post-update-cmd": [
+                        "@create-symlinks"
                     ]
                 },
                 "license": [
