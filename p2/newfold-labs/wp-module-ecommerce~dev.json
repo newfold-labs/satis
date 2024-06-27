@@ -303,17 +303,17 @@
             },
             {
                 "name": "newfold-labs/wp-module-ecommerce",
-                "version": "dev-PRESS0-753",
-                "version_normalized": "dev-PRESS0-753",
+                "version": "dev-PRESS0-1650",
+                "version_normalized": "dev-PRESS0-1650",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-ecommerce.git",
-                    "reference": "51658cd4f7eabd9c7be4315d08ae12e6da65e630"
+                    "reference": "9fba36ec1df919d911e38dac66180999c896a2a1"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/51658cd4f7eabd9c7be4315d08ae12e6da65e630",
-                    "reference": "51658cd4f7eabd9c7be4315d08ae12e6da65e630",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/9fba36ec1df919d911e38dac66180999c896a2a1",
+                    "reference": "9fba36ec1df919d911e38dac66180999c896a2a1",
                     "shasum": ""
                 },
                 "require": {
@@ -325,7 +325,67 @@
                     "wp-cli/i18n-command": "@stable",
                     "wp-cli/wp-cli-bundle": "@stable"
                 },
-                "time": "2024-06-26T15:46:52+00:00",
+                "time": "2024-06-26T11:40:56+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\ECommerce\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "i18n": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-ecommerce.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-ecommerce/issues\",\"POT-Creation-Date\":null}' --exclude=node_modules,src,tests"
+                    ],
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Beyond",
+                        "email": "team-spartans@newfold.com"
+                    }
+                ],
+                "description": "Brand Agnostic eCommerce Experience",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-ecommerce/tree/v1.3.34",
+                    "issues": "https://github.com/newfold-labs/wp-module-ecommerce/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-ecommerce",
+                "version": "dev-PRESS0-753",
+                "version_normalized": "dev-PRESS0-753",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-ecommerce.git",
+                    "reference": "c2cac00dfc07dcdf512d9802db4b699ff2aec776"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/c2cac00dfc07dcdf512d9802db4b699ff2aec776",
+                    "reference": "c2cac00dfc07dcdf512d9802db4b699ff2aec776",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-installer": "^1.1.4",
+                    "newfold-labs/wp-module-onboarding-data": "^1.1.8"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "@stable",
+                    "wp-cli/i18n-command": "@stable",
+                    "wp-cli/wp-cli-bundle": "@stable"
+                },
+                "time": "2024-06-27T13:25:25+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
