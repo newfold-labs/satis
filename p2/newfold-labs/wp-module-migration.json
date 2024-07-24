@@ -495,6 +495,61 @@
                     "source": "https://github.com/newfold-labs/wp-module-migration/tree/v1.0.8",
                     "issues": "https://github.com/newfold-labs/wp-module-migration/issues"
                 }
+            },
+            {
+                "name": "newfold-labs/wp-module-migration",
+                "version": "v1.0.9",
+                "version_normalized": "1.0.9.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-migration.git",
+                    "reference": "b9b94c9906c917b9c1d47d926fe10f48cb8f4315"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-migration/zipball/b9b94c9906c917b9c1d47d926fe10f48cb8f4315",
+                    "reference": "b9b94c9906c917b9c1d47d926fe10f48cb8f4315",
+                    "shasum": ""
+                },
+                "require": {
+                    "instawp/connect-helpers": "1.0.0",
+                    "newfold-labs/wp-module-loader": "^1.0.10"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^1.2"
+                },
+                "time": "2024-07-24T13:47:14+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Migration\\": "includes/"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "i18n": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-ecommerce.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-ecommerce/issues\",\"POT-Creation-Date\":null}' --exclude=node_modules,src,tests"
+                    ],
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "authors": [
+                    {
+                        "name": "Beyond",
+                        "email": "team-spartans@newfold.com"
+                    }
+                ],
+                "description": "Initiates the migration process",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-migration/tree/v1.0.9",
+                    "issues": "https://github.com/newfold-labs/wp-module-migration/issues"
+                }
             }
         ]
     }
