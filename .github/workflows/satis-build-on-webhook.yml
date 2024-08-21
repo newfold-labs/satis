@@ -60,7 +60,7 @@ jobs:
           path: ./dist
 
       - name: Run Build
-        run: composer run build
+        run: php -dmemory_limit=-1 vendor/bin/satis --repository-url ${{ format('git@github.com:{0}/{1}.git/', github.event.client_payload.vendor, github.event.client_payload.package) }} build ./satis.json ./dist
 
       - name: List files
         run: ls -lah ./dist
