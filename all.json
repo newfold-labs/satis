@@ -1787,12 +1787,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-ai.git",
-                    "reference": "dd3b67244dff5fd1ac46033b33d42d085b78d7ce"
+                    "reference": "0442766d70732f6e5015c92a16998442ff1942fa"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai/zipball/dd3b67244dff5fd1ac46033b33d42d085b78d7ce",
-                    "reference": "dd3b67244dff5fd1ac46033b33d42d085b78d7ce",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai/zipball/0442766d70732f6e5015c92a16998442ff1942fa",
+                    "reference": "0442766d70732f6e5015c92a16998442ff1942fa",
                     "shasum": ""
                 },
                 "require": {
@@ -1801,7 +1801,7 @@
                 "require-dev": {
                     "newfold-labs/wp-php-standards": "^1.2"
                 },
-                "time": "2024-08-19T11:40:21+00:00",
+                "time": "2024-08-22T12:19:55+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -30664,6 +30664,61 @@
                     "issues": "https://github.com/newfold-labs/wp-module-migration/issues"
                 }
             },
+            "dev-nested_restructure": {
+                "name": "newfold-labs/wp-module-migration",
+                "version": "dev-nested_restructure",
+                "version_normalized": "dev-nested_restructure",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-migration.git",
+                    "reference": "4d194efc0aeaf240e3d909f0d3a7c1543fbe46f5"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-migration/zipball/4d194efc0aeaf240e3d909f0d3a7c1543fbe46f5",
+                    "reference": "4d194efc0aeaf240e3d909f0d3a7c1543fbe46f5",
+                    "shasum": ""
+                },
+                "require": {
+                    "instawp/connect-helpers": "1.0.0",
+                    "newfold-labs/wp-module-loader": "^1.0.10"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^1.2"
+                },
+                "time": "2024-08-22T07:28:24+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Migration\\": "includes/"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "i18n": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-ecommerce.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-ecommerce/issues\",\"POT-Creation-Date\":null}' --exclude=node_modules,src,tests"
+                    ],
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "authors": [
+                    {
+                        "name": "Beyond",
+                        "email": "team-spartans@newfold.com"
+                    }
+                ],
+                "description": "Initiates the migration process",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-migration/tree/nested_restructure",
+                    "issues": "https://github.com/newfold-labs/wp-module-migration/issues"
+                }
+            },
             "dev-no-space-minify-email-html": {
                 "name": "newfold-labs/wp-module-migration",
                 "version": "dev-no-space-minify-email-html",
@@ -32066,6 +32121,66 @@
                     "issues": "https://github.com/newfold-labs/wp-module-my-products/issues"
                 }
             },
+            "1.0.3": {
+                "name": "newfold-labs/wp-module-my-products",
+                "version": "1.0.3",
+                "version_normalized": "1.0.3.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-my-products.git",
+                    "reference": "e0796b9087f5d4349ad0403a3bf55046ec620eb1"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-my-products/zipball/e0796b9087f5d4349ad0403a3bf55046ec620eb1",
+                    "reference": "e0796b9087f5d4349ad0403a3bf55046ec620eb1",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-context": "^1.0",
+                    "newfold-labs/wp-module-data": "^2.6.1",
+                    "newfold-labs/wp-module-features": "^1.3.0"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^1.2"
+                },
+                "time": "2024-08-22T21:57:38+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\MyProducts\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Vara Prasad Maruboina",
+                        "email": "varaprasad.maruboina@newfold.com"
+                    },
+                    {
+                        "name": "Girish Lokapure",
+                        "email": "girish.lokapure@newfold.com"
+                    }
+                ],
+                "description": "A module for rendering user-specific product data utilizing the Hiive Users API, which integrates with the Fulfilment Gateway API.",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-my-products/tree/1.0.3",
+                    "issues": "https://github.com/newfold-labs/wp-module-my-products/issues"
+                }
+            },
             "dev-feature/press0-719": {
                 "name": "newfold-labs/wp-module-my-products",
                 "version": "dev-feature/press0-719",
@@ -32133,12 +32248,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-my-products.git",
-                    "reference": "95705b1772f79b034800e02cd1a69f95a0316417"
+                    "reference": "e0796b9087f5d4349ad0403a3bf55046ec620eb1"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-my-products/zipball/95705b1772f79b034800e02cd1a69f95a0316417",
-                    "reference": "95705b1772f79b034800e02cd1a69f95a0316417",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-my-products/zipball/e0796b9087f5d4349ad0403a3bf55046ec620eb1",
+                    "reference": "e0796b9087f5d4349ad0403a3bf55046ec620eb1",
                     "shasum": ""
                 },
                 "require": {
@@ -32149,7 +32264,7 @@
                 "require-dev": {
                     "newfold-labs/wp-php-standards": "^1.2"
                 },
-                "time": "2024-08-22T04:14:26+00:00",
+                "time": "2024-08-22T21:57:38+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -32183,7 +32298,7 @@
                 ],
                 "description": "A module for rendering user-specific product data utilizing the Hiive Users API, which integrates with the Fulfilment Gateway API.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-my-products/tree/1.0.2",
+                    "source": "https://github.com/newfold-labs/wp-module-my-products/tree/1.0.3",
                     "issues": "https://github.com/newfold-labs/wp-module-my-products/issues"
                 }
             }
@@ -40909,12 +41024,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-onboarding-data.git",
-                    "reference": "904999f1b69bb2d78135f8d5f237e424519ee432"
+                    "reference": "bc5a99b4ebb406d100f035d44fe55007628206db"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding-data/zipball/904999f1b69bb2d78135f8d5f237e424519ee432",
-                    "reference": "904999f1b69bb2d78135f8d5f237e424519ee432",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding-data/zipball/bc5a99b4ebb406d100f035d44fe55007628206db",
+                    "reference": "bc5a99b4ebb406d100f035d44fe55007628206db",
                     "shasum": ""
                 },
                 "require": {
@@ -40933,7 +41048,7 @@
                     "newfold-labs/wp-php-standards": "^1.2",
                     "wp-cli/i18n-command": "^2.4.3"
                 },
-                "time": "2024-08-21T21:58:47+00:00",
+                "time": "2024-08-22T05:40:53+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -43382,116 +43497,6 @@
                     "issues": "https://github.com/newfold-labs/wp-module-patterns/issues"
                 }
             },
-            "dev-add/PRESS0-1926-Migrate-WonderBlocks-Section-to-Section-Styles": {
-                "name": "newfold-labs/wp-module-patterns",
-                "version": "dev-add/PRESS0-1926-Migrate-WonderBlocks-Section-to-Section-Styles",
-                "version_normalized": "dev-add/PRESS0-1926-Migrate-WonderBlocks-Section-to-Section-Styles",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-patterns.git",
-                    "reference": "1ac744ad7c8446d9cd43c7ad8375d0da6e8b7a1f"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/1ac744ad7c8446d9cd43c7ad8375d0da6e8b7a1f",
-                    "reference": "1ac744ad7c8446d9cd43c7ad8375d0da6e8b7a1f",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.5.1",
-                    "newfold-labs/wp-module-features": "^1.4"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.2"
-                },
-                "time": "2024-08-20T09:08:58+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Patterns\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "lint": [
-                        "vendor/bin/phpcs . --ignore=*/build/* --standard=Newfold -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "clean": [
-                        "vendor/bin/phpcbf . --ignore=*/build/* --standard=Newfold -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Hristina Conjic",
-                        "email": "hristina.conjic@newfold.com"
-                    }
-                ],
-                "description": "WordPress Cloud Patterns",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-patterns/tree/add/PRESS0-1926-Migrate-WonderBlocks-Section-to-Section-Styles",
-                    "issues": "https://github.com/newfold-labs/wp-module-patterns/issues"
-                }
-            },
-            "dev-add/category-selection-by-query-parameter": {
-                "name": "newfold-labs/wp-module-patterns",
-                "version": "dev-add/category-selection-by-query-parameter",
-                "version_normalized": "dev-add/category-selection-by-query-parameter",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-patterns.git",
-                    "reference": "53600c7dd03428e6f48d54b3bf5ba2883b24908f"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/53600c7dd03428e6f48d54b3bf5ba2883b24908f",
-                    "reference": "53600c7dd03428e6f48d54b3bf5ba2883b24908f",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.5.1",
-                    "newfold-labs/wp-module-features": "^1.4"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.2"
-                },
-                "time": "2024-08-21T21:49:30+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Patterns\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "lint": [
-                        "vendor/bin/phpcs . --ignore=*/build/* --standard=Newfold -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "clean": [
-                        "vendor/bin/phpcbf . --ignore=*/build/* --standard=Newfold -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Hristina Conjic",
-                        "email": "hristina.conjic@newfold.com"
-                    }
-                ],
-                "description": "WordPress Cloud Patterns",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-patterns/tree/add/category-selection-by-query-parameter",
-                    "issues": "https://github.com/newfold-labs/wp-module-patterns/issues"
-                }
-            },
             "dev-add/cloud-divider": {
                 "name": "newfold-labs/wp-module-patterns",
                 "version": "dev-add/cloud-divider",
@@ -43646,61 +43651,6 @@
                 "description": "WordPress Cloud Patterns",
                 "support": {
                     "source": "https://github.com/newfold-labs/wp-module-patterns/tree/feature/custom-template-with-header-footer",
-                    "issues": "https://github.com/newfold-labs/wp-module-patterns/issues"
-                }
-            },
-            "dev-fix-utilities-css-minification": {
-                "name": "newfold-labs/wp-module-patterns",
-                "version": "dev-fix-utilities-css-minification",
-                "version_normalized": "dev-fix-utilities-css-minification",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-patterns.git",
-                    "reference": "dd3dfe34512e1b311e2b477ecb75c44817b8f5d1"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/dd3dfe34512e1b311e2b477ecb75c44817b8f5d1",
-                    "reference": "dd3dfe34512e1b311e2b477ecb75c44817b8f5d1",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.5.1",
-                    "newfold-labs/wp-module-features": "^1.4"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.2"
-                },
-                "time": "2024-08-19T22:37:55+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Patterns\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "lint": [
-                        "vendor/bin/phpcs . --ignore=*/build/* --standard=Newfold -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "clean": [
-                        "vendor/bin/phpcbf . --ignore=*/build/* --standard=Newfold -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Hristina Conjic",
-                        "email": "hristina.conjic@newfold.com"
-                    }
-                ],
-                "description": "WordPress Cloud Patterns",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-patterns/tree/fix-utilities-css-minification",
                     "issues": "https://github.com/newfold-labs/wp-module-patterns/issues"
                 }
             },
@@ -43868,12 +43818,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-patterns.git",
-                    "reference": "980baed176b45aa229ae3899ce89661ee0a4bded"
+                    "reference": "f041134b54b387e2bc9132da5199fca9a2259b18"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/980baed176b45aa229ae3899ce89661ee0a4bded",
-                    "reference": "980baed176b45aa229ae3899ce89661ee0a4bded",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/f041134b54b387e2bc9132da5199fca9a2259b18",
+                    "reference": "f041134b54b387e2bc9132da5199fca9a2259b18",
                     "shasum": ""
                 },
                 "require": {
@@ -43883,7 +43833,7 @@
                 "require-dev": {
                     "newfold-labs/wp-php-standards": "^1.2.2"
                 },
-                "time": "2024-08-20T09:10:19+00:00",
+                "time": "2024-08-22T11:35:15+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -43914,61 +43864,6 @@
                 "description": "WordPress Cloud Patterns",
                 "support": {
                     "source": "https://github.com/newfold-labs/wp-module-patterns/tree/main",
-                    "issues": "https://github.com/newfold-labs/wp-module-patterns/issues"
-                }
-            },
-            "dev-readme-casing-fix": {
-                "name": "newfold-labs/wp-module-patterns",
-                "version": "dev-readme-casing-fix",
-                "version_normalized": "dev-readme-casing-fix",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-patterns.git",
-                    "reference": "46af78f74ed6850b95e6eaee505932e7c7b3cb3a"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/46af78f74ed6850b95e6eaee505932e7c7b3cb3a",
-                    "reference": "46af78f74ed6850b95e6eaee505932e7c7b3cb3a",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.5.1",
-                    "newfold-labs/wp-module-features": "^1.4"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.2"
-                },
-                "time": "2024-08-20T00:56:17+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Patterns\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "lint": [
-                        "vendor/bin/phpcs . --ignore=*/build/* --standard=Newfold -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "clean": [
-                        "vendor/bin/phpcbf . --ignore=*/build/* --standard=Newfold -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Hristina Conjic",
-                        "email": "hristina.conjic@newfold.com"
-                    }
-                ],
-                "description": "WordPress Cloud Patterns",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-patterns/tree/readme-casing-fix",
                     "issues": "https://github.com/newfold-labs/wp-module-patterns/issues"
                 }
             },
@@ -44338,61 +44233,6 @@
                 "description": "WordPress Cloud Patterns",
                 "support": {
                     "source": "https://github.com/newfold-labs/wp-module-patterns/tree/release/v2.3.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-patterns/issues"
-                }
-            },
-            "dev-relocate-source-assets": {
-                "name": "newfold-labs/wp-module-patterns",
-                "version": "dev-relocate-source-assets",
-                "version_normalized": "dev-relocate-source-assets",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-patterns.git",
-                    "reference": "6a0acb6606f2e743251f6c71bfa6d69e8fffa35d"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/6a0acb6606f2e743251f6c71bfa6d69e8fffa35d",
-                    "reference": "6a0acb6606f2e743251f6c71bfa6d69e8fffa35d",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.5.1",
-                    "newfold-labs/wp-module-features": "^1.4"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.2"
-                },
-                "time": "2024-08-20T00:06:17+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Patterns\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "lint": [
-                        "vendor/bin/phpcs . --ignore=*/build/* --standard=Newfold -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "clean": [
-                        "vendor/bin/phpcbf . --ignore=*/build/* --standard=Newfold -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Hristina Conjic",
-                        "email": "hristina.conjic@newfold.com"
-                    }
-                ],
-                "description": "WordPress Cloud Patterns",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-patterns/tree/relocate-source-assets",
                     "issues": "https://github.com/newfold-labs/wp-module-patterns/issues"
                 }
             }
@@ -55464,108 +55304,19 @@
                     "issues": "https://github.com/newfold-labs/wp-plugin-hostgator/issues"
                 }
             },
-            "dev-dependabot/composer/develop/newfold-labs/wp-module-data-2.6.2": {
+            "dev-dependabot/npm_and_yarn/develop/wordpress/compose-7.6.0": {
                 "name": "newfold-labs/wp-plugin-hostgator",
-                "version": "dev-dependabot/composer/develop/newfold-labs/wp-module-data-2.6.2",
-                "version_normalized": "dev-dependabot/composer/develop/newfold-labs/wp-module-data-2.6.2",
+                "version": "dev-dependabot/npm_and_yarn/develop/wordpress/compose-7.6.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/develop/wordpress/compose-7.6.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-plugin-hostgator.git",
-                    "reference": "abd6763bdd15930d1c9bb7640afcfecda12a3cb1"
+                    "reference": "4431ea11519a37a984fe83b88db9483e0f5ea3a7"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-hostgator/zipball/abd6763bdd15930d1c9bb7640afcfecda12a3cb1",
-                    "reference": "abd6763bdd15930d1c9bb7640afcfecda12a3cb1",
-                    "shasum": ""
-                },
-                "require": {
-                    "doctrine/inflector": "1.4.4 as 1.3.1",
-                    "newfold-labs/wp-module-activation": "^1.0.3",
-                    "newfold-labs/wp-module-atomic": "^1.3",
-                    "newfold-labs/wp-module-coming-soon": "^1.2.5",
-                    "newfold-labs/wp-module-context": "^1.0.1",
-                    "newfold-labs/wp-module-data": "^2.6.2",
-                    "newfold-labs/wp-module-deactivation": "^1.2.3",
-                    "newfold-labs/wp-module-ecommerce": "^1.3.40",
-                    "newfold-labs/wp-module-features": "^1.4.2",
-                    "newfold-labs/wp-module-global-ctb": "^1.0.13",
-                    "newfold-labs/wp-module-help-center": "^2.0.1",
-                    "newfold-labs/wp-module-loader": "^1.0.10",
-                    "newfold-labs/wp-module-marketplace": "^2.4.0",
-                    "newfold-labs/wp-module-migration": "^1.0.9",
-                    "newfold-labs/wp-module-notifications": "^1.5.0",
-                    "newfold-labs/wp-module-onboarding": "^2.3.11",
-                    "newfold-labs/wp-module-patterns": "^2.3.1",
-                    "newfold-labs/wp-module-performance": "2.0.0 as 1.9.9",
-                    "newfold-labs/wp-module-runtime": "^1.0.11",
-                    "newfold-labs/wp-module-secure-passwords": "^1.1.1",
-                    "newfold-labs/wp-module-sso": "^1.0.6",
-                    "newfold-labs/wp-module-staging": "^2.1.0",
-                    "wp-forge/wp-update-handler": "^1.0.2",
-                    "wp-forge/wp-upgrade-handler": "^1.0"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.4",
-                    "wp-cli/i18n-command": "^2.6.2",
-                    "wp-phpunit/wp-phpunit": "^6.6.0"
-                },
-                "time": "2024-08-19T12:49:08+00:00",
-                "type": "wordpress-plugin",
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf --standard=phpcs.xml ."
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-plugin-hostgator.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-plugin-hostgator/issues\",\"POT-Creation-Date\":\"2023-01-11T20:21:44+00:00\"}' --exclude=assets,tests,src"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-plugin-hostgator.pot ./languages"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-mo",
-                        "@i18n-json"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Evan Mullins",
-                        "homepage": "https://evanmullins.com"
-                    }
-                ],
-                "description": "WordPress plugin that integrates your WordPress site with the HostGator control panel, including performance, security, and update features.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-plugin-hostgator/tree/dependabot/composer/develop/newfold-labs/wp-module-data-2.6.2",
-                    "issues": "https://github.com/newfold-labs/wp-plugin-hostgator/issues"
-                }
-            },
-            "dev-dependabot/composer/develop/newfold-labs/wp-module-ecommerce-1.3.41": {
-                "name": "newfold-labs/wp-plugin-hostgator",
-                "version": "dev-dependabot/composer/develop/newfold-labs/wp-module-ecommerce-1.3.41",
-                "version_normalized": "dev-dependabot/composer/develop/newfold-labs/wp-module-ecommerce-1.3.41",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-plugin-hostgator.git",
-                    "reference": "8910e12497f69d6430af9367e75fd16db35dca48"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-hostgator/zipball/8910e12497f69d6430af9367e75fd16db35dca48",
-                    "reference": "8910e12497f69d6430af9367e75fd16db35dca48",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-hostgator/zipball/4431ea11519a37a984fe83b88db9483e0f5ea3a7",
+                    "reference": "4431ea11519a37a984fe83b88db9483e0f5ea3a7",
                     "shasum": ""
                 },
                 "require": {
@@ -55599,7 +55350,7 @@
                     "wp-cli/i18n-command": "^2.6.2",
                     "wp-phpunit/wp-phpunit": "^6.6.0"
                 },
-                "time": "2024-08-21T13:02:03+00:00",
+                "time": "2024-08-22T12:52:54+00:00",
                 "type": "wordpress-plugin",
                 "scripts": {
                     "fix": [
@@ -55638,23 +55389,23 @@
                 ],
                 "description": "WordPress plugin that integrates your WordPress site with the HostGator control panel, including performance, security, and update features.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-plugin-hostgator/tree/dependabot/composer/develop/newfold-labs/wp-module-ecommerce-1.3.41",
+                    "source": "https://github.com/newfold-labs/wp-plugin-hostgator/tree/dependabot/npm_and_yarn/develop/wordpress/compose-7.6.0",
                     "issues": "https://github.com/newfold-labs/wp-plugin-hostgator/issues"
                 }
             },
-            "dev-dependabot/composer/develop/newfold-labs/wp-module-migration-1.0.10": {
+            "dev-dependabot/npm_and_yarn/develop/wordpress/element-6.6.0": {
                 "name": "newfold-labs/wp-plugin-hostgator",
-                "version": "dev-dependabot/composer/develop/newfold-labs/wp-module-migration-1.0.10",
-                "version_normalized": "dev-dependabot/composer/develop/newfold-labs/wp-module-migration-1.0.10",
+                "version": "dev-dependabot/npm_and_yarn/develop/wordpress/element-6.6.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/develop/wordpress/element-6.6.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-plugin-hostgator.git",
-                    "reference": "b249afe72cca6833c30cc8ac0bb2f9b4564ba423"
+                    "reference": "c45fe9575b261fc2b95dbd20905ba9110e88ed7f"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-hostgator/zipball/b249afe72cca6833c30cc8ac0bb2f9b4564ba423",
-                    "reference": "b249afe72cca6833c30cc8ac0bb2f9b4564ba423",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-hostgator/zipball/c45fe9575b261fc2b95dbd20905ba9110e88ed7f",
+                    "reference": "c45fe9575b261fc2b95dbd20905ba9110e88ed7f",
                     "shasum": ""
                 },
                 "require": {
@@ -55665,96 +55416,7 @@
                     "newfold-labs/wp-module-context": "^1.0.1",
                     "newfold-labs/wp-module-data": "^2.6.1",
                     "newfold-labs/wp-module-deactivation": "^1.2.3",
-                    "newfold-labs/wp-module-ecommerce": "^1.3.40",
-                    "newfold-labs/wp-module-features": "^1.4.2",
-                    "newfold-labs/wp-module-global-ctb": "^1.0.13",
-                    "newfold-labs/wp-module-help-center": "^2.0.1",
-                    "newfold-labs/wp-module-loader": "^1.0.10",
-                    "newfold-labs/wp-module-marketplace": "^2.4.0",
-                    "newfold-labs/wp-module-migration": "^1.0.10",
-                    "newfold-labs/wp-module-notifications": "^1.5.0",
-                    "newfold-labs/wp-module-onboarding": "^2.3.11",
-                    "newfold-labs/wp-module-patterns": "^2.3.1",
-                    "newfold-labs/wp-module-performance": "2.0.0 as 1.9.9",
-                    "newfold-labs/wp-module-runtime": "^1.0.11",
-                    "newfold-labs/wp-module-secure-passwords": "^1.1.1",
-                    "newfold-labs/wp-module-sso": "^1.0.6",
-                    "newfold-labs/wp-module-staging": "^2.1.0",
-                    "wp-forge/wp-update-handler": "^1.0.2",
-                    "wp-forge/wp-upgrade-handler": "^1.0"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.4",
-                    "wp-cli/i18n-command": "^2.6.2",
-                    "wp-phpunit/wp-phpunit": "^6.6.0"
-                },
-                "time": "2024-08-21T13:01:44+00:00",
-                "type": "wordpress-plugin",
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf --standard=phpcs.xml ."
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-plugin-hostgator.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-plugin-hostgator/issues\",\"POT-Creation-Date\":\"2023-01-11T20:21:44+00:00\"}' --exclude=assets,tests,src"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-plugin-hostgator.pot ./languages"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-mo",
-                        "@i18n-json"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Evan Mullins",
-                        "homepage": "https://evanmullins.com"
-                    }
-                ],
-                "description": "WordPress plugin that integrates your WordPress site with the HostGator control panel, including performance, security, and update features.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-plugin-hostgator/tree/dependabot/composer/develop/newfold-labs/wp-module-migration-1.0.10",
-                    "issues": "https://github.com/newfold-labs/wp-plugin-hostgator/issues"
-                }
-            },
-            "dev-dependabot/npm_and_yarn/develop/cypress-13.13.3": {
-                "name": "newfold-labs/wp-plugin-hostgator",
-                "version": "dev-dependabot/npm_and_yarn/develop/cypress-13.13.3",
-                "version_normalized": "dev-dependabot/npm_and_yarn/develop/cypress-13.13.3",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-plugin-hostgator.git",
-                    "reference": "4c124cdf67d7db3db76a9f5c700d9d4a6c9768a1"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-hostgator/zipball/4c124cdf67d7db3db76a9f5c700d9d4a6c9768a1",
-                    "reference": "4c124cdf67d7db3db76a9f5c700d9d4a6c9768a1",
-                    "shasum": ""
-                },
-                "require": {
-                    "doctrine/inflector": "1.4.4 as 1.3.1",
-                    "newfold-labs/wp-module-activation": "^1.0.3",
-                    "newfold-labs/wp-module-atomic": "^1.3",
-                    "newfold-labs/wp-module-coming-soon": "^1.2.5",
-                    "newfold-labs/wp-module-context": "^1.0.1",
-                    "newfold-labs/wp-module-data": "^2.6.1",
-                    "newfold-labs/wp-module-deactivation": "^1.2.3",
-                    "newfold-labs/wp-module-ecommerce": "^1.3.40",
+                    "newfold-labs/wp-module-ecommerce": "^1.3.41",
                     "newfold-labs/wp-module-features": "^1.4.2",
                     "newfold-labs/wp-module-global-ctb": "^1.0.13",
                     "newfold-labs/wp-module-help-center": "^2.0.1",
@@ -55777,7 +55439,7 @@
                     "wp-cli/i18n-command": "^2.6.2",
                     "wp-phpunit/wp-phpunit": "^6.6.0"
                 },
-                "time": "2024-08-15T12:20:21+00:00",
+                "time": "2024-08-22T12:53:29+00:00",
                 "type": "wordpress-plugin",
                 "scripts": {
                     "fix": [
@@ -55816,23 +55478,23 @@
                 ],
                 "description": "WordPress plugin that integrates your WordPress site with the HostGator control panel, including performance, security, and update features.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-plugin-hostgator/tree/dependabot/npm_and_yarn/develop/cypress-13.13.3",
+                    "source": "https://github.com/newfold-labs/wp-plugin-hostgator/tree/dependabot/npm_and_yarn/develop/wordpress/element-6.6.0",
                     "issues": "https://github.com/newfold-labs/wp-plugin-hostgator/issues"
                 }
             },
-            "dev-dependabot/npm_and_yarn/develop/react-router-dom-6.26.1": {
+            "dev-dependabot/npm_and_yarn/develop/wordpress/i18n-5.6.0": {
                 "name": "newfold-labs/wp-plugin-hostgator",
-                "version": "dev-dependabot/npm_and_yarn/develop/react-router-dom-6.26.1",
-                "version_normalized": "dev-dependabot/npm_and_yarn/develop/react-router-dom-6.26.1",
+                "version": "dev-dependabot/npm_and_yarn/develop/wordpress/i18n-5.6.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/develop/wordpress/i18n-5.6.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-plugin-hostgator.git",
-                    "reference": "0f05df39f5c847b92451f462f37e32cb0c4b6dde"
+                    "reference": "6c8c730f4db5609c3fa7b45364d06564e63e689d"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-hostgator/zipball/0f05df39f5c847b92451f462f37e32cb0c4b6dde",
-                    "reference": "0f05df39f5c847b92451f462f37e32cb0c4b6dde",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-hostgator/zipball/6c8c730f4db5609c3fa7b45364d06564e63e689d",
+                    "reference": "6c8c730f4db5609c3fa7b45364d06564e63e689d",
                     "shasum": ""
                 },
                 "require": {
@@ -55843,7 +55505,7 @@
                     "newfold-labs/wp-module-context": "^1.0.1",
                     "newfold-labs/wp-module-data": "^2.6.1",
                     "newfold-labs/wp-module-deactivation": "^1.2.3",
-                    "newfold-labs/wp-module-ecommerce": "^1.3.40",
+                    "newfold-labs/wp-module-ecommerce": "^1.3.41",
                     "newfold-labs/wp-module-features": "^1.4.2",
                     "newfold-labs/wp-module-global-ctb": "^1.0.13",
                     "newfold-labs/wp-module-help-center": "^2.0.1",
@@ -55866,7 +55528,7 @@
                     "wp-cli/i18n-command": "^2.6.2",
                     "wp-phpunit/wp-phpunit": "^6.6.0"
                 },
-                "time": "2024-08-16T12:51:53+00:00",
+                "time": "2024-08-22T12:53:11+00:00",
                 "type": "wordpress-plugin",
                 "scripts": {
                     "fix": [
@@ -55905,23 +55567,23 @@
                 ],
                 "description": "WordPress plugin that integrates your WordPress site with the HostGator control panel, including performance, security, and update features.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-plugin-hostgator/tree/dependabot/npm_and_yarn/develop/react-router-dom-6.26.1",
+                    "source": "https://github.com/newfold-labs/wp-plugin-hostgator/tree/dependabot/npm_and_yarn/develop/wordpress/i18n-5.6.0",
                     "issues": "https://github.com/newfold-labs/wp-plugin-hostgator/issues"
                 }
             },
-            "dev-dependabot/npm_and_yarn/develop/tailwindcss-3.4.10": {
+            "dev-dependabot/npm_and_yarn/develop/wordpress/icons-10.6.0": {
                 "name": "newfold-labs/wp-plugin-hostgator",
-                "version": "dev-dependabot/npm_and_yarn/develop/tailwindcss-3.4.10",
-                "version_normalized": "dev-dependabot/npm_and_yarn/develop/tailwindcss-3.4.10",
+                "version": "dev-dependabot/npm_and_yarn/develop/wordpress/icons-10.6.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/develop/wordpress/icons-10.6.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-plugin-hostgator.git",
-                    "reference": "763731f2e24dd4ec2717546946eb64bbb3b48f1f"
+                    "reference": "61cd0d4cdca24f6d2791517ad10e5467a235b58f"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-hostgator/zipball/763731f2e24dd4ec2717546946eb64bbb3b48f1f",
-                    "reference": "763731f2e24dd4ec2717546946eb64bbb3b48f1f",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-hostgator/zipball/61cd0d4cdca24f6d2791517ad10e5467a235b58f",
+                    "reference": "61cd0d4cdca24f6d2791517ad10e5467a235b58f",
                     "shasum": ""
                 },
                 "require": {
@@ -55932,7 +55594,7 @@
                     "newfold-labs/wp-module-context": "^1.0.1",
                     "newfold-labs/wp-module-data": "^2.6.1",
                     "newfold-labs/wp-module-deactivation": "^1.2.3",
-                    "newfold-labs/wp-module-ecommerce": "^1.3.40",
+                    "newfold-labs/wp-module-ecommerce": "^1.3.41",
                     "newfold-labs/wp-module-features": "^1.4.2",
                     "newfold-labs/wp-module-global-ctb": "^1.0.13",
                     "newfold-labs/wp-module-help-center": "^2.0.1",
@@ -55955,7 +55617,7 @@
                     "wp-cli/i18n-command": "^2.6.2",
                     "wp-phpunit/wp-phpunit": "^6.6.0"
                 },
-                "time": "2024-08-15T12:20:35+00:00",
+                "time": "2024-08-22T12:52:36+00:00",
                 "type": "wordpress-plugin",
                 "scripts": {
                     "fix": [
@@ -55994,23 +55656,23 @@
                 ],
                 "description": "WordPress plugin that integrates your WordPress site with the HostGator control panel, including performance, security, and update features.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-plugin-hostgator/tree/dependabot/npm_and_yarn/develop/tailwindcss-3.4.10",
+                    "source": "https://github.com/newfold-labs/wp-plugin-hostgator/tree/dependabot/npm_and_yarn/develop/wordpress/icons-10.6.0",
                     "issues": "https://github.com/newfold-labs/wp-plugin-hostgator/issues"
                 }
             },
-            "dev-dependabot/npm_and_yarn/develop/wordpress/compose-7.5.0": {
+            "dev-dependabot/npm_and_yarn/develop/wordpress/scripts-28.6.0": {
                 "name": "newfold-labs/wp-plugin-hostgator",
-                "version": "dev-dependabot/npm_and_yarn/develop/wordpress/compose-7.5.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/develop/wordpress/compose-7.5.0",
+                "version": "dev-dependabot/npm_and_yarn/develop/wordpress/scripts-28.6.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/develop/wordpress/scripts-28.6.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-plugin-hostgator.git",
-                    "reference": "c7ed0051b1501bab8ec6e2f6209268790e4c9ed6"
+                    "reference": "49c9116f250c320e820b7e9c0b8012751c9ec96e"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-hostgator/zipball/c7ed0051b1501bab8ec6e2f6209268790e4c9ed6",
-                    "reference": "c7ed0051b1501bab8ec6e2f6209268790e4c9ed6",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-hostgator/zipball/49c9116f250c320e820b7e9c0b8012751c9ec96e",
+                    "reference": "49c9116f250c320e820b7e9c0b8012751c9ec96e",
                     "shasum": ""
                 },
                 "require": {
@@ -56021,7 +55683,7 @@
                     "newfold-labs/wp-module-context": "^1.0.1",
                     "newfold-labs/wp-module-data": "^2.6.1",
                     "newfold-labs/wp-module-deactivation": "^1.2.3",
-                    "newfold-labs/wp-module-ecommerce": "^1.3.40",
+                    "newfold-labs/wp-module-ecommerce": "^1.3.41",
                     "newfold-labs/wp-module-features": "^1.4.2",
                     "newfold-labs/wp-module-global-ctb": "^1.0.13",
                     "newfold-labs/wp-module-help-center": "^2.0.1",
@@ -56044,7 +55706,7 @@
                     "wp-cli/i18n-command": "^2.6.2",
                     "wp-phpunit/wp-phpunit": "^6.6.0"
                 },
-                "time": "2024-08-15T12:19:47+00:00",
+                "time": "2024-08-22T12:53:54+00:00",
                 "type": "wordpress-plugin",
                 "scripts": {
                     "fix": [
@@ -56083,96 +55745,7 @@
                 ],
                 "description": "WordPress plugin that integrates your WordPress site with the HostGator control panel, including performance, security, and update features.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-plugin-hostgator/tree/dependabot/npm_and_yarn/develop/wordpress/compose-7.5.0",
-                    "issues": "https://github.com/newfold-labs/wp-plugin-hostgator/issues"
-                }
-            },
-            "dev-dependabot/npm_and_yarn/develop/wordpress/dom-ready-4.5.0": {
-                "name": "newfold-labs/wp-plugin-hostgator",
-                "version": "dev-dependabot/npm_and_yarn/develop/wordpress/dom-ready-4.5.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/develop/wordpress/dom-ready-4.5.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-plugin-hostgator.git",
-                    "reference": "b4d4038d1cd25c138b581e1f03676e71d16f9372"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-hostgator/zipball/b4d4038d1cd25c138b581e1f03676e71d16f9372",
-                    "reference": "b4d4038d1cd25c138b581e1f03676e71d16f9372",
-                    "shasum": ""
-                },
-                "require": {
-                    "doctrine/inflector": "1.4.4 as 1.3.1",
-                    "newfold-labs/wp-module-activation": "^1.0.3",
-                    "newfold-labs/wp-module-atomic": "^1.3",
-                    "newfold-labs/wp-module-coming-soon": "^1.2.5",
-                    "newfold-labs/wp-module-context": "^1.0.1",
-                    "newfold-labs/wp-module-data": "^2.6.1",
-                    "newfold-labs/wp-module-deactivation": "^1.2.3",
-                    "newfold-labs/wp-module-ecommerce": "^1.3.40",
-                    "newfold-labs/wp-module-features": "^1.4.2",
-                    "newfold-labs/wp-module-global-ctb": "^1.0.13",
-                    "newfold-labs/wp-module-help-center": "^2.0.1",
-                    "newfold-labs/wp-module-loader": "^1.0.10",
-                    "newfold-labs/wp-module-marketplace": "^2.4.0",
-                    "newfold-labs/wp-module-migration": "^1.0.9",
-                    "newfold-labs/wp-module-notifications": "^1.5.0",
-                    "newfold-labs/wp-module-onboarding": "^2.3.11",
-                    "newfold-labs/wp-module-patterns": "^2.3.1",
-                    "newfold-labs/wp-module-performance": "2.0.0 as 1.9.9",
-                    "newfold-labs/wp-module-runtime": "^1.0.11",
-                    "newfold-labs/wp-module-secure-passwords": "^1.1.1",
-                    "newfold-labs/wp-module-sso": "^1.0.6",
-                    "newfold-labs/wp-module-staging": "^2.1.0",
-                    "wp-forge/wp-update-handler": "^1.0.2",
-                    "wp-forge/wp-upgrade-handler": "^1.0"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.4",
-                    "wp-cli/i18n-command": "^2.6.2",
-                    "wp-phpunit/wp-phpunit": "^6.6.0"
-                },
-                "time": "2024-08-15T12:20:10+00:00",
-                "type": "wordpress-plugin",
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf --standard=phpcs.xml ."
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-plugin-hostgator.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-plugin-hostgator/issues\",\"POT-Creation-Date\":\"2023-01-11T20:21:44+00:00\"}' --exclude=assets,tests,src"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-plugin-hostgator.pot ./languages"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-mo",
-                        "@i18n-json"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Evan Mullins",
-                        "homepage": "https://evanmullins.com"
-                    }
-                ],
-                "description": "WordPress plugin that integrates your WordPress site with the HostGator control panel, including performance, security, and update features.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-plugin-hostgator/tree/dependabot/npm_and_yarn/develop/wordpress/dom-ready-4.5.0",
+                    "source": "https://github.com/newfold-labs/wp-plugin-hostgator/tree/dependabot/npm_and_yarn/develop/wordpress/scripts-28.6.0",
                     "issues": "https://github.com/newfold-labs/wp-plugin-hostgator/issues"
                 }
             },
@@ -56183,12 +55756,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-plugin-hostgator.git",
-                    "reference": "187d68b71c0040ba525b32f5b05d07af130684fd"
+                    "reference": "708085b1208b115b631ffe15f0a683bd0ab7e622"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-hostgator/zipball/187d68b71c0040ba525b32f5b05d07af130684fd",
-                    "reference": "187d68b71c0040ba525b32f5b05d07af130684fd",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-hostgator/zipball/708085b1208b115b631ffe15f0a683bd0ab7e622",
+                    "reference": "708085b1208b115b631ffe15f0a683bd0ab7e622",
                     "shasum": ""
                 },
                 "require": {
@@ -56199,17 +55772,17 @@
                     "newfold-labs/wp-module-context": "^1.0.1",
                     "newfold-labs/wp-module-data": "^2.6.1",
                     "newfold-labs/wp-module-deactivation": "^1.2.3",
-                    "newfold-labs/wp-module-ecommerce": "^1.3.40",
+                    "newfold-labs/wp-module-ecommerce": "^1.3.41",
                     "newfold-labs/wp-module-features": "^1.4.2",
                     "newfold-labs/wp-module-global-ctb": "^1.0.13",
                     "newfold-labs/wp-module-help-center": "^2.0.1",
                     "newfold-labs/wp-module-loader": "^1.0.10",
                     "newfold-labs/wp-module-marketplace": "^2.4.0",
-                    "newfold-labs/wp-module-migration": "^1.0.9",
+                    "newfold-labs/wp-module-migration": "^1.0.11",
                     "newfold-labs/wp-module-notifications": "^1.5.0",
                     "newfold-labs/wp-module-onboarding": "^2.3.11",
                     "newfold-labs/wp-module-patterns": "^2.3.1",
-                    "newfold-labs/wp-module-performance": "2.0.0 as 1.9.9",
+                    "newfold-labs/wp-module-performance": "2.0.1 as 1.9.9",
                     "newfold-labs/wp-module-runtime": "^1.0.11",
                     "newfold-labs/wp-module-secure-passwords": "^1.1.1",
                     "newfold-labs/wp-module-sso": "^1.0.6",
@@ -56222,7 +55795,7 @@
                     "wp-cli/i18n-command": "^2.6.2",
                     "wp-phpunit/wp-phpunit": "^6.6.0"
                 },
-                "time": "2024-08-14T21:22:56+00:00",
+                "time": "2024-08-22T17:18:16+00:00",
                 "type": "wordpress-plugin",
                 "scripts": {
                     "fix": [
@@ -56262,95 +55835,6 @@
                 "description": "WordPress plugin that integrates your WordPress site with the HostGator control panel, including performance, security, and update features.",
                 "support": {
                     "source": "https://github.com/newfold-labs/wp-plugin-hostgator/tree/develop",
-                    "issues": "https://github.com/newfold-labs/wp-plugin-hostgator/issues"
-                }
-            },
-            "dev-fix/wonderblocks-typo": {
-                "name": "newfold-labs/wp-plugin-hostgator",
-                "version": "dev-fix/wonderblocks-typo",
-                "version_normalized": "dev-fix/wonderblocks-typo",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-plugin-hostgator.git",
-                    "reference": "531474e8fddc63a1c3c2c77f1ef5ec9ccfa0a9ff"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-hostgator/zipball/531474e8fddc63a1c3c2c77f1ef5ec9ccfa0a9ff",
-                    "reference": "531474e8fddc63a1c3c2c77f1ef5ec9ccfa0a9ff",
-                    "shasum": ""
-                },
-                "require": {
-                    "doctrine/inflector": "1.4.4 as 1.3.1",
-                    "newfold-labs/wp-module-activation": "^1.0.3",
-                    "newfold-labs/wp-module-atomic": "^1.3",
-                    "newfold-labs/wp-module-coming-soon": "^1.2.5",
-                    "newfold-labs/wp-module-context": "^1.0.1",
-                    "newfold-labs/wp-module-data": "^2.6.1",
-                    "newfold-labs/wp-module-deactivation": "^1.2.3",
-                    "newfold-labs/wp-module-ecommerce": "^1.3.39",
-                    "newfold-labs/wp-module-features": "^1.4.2",
-                    "newfold-labs/wp-module-global-ctb": "^1.0.13",
-                    "newfold-labs/wp-module-help-center": "^2.0.1",
-                    "newfold-labs/wp-module-loader": "^1.0.10",
-                    "newfold-labs/wp-module-marketplace": "^2.4.0",
-                    "newfold-labs/wp-module-migration": "^1.0.9",
-                    "newfold-labs/wp-module-notifications": "^1.5.0",
-                    "newfold-labs/wp-module-onboarding": "^2.3.11",
-                    "newfold-labs/wp-module-patterns": "^2.3.1",
-                    "newfold-labs/wp-module-performance": "2.0.0 as 1.9.9",
-                    "newfold-labs/wp-module-runtime": "^1.0.11",
-                    "newfold-labs/wp-module-secure-passwords": "^1.1.1",
-                    "newfold-labs/wp-module-sso": "^1.0.6",
-                    "newfold-labs/wp-module-staging": "^2.1.0",
-                    "wp-forge/wp-update-handler": "^1.0.2",
-                    "wp-forge/wp-upgrade-handler": "^1.0"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.4",
-                    "wp-cli/i18n-command": "^2.6.2",
-                    "wp-phpunit/wp-phpunit": "^6.6.0"
-                },
-                "time": "2024-08-15T15:59:46+00:00",
-                "type": "wordpress-plugin",
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf --standard=phpcs.xml ."
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-plugin-hostgator.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-plugin-hostgator/issues\",\"POT-Creation-Date\":\"2023-01-11T20:21:44+00:00\"}' --exclude=assets,tests,src"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-plugin-hostgator.pot ./languages"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-mo",
-                        "@i18n-json"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Evan Mullins",
-                        "homepage": "https://evanmullins.com"
-                    }
-                ],
-                "description": "WordPress plugin that integrates your WordPress site with the HostGator control panel, including performance, security, and update features.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-plugin-hostgator/tree/fix/wonderblocks-typo",
                     "issues": "https://github.com/newfold-labs/wp-plugin-hostgator/issues"
                 }
             },
@@ -56444,19 +55928,19 @@
                     "issues": "https://github.com/newfold-labs/wp-plugin-hostgator/issues"
                 }
             },
-            "dev-update/ecommerce-version-bump-1.3.41": {
+            "dev-release/2.11.4": {
                 "name": "newfold-labs/wp-plugin-hostgator",
-                "version": "dev-update/ecommerce-version-bump-1.3.41",
-                "version_normalized": "dev-update/ecommerce-version-bump-1.3.41",
+                "version": "dev-release/2.11.4",
+                "version_normalized": "dev-release/2.11.4",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-plugin-hostgator.git",
-                    "reference": "f7ba08cb125a4fb84cda56ee03ff99f16f92e7bb"
+                    "reference": "bbf2317de4d2d770e85b2ece6986f6250dd8d6c9"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-hostgator/zipball/f7ba08cb125a4fb84cda56ee03ff99f16f92e7bb",
-                    "reference": "f7ba08cb125a4fb84cda56ee03ff99f16f92e7bb",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-hostgator/zipball/bbf2317de4d2d770e85b2ece6986f6250dd8d6c9",
+                    "reference": "bbf2317de4d2d770e85b2ece6986f6250dd8d6c9",
                     "shasum": ""
                 },
                 "require": {
@@ -56473,11 +55957,11 @@
                     "newfold-labs/wp-module-help-center": "^2.0.1",
                     "newfold-labs/wp-module-loader": "^1.0.10",
                     "newfold-labs/wp-module-marketplace": "^2.4.0",
-                    "newfold-labs/wp-module-migration": "^1.0.9",
+                    "newfold-labs/wp-module-migration": "^1.0.11",
                     "newfold-labs/wp-module-notifications": "^1.5.0",
                     "newfold-labs/wp-module-onboarding": "^2.3.11",
                     "newfold-labs/wp-module-patterns": "^2.3.1",
-                    "newfold-labs/wp-module-performance": "2.0.0 as 1.9.9",
+                    "newfold-labs/wp-module-performance": "2.0.1 as 1.9.9",
                     "newfold-labs/wp-module-runtime": "^1.0.11",
                     "newfold-labs/wp-module-secure-passwords": "^1.1.1",
                     "newfold-labs/wp-module-sso": "^1.0.6",
@@ -56490,7 +55974,7 @@
                     "wp-cli/i18n-command": "^2.6.2",
                     "wp-phpunit/wp-phpunit": "^6.6.0"
                 },
-                "time": "2024-08-21T10:14:26+00:00",
+                "time": "2024-08-22T17:40:31+00:00",
                 "type": "wordpress-plugin",
                 "scripts": {
                     "fix": [
@@ -56529,7 +56013,7 @@
                 ],
                 "description": "WordPress plugin that integrates your WordPress site with the HostGator control panel, including performance, security, and update features.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-plugin-hostgator/tree/update/ecommerce-version-bump-1.3.41",
+                    "source": "https://github.com/newfold-labs/wp-plugin-hostgator/tree/release/2.11.4",
                     "issues": "https://github.com/newfold-labs/wp-plugin-hostgator/issues"
                 }
             }
@@ -58066,19 +57550,19 @@
                     "issues": "https://github.com/newfold-labs/wp-plugin-mojo/issues"
                 }
             },
-            "dev-dependabot/npm_and_yarn/develop/wordpress/compose-7.5.0": {
+            "dev-dependabot/npm_and_yarn/develop/wordpress/compose-7.6.0": {
                 "name": "newfold-labs/wp-plugin-mojo",
-                "version": "dev-dependabot/npm_and_yarn/develop/wordpress/compose-7.5.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/develop/wordpress/compose-7.5.0",
+                "version": "dev-dependabot/npm_and_yarn/develop/wordpress/compose-7.6.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/develop/wordpress/compose-7.6.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-plugin-mojo.git",
-                    "reference": "2647e064fe32453e70a9d1b7b5ac1b95aba22742"
+                    "reference": "20a18c777ac0de9b264c226436da21bb813741b2"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-mojo/zipball/2647e064fe32453e70a9d1b7b5ac1b95aba22742",
-                    "reference": "2647e064fe32453e70a9d1b7b5ac1b95aba22742",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-mojo/zipball/20a18c777ac0de9b264c226436da21bb813741b2",
+                    "reference": "20a18c777ac0de9b264c226436da21bb813741b2",
                     "shasum": ""
                 },
                 "require": {
@@ -58106,7 +57590,7 @@
                     "wp-cli/i18n-command": "^2.6.1",
                     "wp-phpunit/wp-phpunit": "^6.6.1"
                 },
-                "time": "2024-08-13T19:16:56+00:00",
+                "time": "2024-08-22T10:34:01+00:00",
                 "type": "wordpress-plugin",
                 "extra": {
                     "installer-name": "mojo-marketplace-wp-plugin"
@@ -58148,109 +57632,23 @@
                 ],
                 "description": "WordPress plugin that integrates a WordPress site with Hosting.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-plugin-mojo/tree/dependabot/npm_and_yarn/develop/wordpress/compose-7.5.0",
+                    "source": "https://github.com/newfold-labs/wp-plugin-mojo/tree/dependabot/npm_and_yarn/develop/wordpress/compose-7.6.0",
                     "issues": "https://github.com/newfold-labs/wp-plugin-mojo/issues"
                 }
             },
-            "dev-dependabot/npm_and_yarn/develop/wordpress/element-6.5.0": {
+            "dev-dependabot/npm_and_yarn/develop/wordpress/element-6.6.0": {
                 "name": "newfold-labs/wp-plugin-mojo",
-                "version": "dev-dependabot/npm_and_yarn/develop/wordpress/element-6.5.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/develop/wordpress/element-6.5.0",
+                "version": "dev-dependabot/npm_and_yarn/develop/wordpress/element-6.6.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/develop/wordpress/element-6.6.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-plugin-mojo.git",
-                    "reference": "a1cc3c682c2d0ffc5b3bd7c0c25ec1dfd8488dad"
+                    "reference": "7c693bb6cf88fa30283167a931875221a79b04b8"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-mojo/zipball/a1cc3c682c2d0ffc5b3bd7c0c25ec1dfd8488dad",
-                    "reference": "a1cc3c682c2d0ffc5b3bd7c0c25ec1dfd8488dad",
-                    "shasum": ""
-                },
-                "require": {
-                    "doctrine/inflector": "1.2.0 as 1.3.1",
-                    "newfold-labs/wp-module-activation": "^1.0.3",
-                    "newfold-labs/wp-module-atomic": "^1.3",
-                    "newfold-labs/wp-module-coming-soon": "^1.2.5",
-                    "newfold-labs/wp-module-context": "^1.0.1",
-                    "newfold-labs/wp-module-data": "^2.5.3",
-                    "newfold-labs/wp-module-deactivation": "^1.2.1",
-                    "newfold-labs/wp-module-features": "^1.4.2",
-                    "newfold-labs/wp-module-loader": "^1.0.10",
-                    "newfold-labs/wp-module-marketplace": "^2.4.0",
-                    "newfold-labs/wp-module-notifications": "^1.4.0",
-                    "newfold-labs/wp-module-performance": "^2.0.0",
-                    "newfold-labs/wp-module-runtime": "^1.0.11",
-                    "newfold-labs/wp-module-secure-passwords": "^1.1.1",
-                    "newfold-labs/wp-module-sso": "^1.0.5",
-                    "wp-forge/wp-update-handler": "^1.0.2",
-                    "wp-forge/wp-upgrade-handler": "^1.0"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.3",
-                    "roave/security-advisories": "dev-latest",
-                    "wp-cli/i18n-command": "^2.6.1",
-                    "wp-phpunit/wp-phpunit": "^6.6.1"
-                },
-                "time": "2024-08-13T10:28:00+00:00",
-                "type": "wordpress-plugin",
-                "extra": {
-                    "installer-name": "mojo-marketplace-wp-plugin"
-                },
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf --standard=phpcs.xml ."
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-plugin-mojo.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-plugin-mojo/issues\",\"POT-Creation-Date\":\"2023-01-11T20:21:44+00:00\"}' --exclude=assets,tests,src"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-plugin-mojo.pot ./languages"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-mo",
-                        "@i18n-json"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Evan Mullins",
-                        "homepage": "https://evanmullins.com"
-                    }
-                ],
-                "description": "WordPress plugin that integrates a WordPress site with Hosting.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-plugin-mojo/tree/dependabot/npm_and_yarn/develop/wordpress/element-6.5.0",
-                    "issues": "https://github.com/newfold-labs/wp-plugin-mojo/issues"
-                }
-            },
-            "dev-dependabot/npm_and_yarn/develop/wordpress/env-10.5.0": {
-                "name": "newfold-labs/wp-plugin-mojo",
-                "version": "dev-dependabot/npm_and_yarn/develop/wordpress/env-10.5.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/develop/wordpress/env-10.5.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-plugin-mojo.git",
-                    "reference": "6fe688910a525bf19b2c251a770b7a58dfcbc4eb"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-mojo/zipball/6fe688910a525bf19b2c251a770b7a58dfcbc4eb",
-                    "reference": "6fe688910a525bf19b2c251a770b7a58dfcbc4eb",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-mojo/zipball/7c693bb6cf88fa30283167a931875221a79b04b8",
+                    "reference": "7c693bb6cf88fa30283167a931875221a79b04b8",
                     "shasum": ""
                 },
                 "require": {
@@ -58278,7 +57676,7 @@
                     "wp-cli/i18n-command": "^2.6.1",
                     "wp-phpunit/wp-phpunit": "^6.6.1"
                 },
-                "time": "2024-08-14T10:21:31+00:00",
+                "time": "2024-08-22T10:34:37+00:00",
                 "type": "wordpress-plugin",
                 "extra": {
                     "installer-name": "mojo-marketplace-wp-plugin"
@@ -58320,23 +57718,23 @@
                 ],
                 "description": "WordPress plugin that integrates a WordPress site with Hosting.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-plugin-mojo/tree/dependabot/npm_and_yarn/develop/wordpress/env-10.5.0",
+                    "source": "https://github.com/newfold-labs/wp-plugin-mojo/tree/dependabot/npm_and_yarn/develop/wordpress/element-6.6.0",
                     "issues": "https://github.com/newfold-labs/wp-plugin-mojo/issues"
                 }
             },
-            "dev-dependabot/npm_and_yarn/develop/wordpress/i18n-5.5.0": {
+            "dev-dependabot/npm_and_yarn/develop/wordpress/env-10.6.0": {
                 "name": "newfold-labs/wp-plugin-mojo",
-                "version": "dev-dependabot/npm_and_yarn/develop/wordpress/i18n-5.5.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/develop/wordpress/i18n-5.5.0",
+                "version": "dev-dependabot/npm_and_yarn/develop/wordpress/env-10.6.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/develop/wordpress/env-10.6.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-plugin-mojo.git",
-                    "reference": "ecb0fb4b97d0c2130fd2930d3c12ce7cf56494b6"
+                    "reference": "25131275ce70a3546f73a61ac9250a353685b3f7"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-mojo/zipball/ecb0fb4b97d0c2130fd2930d3c12ce7cf56494b6",
-                    "reference": "ecb0fb4b97d0c2130fd2930d3c12ce7cf56494b6",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-mojo/zipball/25131275ce70a3546f73a61ac9250a353685b3f7",
+                    "reference": "25131275ce70a3546f73a61ac9250a353685b3f7",
                     "shasum": ""
                 },
                 "require": {
@@ -58364,7 +57762,7 @@
                     "wp-cli/i18n-command": "^2.6.1",
                     "wp-phpunit/wp-phpunit": "^6.6.1"
                 },
-                "time": "2024-08-14T10:21:13+00:00",
+                "time": "2024-08-22T10:33:36+00:00",
                 "type": "wordpress-plugin",
                 "extra": {
                     "installer-name": "mojo-marketplace-wp-plugin"
@@ -58406,7 +57804,93 @@
                 ],
                 "description": "WordPress plugin that integrates a WordPress site with Hosting.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-plugin-mojo/tree/dependabot/npm_and_yarn/develop/wordpress/i18n-5.5.0",
+                    "source": "https://github.com/newfold-labs/wp-plugin-mojo/tree/dependabot/npm_and_yarn/develop/wordpress/env-10.6.0",
+                    "issues": "https://github.com/newfold-labs/wp-plugin-mojo/issues"
+                }
+            },
+            "dev-dependabot/npm_and_yarn/develop/wordpress/i18n-5.6.0": {
+                "name": "newfold-labs/wp-plugin-mojo",
+                "version": "dev-dependabot/npm_and_yarn/develop/wordpress/i18n-5.6.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/develop/wordpress/i18n-5.6.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-plugin-mojo.git",
+                    "reference": "13ddb4bbff8f76de7d6a790056c4c8ad1ae60aa1"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-mojo/zipball/13ddb4bbff8f76de7d6a790056c4c8ad1ae60aa1",
+                    "reference": "13ddb4bbff8f76de7d6a790056c4c8ad1ae60aa1",
+                    "shasum": ""
+                },
+                "require": {
+                    "doctrine/inflector": "1.2.0 as 1.3.1",
+                    "newfold-labs/wp-module-activation": "^1.0.3",
+                    "newfold-labs/wp-module-atomic": "^1.3",
+                    "newfold-labs/wp-module-coming-soon": "^1.2.5",
+                    "newfold-labs/wp-module-context": "^1.0.1",
+                    "newfold-labs/wp-module-data": "^2.5.3",
+                    "newfold-labs/wp-module-deactivation": "^1.2.1",
+                    "newfold-labs/wp-module-features": "^1.4.2",
+                    "newfold-labs/wp-module-loader": "^1.0.10",
+                    "newfold-labs/wp-module-marketplace": "^2.4.0",
+                    "newfold-labs/wp-module-notifications": "^1.4.0",
+                    "newfold-labs/wp-module-performance": "^2.0.0",
+                    "newfold-labs/wp-module-runtime": "^1.0.11",
+                    "newfold-labs/wp-module-secure-passwords": "^1.1.1",
+                    "newfold-labs/wp-module-sso": "^1.0.5",
+                    "wp-forge/wp-update-handler": "^1.0.2",
+                    "wp-forge/wp-upgrade-handler": "^1.0"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^1.2.4",
+                    "roave/security-advisories": "dev-latest",
+                    "wp-cli/i18n-command": "^2.6.1",
+                    "wp-phpunit/wp-phpunit": "^6.6.1"
+                },
+                "time": "2024-08-22T10:35:56+00:00",
+                "type": "wordpress-plugin",
+                "extra": {
+                    "installer-name": "mojo-marketplace-wp-plugin"
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-plugin-mojo.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-plugin-mojo/issues\",\"POT-Creation-Date\":\"2023-01-11T20:21:44+00:00\"}' --exclude=assets,tests,src"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-plugin-mojo.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-mo",
+                        "@i18n-json"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Evan Mullins",
+                        "homepage": "https://evanmullins.com"
+                    }
+                ],
+                "description": "WordPress plugin that integrates a WordPress site with Hosting.",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-plugin-mojo/tree/dependabot/npm_and_yarn/develop/wordpress/i18n-5.6.0",
                     "issues": "https://github.com/newfold-labs/wp-plugin-mojo/issues"
                 }
             },
@@ -60270,19 +59754,19 @@
                     "issues": "https://github.com/newfold-labs/wp-plugin-web/issues"
                 }
             },
-            "dev-dependabot/npm_and_yarn/develop/wordpress/i18n-5.5.0": {
+            "dev-dependabot/npm_and_yarn/develop/wordpress/i18n-5.6.0": {
                 "name": "newfold-labs/wp-plugin-web",
-                "version": "dev-dependabot/npm_and_yarn/develop/wordpress/i18n-5.5.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/develop/wordpress/i18n-5.5.0",
+                "version": "dev-dependabot/npm_and_yarn/develop/wordpress/i18n-5.6.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/develop/wordpress/i18n-5.6.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-plugin-web.git",
-                    "reference": "28b92c4e62dff85303fda1fd6dd254cade0b494e"
+                    "reference": "29297f13eef0ca90c60a34362c154cc17f12e0f4"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-web/zipball/28b92c4e62dff85303fda1fd6dd254cade0b494e",
-                    "reference": "28b92c4e62dff85303fda1fd6dd254cade0b494e",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-web/zipball/29297f13eef0ca90c60a34362c154cc17f12e0f4",
+                    "reference": "29297f13eef0ca90c60a34362c154cc17f12e0f4",
                     "shasum": ""
                 },
                 "require": {
@@ -60310,7 +59794,7 @@
                     "wp-cli/i18n-command": "^2.6.1",
                     "wp-phpunit/wp-phpunit": "^6.6.1"
                 },
-                "time": "2024-08-08T09:07:56+00:00",
+                "time": "2024-08-22T09:27:01+00:00",
                 "type": "wordpress-plugin",
                 "scripts": {
                     "fix": [
@@ -60349,23 +59833,23 @@
                 ],
                 "description": "WordPress plugin that integrates your WordPress site with the Web.com control panel, including performance, security, and update features.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-plugin-web/tree/dependabot/npm_and_yarn/develop/wordpress/i18n-5.5.0",
+                    "source": "https://github.com/newfold-labs/wp-plugin-web/tree/dependabot/npm_and_yarn/develop/wordpress/i18n-5.6.0",
                     "issues": "https://github.com/newfold-labs/wp-plugin-web/issues"
                 }
             },
-            "dev-dependabot/npm_and_yarn/develop/wordpress/scripts-28.5.0": {
+            "dev-dependabot/npm_and_yarn/develop/wordpress/scripts-28.6.0": {
                 "name": "newfold-labs/wp-plugin-web",
-                "version": "dev-dependabot/npm_and_yarn/develop/wordpress/scripts-28.5.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/develop/wordpress/scripts-28.5.0",
+                "version": "dev-dependabot/npm_and_yarn/develop/wordpress/scripts-28.6.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/develop/wordpress/scripts-28.6.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-plugin-web.git",
-                    "reference": "a5a54e74dbb9781122324101687623ca917a272a"
+                    "reference": "004958004d542742039de56bc79fd693b9fbece0"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-web/zipball/a5a54e74dbb9781122324101687623ca917a272a",
-                    "reference": "a5a54e74dbb9781122324101687623ca917a272a",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-plugin-web/zipball/004958004d542742039de56bc79fd693b9fbece0",
+                    "reference": "004958004d542742039de56bc79fd693b9fbece0",
                     "shasum": ""
                 },
                 "require": {
@@ -60393,7 +59877,7 @@
                     "wp-cli/i18n-command": "^2.6.1",
                     "wp-phpunit/wp-phpunit": "^6.6.1"
                 },
-                "time": "2024-08-08T09:10:43+00:00",
+                "time": "2024-08-22T09:26:14+00:00",
                 "type": "wordpress-plugin",
                 "scripts": {
                     "fix": [
@@ -60432,7 +59916,7 @@
                 ],
                 "description": "WordPress plugin that integrates your WordPress site with the Web.com control panel, including performance, security, and update features.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-plugin-web/tree/dependabot/npm_and_yarn/develop/wordpress/scripts-28.5.0",
+                    "source": "https://github.com/newfold-labs/wp-plugin-web/tree/dependabot/npm_and_yarn/develop/wordpress/scripts-28.6.0",
                     "issues": "https://github.com/newfold-labs/wp-plugin-web/issues"
                 }
             },
