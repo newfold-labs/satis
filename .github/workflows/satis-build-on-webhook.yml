@@ -8,10 +8,10 @@ on:
     inputs:
       vendor:
         description: 'Vendor Name'
-        required: true
+        required: false
       package:
         description: 'Package Name'
-        required: true
+        required: false
 
 concurrency:
   group: ${{ github.repository }}-build
@@ -67,7 +67,42 @@ jobs:
           path: ./dist
 
       - name: Run Build
-        run: php -dmemory_limit=-1 vendor/bin/satis build --repository-url ${{ format('git@github.com:{0}/{1}.git', github.event.inputs.vendor, github.event.inputs.package) }} ./satis.json ./dist
+        run: php -dmemory_limit=-1 vendor/bin/satis build --repository-url ${{ format('git@github.com:{0}/{1}.git', github.event.client_payload.vendor, github.event.client_payload.package) }} ./satis.json ./dist
 
       - name: List files
         run: ls -lah ./dist
+
+      - name: Commit web files
+        run: |
+          cd ./dist
+          git config --local user.name "Newfold WordPress Team"
+          git config --local user.email "wordpress-coe@newfold.com"
+          git remote -v
+          git add -A
+          git commit -m "Satis build triggered by release $VERSION of $VENDOR/$PACKAGE"
+          git status
+          cd -
+
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.8.0
+        with:
+          branch: gh-pages
+          directory: ./dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          event-type: 'package-released'
+          client-payload: >-
+            {
+              "vendor": "$VENDOR",
+              "package": "$PACKAGE",
+              "version": "$VENDOR"
+            }
+
+      - name: Send message to ms teams
+        uses: dhollerbach/actions.send-message-to-ms-teams@1.0.10
+        with:
+          webhook: '${{ secrets.INCOMING_WEBHOOK_URL }}'
+          message: "Release ${{ github.event.client_payload.version }} of ${{ github.event.client_payload.vendor }}/${{ github.event.client_payload.package }} on satis is complete!\nVisit https://newfold-labs.github.io/satis/"
