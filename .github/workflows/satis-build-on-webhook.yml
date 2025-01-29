@@ -25,6 +25,9 @@ concurrency:
   cancel-in-progress: false
 
 env:
+  VENDOR: ${{ github.event.client_payload.vendor != '' && github.event.client_payload.vendor || inputs.vendor }}
+  PACKAGE: ${{ github.event.client_payload.package != '' && github.event.client_payload.package || inputs.package }}
+  VERSION: ${{ github.event.client_payload.version != '' && github.event.client_payload.version || inputs.version }}
   COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.TOKEN }}"}}'
 
 jobs:
@@ -36,15 +39,9 @@ jobs:
       - name: Setup workflow variables
         id: vars
         run: |
-          if ( ${{ inputs.package != '' }} ) {
-            echo "vendor=${{ inputs.vendor }}" >> $GITHUB_OUTPUT
-            echo "package=${{ inputs.package }}" >> $GITHUB_OUTPUT
-            echo "version=${{ inputs.version }}" >> $GITHUB_OUTPUT
-          } else {
-            echo "vendor=${{ github.event.client_payload.vendor }}" >> $GITHUB_OUTPUT
-            echo "package=${{ github.event.client_payload.package }}" >> $GITHUB_OUTPUT
-            echo "version=${{ github.event.client_payload.version }}" >> $GITHUB_OUTPUT
-          }
+            echo "vendor=$VENDOR" >> $GITHUB_OUTPUT
+            echo "package=$PACKAGE" >> $GITHUB_OUTPUT
+            echo "version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Checkout
         uses: actions/checkout@v4
