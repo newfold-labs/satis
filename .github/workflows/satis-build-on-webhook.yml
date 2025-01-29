@@ -25,9 +25,6 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  VENDOR: ${{ inputs.vendor && inputs.vendor || github.event.client_payload.vendor }}
-  PACKAGE: ${{ inputs.package && inputs.package || github.event.client_payload.package }}
-  VERSION: ${{ inputs.version && inputs.version || github.event.client_payload.version }}
   COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.TOKEN }}"}}'
 
 jobs:
@@ -35,6 +32,19 @@ jobs:
     name: Satis Build
     runs-on: ubuntu-latest
     steps:
+
+      - name: Setup workflow variables
+        id: vars
+        run: |
+          if ( ${{ inputs.package != '' }} ) {
+            echo "vendor=${{ inputs.vendor }}" >> $GITHUB_OUTPUT
+            echo "package=${{ inputs.package }}" >> $GITHUB_OUTPUT
+            echo "version=${{ inputs.version }}" >> $GITHUB_OUTPUT
+          } else {
+            echo "vendor=${{ github.event.client_payload.vendor }}" >> $GITHUB_OUTPUT
+            echo "package=${{ github.event.client_payload.package }}" >> $GITHUB_OUTPUT
+            echo "version=${{ github.event.client_payload.version }}" >> $GITHUB_OUTPUT
+          }
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -74,7 +84,7 @@ jobs:
           path: ./dist
 
       - name: Run Build
-        run: php -dmemory_limit=-1 vendor/bin/satis build --repository-url ${{ format('git@github.com:{0}/{1}.git', github.event.client_payload.vendor, github.event.client_payload.package) }} ./satis.json ./dist
+        run: php -dmemory_limit=-1 vendor/bin/satis build --repository-url ${{ format('git@github.com:{0}/{1}.git', steps.vars.output.vendor, steps.vars.output.package) }} ./satis.json ./dist
 
       - name: List files
         run: ls -lah ./dist
@@ -86,7 +96,7 @@ jobs:
           git config --local user.email "wordpress-coe@newfold.com"
           git remote -v
           git add -A
-          git commit -m "Satis build triggered by release $VERSION of $VENDOR/$PACKAGE"
+          git commit -m "Satis build triggered by release ${{ steps.vars.output.version }} of ${{ steps.vars.output.vendor }}/${{ steps.vars.output.package}}"
           git status
           cd -
 
@@ -103,13 +113,13 @@ jobs:
           event-type: 'package-released'
           client-payload: >-
             {
-              "vendor": "$VENDOR",
-              "package": "$PACKAGE",
-              "version": "$VENDOR"
+              "vendor": "$${{ steps.vars.output.vendor }}",
+              "package": "$${{ steps.vars.output.package }}",
+              "version": "${{ steps.vars.output.version }}"
             }
 
       - name: Send message to ms teams
         uses: dhollerbach/actions.send-message-to-ms-teams@1.0.10
         with:
           webhook: '${{ secrets.INCOMING_WEBHOOK_URL }}'
-          message: "Release ${{ github.event.client_payload.version }} of ${{ github.event.client_payload.vendor }}/${{ github.event.client_payload.package }} on satis is complete!\nVisit https://newfold-labs.github.io/satis/"
+          message: "Release ${{ steps.vars.output.version }} of ${{ steps.vars.output.vendor }}/${{ steps.vars.output.package }} on satis is complete!\nVisit https://newfold-labs.github.io/satis/"
