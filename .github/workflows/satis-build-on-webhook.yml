@@ -5,15 +5,29 @@ on:
     types:
       - 'satis-build'
   workflow_dispatch:
+    inputs:
+      vendor:
+        description: The vendor of the target package
+        type: string
+        default: 'newfold-labs'
+        required: true
+      package:
+        description: The package to build
+        type: string
+        required: true
+      version:
+        description: The version of the package to build
+        type: string
+        required: true
 
 concurrency:
   group: ${{ github.repository }}-build
   cancel-in-progress: false
 
 env:
-  VENDOR: ${{ github.event.client_payload.vendor }}
-  PACKAGE: ${{ github.event.client_payload.package }}
-  VERSION: ${{ github.event.client_payload.version }}
+  VENDOR: ${{ inputs.vendor && inputs.vendor || github.event.client_payload.vendor }}
+  PACKAGE: ${{ inputs.package && inputs.package || github.event.client_payload.package }}
+  VERSION: ${{ inputs.version && inputs.version || github.event.client_payload.version }}
   COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.TOKEN }}"}}'
 
 jobs:
