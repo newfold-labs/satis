@@ -27539,19 +27539,19 @@
                     "issues": "https://github.com/newfold-labs/wp-module-framework/issues"
                 }
             },
-            "dev-main": {
+            "0.1.9": {
                 "name": "newfold-labs/wp-module-framework",
-                "version": "dev-main",
-                "version_normalized": "dev-main",
+                "version": "0.1.9",
+                "version_normalized": "0.1.9.0",
                 "source": {
                     "type": "git",
                     "url": "git@github.com:newfold-labs/wp-module-framework.git",
-                    "reference": "2579116ec51a29c3fd6763dcc24bbbca05b3a2a5"
+                    "reference": "ec888afe78e6e4ebd31914c3b483833f7b783ad1"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-framework/zipball/2579116ec51a29c3fd6763dcc24bbbca05b3a2a5",
-                    "reference": "2579116ec51a29c3fd6763dcc24bbbca05b3a2a5",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-framework/zipball/ec888afe78e6e4ebd31914c3b483833f7b783ad1",
+                    "reference": "ec888afe78e6e4ebd31914c3b483833f7b783ad1",
                     "shasum": ""
                 },
                 "require-dev": {
@@ -27559,7 +27559,75 @@
                     "newfold-labs/wp-php-standards": "^1.2.4",
                     "wp-cli/i18n-command": "^2.6.3"
                 },
-                "time": "2025-02-18T14:55:54+00:00",
+                "time": "2025-02-20T14:16:17+00:00",
+                "type": "wordpress-plugin",
+                "archive": {
+                    "exclude": [
+                        "./assets/js-src",
+                        "./assets/scss",
+                        "./bin",
+                        "node_modules",
+                        "./resources",
+                        ".*",
+                        ".github",
+                        "*.md",
+                        "./package.json",
+                        "./package-lock.json",
+                        "./webpack.config.js"
+                    ]
+                },
+                "scripts": {
+                    "i18n-pot-audit": [
+                        "wp --allow-root i18n make-pot . --exclude=\".git,.idea,.vscode,bin,languages,node_modules,vendor,tests,dist\" --slug=wp-module-framework"
+                    ],
+                    "i18n-pot": [
+                        "@i18n-pot-audit --skip-audit"
+                    ],
+                    "i18n-po": [
+                        "wp --allow-root i18n update-po languages/wp-module-framework.pot"
+                    ],
+                    "i18n-mo": [
+                        "wp --allow-root i18n make-mo languages"
+                    ],
+                    "i18n-php": [
+                        "wp --allow-root i18n make-php languages"
+                    ],
+                    "php-fix": [
+                        "phpcbf --standard=phpcs.xml ."
+                    ],
+                    "php-lint": [
+                        "phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-framework/tree/0.1.9",
+                    "issues": "https://github.com/newfold-labs/wp-module-framework/issues"
+                }
+            },
+            "dev-main": {
+                "name": "newfold-labs/wp-module-framework",
+                "version": "dev-main",
+                "version_normalized": "dev-main",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:newfold-labs/wp-module-framework.git",
+                    "reference": "ec888afe78e6e4ebd31914c3b483833f7b783ad1"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-framework/zipball/ec888afe78e6e4ebd31914c3b483833f7b783ad1",
+                    "reference": "ec888afe78e6e4ebd31914c3b483833f7b783ad1",
+                    "shasum": ""
+                },
+                "require-dev": {
+                    "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+                    "newfold-labs/wp-php-standards": "^1.2.4",
+                    "wp-cli/i18n-command": "^2.6.3"
+                },
+                "time": "2025-02-20T14:16:17+00:00",
                 "default-branch": true,
                 "type": "wordpress-plugin",
                 "archive": {
@@ -27604,7 +27672,7 @@
                     "GPL-2.0-or-later"
                 ],
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-framework/tree/0.1.8",
+                    "source": "https://github.com/newfold-labs/wp-module-framework/tree/0.1.9",
                     "issues": "https://github.com/newfold-labs/wp-module-framework/issues"
                 }
             }
