@@ -54,21 +54,22 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-sso.git",
-                    "reference": "54b645bb0e515a6ca7f9d8a429c426cc7e8bd730"
+                    "reference": "92f78333da7bde102604a3b55b7b3d9920f87cc4"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-sso/zipball/54b645bb0e515a6ca7f9d8a429c426cc7e8bd730",
-                    "reference": "54b645bb0e515a6ca7f9d8a429c426cc7e8bd730",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-sso/zipball/92f78333da7bde102604a3b55b7b3d9920f87cc4",
+                    "reference": "92f78333da7bde102604a3b55b7b3d9920f87cc4",
                     "shasum": ""
                 },
                 "require": {
-                    "newfold-labs/wp-module-data": ">=2.6.8"
+                    "newfold-labs/wp-module-data": ">=2.6.10"
                 },
                 "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2"
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "wp-cli/i18n-command": "^2.6.3"
                 },
-                "time": "2025-01-28T21:29:45+00:00",
+                "time": "2025-02-25T23:05:26+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -77,6 +78,36 @@
                     },
                     "files": [
                         "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-sso.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-sso/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}'"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-sso.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-mo",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
                     ]
                 },
                 "license": [
@@ -90,7 +121,80 @@
                 ],
                 "description": "Single sign-on functionality for Newfold WordPress sites.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-sso/tree/main",
+                    "source": "https://github.com/newfold-labs/wp-module-sso/tree/1.1.0",
+                    "issues": "https://github.com/newfold-labs/wp-module-sso/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-sso",
+                "version": "dev-press11-176",
+                "version_normalized": "dev-press11-176",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-sso.git",
+                    "reference": "513a350d872bc688b1bd8133210fe9c9cac44800"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-sso/zipball/513a350d872bc688b1bd8133210fe9c9cac44800",
+                    "reference": "513a350d872bc688b1bd8133210fe9c9cac44800",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-data": ">=2.6.8"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "wp-cli/i18n-command": "^2.6.3"
+                },
+                "time": "2025-02-20T11:13:49+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewFoldLabs\\WP\\Module\\SSO\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-sso.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-sso/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}'"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-sso.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-mo",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Micah Wood",
+                        "email": "micah@bluehost.com"
+                    }
+                ],
+                "description": "Single sign-on functionality for Newfold WordPress sites.",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-sso/tree/press11-176",
                     "issues": "https://github.com/newfold-labs/wp-module-sso/issues"
                 }
             },
