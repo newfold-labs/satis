@@ -309,12 +309,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-facebook.git",
-                    "reference": "af27dc8443d6534211dc0e96ff231f88cfe8a817"
+                    "reference": "2c6b0fff6c470fd6cf7152c5e1780d0b345e4889"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-facebook/zipball/af27dc8443d6534211dc0e96ff231f88cfe8a817",
-                    "reference": "af27dc8443d6534211dc0e96ff231f88cfe8a817",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-facebook/zipball/2c6b0fff6c470fd6cf7152c5e1780d0b345e4889",
+                    "reference": "2c6b0fff6c470fd6cf7152c5e1780d0b345e4889",
                     "shasum": ""
                 },
                 "require": {
@@ -322,9 +322,10 @@
                     "newfold-labs/wp-module-loader": "^1.0.10"
                 },
                 "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2"
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "wp-cli/i18n-command": "^2.6.3"
                 },
-                "time": "2025-02-04T18:28:03+00:00",
+                "time": "2025-02-26T15:02:51+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -332,6 +333,36 @@
                     },
                     "files": [
                         "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-facebook.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-facebook/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=node_modules,src"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-facebook.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-mo",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
                     ]
                 },
                 "license": [
@@ -562,12 +593,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-facebook.git",
-                    "reference": "4ac998ee48743ab5df2b465f815f67a30a6634b9"
+                    "reference": "e3e084559f7706cb661fae057def9740b0c7466c"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-facebook/zipball/4ac998ee48743ab5df2b465f815f67a30a6634b9",
-                    "reference": "4ac998ee48743ab5df2b465f815f67a30a6634b9",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-facebook/zipball/e3e084559f7706cb661fae057def9740b0c7466c",
+                    "reference": "e3e084559f7706cb661fae057def9740b0c7466c",
                     "shasum": ""
                 },
                 "require": {
@@ -575,9 +606,10 @@
                     "newfold-labs/wp-module-loader": "^1.0.10"
                 },
                 "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2"
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "wp-cli/i18n-command": "^2.6.3"
                 },
-                "time": "2025-01-28T21:09:13+00:00",
+                "time": "2025-02-26T15:26:03+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -586,6 +618,35 @@
                     },
                     "files": [
                         "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-facebook.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-facebook/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=node_modules,src"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-facebook.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
                     ]
                 },
                 "license": [
@@ -599,7 +660,7 @@
                 ],
                 "description": "Module connects to Customers Facebook profile and fetches data",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-facebook/tree/main",
+                    "source": "https://github.com/newfold-labs/wp-module-facebook/tree/1.2.0",
                     "issues": "https://github.com/newfold-labs/wp-module-facebook/issues"
                 }
             },
