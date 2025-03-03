@@ -3,6 +3,53 @@
         "newfold-labs/wp-module-installer": [
             {
                 "name": "newfold-labs/wp-module-installer",
+                "version": "dev-1.3.2-patch",
+                "version_normalized": "dev-1.3.2-patch",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-installer.git",
+                    "reference": "4ad54206a0d9bb46a44e3ade91efe97da96a8717"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-installer/zipball/4ad54206a0d9bb46a44e3ade91efe97da96a8717",
+                    "reference": "4ad54206a0d9bb46a44e3ade91efe97da96a8717",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-pls": "^1.0.1"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^1.2.4",
+                    "wp-cli/wp-cli": "^2.11"
+                },
+                "time": "2025-02-27T13:58:28+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Installer\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Micah Wood",
+                        "email": "micah.wood@newfold.com"
+                    }
+                ],
+                "description": "An installer for WordPress plugins and themes.",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-installer/tree/1.3.2-patch",
+                    "issues": "https://github.com/newfold-labs/wp-module-installer/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-installer",
                 "version": "dev-add/api-method-for-installer-button-rendering",
                 "version_normalized": "dev-add/api-method-for-installer-button-rendering",
                 "source": {
@@ -50,27 +97,27 @@
             },
             {
                 "name": "newfold-labs/wp-module-installer",
-                "version": "dev-dependabot/npm_and_yarn/main/node-fetch-3.3.2",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/node-fetch-3.3.2",
+                "version": "dev-dependabot/npm_and_yarn/main/wordpress/base-styles-5.19.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/base-styles-5.19.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-installer.git",
-                    "reference": "340d6de6456f3d0f9fe6b0e5efff9593e42caf70"
+                    "reference": "24d0d9dd72a5bc767bb69f5d1bf8de8abdb17cc8"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-installer/zipball/340d6de6456f3d0f9fe6b0e5efff9593e42caf70",
-                    "reference": "340d6de6456f3d0f9fe6b0e5efff9593e42caf70",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-installer/zipball/24d0d9dd72a5bc767bb69f5d1bf8de8abdb17cc8",
+                    "reference": "24d0d9dd72a5bc767bb69f5d1bf8de8abdb17cc8",
                     "shasum": ""
                 },
                 "require": {
                     "newfold-labs/wp-module-pls": "^1.0.1"
                 },
                 "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2",
+                    "newfold-labs/wp-php-standards": "^1.2.4",
                     "wp-cli/wp-cli": "^2.11"
                 },
-                "time": "2025-01-16T23:48:30+00:00",
+                "time": "2025-03-03T15:47:41+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -78,6 +125,36 @@
                     },
                     "files": [
                         "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-installer.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-installer/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=node_modules,src"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-installer.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-mo",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
                     ]
                 },
                 "license": [
@@ -91,33 +168,33 @@
                 ],
                 "description": "An installer for WordPress plugins and themes.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-installer/tree/dependabot/npm_and_yarn/main/node-fetch-3.3.2",
+                    "source": "https://github.com/newfold-labs/wp-module-installer/tree/dependabot/npm_and_yarn/main/wordpress/base-styles-5.19.0",
                     "issues": "https://github.com/newfold-labs/wp-module-installer/issues"
                 }
             },
             {
                 "name": "newfold-labs/wp-module-installer",
-                "version": "dev-dependabot/npm_and_yarn/main/semver-7.7.1",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/semver-7.7.1",
+                "version": "dev-dependabot/npm_and_yarn/main/wordpress/element-6.19.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/element-6.19.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-installer.git",
-                    "reference": "211a387e334f30595953a66c2b2b5d63f8e6b1ae"
+                    "reference": "8f58d66482bd5993b5e1932231a674dec53e6067"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-installer/zipball/211a387e334f30595953a66c2b2b5d63f8e6b1ae",
-                    "reference": "211a387e334f30595953a66c2b2b5d63f8e6b1ae",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-installer/zipball/8f58d66482bd5993b5e1932231a674dec53e6067",
+                    "reference": "8f58d66482bd5993b5e1932231a674dec53e6067",
                     "shasum": ""
                 },
                 "require": {
                     "newfold-labs/wp-module-pls": "^1.0.1"
                 },
                 "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2",
+                    "newfold-labs/wp-php-standards": "^1.2.4",
                     "wp-cli/wp-cli": "^2.11"
                 },
-                "time": "2025-02-03T23:34:23+00:00",
+                "time": "2025-03-01T00:00:04+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -125,6 +202,36 @@
                     },
                     "files": [
                         "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-installer.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-installer/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=node_modules,src"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-installer.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-mo",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
                     ]
                 },
                 "license": [
@@ -138,80 +245,33 @@
                 ],
                 "description": "An installer for WordPress plugins and themes.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-installer/tree/dependabot/npm_and_yarn/main/semver-7.7.1",
+                    "source": "https://github.com/newfold-labs/wp-module-installer/tree/dependabot/npm_and_yarn/main/wordpress/element-6.19.0",
                     "issues": "https://github.com/newfold-labs/wp-module-installer/issues"
                 }
             },
             {
                 "name": "newfold-labs/wp-module-installer",
-                "version": "dev-dependabot/npm_and_yarn/main/webpack-merge-6.0.1",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/webpack-merge-6.0.1",
+                "version": "dev-dependabot/npm_and_yarn/main/wordpress/icons-10.19.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/icons-10.19.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-installer.git",
-                    "reference": "b31ddf8df899fb4cab2ea851b5e99b0de4edb6b9"
+                    "reference": "da96e2b5125265c8fda3e28c66e447f240f0667f"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-installer/zipball/b31ddf8df899fb4cab2ea851b5e99b0de4edb6b9",
-                    "reference": "b31ddf8df899fb4cab2ea851b5e99b0de4edb6b9",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-pls": "^1.0.0"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2",
-                    "wp-cli/wp-cli": "^2.11"
-                },
-                "time": "2024-12-11T19:31:52+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Installer\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Micah Wood",
-                        "email": "micah.wood@newfold.com"
-                    }
-                ],
-                "description": "An installer for WordPress plugins and themes.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-installer/tree/dependabot/npm_and_yarn/main/webpack-merge-6.0.1",
-                    "issues": "https://github.com/newfold-labs/wp-module-installer/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-installer",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/base-styles-5.17.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/base-styles-5.17.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-installer.git",
-                    "reference": "73924b892706da6e571aff5096217f5e81b3f387"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-installer/zipball/73924b892706da6e571aff5096217f5e81b3f387",
-                    "reference": "73924b892706da6e571aff5096217f5e81b3f387",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-installer/zipball/da96e2b5125265c8fda3e28c66e447f240f0667f",
+                    "reference": "da96e2b5125265c8fda3e28c66e447f240f0667f",
                     "shasum": ""
                 },
                 "require": {
                     "newfold-labs/wp-module-pls": "^1.0.1"
                 },
                 "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2",
+                    "newfold-labs/wp-php-standards": "^1.2.4",
                     "wp-cli/wp-cli": "^2.11"
                 },
-                "time": "2025-01-29T23:45:07+00:00",
+                "time": "2025-03-01T00:00:31+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -219,6 +279,36 @@
                     },
                     "files": [
                         "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-installer.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-installer/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=node_modules,src"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-installer.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-mo",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
                     ]
                 },
                 "license": [
@@ -232,195 +322,7 @@
                 ],
                 "description": "An installer for WordPress plugins and themes.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-installer/tree/dependabot/npm_and_yarn/main/wordpress/base-styles-5.17.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-installer/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-installer",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/base-styles-5.18.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/base-styles-5.18.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-installer.git",
-                    "reference": "2473cc9fc01afd6c5e1ed3dbec41fe009bb548ce"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-installer/zipball/2473cc9fc01afd6c5e1ed3dbec41fe009bb548ce",
-                    "reference": "2473cc9fc01afd6c5e1ed3dbec41fe009bb548ce",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-pls": "^1.0.1"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2",
-                    "wp-cli/wp-cli": "^2.11"
-                },
-                "time": "2025-02-12T23:47:58+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Installer\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Micah Wood",
-                        "email": "micah.wood@newfold.com"
-                    }
-                ],
-                "description": "An installer for WordPress plugins and themes.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-installer/tree/dependabot/npm_and_yarn/main/wordpress/base-styles-5.18.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-installer/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-installer",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/scripts-30.10.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/scripts-30.10.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-installer.git",
-                    "reference": "321f21bc6b54741727d67922e7f001fd94b65ba1"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-installer/zipball/321f21bc6b54741727d67922e7f001fd94b65ba1",
-                    "reference": "321f21bc6b54741727d67922e7f001fd94b65ba1",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-pls": "^1.0.1"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2",
-                    "wp-cli/wp-cli": "^2.11"
-                },
-                "time": "2025-01-29T23:44:40+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Installer\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Micah Wood",
-                        "email": "micah.wood@newfold.com"
-                    }
-                ],
-                "description": "An installer for WordPress plugins and themes.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-installer/tree/dependabot/npm_and_yarn/main/wordpress/scripts-30.10.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-installer/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-installer",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/scripts-30.11.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/scripts-30.11.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-installer.git",
-                    "reference": "4ccf12f957c6571119fc1d592766a58cf4e79515"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-installer/zipball/4ccf12f957c6571119fc1d592766a58cf4e79515",
-                    "reference": "4ccf12f957c6571119fc1d592766a58cf4e79515",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-pls": "^1.0.1"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2",
-                    "wp-cli/wp-cli": "^2.11"
-                },
-                "time": "2025-02-12T23:47:05+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Installer\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Micah Wood",
-                        "email": "micah.wood@newfold.com"
-                    }
-                ],
-                "description": "An installer for WordPress plugins and themes.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-installer/tree/dependabot/npm_and_yarn/main/wordpress/scripts-30.11.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-installer/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-installer",
-                "version": "dev-enhance/activate-premium-plugin",
-                "version_normalized": "dev-enhance/activate-premium-plugin",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-installer.git",
-                    "reference": "cd1f05b9ce15dd7b855a27adee805fe9179aeec5"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-installer/zipball/cd1f05b9ce15dd7b855a27adee805fe9179aeec5",
-                    "reference": "cd1f05b9ce15dd7b855a27adee805fe9179aeec5",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-pls": "^0.1.0"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2",
-                    "wp-cli/wp-cli": "^2.11"
-                },
-                "time": "2024-10-15T17:36:48+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Installer\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Micah Wood",
-                        "email": "micah.wood@newfold.com"
-                    }
-                ],
-                "description": "An installer for WordPress plugins and themes.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-installer/tree/enhance/activate-premium-plugin",
+                    "source": "https://github.com/newfold-labs/wp-module-installer/tree/dependabot/npm_and_yarn/main/wordpress/icons-10.19.0",
                     "issues": "https://github.com/newfold-labs/wp-module-installer/issues"
                 }
             },
@@ -521,12 +423,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-installer.git",
-                    "reference": "ad0c43463c315e29a75e4702c47d8e630df3acb7"
+                    "reference": "397ee9fb8ab29dfde639ceaa89cc29a50b90a713"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-installer/zipball/ad0c43463c315e29a75e4702c47d8e630df3acb7",
-                    "reference": "ad0c43463c315e29a75e4702c47d8e630df3acb7",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-installer/zipball/397ee9fb8ab29dfde639ceaa89cc29a50b90a713",
+                    "reference": "397ee9fb8ab29dfde639ceaa89cc29a50b90a713",
                     "shasum": ""
                 },
                 "require": {
@@ -536,7 +438,7 @@
                     "newfold-labs/wp-php-standards": "^1.2.4",
                     "wp-cli/wp-cli": "^2.11"
                 },
-                "time": "2025-02-26T19:08:38+00:00",
+                "time": "2025-03-03T15:46:27+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -588,132 +490,7 @@
                 ],
                 "description": "An installer for WordPress plugins and themes.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-installer/tree/1.4.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-installer/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-installer",
-                "version": "dev-press11-166",
-                "version_normalized": "dev-press11-166",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-installer.git",
-                    "reference": "d143469fcf7e871c1ebdcf7b9dfbf9adceb9e4f0"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-installer/zipball/d143469fcf7e871c1ebdcf7b9dfbf9adceb9e4f0",
-                    "reference": "d143469fcf7e871c1ebdcf7b9dfbf9adceb9e4f0",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-pls": "^1.0.1"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2",
-                    "wp-cli/i18n-command": "^2.6.3",
-                    "wp-cli/wp-cli": "^2.11"
-                },
-                "time": "2025-02-24T14:12:11+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Installer\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf --standard=phpcs.xml ."
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-installer.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-installer/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=node_modules,src"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-module-installer.pot ./languages"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-mo",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Micah Wood",
-                        "email": "micah.wood@newfold.com"
-                    }
-                ],
-                "description": "An installer for WordPress plugins and themes.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-installer/tree/press11-166",
-                    "issues": "https://github.com/newfold-labs/wp-module-installer/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-installer",
-                "version": "dev-solutions",
-                "version_normalized": "dev-solutions",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-installer.git",
-                    "reference": "e92e6bbddf08bd9c3240051f0b88871c22caf068"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-installer/zipball/e92e6bbddf08bd9c3240051f0b88871c22caf068",
-                    "reference": "e92e6bbddf08bd9c3240051f0b88871c22caf068",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-pls": "^0.2.0"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2",
-                    "wp-cli/wp-cli": "^2.11"
-                },
-                "time": "2024-10-23T08:59:52+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Installer\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Micah Wood",
-                        "email": "micah.wood@newfold.com"
-                    }
-                ],
-                "description": "An installer for WordPress plugins and themes.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-installer/tree/solutions",
+                    "source": "https://github.com/newfold-labs/wp-module-installer/tree/1.4.1",
                     "issues": "https://github.com/newfold-labs/wp-module-installer/issues"
                 }
             }

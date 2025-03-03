@@ -102,6 +102,58 @@
             },
             {
                 "name": "newfold-labs/wp-module-onboarding-data",
+                "version": "dev-add/PRESS8-243-resume-or-restart-onboarding",
+                "version_normalized": "dev-add/PRESS8-243-resume-or-restart-onboarding",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-onboarding-data.git",
+                    "reference": "275ee2c60a7befc7ea6bdbcbf1af8f47d1e20ac5"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding-data/zipball/275ee2c60a7befc7ea6bdbcbf1af8f47d1e20ac5",
+                    "reference": "275ee2c60a7befc7ea6bdbcbf1af8f47d1e20ac5",
+                    "shasum": ""
+                },
+                "require": {
+                    "mustache/mustache": "^2.14.2",
+                    "newfold-labs/wp-module-ai": "^1.1.12",
+                    "newfold-labs/wp-module-data": "^2.6.5",
+                    "newfold-labs/wp-module-install-checker": "^1.0.3",
+                    "newfold-labs/wp-module-installer": "^1.2.0",
+                    "newfold-labs/wp-module-patterns": "^2.6",
+                    "newfold-labs/wp-module-performance": "^2.0.1",
+                    "newfold-labs/wp-module-survey": "^1.0.1",
+                    "wp-forge/wp-upgrade-handler": "^1.0"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^1.2.4",
+                    "wp-cli/i18n-command": "^2.6.2"
+                },
+                "time": "2025-02-17T04:14:08+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Onboarding\\Data\\": "includes/"
+                    },
+                    "files": [
+                        "includes/I18n.php"
+                    ]
+                },
+                "authors": [
+                    {
+                        "name": "arunshenoy99",
+                        "email": "devarunshenoy99@gmail.com"
+                    }
+                ],
+                "description": "A non-toggleable module containing a standardized interface for interacting with Onboarding data.",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-onboarding-data/tree/add/PRESS8-243-resume-or-restart-onboarding",
+                    "issues": "https://github.com/newfold-labs/wp-module-onboarding-data/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-onboarding-data",
                 "version": "dev-fix/solutions-and-yith",
                 "version_normalized": "dev-fix/solutions-and-yith",
                 "source": {
@@ -207,12 +259,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-onboarding-data.git",
-                    "reference": "3d4bd37df297af9ab059f9d3a8d9e3b36f25c058"
+                    "reference": "17199a536ebb5e460a323a0fda2acb7063560d06"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding-data/zipball/3d4bd37df297af9ab059f9d3a8d9e3b36f25c058",
-                    "reference": "3d4bd37df297af9ab059f9d3a8d9e3b36f25c058",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding-data/zipball/17199a536ebb5e460a323a0fda2acb7063560d06",
+                    "reference": "17199a536ebb5e460a323a0fda2acb7063560d06",
                     "shasum": ""
                 },
                 "require": {
@@ -230,7 +282,7 @@
                     "newfold-labs/wp-php-standards": "^1.2.4",
                     "wp-cli/i18n-command": "^2.6.2"
                 },
-                "time": "2024-12-18T12:54:07+00:00",
+                "time": "2025-02-28T14:49:35+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -239,6 +291,36 @@
                     },
                     "files": [
                         "includes/I18n.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/nfd-wonder-blocks.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-patterns/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}'"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/nfd-wonder-blocks.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-mo",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
                     ]
                 },
                 "authors": [
@@ -355,6 +437,88 @@
                 "description": "A non-toggleable module containing a standardized interface for interacting with Onboarding data.",
                 "support": {
                     "source": "https://github.com/newfold-labs/wp-module-onboarding-data/tree/try/remove-rest-api-hits",
+                    "issues": "https://github.com/newfold-labs/wp-module-onboarding-data/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-onboarding-data",
+                "version": "dev-workflow/press11-144",
+                "version_normalized": "dev-workflow/press11-144",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-onboarding-data.git",
+                    "reference": "e2ac400c5606dab5d6fb3aac57958ec14dc409b5"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding-data/zipball/e2ac400c5606dab5d6fb3aac57958ec14dc409b5",
+                    "reference": "e2ac400c5606dab5d6fb3aac57958ec14dc409b5",
+                    "shasum": ""
+                },
+                "require": {
+                    "mustache/mustache": "^2.14.2",
+                    "newfold-labs/wp-module-ai": "^1.1.12",
+                    "newfold-labs/wp-module-data": "^2.6.5",
+                    "newfold-labs/wp-module-install-checker": "^1.0.3",
+                    "newfold-labs/wp-module-installer": "^1.2.0",
+                    "newfold-labs/wp-module-patterns": "^2.6",
+                    "newfold-labs/wp-module-performance": "^2.0.1",
+                    "newfold-labs/wp-module-survey": "^1.0.1",
+                    "wp-forge/wp-upgrade-handler": "^1.0"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^1.2.4",
+                    "wp-cli/i18n-command": "^2.6.2"
+                },
+                "time": "2025-02-28T17:04:57+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Onboarding\\Data\\": "includes/"
+                    },
+                    "files": [
+                        "includes/I18n.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/nfd-wonder-blocks.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-patterns/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}'"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/nfd-wonder-blocks.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-mo",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
+                    ]
+                },
+                "authors": [
+                    {
+                        "name": "arunshenoy99",
+                        "email": "devarunshenoy99@gmail.com"
+                    }
+                ],
+                "description": "A non-toggleable module containing a standardized interface for interacting with Onboarding data.",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-onboarding-data/tree/workflow/press11-144",
                     "issues": "https://github.com/newfold-labs/wp-module-onboarding-data/issues"
                 }
             }
