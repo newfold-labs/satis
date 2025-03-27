@@ -43,7 +43,7 @@ jobs:
 
     - name: Set Version
       id: tag
-      run: echo ::set-output name=VERSION::${GITHUB_REF##*/}
+      run: echo "VERSION=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
 
     - name: Repository Dispatch
       uses: peter-evans/repository-dispatch@v1
