@@ -76,12 +76,12 @@
                 "source": {
                     "type": "git",
                     "url": "git@github.com:newfold-labs/wp-module-framework.git",
-                    "reference": "f5e9417d117f3a85752f5a656ed1ed7687e1851f"
+                    "reference": "95533ac6de14922dcf3e9b06556f4dddd41647cb"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-framework/zipball/f5e9417d117f3a85752f5a656ed1ed7687e1851f",
-                    "reference": "f5e9417d117f3a85752f5a656ed1ed7687e1851f",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-framework/zipball/95533ac6de14922dcf3e9b06556f4dddd41647cb",
+                    "reference": "95533ac6de14922dcf3e9b06556f4dddd41647cb",
                     "shasum": ""
                 },
                 "require-dev": {
@@ -89,7 +89,7 @@
                     "newfold-labs/wp-php-standards": "^1.2.4",
                     "wp-cli/i18n-command": "^2.6.3"
                 },
-                "time": "2025-03-31T13:49:58+00:00",
+                "time": "2025-04-03T14:36:41+00:00",
                 "default-branch": true,
                 "type": "wordpress-plugin",
                 "archive": {
@@ -109,32 +109,32 @@
                 },
                 "scripts": {
                     "i18n-pot-audit": [
-                        "wp --allow-root i18n make-pot . --exclude=\".git,.idea,.vscode,bin,languages,node_modules,vendor,tests,dist\" --slug=wp-module-framework"
+                        "vendor/bin/wp --allow-root i18n make-pot . languages/wp-module-framework.pot --exclude=\".git,.idea,.vscode,bin,languages,node_modules,vendor,tests,dist\" --slug=wp-module-framework"
                     ],
                     "i18n-pot": [
                         "@i18n-pot-audit --skip-audit"
                     ],
                     "i18n-po": [
-                        "wp --allow-root i18n update-po languages/wp-module-framework.pot"
+                        "vendor/bin/wp --allow-root i18n update-po languages/wp-module-framework.pot"
                     ],
                     "i18n-mo": [
-                        "wp --allow-root i18n make-mo languages"
+                        "vendor/bin/wp --allow-root i18n make-mo languages"
                     ],
                     "i18n-php": [
-                        "wp --allow-root i18n make-php languages"
+                        "vendor/bin/wp --allow-root i18n make-php languages"
                     ],
                     "php-fix": [
-                        "phpcbf --standard=phpcs.xml ."
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
                     ],
                     "php-lint": [
-                        "phpcs --standard=phpcs.xml -s ."
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
                     ]
                 },
                 "license": [
                     "GPL-2.0-or-later"
                 ],
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-framework/tree/0.2.7",
+                    "source": "https://github.com/newfold-labs/wp-module-framework/tree/1.0.0",
                     "issues": "https://github.com/newfold-labs/wp-module-framework/issues"
                 }
             }
