@@ -8,12 +8,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-help-center.git",
-                    "reference": "7adf57ffdf1d21e4fdc7db0e516d3093545196f5"
+                    "reference": "0513269039c401c2fe8f36cab6843ee3ab431a4f"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-help-center/zipball/7adf57ffdf1d21e4fdc7db0e516d3093545196f5",
-                    "reference": "7adf57ffdf1d21e4fdc7db0e516d3093545196f5",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-help-center/zipball/0513269039c401c2fe8f36cab6843ee3ab431a4f",
+                    "reference": "0513269039c401c2fe8f36cab6843ee3ab431a4f",
                     "shasum": ""
                 },
                 "require": {
@@ -26,7 +26,7 @@
                     "newfold-labs/wp-php-standards": "@stable",
                     "wp-cli/i18n-command": "^2.6.3"
                 },
-                "time": "2025-04-25T14:07:44+00:00",
+                "time": "2025-05-07T15:24:49+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -208,6 +208,82 @@
                 "description": "HelpCenter",
                 "support": {
                     "source": "https://github.com/newfold-labs/wp-module-help-center/tree/PRESS3-105-implement-suggestions-generator-design",
+                    "issues": "https://github.com/newfold-labs/wp-module-help-center/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-help-center",
+                "version": "dev-PRESS6-363-wonderhelp-redesign",
+                "version_normalized": "dev-PRESS6-363-wonderhelp-redesign",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-help-center.git",
+                    "reference": "7debecfb2a0a3c827d1479e972550ebc91a11bb2"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-help-center/zipball/7debecfb2a0a3c827d1479e972550ebc91a11bb2",
+                    "reference": "7debecfb2a0a3c827d1479e972550ebc91a11bb2",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-ai": "^1.2.1",
+                    "newfold-labs/wp-module-data": "^2.6.13",
+                    "newfold-labs/wp-module-features": "^1.5.0",
+                    "typesense/typesense-php": "^2.0.4"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "@stable",
+                    "wp-cli/i18n-command": "^2.6.3"
+                },
+                "time": "2025-05-16T10:51:51+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\HelpCenter\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-help-center.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-help-center/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,src"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-help-center.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Faizaan Mohammed",
+                        "email": "faizaan.md@newfold.com"
+                    }
+                ],
+                "description": "HelpCenter",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-help-center/tree/PRESS6-363-wonderhelp-redesign",
                     "issues": "https://github.com/newfold-labs/wp-module-help-center/issues"
                 }
             },
@@ -489,6 +565,82 @@
             },
             {
                 "name": "newfold-labs/wp-module-help-center",
+                "version": "dev-dependabot/composer/main/newfold-labs/wp-module-data-2.8.3",
+                "version_normalized": "dev-dependabot/composer/main/newfold-labs/wp-module-data-2.8.3",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-help-center.git",
+                    "reference": "4fc3435f49b5924f2141b16f7623e26910c98978"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-help-center/zipball/4fc3435f49b5924f2141b16f7623e26910c98978",
+                    "reference": "4fc3435f49b5924f2141b16f7623e26910c98978",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-ai": "^1.2.1",
+                    "newfold-labs/wp-module-data": "^2.8.3",
+                    "newfold-labs/wp-module-features": "^1.5.0",
+                    "typesense/typesense-php": "^2.0.4"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "@stable",
+                    "wp-cli/i18n-command": "^2.6.3"
+                },
+                "time": "2025-05-13T16:33:52+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\HelpCenter\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-help-center.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-help-center/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,src"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-help-center.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Faizaan Mohammed",
+                        "email": "faizaan.md@newfold.com"
+                    }
+                ],
+                "description": "HelpCenter",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-help-center/tree/dependabot/composer/main/newfold-labs/wp-module-data-2.8.3",
+                    "issues": "https://github.com/newfold-labs/wp-module-help-center/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-help-center",
                 "version": "dev-dependabot/composer/main/newfold-labs/wp-php-standards-1.2.5",
                 "version_normalized": "dev-dependabot/composer/main/newfold-labs/wp-php-standards-1.2.5",
                 "source": {
@@ -560,6 +712,82 @@
                 "description": "HelpCenter",
                 "support": {
                     "source": "https://github.com/newfold-labs/wp-module-help-center/tree/dependabot/composer/main/newfold-labs/wp-php-standards-1.2.5",
+                    "issues": "https://github.com/newfold-labs/wp-module-help-center/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-help-center",
+                "version": "dev-dependabot/composer/main/wp-cli/i18n-command-2.6.5",
+                "version_normalized": "dev-dependabot/composer/main/wp-cli/i18n-command-2.6.5",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-help-center.git",
+                    "reference": "3d3e432249b0f081d40a7ea0bfcfe8e556321e6d"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-help-center/zipball/3d3e432249b0f081d40a7ea0bfcfe8e556321e6d",
+                    "reference": "3d3e432249b0f081d40a7ea0bfcfe8e556321e6d",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-ai": "^1.2.1",
+                    "newfold-labs/wp-module-data": "^2.6.13",
+                    "newfold-labs/wp-module-features": "^1.5.0",
+                    "typesense/typesense-php": "^2.0.4"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "@stable",
+                    "wp-cli/i18n-command": "^2.6.5"
+                },
+                "time": "2025-05-07T16:29:46+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\HelpCenter\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-help-center.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-help-center/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,src"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-help-center.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Faizaan Mohammed",
+                        "email": "faizaan.md@newfold.com"
+                    }
+                ],
+                "description": "HelpCenter",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-help-center/tree/dependabot/composer/main/wp-cli/i18n-command-2.6.5",
                     "issues": "https://github.com/newfold-labs/wp-module-help-center/issues"
                 }
             },
@@ -945,6 +1173,158 @@
             },
             {
                 "name": "newfold-labs/wp-module-help-center",
+                "version": "dev-dependabot/npm_and_yarn/main/wordpress/eslint-plugin-22.9.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/eslint-plugin-22.9.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-help-center.git",
+                    "reference": "b51e137f8d3f4f2b55058ac10456847f3e012bff"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-help-center/zipball/b51e137f8d3f4f2b55058ac10456847f3e012bff",
+                    "reference": "b51e137f8d3f4f2b55058ac10456847f3e012bff",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-ai": "^1.2.1",
+                    "newfold-labs/wp-module-data": "^2.6.13",
+                    "newfold-labs/wp-module-features": "^1.5.0",
+                    "typesense/typesense-php": "^2.0.4"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "@stable",
+                    "wp-cli/i18n-command": "^2.6.3"
+                },
+                "time": "2025-05-07T17:13:08+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\HelpCenter\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-help-center.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-help-center/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,src"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-help-center.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Faizaan Mohammed",
+                        "email": "faizaan.md@newfold.com"
+                    }
+                ],
+                "description": "HelpCenter",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-help-center/tree/dependabot/npm_and_yarn/main/wordpress/eslint-plugin-22.9.0",
+                    "issues": "https://github.com/newfold-labs/wp-module-help-center/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-help-center",
+                "version": "dev-dependabot/npm_and_yarn/main/wordpress/i18n-5.23.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/i18n-5.23.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-help-center.git",
+                    "reference": "1ce289e671974617867a2df697982f1bcb108f83"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-help-center/zipball/1ce289e671974617867a2df697982f1bcb108f83",
+                    "reference": "1ce289e671974617867a2df697982f1bcb108f83",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-ai": "^1.2.1",
+                    "newfold-labs/wp-module-data": "^2.6.13",
+                    "newfold-labs/wp-module-features": "^1.5.0",
+                    "typesense/typesense-php": "^2.0.4"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "@stable",
+                    "wp-cli/i18n-command": "^2.6.3"
+                },
+                "time": "2025-05-07T17:12:47+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\HelpCenter\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-help-center.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-help-center/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,src"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-help-center.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Faizaan Mohammed",
+                        "email": "faizaan.md@newfold.com"
+                    }
+                ],
+                "description": "HelpCenter",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-help-center/tree/dependabot/npm_and_yarn/main/wordpress/i18n-5.23.0",
+                    "issues": "https://github.com/newfold-labs/wp-module-help-center/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-help-center",
                 "version": "dev-dependabot/npm_and_yarn/main/wordpress/plugins-7.22.0",
                 "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/plugins-7.22.0",
                 "source": {
@@ -1016,6 +1396,158 @@
                 "description": "HelpCenter",
                 "support": {
                     "source": "https://github.com/newfold-labs/wp-module-help-center/tree/dependabot/npm_and_yarn/main/wordpress/plugins-7.22.0",
+                    "issues": "https://github.com/newfold-labs/wp-module-help-center/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-help-center",
+                "version": "dev-dependabot/npm_and_yarn/main/wordpress/scripts-30.16.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/scripts-30.16.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-help-center.git",
+                    "reference": "015d08193a2d5f4a288816a1faf47d181816acc8"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-help-center/zipball/015d08193a2d5f4a288816a1faf47d181816acc8",
+                    "reference": "015d08193a2d5f4a288816a1faf47d181816acc8",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-ai": "^1.2.1",
+                    "newfold-labs/wp-module-data": "^2.6.13",
+                    "newfold-labs/wp-module-features": "^1.5.0",
+                    "typesense/typesense-php": "^2.0.4"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "@stable",
+                    "wp-cli/i18n-command": "^2.6.3"
+                },
+                "time": "2025-05-07T17:12:25+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\HelpCenter\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-help-center.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-help-center/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,src"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-help-center.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Faizaan Mohammed",
+                        "email": "faizaan.md@newfold.com"
+                    }
+                ],
+                "description": "HelpCenter",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-help-center/tree/dependabot/npm_and_yarn/main/wordpress/scripts-30.16.0",
+                    "issues": "https://github.com/newfold-labs/wp-module-help-center/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-help-center",
+                "version": "dev-dev/PRESS6-333/helpcenter",
+                "version_normalized": "dev-dev/PRESS6-333/helpcenter",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-help-center.git",
+                    "reference": "ed4cc12679f4f95dd27f40845a356de516c8bbde"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-help-center/zipball/ed4cc12679f4f95dd27f40845a356de516c8bbde",
+                    "reference": "ed4cc12679f4f95dd27f40845a356de516c8bbde",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-ai": "^1.2.1",
+                    "newfold-labs/wp-module-data": "^2.6.13",
+                    "newfold-labs/wp-module-features": "^1.5.0",
+                    "typesense/typesense-php": "^2.0.4"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "@stable",
+                    "wp-cli/i18n-command": "^2.6.3"
+                },
+                "time": "2025-05-12T10:02:38+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\HelpCenter\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-help-center.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-help-center/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,src"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-help-center.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Faizaan Mohammed",
+                        "email": "faizaan.md@newfold.com"
+                    }
+                ],
+                "description": "HelpCenter",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-help-center/tree/dev/PRESS6-333/helpcenter",
                     "issues": "https://github.com/newfold-labs/wp-module-help-center/issues"
                 }
             },
@@ -1357,6 +1889,82 @@
             },
             {
                 "name": "newfold-labs/wp-module-help-center",
+                "version": "dev-fixes/design-banner-minor-fixes",
+                "version_normalized": "dev-fixes/design-banner-minor-fixes",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-help-center.git",
+                    "reference": "67b357fec8d9a58bcdf0b9effcdb3a8d623474dd"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-help-center/zipball/67b357fec8d9a58bcdf0b9effcdb3a8d623474dd",
+                    "reference": "67b357fec8d9a58bcdf0b9effcdb3a8d623474dd",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-ai": "^1.2.1",
+                    "newfold-labs/wp-module-data": "^2.6.13",
+                    "newfold-labs/wp-module-features": "^1.5.0",
+                    "typesense/typesense-php": "^2.0.4"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "@stable",
+                    "wp-cli/i18n-command": "^2.6.3"
+                },
+                "time": "2025-05-19T08:48:47+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\HelpCenter\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-help-center.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-help-center/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,src"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-help-center.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Faizaan Mohammed",
+                        "email": "faizaan.md@newfold.com"
+                    }
+                ],
+                "description": "HelpCenter",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-help-center/tree/fixes/design-banner-minor-fixes",
+                    "issues": "https://github.com/newfold-labs/wp-module-help-center/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-help-center",
                 "version": "dev-gha/pin-3rd-party-actions",
                 "version_normalized": "dev-gha/pin-3rd-party-actions",
                 "source": {
@@ -1514,12 +2122,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-help-center.git",
-                    "reference": "e45b1c4504c9067f07d4c3afe8568427ac54d820"
+                    "reference": "8f554fc0ab8337a39512fddbdcb7a20888c82a73"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-help-center/zipball/e45b1c4504c9067f07d4c3afe8568427ac54d820",
-                    "reference": "e45b1c4504c9067f07d4c3afe8568427ac54d820",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-help-center/zipball/8f554fc0ab8337a39512fddbdcb7a20888c82a73",
+                    "reference": "8f554fc0ab8337a39512fddbdcb7a20888c82a73",
                     "shasum": ""
                 },
                 "require": {
@@ -1532,7 +2140,7 @@
                     "newfold-labs/wp-php-standards": "@stable",
                     "wp-cli/i18n-command": "^2.6.3"
                 },
-                "time": "2025-04-29T10:51:46+00:00",
+                "time": "2025-05-09T14:38:06+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -1580,7 +2188,7 @@
                 ],
                 "description": "HelpCenter",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-help-center/tree/2.4.1",
+                    "source": "https://github.com/newfold-labs/wp-module-help-center/tree/2.4.2",
                     "issues": "https://github.com/newfold-labs/wp-module-help-center/issues"
                 }
             },
@@ -1680,6 +2288,82 @@
             },
             {
                 "name": "newfold-labs/wp-module-help-center",
+                "version": "dev-press11-154",
+                "version_normalized": "dev-press11-154",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-help-center.git",
+                    "reference": "7f4f62326505289fa6fb68511e42a7226c2e71c6"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-help-center/zipball/7f4f62326505289fa6fb68511e42a7226c2e71c6",
+                    "reference": "7f4f62326505289fa6fb68511e42a7226c2e71c6",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-ai": "^1.2.1",
+                    "newfold-labs/wp-module-data": "^2.6.13",
+                    "newfold-labs/wp-module-features": "^1.5.0",
+                    "typesense/typesense-php": "^2.0.4"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "@stable",
+                    "wp-cli/i18n-command": "^2.6.3"
+                },
+                "time": "2025-05-04T06:55:47+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\HelpCenter\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-help-center.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-help-center/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,src"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-help-center.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Faizaan Mohammed",
+                        "email": "faizaan.md@newfold.com"
+                    }
+                ],
+                "description": "HelpCenter",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-help-center/tree/press11-154",
+                    "issues": "https://github.com/newfold-labs/wp-module-help-center/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-help-center",
                 "version": "dev-release/update-dependency-versions",
                 "version_normalized": "dev-release/update-dependency-versions",
                 "source": {
@@ -1724,6 +2408,82 @@
                 "description": "HelpCenter",
                 "support": {
                     "source": "https://github.com/newfold-labs/wp-module-help-center/tree/release/update-dependency-versions",
+                    "issues": "https://github.com/newfold-labs/wp-module-help-center/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-help-center",
+                "version": "dev-release/ux-improvements",
+                "version_normalized": "dev-release/ux-improvements",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-help-center.git",
+                    "reference": "08064e335c6102f2abb4102535d7fee43a3ba281"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-help-center/zipball/08064e335c6102f2abb4102535d7fee43a3ba281",
+                    "reference": "08064e335c6102f2abb4102535d7fee43a3ba281",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-ai": "^1.2.1",
+                    "newfold-labs/wp-module-data": "^2.6.13",
+                    "newfold-labs/wp-module-features": "^1.5.0",
+                    "typesense/typesense-php": "^2.0.4"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "@stable",
+                    "wp-cli/i18n-command": "^2.6.3"
+                },
+                "time": "2025-05-16T08:20:52+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\HelpCenter\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-help-center.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-help-center/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,src"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-help-center.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Faizaan Mohammed",
+                        "email": "faizaan.md@newfold.com"
+                    }
+                ],
+                "description": "HelpCenter",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-help-center/tree/release/ux-improvements",
                     "issues": "https://github.com/newfold-labs/wp-module-help-center/issues"
                 }
             },
