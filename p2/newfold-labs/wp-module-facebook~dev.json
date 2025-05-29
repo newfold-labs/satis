@@ -89,6 +89,94 @@
             },
             {
                 "name": "newfold-labs/wp-module-facebook",
+                "version": "dev-PRESS10-97",
+                "version_normalized": "dev-PRESS10-97",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-facebook.git",
+                    "reference": "d1688cbb5e14c228af6c2b55a453a9ce0c5b97f9"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-facebook/zipball/d1688cbb5e14c228af6c2b55a453a9ce0c5b97f9",
+                    "reference": "d1688cbb5e14c228af6c2b55a453a9ce0c5b97f9",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-data": "^2.6.9",
+                    "newfold-labs/wp-module-loader": "^1.0.10"
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.6.3"
+                },
+                "time": "2025-04-16T15:03:47+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Facebook\\": "includes/"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-facebook.pot ./languages"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-facebook.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-facebook/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=node_modules,src"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+                        "echo \"open tests/_output/html/index.html\" to view the report"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Beyond",
+                        "email": "team-spartans@newfold.com"
+                    }
+                ],
+                "description": "Module connects to Customers Facebook profile and fetches data",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-facebook/tree/PRESS10-97",
+                    "issues": "https://github.com/newfold-labs/wp-module-facebook/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-facebook",
                 "version": "dev-PRESS4-196",
                 "version_normalized": "dev-PRESS4-196",
                 "source": {
@@ -304,28 +392,28 @@
             },
             {
                 "name": "newfold-labs/wp-module-facebook",
-                "version": "dev-dependabot/composer/main/newfold-labs/wp-module-data-2.6.11",
-                "version_normalized": "dev-dependabot/composer/main/newfold-labs/wp-module-data-2.6.11",
+                "version": "dev-dependabot/composer/main/newfold-labs/wp-module-data-2.8.4",
+                "version_normalized": "dev-dependabot/composer/main/newfold-labs/wp-module-data-2.8.4",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-facebook.git",
-                    "reference": "831e45867323413c960d88b4b73ea49a57541cbe"
+                    "reference": "586586c316be6301e549aae8bcf4dcf6e0f6c307"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-facebook/zipball/831e45867323413c960d88b4b73ea49a57541cbe",
-                    "reference": "831e45867323413c960d88b4b73ea49a57541cbe",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-facebook/zipball/586586c316be6301e549aae8bcf4dcf6e0f6c307",
+                    "reference": "586586c316be6301e549aae8bcf4dcf6e0f6c307",
                     "shasum": ""
                 },
                 "require": {
-                    "newfold-labs/wp-module-data": "^2.6.11",
+                    "newfold-labs/wp-module-data": "^2.8.4",
                     "newfold-labs/wp-module-loader": "^1.0.10"
                 },
                 "require-dev": {
                     "newfold-labs/wp-php-standards": "^1.2",
                     "wp-cli/i18n-command": "^2.6.3"
                 },
-                "time": "2025-03-11T18:35:54+00:00",
+                "time": "2025-05-20T18:34:29+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -375,7 +463,7 @@
                 ],
                 "description": "Module connects to Customers Facebook profile and fetches data",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-facebook/tree/dependabot/composer/main/newfold-labs/wp-module-data-2.6.11",
+                    "source": "https://github.com/newfold-labs/wp-module-facebook/tree/dependabot/composer/main/newfold-labs/wp-module-data-2.8.4",
                     "issues": "https://github.com/newfold-labs/wp-module-facebook/issues"
                 }
             },
@@ -458,17 +546,17 @@
             },
             {
                 "name": "newfold-labs/wp-module-facebook",
-                "version": "dev-dependabot/npm_and_yarn/main/semver-7.7.1",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/semver-7.7.1",
+                "version": "dev-dependabot/composer/main/wp-cli/i18n-command-2.6.5",
+                "version_normalized": "dev-dependabot/composer/main/wp-cli/i18n-command-2.6.5",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-facebook.git",
-                    "reference": "2c6b0fff6c470fd6cf7152c5e1780d0b345e4889"
+                    "reference": "4d53d7b597a4412bd4d455fe57c6ff0cdabbb2f7"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-facebook/zipball/2c6b0fff6c470fd6cf7152c5e1780d0b345e4889",
-                    "reference": "2c6b0fff6c470fd6cf7152c5e1780d0b345e4889",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-facebook/zipball/4d53d7b597a4412bd4d455fe57c6ff0cdabbb2f7",
+                    "reference": "4d53d7b597a4412bd4d455fe57c6ff0cdabbb2f7",
                     "shasum": ""
                 },
                 "require": {
@@ -477,9 +565,9 @@
                 },
                 "require-dev": {
                     "newfold-labs/wp-php-standards": "^1.2",
-                    "wp-cli/i18n-command": "^2.6.3"
+                    "wp-cli/i18n-command": "^2.6.5"
                 },
-                "time": "2025-02-26T15:02:51+00:00",
+                "time": "2025-05-07T18:35:07+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -511,7 +599,6 @@
                     "i18n": [
                         "@i18n-pot",
                         "@i18n-po",
-                        "@i18n-mo",
                         "@i18n-php",
                         "@i18n-json"
                     ],
@@ -530,23 +617,23 @@
                 ],
                 "description": "Module connects to Customers Facebook profile and fetches data",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-facebook/tree/dependabot/npm_and_yarn/main/semver-7.7.1",
+                    "source": "https://github.com/newfold-labs/wp-module-facebook/tree/dependabot/composer/main/wp-cli/i18n-command-2.6.5",
                     "issues": "https://github.com/newfold-labs/wp-module-facebook/issues"
                 }
             },
             {
                 "name": "newfold-labs/wp-module-facebook",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/api-fetch-7.20.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/api-fetch-7.20.0",
+                "version": "dev-dependabot/github_actions/main/actions/cache-4.2.3",
+                "version_normalized": "dev-dependabot/github_actions/main/actions/cache-4.2.3",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-facebook.git",
-                    "reference": "1230a26088dfad8670884cf9c8a4b9767a09710b"
+                    "reference": "266e10c6f2ff3b38960f7c82357973f5cfe74b7f"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-facebook/zipball/1230a26088dfad8670884cf9c8a4b9767a09710b",
-                    "reference": "1230a26088dfad8670884cf9c8a4b9767a09710b",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-facebook/zipball/266e10c6f2ff3b38960f7c82357973f5cfe74b7f",
+                    "reference": "266e10c6f2ff3b38960f7c82357973f5cfe74b7f",
                     "shasum": ""
                 },
                 "require": {
@@ -557,7 +644,7 @@
                     "newfold-labs/wp-php-standards": "^1.2",
                     "wp-cli/i18n-command": "^2.6.3"
                 },
-                "time": "2025-03-13T18:47:14+00:00",
+                "time": "2025-05-06T19:07:10+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -607,23 +694,23 @@
                 ],
                 "description": "Module connects to Customers Facebook profile and fetches data",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-facebook/tree/dependabot/npm_and_yarn/main/wordpress/api-fetch-7.20.0",
+                    "source": "https://github.com/newfold-labs/wp-module-facebook/tree/dependabot/github_actions/main/actions/cache-4.2.3",
                     "issues": "https://github.com/newfold-labs/wp-module-facebook/issues"
                 }
             },
             {
                 "name": "newfold-labs/wp-module-facebook",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/scripts-30.13.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/scripts-30.13.0",
+                "version": "dev-dependabot/github_actions/main/actions/setup-node-4.4.0",
+                "version_normalized": "dev-dependabot/github_actions/main/actions/setup-node-4.4.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-facebook.git",
-                    "reference": "62b00ba3b83a92ebeb75ea3d56ac7da3279c4f46"
+                    "reference": "b2b30a42f873fccf9218c65de0a37b749385aad1"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-facebook/zipball/62b00ba3b83a92ebeb75ea3d56ac7da3279c4f46",
-                    "reference": "62b00ba3b83a92ebeb75ea3d56ac7da3279c4f46",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-facebook/zipball/b2b30a42f873fccf9218c65de0a37b749385aad1",
+                    "reference": "b2b30a42f873fccf9218c65de0a37b749385aad1",
                     "shasum": ""
                 },
                 "require": {
@@ -634,7 +721,7 @@
                     "newfold-labs/wp-php-standards": "^1.2",
                     "wp-cli/i18n-command": "^2.6.3"
                 },
-                "time": "2025-03-13T18:48:00+00:00",
+                "time": "2025-05-06T19:07:07+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -684,7 +771,392 @@
                 ],
                 "description": "Module connects to Customers Facebook profile and fetches data",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-facebook/tree/dependabot/npm_and_yarn/main/wordpress/scripts-30.13.0",
+                    "source": "https://github.com/newfold-labs/wp-module-facebook/tree/dependabot/github_actions/main/actions/setup-node-4.4.0",
+                    "issues": "https://github.com/newfold-labs/wp-module-facebook/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-facebook",
+                "version": "dev-dependabot/github_actions/main/shivammathur/setup-php-2.33.0",
+                "version_normalized": "dev-dependabot/github_actions/main/shivammathur/setup-php-2.33.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-facebook.git",
+                    "reference": "24d2783d9f847022fd0803f2d2d0dc0ba56f4a6e"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-facebook/zipball/24d2783d9f847022fd0803f2d2d0dc0ba56f4a6e",
+                    "reference": "24d2783d9f847022fd0803f2d2d0dc0ba56f4a6e",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-data": "^2.6.9",
+                    "newfold-labs/wp-module-loader": "^1.0.10"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "wp-cli/i18n-command": "^2.6.3"
+                },
+                "time": "2025-05-06T19:07:04+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Facebook\\": "includes/"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-facebook.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-facebook/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=node_modules,src"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-facebook.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Beyond",
+                        "email": "team-spartans@newfold.com"
+                    }
+                ],
+                "description": "Module connects to Customers Facebook profile and fetches data",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-facebook/tree/dependabot/github_actions/main/shivammathur/setup-php-2.33.0",
+                    "issues": "https://github.com/newfold-labs/wp-module-facebook/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-facebook",
+                "version": "dev-dependabot/npm_and_yarn/main/react-19.1.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/react-19.1.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-facebook.git",
+                    "reference": "5d5f77169756e2af7440fe4abe7988f096c38f5a"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-facebook/zipball/5d5f77169756e2af7440fe4abe7988f096c38f5a",
+                    "reference": "5d5f77169756e2af7440fe4abe7988f096c38f5a",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-data": "^2.6.9",
+                    "newfold-labs/wp-module-loader": "^1.0.10"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "wp-cli/i18n-command": "^2.6.3"
+                },
+                "time": "2025-03-31T19:16:36+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Facebook\\": "includes/"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-facebook.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-facebook/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=node_modules,src"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-facebook.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Beyond",
+                        "email": "team-spartans@newfold.com"
+                    }
+                ],
+                "description": "Module connects to Customers Facebook profile and fetches data",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-facebook/tree/dependabot/npm_and_yarn/main/react-19.1.0",
+                    "issues": "https://github.com/newfold-labs/wp-module-facebook/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-facebook",
+                "version": "dev-dependabot/npm_and_yarn/main/semver-7.7.2",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/semver-7.7.2",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-facebook.git",
+                    "reference": "65c8ad2bfa5cfd0164ff480005e0d9dc528b21ec"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-facebook/zipball/65c8ad2bfa5cfd0164ff480005e0d9dc528b21ec",
+                    "reference": "65c8ad2bfa5cfd0164ff480005e0d9dc528b21ec",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-data": "^2.6.9",
+                    "newfold-labs/wp-module-loader": "^1.0.10"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "wp-cli/i18n-command": "^2.6.3"
+                },
+                "time": "2025-05-12T18:36:53+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Facebook\\": "includes/"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-facebook.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-facebook/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=node_modules,src"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-facebook.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Beyond",
+                        "email": "team-spartans@newfold.com"
+                    }
+                ],
+                "description": "Module connects to Customers Facebook profile and fetches data",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-facebook/tree/dependabot/npm_and_yarn/main/semver-7.7.2",
+                    "issues": "https://github.com/newfold-labs/wp-module-facebook/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-facebook",
+                "version": "dev-dependabot/npm_and_yarn/main/wordpress/api-fetch-7.24.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/api-fetch-7.24.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-facebook.git",
+                    "reference": "3db7d25c6a67b9e4ab5415005ab8690d758847b1"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-facebook/zipball/3db7d25c6a67b9e4ab5415005ab8690d758847b1",
+                    "reference": "3db7d25c6a67b9e4ab5415005ab8690d758847b1",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-data": "^2.6.9",
+                    "newfold-labs/wp-module-loader": "^1.0.10"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "wp-cli/i18n-command": "^2.6.3"
+                },
+                "time": "2025-05-22T19:02:02+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Facebook\\": "includes/"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-facebook.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-facebook/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=node_modules,src"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-facebook.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Beyond",
+                        "email": "team-spartans@newfold.com"
+                    }
+                ],
+                "description": "Module connects to Customers Facebook profile and fetches data",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-facebook/tree/dependabot/npm_and_yarn/main/wordpress/api-fetch-7.24.0",
+                    "issues": "https://github.com/newfold-labs/wp-module-facebook/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-facebook",
+                "version": "dev-dependabot/npm_and_yarn/main/wordpress/scripts-30.17.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/scripts-30.17.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-facebook.git",
+                    "reference": "0ffc801109c26898141815ba38e67bea25906ca0"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-facebook/zipball/0ffc801109c26898141815ba38e67bea25906ca0",
+                    "reference": "0ffc801109c26898141815ba38e67bea25906ca0",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-data": "^2.6.9",
+                    "newfold-labs/wp-module-loader": "^1.0.10"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "wp-cli/i18n-command": "^2.6.3"
+                },
+                "time": "2025-05-22T19:01:36+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Facebook\\": "includes/"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-facebook.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-facebook/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=node_modules,src"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-facebook.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Beyond",
+                        "email": "team-spartans@newfold.com"
+                    }
+                ],
+                "description": "Module connects to Customers Facebook profile and fetches data",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-facebook/tree/dependabot/npm_and_yarn/main/wordpress/scripts-30.17.0",
                     "issues": "https://github.com/newfold-labs/wp-module-facebook/issues"
                 }
             },
@@ -802,94 +1274,17 @@
             },
             {
                 "name": "newfold-labs/wp-module-facebook",
-                "version": "dev-gha/pin-full-length-shas",
-                "version_normalized": "dev-gha/pin-full-length-shas",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-facebook.git",
-                    "reference": "ec50ef2c4f7574a54dd076d21e5a4c015be90b8a"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-facebook/zipball/ec50ef2c4f7574a54dd076d21e5a4c015be90b8a",
-                    "reference": "ec50ef2c4f7574a54dd076d21e5a4c015be90b8a",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.6.9",
-                    "newfold-labs/wp-module-loader": "^1.0.10"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2",
-                    "wp-cli/i18n-command": "^2.6.3"
-                },
-                "time": "2025-03-20T17:44:06+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Facebook\\": "includes/"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf --standard=phpcs.xml ."
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-facebook.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-facebook/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=node_modules,src"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-module-facebook.pot ./languages"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Beyond",
-                        "email": "team-spartans@newfold.com"
-                    }
-                ],
-                "description": "Module connects to Customers Facebook profile and fetches data",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-facebook/tree/gha/pin-full-length-shas",
-                    "issues": "https://github.com/newfold-labs/wp-module-facebook/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-facebook",
                 "version": "dev-main",
                 "version_normalized": "dev-main",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-facebook.git",
-                    "reference": "4d1e7d7790e8b6bf552df0ee911fe8e31154f69c"
+                    "reference": "25b234fdd32bf3bbb72bd12e39983dfdeaa1431c"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-facebook/zipball/4d1e7d7790e8b6bf552df0ee911fe8e31154f69c",
-                    "reference": "4d1e7d7790e8b6bf552df0ee911fe8e31154f69c",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-facebook/zipball/25b234fdd32bf3bbb72bd12e39983dfdeaa1431c",
+                    "reference": "25b234fdd32bf3bbb72bd12e39983dfdeaa1431c",
                     "shasum": ""
                 },
                 "require": {
@@ -900,7 +1295,7 @@
                     "newfold-labs/wp-php-standards": "^1.2",
                     "wp-cli/i18n-command": "^2.6.3"
                 },
-                "time": "2025-03-10T21:47:32+00:00",
+                "time": "2025-05-06T18:18:49+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -951,7 +1346,84 @@
                 ],
                 "description": "Module connects to Customers Facebook profile and fetches data",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-facebook/tree/1.2.1",
+                    "source": "https://github.com/newfold-labs/wp-module-facebook/tree/main",
+                    "issues": "https://github.com/newfold-labs/wp-module-facebook/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-facebook",
+                "version": "dev-press11-154",
+                "version_normalized": "dev-press11-154",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-facebook.git",
+                    "reference": "f2bbf0937c52e0cc21795a521d3e815ae4131c33"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-facebook/zipball/f2bbf0937c52e0cc21795a521d3e815ae4131c33",
+                    "reference": "f2bbf0937c52e0cc21795a521d3e815ae4131c33",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-data": "^2.6.9",
+                    "newfold-labs/wp-module-loader": "^1.0.10"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "wp-cli/i18n-command": "^2.6.3"
+                },
+                "time": "2025-05-24T01:06:35+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Facebook\\": "includes/"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-facebook.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-facebook/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=node_modules,src"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-facebook.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Beyond",
+                        "email": "team-spartans@newfold.com"
+                    }
+                ],
+                "description": "Module connects to Customers Facebook profile and fetches data",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-facebook/tree/press11-154",
                     "issues": "https://github.com/newfold-labs/wp-module-facebook/issues"
                 }
             },
@@ -995,6 +1467,160 @@
                 ],
                 "support": {
                     "source": "https://github.com/newfold-labs/wp-module-facebook/tree/testingg",
+                    "issues": "https://github.com/newfold-labs/wp-module-facebook/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-facebook",
+                "version": "dev-update/PRESS10-202",
+                "version_normalized": "dev-update/PRESS10-202",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-facebook.git",
+                    "reference": "8e94832bf48be4aada86b5c9c8fa4cf1e6a6a4c4"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-facebook/zipball/8e94832bf48be4aada86b5c9c8fa4cf1e6a6a4c4",
+                    "reference": "8e94832bf48be4aada86b5c9c8fa4cf1e6a6a4c4",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-data": "^2.6.9",
+                    "newfold-labs/wp-module-loader": "^1.0.10"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "wp-cli/i18n-command": "^2.6.3"
+                },
+                "time": "2025-05-07T11:52:56+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Facebook\\": "includes/"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-facebook.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-facebook/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=node_modules,src"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-facebook.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Beyond",
+                        "email": "team-spartans@newfold.com"
+                    }
+                ],
+                "description": "Module connects to Customers Facebook profile and fetches data",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-facebook/tree/update/PRESS10-202",
+                    "issues": "https://github.com/newfold-labs/wp-module-facebook/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-facebook",
+                "version": "dev-update/release-workflow",
+                "version_normalized": "dev-update/release-workflow",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-facebook.git",
+                    "reference": "25595d4c8a672e03cb9767cd9e52a199a13192f0"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-facebook/zipball/25595d4c8a672e03cb9767cd9e52a199a13192f0",
+                    "reference": "25595d4c8a672e03cb9767cd9e52a199a13192f0",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-data": "^2.6.9",
+                    "newfold-labs/wp-module-loader": "^1.0.10"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "wp-cli/i18n-command": "^2.6.3"
+                },
+                "time": "2025-05-12T20:32:52+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Facebook\\": "includes/"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-facebook.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-facebook/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=node_modules,src"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-facebook.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Beyond",
+                        "email": "team-spartans@newfold.com"
+                    }
+                ],
+                "description": "Module connects to Customers Facebook profile and fetches data",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-facebook/tree/update/release-workflow",
                     "issues": "https://github.com/newfold-labs/wp-module-facebook/issues"
                 }
             }
