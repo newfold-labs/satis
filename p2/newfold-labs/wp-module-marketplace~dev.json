@@ -8,12 +8,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-marketplace.git",
-                    "reference": "3b2aad6df0290641a0ace7dedc876cfbf9deeabc"
+                    "reference": "752aa9a645f49451c4e57d1da8ccdc5404c5095e"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-marketplace/zipball/3b2aad6df0290641a0ace7dedc876cfbf9deeabc",
-                    "reference": "3b2aad6df0290641a0ace7dedc876cfbf9deeabc",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-marketplace/zipball/752aa9a645f49451c4e57d1da8ccdc5404c5095e",
+                    "reference": "752aa9a645f49451c4e57d1da8ccdc5404c5095e",
                     "shasum": ""
                 },
                 "require": {
@@ -26,7 +26,7 @@
                     "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.6.5"
                 },
-                "time": "2025-06-24T07:11:58+00:00",
+                "time": "2025-07-02T12:19:21+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -46,6 +46,14 @@
                         "@i18n-mo",
                         "@i18n-php",
                         "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
                     ],
                     "i18n-json": [
                         "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
@@ -148,190 +156,6 @@
                 "description": "A module for rendering product data and interacting with the Hiive marketplace API.",
                 "support": {
                     "source": "https://github.com/newfold-labs/wp-module-marketplace/tree/demo/subtitle-test",
-                    "issues": "https://github.com/newfold-labs/wp-module-marketplace/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-marketplace",
-                "version": "dev-dependabot/github_actions/main/stefanzweifel/git-auto-commit-action-5.2.0",
-                "version_normalized": "dev-dependabot/github_actions/main/stefanzweifel/git-auto-commit-action-5.2.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-marketplace.git",
-                    "reference": "6c515178713856b8905b954aeb8dbae863b6ddc7"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-marketplace/zipball/6c515178713856b8905b954aeb8dbae863b6ddc7",
-                    "reference": "6c515178713856b8905b954aeb8dbae863b6ddc7",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.6.11"
-                },
-                "require-dev": {
-                    "johnpbloch/wordpress": "@stable",
-                    "lucatume/wp-browser": "*",
-                    "newfold-labs/wp-php-standards": "^1.2",
-                    "phpunit/phpcov": "*",
-                    "wp-cli/i18n-command": "^2.6.5"
-                },
-                "time": "2025-06-09T08:08:58+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Marketplace\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf --standard=phpcs.xml ."
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-mo",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-module-marketplace.pot ./languages"
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-marketplace.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-marketplace/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}'"
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
-                    ],
-                    "test": [
-                        "codecept run wpunit"
-                    ],
-                    "test-coverage": [
-                        "codecept run wpunit --coverage wpunit.cov",
-                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
-                        "echo \"open tests/_output/html/index.html\" to view the report"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Micah Wood",
-                        "email": "micah@wpscholar.com"
-                    },
-                    {
-                        "name": "Evan Mullins",
-                        "email": "evanrm@gmail.com"
-                    }
-                ],
-                "description": "A module for rendering product data and interacting with the Hiive marketplace API.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-marketplace/tree/dependabot/github_actions/main/stefanzweifel/git-auto-commit-action-5.2.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-marketplace/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-marketplace",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/env-10.25.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/env-10.25.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-marketplace.git",
-                    "reference": "b3273bc8e84c581f2fdcbc2d899d3ac0586ffe2b"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-marketplace/zipball/b3273bc8e84c581f2fdcbc2d899d3ac0586ffe2b",
-                    "reference": "b3273bc8e84c581f2fdcbc2d899d3ac0586ffe2b",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.6.11"
-                },
-                "require-dev": {
-                    "johnpbloch/wordpress": "@stable",
-                    "lucatume/wp-browser": "*",
-                    "newfold-labs/wp-php-standards": "^1.2",
-                    "phpunit/phpcov": "*",
-                    "wp-cli/i18n-command": "^2.6.5"
-                },
-                "time": "2025-06-09T08:10:55+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Marketplace\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf --standard=phpcs.xml ."
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-mo",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-module-marketplace.pot ./languages"
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-marketplace.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-marketplace/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}'"
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
-                    ],
-                    "test": [
-                        "codecept run wpunit"
-                    ],
-                    "test-coverage": [
-                        "codecept run wpunit --coverage wpunit.cov",
-                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
-                        "echo \"open tests/_output/html/index.html\" to view the report"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Micah Wood",
-                        "email": "micah@wpscholar.com"
-                    },
-                    {
-                        "name": "Evan Mullins",
-                        "email": "evanrm@gmail.com"
-                    }
-                ],
-                "description": "A module for rendering product data and interacting with the Hiive marketplace API.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-marketplace/tree/dependabot/npm_and_yarn/main/wordpress/env-10.25.0",
                     "issues": "https://github.com/newfold-labs/wp-module-marketplace/issues"
                 }
             },
@@ -587,98 +411,6 @@
                 "description": "A module for rendering product data and interacting with the Hiive marketplace API.",
                 "support": {
                     "source": "https://github.com/newfold-labs/wp-module-marketplace/tree/update-i18n-20250507155226",
-                    "issues": "https://github.com/newfold-labs/wp-module-marketplace/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-marketplace",
-                "version": "dev-update-i18n-20250606220902",
-                "version_normalized": "dev-update-i18n-20250606220902",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-marketplace.git",
-                    "reference": "2236802f7b066367ae4ba131cfc77955d41c2ead"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-marketplace/zipball/2236802f7b066367ae4ba131cfc77955d41c2ead",
-                    "reference": "2236802f7b066367ae4ba131cfc77955d41c2ead",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.6.11"
-                },
-                "require-dev": {
-                    "johnpbloch/wordpress": "@stable",
-                    "lucatume/wp-browser": "*",
-                    "newfold-labs/wp-php-standards": "^1.2",
-                    "phpunit/phpcov": "*",
-                    "wp-cli/i18n-command": "^2.6.5"
-                },
-                "time": "2025-06-06T22:09:02+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Marketplace\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf --standard=phpcs.xml ."
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-mo",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-module-marketplace.pot ./languages"
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-marketplace.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-marketplace/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}'"
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
-                    ],
-                    "test": [
-                        "codecept run wpunit"
-                    ],
-                    "test-coverage": [
-                        "codecept run wpunit --coverage wpunit.cov",
-                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
-                        "echo \"open tests/_output/html/index.html\" to view the report"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Micah Wood",
-                        "email": "micah@wpscholar.com"
-                    },
-                    {
-                        "name": "Evan Mullins",
-                        "email": "evanrm@gmail.com"
-                    }
-                ],
-                "description": "A module for rendering product data and interacting with the Hiive marketplace API.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-marketplace/tree/update-i18n-20250606220902",
                     "issues": "https://github.com/newfold-labs/wp-module-marketplace/issues"
                 }
             },
