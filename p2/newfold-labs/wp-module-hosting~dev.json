@@ -3,6 +3,154 @@
         "newfold-labs/wp-module-hosting": [
             {
                 "name": "newfold-labs/wp-module-hosting",
+                "version": "dev-dependabot/composer/main/newfold-labs/wp-module-data-2.8.6",
+                "version_normalized": "dev-dependabot/composer/main/newfold-labs/wp-module-data-2.8.6",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-hosting.git",
+                    "reference": "860fa91047105e5405b3b75dbde9937fdaf2d883"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-hosting/zipball/860fa91047105e5405b3b75dbde9937fdaf2d883",
+                    "reference": "860fa91047105e5405b3b75dbde9937fdaf2d883",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-data": "^2.8"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "wp-cli/i18n-command": "^2.6.5",
+                    "wp-cli/wp-cli": "^2.12"
+                },
+                "time": "2025-07-17T17:15:03+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Hosting\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-hosting.pot --domain=wp-module-hosting --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-hosting/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,scripts,tests,webpack --include=build/*.min.js,includes"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-hosting.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ]
+                },
+                "license": [
+                    "GPL-3.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "arunshenoy99",
+                        "email": "devarunshenoy99@gmail.com"
+                    }
+                ],
+                "description": "A Newfold module that manages the Hosting panel on the plugin page and serves as middleware for interacting with hosting services.",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-hosting/tree/dependabot/composer/main/newfold-labs/wp-module-data-2.8.6",
+                    "issues": "https://github.com/newfold-labs/wp-module-hosting/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-hosting",
+                "version": "dev-dependabot/npm_and_yarn/main/html-react-parser-5.2.6",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/html-react-parser-5.2.6",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-hosting.git",
+                    "reference": "00e091d7219f32ec8ba8b616c68cb4251891c8ee"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-hosting/zipball/00e091d7219f32ec8ba8b616c68cb4251891c8ee",
+                    "reference": "00e091d7219f32ec8ba8b616c68cb4251891c8ee",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-data": "^2.8"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "wp-cli/i18n-command": "^2.6.5",
+                    "wp-cli/wp-cli": "^2.12"
+                },
+                "time": "2025-07-18T16:52:26+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Hosting\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-hosting.pot --domain=wp-module-hosting --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-hosting/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,scripts,tests,webpack --include=build/*.min.js,includes"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-hosting.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ]
+                },
+                "license": [
+                    "GPL-3.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "arunshenoy99",
+                        "email": "devarunshenoy99@gmail.com"
+                    }
+                ],
+                "description": "A Newfold module that manages the Hosting panel on the plugin page and serves as middleware for interacting with hosting services.",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-hosting/tree/dependabot/npm_and_yarn/main/html-react-parser-5.2.6",
+                    "issues": "https://github.com/newfold-labs/wp-module-hosting/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-hosting",
                 "version": "dev-dependabot/npm_and_yarn/main/newfold/ui-component-library-2.0.0",
                 "version_normalized": "dev-dependabot/npm_and_yarn/main/newfold/ui-component-library-2.0.0",
                 "source": {
@@ -155,80 +303,6 @@
             },
             {
                 "name": "newfold-labs/wp-module-hosting",
-                "version": "dev-enhance/server-hits",
-                "version_normalized": "dev-enhance/server-hits",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-hosting.git",
-                    "reference": "f7fd14185e0f91ed51a904c39eabf0fae8e50fe5"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-hosting/zipball/f7fd14185e0f91ed51a904c39eabf0fae8e50fe5",
-                    "reference": "f7fd14185e0f91ed51a904c39eabf0fae8e50fe5",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.8"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2",
-                    "wp-cli/i18n-command": "^2.6.5",
-                    "wp-cli/wp-cli": "^2.12"
-                },
-                "time": "2025-07-08T17:05:42+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Hosting\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf . --standard=phpcs.xml"
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-hosting.pot --domain=wp-module-hosting --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-hosting/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,scripts,tests,webpack --include=build/*.min.js,includes"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-module-hosting.pot ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "arunshenoy99",
-                        "email": "devarunshenoy99@gmail.com"
-                    }
-                ],
-                "description": "A Newfold module that manages the Hosting panel on the plugin page and serves as middleware for interacting with hosting services.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-hosting/tree/enhance/server-hits",
-                    "issues": "https://github.com/newfold-labs/wp-module-hosting/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-hosting",
                 "version": "dev-enhance/utm-params",
                 "version_normalized": "dev-enhance/utm-params",
                 "source": {
@@ -376,80 +450,6 @@
                 "description": "A Newfold module that manages the Hosting panel on the plugin page and serves as middleware for interacting with hosting services.",
                 "support": {
                     "source": "https://github.com/newfold-labs/wp-module-hosting/tree/enhance/v1-huapi",
-                    "issues": "https://github.com/newfold-labs/wp-module-hosting/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-hosting",
-                "version": "dev-enhance/v1-via-huapi",
-                "version_normalized": "dev-enhance/v1-via-huapi",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-hosting.git",
-                    "reference": "83dbbbe665037e02bfd22b14225db89d05cab8a0"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-hosting/zipball/83dbbbe665037e02bfd22b14225db89d05cab8a0",
-                    "reference": "83dbbbe665037e02bfd22b14225db89d05cab8a0",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.8"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2",
-                    "wp-cli/i18n-command": "^2.4.3",
-                    "wp-cli/wp-cli": "^2.11"
-                },
-                "time": "2025-07-02T07:33:10+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Hosting\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf . --standard=phpcs.xml"
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-hosting.pot --domain=wp-module-hosting --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-hosting/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,scripts,tests,webpack --include=build/*.min.js,includes"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-module-hosting.pot ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "arunshenoy99",
-                        "email": "devarunshenoy99@gmail.com"
-                    }
-                ],
-                "description": "A Newfold module that manages the Hosting panel on the plugin page and serves as middleware for interacting with hosting services.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-hosting/tree/enhance/v1-via-huapi",
                     "issues": "https://github.com/newfold-labs/wp-module-hosting/issues"
                 }
             },

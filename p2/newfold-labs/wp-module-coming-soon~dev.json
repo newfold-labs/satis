@@ -99,248 +99,6 @@
             },
             {
                 "name": "newfold-labs/wp-module-coming-soon",
-                "version": "dev-fix/flaky-test",
-                "version_normalized": "dev-fix/flaky-test",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-coming-soon.git",
-                    "reference": "c6c959b4f67fa19399c9386d4ffe40c427c3de33"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-coming-soon/zipball/c6c959b4f67fa19399c9386d4ffe40c427c3de33",
-                    "reference": "c6c959b4f67fa19399c9386d4ffe40c427c3de33",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.6.8",
-                    "wp-forge/wp-upgrade-handler": "^1.0"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.4",
-                    "wp-cli/i18n-command": "^2.6.3"
-                },
-                "time": "2025-05-15T16:35:31+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\ComingSoon\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf . --standard=phpcs.xml"
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-coming-soon.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-coming-soon/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=node_modules,assets,tests,src"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-module-coming-soon.pot ./languages"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-json": [
-                        "find ./languages -name \"*.json\" -exec rm {} \\; && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Evan Mullins",
-                        "homepage": "https://evanmullins.com"
-                    }
-                ],
-                "description": "Coming Soon module for WordPress sites.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-coming-soon/tree/fix/flaky-test",
-                    "issues": "https://github.com/newfold-labs/wp-module-coming-soon/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-coming-soon",
-                "version": "dev-fix/prevent-error-ajax",
-                "version_normalized": "dev-fix/prevent-error-ajax",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-coming-soon.git",
-                    "reference": "258f94a9580116a81fa362af4edf52a4d2b4abc3"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-coming-soon/zipball/258f94a9580116a81fa362af4edf52a4d2b4abc3",
-                    "reference": "258f94a9580116a81fa362af4edf52a4d2b4abc3",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.6.8",
-                    "wp-forge/wp-upgrade-handler": "^1.0"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.4",
-                    "wp-cli/i18n-command": "^2.6.3"
-                },
-                "time": "2025-04-28T14:55:24+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\ComingSoon\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf . --standard=phpcs.xml"
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-coming-soon.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-coming-soon/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=node_modules,assets,tests,src"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-module-coming-soon.pot ./languages"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-json": [
-                        "find ./languages -name \"*.json\" -exec rm {} \\; && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Evan Mullins",
-                        "homepage": "https://evanmullins.com"
-                    }
-                ],
-                "description": "Coming Soon module for WordPress sites.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-coming-soon/tree/fix/prevent-error-ajax",
-                    "issues": "https://github.com/newfold-labs/wp-module-coming-soon/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-coming-soon",
-                "version": "dev-improve/coming-soon-page",
-                "version_normalized": "dev-improve/coming-soon-page",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-coming-soon.git",
-                    "reference": "16de93aa7f513dbf9f344293da9780cb8a066a30"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-coming-soon/zipball/16de93aa7f513dbf9f344293da9780cb8a066a30",
-                    "reference": "16de93aa7f513dbf9f344293da9780cb8a066a30",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.6.8",
-                    "wp-forge/wp-upgrade-handler": "^1.0"
-                },
-                "require-dev": {
-                    "johnpbloch/wordpress": "@stable",
-                    "lucatume/wp-browser": "*",
-                    "newfold-labs/wp-php-standards": "^1.2.4",
-                    "phpunit/phpcov": "*",
-                    "wp-cli/i18n-command": "^2.6.3"
-                },
-                "time": "2025-07-01T13:39:01+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\ComingSoon\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf . --standard=phpcs.xml"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-json": [
-                        "find ./languages -name \"*.json\" -exec rm {} \\; && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-module-coming-soon.pot ./languages"
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-coming-soon.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-coming-soon/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=node_modules,assets,tests,src"
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
-                    ],
-                    "test": [
-                        "codecept run wpunit"
-                    ],
-                    "test-coverage": [
-                        "codecept run wpunit --coverage wpunit.cov",
-                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
-                        "echo \"open tests/_output/html/index.html\" to view the report"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Evan Mullins",
-                        "homepage": "https://evanmullins.com"
-                    }
-                ],
-                "description": "Coming Soon module for WordPress sites.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-coming-soon/tree/improve/coming-soon-page",
-                    "issues": "https://github.com/newfold-labs/wp-module-coming-soon/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-coming-soon",
                 "version": "dev-main",
                 "version_normalized": "dev-main",
                 "source": {
@@ -430,17 +188,17 @@
             },
             {
                 "name": "newfold-labs/wp-module-coming-soon",
-                "version": "dev-update/release-workflow",
-                "version_normalized": "dev-update/release-workflow",
+                "version": "dev-test/coming-soon-page",
+                "version_normalized": "dev-test/coming-soon-page",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-coming-soon.git",
-                    "reference": "9677c91e78f09f62ad85a6e2fa134a843d5c1d50"
+                    "reference": "d2c2d9ecfeff67f747949cdca157575af33526b2"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-coming-soon/zipball/9677c91e78f09f62ad85a6e2fa134a843d5c1d50",
-                    "reference": "9677c91e78f09f62ad85a6e2fa134a843d5c1d50",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-coming-soon/zipball/d2c2d9ecfeff67f747949cdca157575af33526b2",
+                    "reference": "d2c2d9ecfeff67f747949cdca157575af33526b2",
                     "shasum": ""
                 },
                 "require": {
@@ -454,7 +212,7 @@
                     "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.6.3"
                 },
-                "time": "2025-06-17T14:58:36+00:00",
+                "time": "2025-07-21T09:58:28+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -512,7 +270,7 @@
                 ],
                 "description": "Coming Soon module for WordPress sites.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-coming-soon/tree/update/release-workflow",
+                    "source": "https://github.com/newfold-labs/wp-module-coming-soon/tree/test/coming-soon-page",
                     "issues": "https://github.com/newfold-labs/wp-module-coming-soon/issues"
                 }
             }
