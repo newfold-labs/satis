@@ -402,16 +402,16 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-patterns.git",
-                    "reference": "842408457ef1f7b70fbe9993d29b2a90273463b4"
+                    "reference": "f3e4fc4e395132a62c6163c04829d7c05176fa4c"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/842408457ef1f7b70fbe9993d29b2a90273463b4",
-                    "reference": "842408457ef1f7b70fbe9993d29b2a90273463b4",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/f3e4fc4e395132a62c6163c04829d7c05176fa4c",
+                    "reference": "f3e4fc4e395132a62c6163c04829d7c05176fa4c",
                     "shasum": ""
                 },
                 "require": {
-                    "newfold-labs/wp-module-data": "^2.6.13",
+                    "newfold-labs/wp-module-data": "^2.8.6",
                     "newfold-labs/wp-module-features": "^1.5",
                     "newfold-labs/wp-module-installer": "^1.6"
                 },
@@ -422,7 +422,7 @@
                     "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.6.3"
                 },
-                "time": "2025-07-28T13:43:58+00:00",
+                "time": "2025-08-04T14:32:09+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -1408,6 +1408,103 @@
             },
             {
                 "name": "newfold-labs/wp-module-patterns",
+                "version": "dev-dependabot/npm_and_yarn/main/lucide-react-0.536.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/lucide-react-0.536.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-patterns.git",
+                    "reference": "7cec90eadd069483bd2a6a30679aeaf7fea3d72c"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/7cec90eadd069483bd2a6a30679aeaf7fea3d72c",
+                    "reference": "7cec90eadd069483bd2a6a30679aeaf7fea3d72c",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-data": "^2.6.13",
+                    "newfold-labs/wp-module-features": "^1.5",
+                    "newfold-labs/wp-module-installer": "^1.6"
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2.5",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.6.3"
+                },
+                "time": "2025-08-04T09:22:55+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Patterns\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "lint": [
+                        "vendor/bin/phpcs . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
+                    ],
+                    "clean": [
+                        "vendor/bin/phpcbf . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/nfd-wonder-blocks.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-patterns/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=node_modules,tests,src,wordpress --domain=nfd-wonder-blocks"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/nfd-wonder-blocks.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "find ./languages -name \"*.json\" -exec rm {} \\; && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+                        "echo \"open tests/_output/html/index.html\" to view the report"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Hristina Conjic",
+                        "email": "hristina.conjic@newfold.com"
+                    }
+                ],
+                "description": "WordPress Cloud Patterns",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-patterns/tree/dependabot/npm_and_yarn/main/lucide-react-0.536.0",
+                    "issues": "https://github.com/newfold-labs/wp-module-patterns/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-patterns",
                 "version": "dev-dependabot/npm_and_yarn/main/wordpress/scripts-30.20.0",
                 "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/scripts-30.20.0",
                 "source": {
@@ -1647,16 +1744,16 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-patterns.git",
-                    "reference": "02eb2605178e816bec9a724cd259f808268db783"
+                    "reference": "b7d36d90c5222bdf3e7465c1cac40a95090922a8"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/02eb2605178e816bec9a724cd259f808268db783",
-                    "reference": "02eb2605178e816bec9a724cd259f808268db783",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/b7d36d90c5222bdf3e7465c1cac40a95090922a8",
+                    "reference": "b7d36d90c5222bdf3e7465c1cac40a95090922a8",
                     "shasum": ""
                 },
                 "require": {
-                    "newfold-labs/wp-module-data": "^2.6.13",
+                    "newfold-labs/wp-module-data": "^2.8.6",
                     "newfold-labs/wp-module-features": "^1.5",
                     "newfold-labs/wp-module-installer": "^1.6"
                 },
@@ -1667,7 +1764,7 @@
                     "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.6.3"
                 },
-                "time": "2025-07-28T13:42:23+00:00",
+                "time": "2025-08-04T15:32:17+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -1734,7 +1831,7 @@
                 ],
                 "description": "WordPress Cloud Patterns",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-patterns/tree/main",
+                    "source": "https://github.com/newfold-labs/wp-module-patterns/tree/2.10.0",
                     "issues": "https://github.com/newfold-labs/wp-module-patterns/issues"
                 }
             },
