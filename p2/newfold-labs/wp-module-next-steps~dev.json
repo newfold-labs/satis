@@ -8,12 +8,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-next-steps.git",
-                    "reference": "7b21e1ce17a9afe79dac1ce46d58b0b0e7e809b6"
+                    "reference": "ca2e6664bda616fa9fb0f056218aa4f078e89c60"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-next-steps/zipball/7b21e1ce17a9afe79dac1ce46d58b0b0e7e809b6",
-                    "reference": "7b21e1ce17a9afe79dac1ce46d58b0b0e7e809b6",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-next-steps/zipball/ca2e6664bda616fa9fb0f056218aa4f078e89c60",
+                    "reference": "ca2e6664bda616fa9fb0f056218aa4f078e89c60",
                     "shasum": ""
                 },
                 "require": {
@@ -26,7 +26,7 @@
                     "wp-cli/i18n-command": "^2.6.5",
                     "yoast/phpunit-polyfills": "^1.1"
                 },
-                "time": "2025-08-04T21:10:07+00:00",
+                "time": "2025-08-05T17:34:03+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -291,6 +291,102 @@
             },
             {
                 "name": "newfold-labs/wp-module-next-steps",
+                "version": "dev-dependabot/npm_and_yarn/main/mini-css-extract-plugin-2.9.3",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/mini-css-extract-plugin-2.9.3",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-next-steps.git",
+                    "reference": "5a65ddba37951f60e185c1e47941d2906d7c18be"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-next-steps/zipball/5a65ddba37951f60e185c1e47941d2906d7c18be",
+                    "reference": "5a65ddba37951f60e185c1e47941d2906d7c18be",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-data": "^2.8.6",
+                    "newfold-labs/wp-module-loader": "^1.0.12"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^1.2.5",
+                    "phpunit/phpunit": "^9.6",
+                    "wp-cli/i18n-command": "^2.6.5",
+                    "yoast/phpunit-polyfills": "^1.1"
+                },
+                "time": "2025-08-05T04:10:33+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\NextSteps\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-next-steps.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-next-steps/issues\",\"POT-Creation-Date\":\"2025-06-06T06:30:00+00:00\"}' --exclude=src,tests"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-next-steps.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "vendor/bin/phpunit"
+                    ],
+                    "test-coverage": [
+                        "vendor/bin/phpunit --coverage-text"
+                    ],
+                    "test-coverage-html": [
+                        "vendor/bin/phpunit --coverage-html tests/coverage"
+                    ]
+                },
+                "license": [
+                    "GPL-3.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Evan Mullins",
+                        "homepage": "https://evanmullins.com"
+                    }
+                ],
+                "description": "A Newfold module to manage next steps for a customer in a brand plugin.",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-next-steps/tree/dependabot/npm_and_yarn/main/mini-css-extract-plugin-2.9.3",
+                    "issues": "https://github.com/newfold-labs/wp-module-next-steps/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-next-steps",
                 "version": "dev-dependabot/npm_and_yarn/main/webpack-5.101.0",
                 "version_normalized": "dev-dependabot/npm_and_yarn/main/webpack-5.101.0",
                 "source": {
@@ -392,12 +488,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-next-steps.git",
-                    "reference": "a9e754811d3276910e86b3f153fa721fcfeff07c"
+                    "reference": "4a312311dbd4bd84576a07c018fc69f81f391987"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-next-steps/zipball/a9e754811d3276910e86b3f153fa721fcfeff07c",
-                    "reference": "a9e754811d3276910e86b3f153fa721fcfeff07c",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-next-steps/zipball/4a312311dbd4bd84576a07c018fc69f81f391987",
+                    "reference": "4a312311dbd4bd84576a07c018fc69f81f391987",
                     "shasum": ""
                 },
                 "require": {
@@ -410,7 +506,7 @@
                     "wp-cli/i18n-command": "^2.6.5",
                     "yoast/phpunit-polyfills": "^1.1"
                 },
-                "time": "2025-08-04T21:08:53+00:00",
+                "time": "2025-08-05T17:32:43+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -478,7 +574,7 @@
                 ],
                 "description": "A Newfold module to manage next steps for a customer in a brand plugin.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-next-steps/tree/1.0.7",
+                    "source": "https://github.com/newfold-labs/wp-module-next-steps/tree/1.0.8",
                     "issues": "https://github.com/newfold-labs/wp-module-next-steps/issues"
                 }
             },
