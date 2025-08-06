@@ -350,12 +350,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-ai.git",
-                    "reference": "796157d0fffd22431989c0b56b6921689721f9d4"
+                    "reference": "2c892761e4fd347fa3ee98e8c2e2b3a51c1b2872"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai/zipball/796157d0fffd22431989c0b56b6921689721f9d4",
-                    "reference": "796157d0fffd22431989c0b56b6921689721f9d4",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai/zipball/2c892761e4fd347fa3ee98e8c2e2b3a51c1b2872",
+                    "reference": "2c892761e4fd347fa3ee98e8c2e2b3a51c1b2872",
                     "shasum": ""
                 },
                 "require": {
@@ -366,7 +366,7 @@
                     "newfold-labs/wp-php-standards": "^1.2",
                     "wp-cli/i18n-command": "^2.6.5"
                 },
-                "time": "2025-07-24T19:03:04+00:00",
+                "time": "2025-08-06T18:24:13+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -425,7 +425,7 @@
                 ],
                 "description": "A module for providing artificial intelligence capabilities.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-ai/tree/auto-translate/main",
+                    "source": "https://github.com/newfold-labs/wp-module-ai/tree/1.3.2",
                     "issues": "https://github.com/newfold-labs/wp-module-ai/issues"
                 }
             },
@@ -1257,6 +1257,92 @@
             },
             {
                 "name": "newfold-labs/wp-module-ai",
+                "version": "dev-fix/php-warnings-PRESS0-3017",
+                "version_normalized": "dev-fix/php-warnings-PRESS0-3017",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-ai.git",
+                    "reference": "4bc6974565129c121ddbc8c364f7c4dab8fed1e2"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai/zipball/4bc6974565129c121ddbc8c364f7c4dab8fed1e2",
+                    "reference": "4bc6974565129c121ddbc8c364f7c4dab8fed1e2",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-data": "^2.8.6",
+                    "newfold-labs/wp-module-installer": "^1.6.4"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "wp-cli/i18n-command": "^2.6.5"
+                },
+                "time": "2025-07-31T18:27:25+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\AI\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-ai.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-ai/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}'"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-ai.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-mo",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Micah Wood",
+                        "email": "micah@bluehost.com"
+                    }
+                ],
+                "description": "A module for providing artificial intelligence capabilities.",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-ai/tree/fix/php-warnings-PRESS0-3017",
+                    "issues": "https://github.com/newfold-labs/wp-module-ai/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-ai",
                 "version": "dev-generic_response",
                 "version_normalized": "dev-generic_response",
                 "source": {
@@ -1354,12 +1440,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-ai.git",
-                    "reference": "79758b146d318b797e8da12a2df1710d43b97c13"
+                    "reference": "2c892761e4fd347fa3ee98e8c2e2b3a51c1b2872"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai/zipball/79758b146d318b797e8da12a2df1710d43b97c13",
-                    "reference": "79758b146d318b797e8da12a2df1710d43b97c13",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai/zipball/2c892761e4fd347fa3ee98e8c2e2b3a51c1b2872",
+                    "reference": "2c892761e4fd347fa3ee98e8c2e2b3a51c1b2872",
                     "shasum": ""
                 },
                 "require": {
@@ -1370,7 +1456,7 @@
                     "newfold-labs/wp-php-standards": "^1.2",
                     "wp-cli/i18n-command": "^2.6.5"
                 },
-                "time": "2025-07-24T19:01:53+00:00",
+                "time": "2025-08-06T18:24:13+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -1430,7 +1516,7 @@
                 ],
                 "description": "A module for providing artificial intelligence capabilities.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-ai/tree/1.3.1",
+                    "source": "https://github.com/newfold-labs/wp-module-ai/tree/1.3.2",
                     "issues": "https://github.com/newfold-labs/wp-module-ai/issues"
                 }
             },
