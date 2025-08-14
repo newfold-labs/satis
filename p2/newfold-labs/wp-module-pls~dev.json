@@ -92,103 +92,6 @@
             },
             {
                 "name": "newfold-labs/wp-module-pls",
-                "version": "dev-PRESS11-157",
-                "version_normalized": "dev-PRESS11-157",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-pls.git",
-                    "reference": "e20410dd77ae579336f219c1da9e8f31131ec3ef"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-pls/zipball/e20410dd77ae579336f219c1da9e8f31131ec3ef",
-                    "reference": "e20410dd77ae579336f219c1da9e8f31131ec3ef",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.8"
-                },
-                "require-dev": {
-                    "johnpbloch/wordpress": "@stable",
-                    "lucatume/wp-browser": "*",
-                    "newfold-labs/wp-php-standards": "^1.2",
-                    "phpunit/phpcov": "*",
-                    "wp-cli/i18n-command": "^2.6.5",
-                    "wp-cli/wp-cli": "^2.12"
-                },
-                "time": "2025-07-02T11:19:17+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\PLS\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf . --standard=phpcs.xml"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-mo",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-ci-pre": [
-                        "@i18n-pot",
-                        "@i18n-po"
-                    ],
-                    "i18n-ci-post": [
-                        "@i18n-json",
-                        "@i18n-php"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-module-pls.pot ./languages"
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-pls.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-pls/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}'"
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
-                    ],
-                    "test": [
-                        "codecept run wpunit"
-                    ],
-                    "test-coverage": [
-                        "codecept run wpunit --coverage wpunit.cov",
-                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
-                        "echo \"open tests/_output/html/index.html\" to view the report"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "arunshenoy99",
-                        "email": "devarunshenoy99@gmail.com"
-                    }
-                ],
-                "description": "A Newfold module that handles license key provisioning, validation, and other lifecycle events for registered plugins using the PLS API via Hiive.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-pls/tree/PRESS11-157",
-                    "issues": "https://github.com/newfold-labs/wp-module-pls/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-pls",
                 "version": "dev-add/brand-plugin-build-test",
                 "version_normalized": "dev-add/brand-plugin-build-test",
                 "source": {
@@ -232,6 +135,103 @@
                 "description": "A Newfold module that handles license key provisioning, validation, and other lifecycle events for registered plugins using the PLS API via Hiive.",
                 "support": {
                     "source": "https://github.com/newfold-labs/wp-module-pls/tree/add/brand-plugin-build-test",
+                    "issues": "https://github.com/newfold-labs/wp-module-pls/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-pls",
+                "version": "dev-auto-translate/main",
+                "version_normalized": "dev-auto-translate/main",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-pls.git",
+                    "reference": "815e4b08a4199c95a6ddb5132b8355c9da9ec24a"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-pls/zipball/815e4b08a4199c95a6ddb5132b8355c9da9ec24a",
+                    "reference": "815e4b08a4199c95a6ddb5132b8355c9da9ec24a",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-data": "^2.8"
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.6.5",
+                    "wp-cli/wp-cli": "^2.12"
+                },
+                "time": "2025-08-12T14:52:35+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\PLS\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-mo",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-pls.pot ./languages"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . --domain=wp-module-pls ./languages/wp-module-pls.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-pls/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=wordpress"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+                        "echo \"open tests/_output/html/index.html\" to view the report"
+                    ]
+                },
+                "license": [
+                    "GPL-3.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "arunshenoy99",
+                        "email": "devarunshenoy99@gmail.com"
+                    }
+                ],
+                "description": "A Newfold module that handles license key provisioning, validation, and other lifecycle events for registered plugins using the PLS API via Hiive.",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-pls/tree/auto-translate/main",
                     "issues": "https://github.com/newfold-labs/wp-module-pls/issues"
                 }
             },
@@ -415,17 +415,17 @@
             },
             {
                 "name": "newfold-labs/wp-module-pls",
-                "version": "dev-dependabot/github_actions/main/shivammathur/setup-php-2.35.2",
-                "version_normalized": "dev-dependabot/github_actions/main/shivammathur/setup-php-2.35.2",
+                "version": "dev-dependabot/github_actions/main/actions/cache-4.2.4",
+                "version_normalized": "dev-dependabot/github_actions/main/actions/cache-4.2.4",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-pls.git",
-                    "reference": "ebe502446087fcdb4a98e60f416159cb64f833be"
+                    "reference": "fbfc09c288c73c387fd3c734b6a9de584057cbe1"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-pls/zipball/ebe502446087fcdb4a98e60f416159cb64f833be",
-                    "reference": "ebe502446087fcdb4a98e60f416159cb64f833be",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-pls/zipball/fbfc09c288c73c387fd3c734b6a9de584057cbe1",
+                    "reference": "fbfc09c288c73c387fd3c734b6a9de584057cbe1",
                     "shasum": ""
                 },
                 "require": {
@@ -439,7 +439,7 @@
                     "wp-cli/i18n-command": "^2.6.5",
                     "wp-cli/wp-cli": "^2.12"
                 },
-                "time": "2025-07-29T21:29:14+00:00",
+                "time": "2025-08-07T21:56:29+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -498,7 +498,201 @@
                 ],
                 "description": "A Newfold module that handles license key provisioning, validation, and other lifecycle events for registered plugins using the PLS API via Hiive.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-pls/tree/dependabot/github_actions/main/shivammathur/setup-php-2.35.2",
+                    "source": "https://github.com/newfold-labs/wp-module-pls/tree/dependabot/github_actions/main/actions/cache-4.2.4",
+                    "issues": "https://github.com/newfold-labs/wp-module-pls/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-pls",
+                "version": "dev-dependabot/github_actions/main/actions/checkout-5.0.0",
+                "version_normalized": "dev-dependabot/github_actions/main/actions/checkout-5.0.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-pls.git",
+                    "reference": "42a6ece765c00f893ad95e3ec771104cff567043"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-pls/zipball/42a6ece765c00f893ad95e3ec771104cff567043",
+                    "reference": "42a6ece765c00f893ad95e3ec771104cff567043",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-data": "^2.8"
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.6.5",
+                    "wp-cli/wp-cli": "^2.12"
+                },
+                "time": "2025-08-12T06:17:25+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\PLS\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-mo",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-pls.pot ./languages"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-pls.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-pls/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}'"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+                        "echo \"open tests/_output/html/index.html\" to view the report"
+                    ]
+                },
+                "license": [
+                    "GPL-3.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "arunshenoy99",
+                        "email": "devarunshenoy99@gmail.com"
+                    }
+                ],
+                "description": "A Newfold module that handles license key provisioning, validation, and other lifecycle events for registered plugins using the PLS API via Hiive.",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-pls/tree/dependabot/github_actions/main/actions/checkout-5.0.0",
+                    "issues": "https://github.com/newfold-labs/wp-module-pls/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-pls",
+                "version": "dev-dependabot/github_actions/main/shivammathur/setup-php-2.35.3",
+                "version_normalized": "dev-dependabot/github_actions/main/shivammathur/setup-php-2.35.3",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-pls.git",
+                    "reference": "b2bef80abadf8bbd7ff03bf3da44681bf28e1729"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-pls/zipball/b2bef80abadf8bbd7ff03bf3da44681bf28e1729",
+                    "reference": "b2bef80abadf8bbd7ff03bf3da44681bf28e1729",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-data": "^2.8"
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.6.5",
+                    "wp-cli/wp-cli": "^2.12"
+                },
+                "time": "2025-08-12T06:26:12+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\PLS\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-mo",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-pls.pot ./languages"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-pls.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-pls/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}'"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+                        "echo \"open tests/_output/html/index.html\" to view the report"
+                    ]
+                },
+                "license": [
+                    "GPL-3.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "arunshenoy99",
+                        "email": "devarunshenoy99@gmail.com"
+                    }
+                ],
+                "description": "A Newfold module that handles license key provisioning, validation, and other lifecycle events for registered plugins using the PLS API via Hiive.",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-pls/tree/dependabot/github_actions/main/shivammathur/setup-php-2.35.3",
                     "issues": "https://github.com/newfold-labs/wp-module-pls/issues"
                 }
             },
@@ -676,12 +870,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-pls.git",
-                    "reference": "828e48cbf5d0e05bef872dd59db91cd03402eb06"
+                    "reference": "815e4b08a4199c95a6ddb5132b8355c9da9ec24a"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-pls/zipball/828e48cbf5d0e05bef872dd59db91cd03402eb06",
-                    "reference": "828e48cbf5d0e05bef872dd59db91cd03402eb06",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-pls/zipball/815e4b08a4199c95a6ddb5132b8355c9da9ec24a",
+                    "reference": "815e4b08a4199c95a6ddb5132b8355c9da9ec24a",
                     "shasum": ""
                 },
                 "require": {
@@ -695,7 +889,7 @@
                     "wp-cli/i18n-command": "^2.6.5",
                     "wp-cli/wp-cli": "^2.12"
                 },
-                "time": "2025-06-06T22:24:21+00:00",
+                "time": "2025-08-12T14:52:35+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -717,6 +911,14 @@
                         "@i18n-php",
                         "@i18n-json"
                     ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
                     "i18n-json": [
                         "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
                     ],
@@ -730,7 +932,7 @@
                         "vendor/bin/wp i18n update-po ./languages/wp-module-pls.pot ./languages"
                     ],
                     "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-pls.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-pls/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}'"
+                        "vendor/bin/wp i18n make-pot . --domain=wp-module-pls ./languages/wp-module-pls.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-pls/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=wordpress"
                     ],
                     "lint": [
                         "vendor/bin/phpcs . --standard=phpcs.xml -s"
@@ -755,7 +957,7 @@
                 ],
                 "description": "A Newfold module that handles license key provisioning, validation, and other lifecycle events for registered plugins using the PLS API via Hiive.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-pls/tree/main",
+                    "source": "https://github.com/newfold-labs/wp-module-pls/tree/auto-translate/main",
                     "issues": "https://github.com/newfold-labs/wp-module-pls/issues"
                 }
             },
@@ -990,184 +1192,6 @@
                 "description": "A Newfold module that handles license key provisioning, validation, and other lifecycle events for registered plugins using the PLS API via Hiive.",
                 "support": {
                     "source": "https://github.com/newfold-labs/wp-module-pls/tree/update-i18n-20250603201306",
-                    "issues": "https://github.com/newfold-labs/wp-module-pls/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-pls",
-                "version": "dev-update-i18n-20250606222735",
-                "version_normalized": "dev-update-i18n-20250606222735",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-pls.git",
-                    "reference": "6a9446b0ff45ec3e1ab218ab5845778b886f0c7a"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-pls/zipball/6a9446b0ff45ec3e1ab218ab5845778b886f0c7a",
-                    "reference": "6a9446b0ff45ec3e1ab218ab5845778b886f0c7a",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.8"
-                },
-                "require-dev": {
-                    "johnpbloch/wordpress": "@stable",
-                    "lucatume/wp-browser": "*",
-                    "newfold-labs/wp-php-standards": "^1.2",
-                    "phpunit/phpcov": "*",
-                    "wp-cli/i18n-command": "^2.6.5",
-                    "wp-cli/wp-cli": "^2.12"
-                },
-                "time": "2025-06-06T22:27:35+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\PLS\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf . --standard=phpcs.xml"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-mo",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-module-pls.pot ./languages"
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-pls.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-pls/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}'"
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
-                    ],
-                    "test": [
-                        "codecept run wpunit"
-                    ],
-                    "test-coverage": [
-                        "codecept run wpunit --coverage wpunit.cov",
-                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
-                        "echo \"open tests/_output/html/index.html\" to view the report"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "arunshenoy99",
-                        "email": "devarunshenoy99@gmail.com"
-                    }
-                ],
-                "description": "A Newfold module that handles license key provisioning, validation, and other lifecycle events for registered plugins using the PLS API via Hiive.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-pls/tree/update-i18n-20250606222735",
-                    "issues": "https://github.com/newfold-labs/wp-module-pls/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-pls",
-                "version": "dev-update-i18n-20250606222809",
-                "version_normalized": "dev-update-i18n-20250606222809",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-pls.git",
-                    "reference": "ab7bfb5e09d23980ea1ef96fcbe6a56a2922f08d"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-pls/zipball/ab7bfb5e09d23980ea1ef96fcbe6a56a2922f08d",
-                    "reference": "ab7bfb5e09d23980ea1ef96fcbe6a56a2922f08d",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.8"
-                },
-                "require-dev": {
-                    "johnpbloch/wordpress": "@stable",
-                    "lucatume/wp-browser": "*",
-                    "newfold-labs/wp-php-standards": "^1.2",
-                    "phpunit/phpcov": "*",
-                    "wp-cli/i18n-command": "^2.6.5",
-                    "wp-cli/wp-cli": "^2.12"
-                },
-                "time": "2025-06-06T22:28:09+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\PLS\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf . --standard=phpcs.xml"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-mo",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-module-pls.pot ./languages"
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-pls.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-pls/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}'"
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
-                    ],
-                    "test": [
-                        "codecept run wpunit"
-                    ],
-                    "test-coverage": [
-                        "codecept run wpunit --coverage wpunit.cov",
-                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
-                        "echo \"open tests/_output/html/index.html\" to view the report"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "arunshenoy99",
-                        "email": "devarunshenoy99@gmail.com"
-                    }
-                ],
-                "description": "A Newfold module that handles license key provisioning, validation, and other lifecycle events for registered plugins using the PLS API via Hiive.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-pls/tree/update-i18n-20250606222809",
                     "issues": "https://github.com/newfold-labs/wp-module-pls/issues"
                 }
             },
