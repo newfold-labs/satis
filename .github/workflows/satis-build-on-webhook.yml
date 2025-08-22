@@ -93,9 +93,3 @@ jobs:
               "package": "$PACKAGE",
               "version": "$VENDOR"
             }
-
-      - name: Send message to ms teams
-        uses: dhollerbach/actions.send-message-to-ms-teams@dfc95a402e5cef63a9dd790f8ae51f49951b6754 # v3
-        with:
-          webhook: '${{ secrets.INCOMING_WEBHOOK_URL }}'
-          message: "Release ${{ github.event.client_payload.version }} of ${{ github.event.client_payload.vendor }}/${{ github.event.client_payload.package }} on satis is complete!\nVisit https://newfold-labs.github.io/satis/"
