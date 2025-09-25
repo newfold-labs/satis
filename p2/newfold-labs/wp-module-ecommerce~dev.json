@@ -277,17 +277,17 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-ecommerce.git",
-                    "reference": "cec29210230c0d8fc1860214d94ebb1d12906cf6"
+                    "reference": "0da6db53f1495ed6b470ffbb101d77381bdfac11"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/cec29210230c0d8fc1860214d94ebb1d12906cf6",
-                    "reference": "cec29210230c0d8fc1860214d94ebb1d12906cf6",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/0da6db53f1495ed6b470ffbb101d77381bdfac11",
+                    "reference": "0da6db53f1495ed6b470ffbb101d77381bdfac11",
                     "shasum": ""
                 },
                 "require": {
                     "newfold-labs/wp-module-installer": "^1.6.5",
-                    "newfold-labs/wp-module-onboarding-data": "^1.2.16"
+                    "newfold-labs/wp-module-onboarding-data": "^1.2.17"
                 },
                 "require-dev": {
                     "johnpbloch/wordpress": "@stable",
@@ -297,7 +297,7 @@
                     "wp-cli/i18n-command": "@stable",
                     "wp-cli/wp-cli-bundle": "@stable"
                 },
-                "time": "2025-09-04T14:29:32+00:00",
+                "time": "2025-09-25T22:41:01+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -363,7 +363,7 @@
                 ],
                 "description": "Brand Agnostic eCommerce Experience",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-ecommerce/tree/auto-translate/main",
+                    "source": "https://github.com/newfold-labs/wp-module-ecommerce/tree/1.10.0",
                     "issues": "https://github.com/newfold-labs/wp-module-ecommerce/issues"
                 }
             },
@@ -854,6 +854,103 @@
             },
             {
                 "name": "newfold-labs/wp-module-ecommerce",
+                "version": "dev-dependabot/npm_and_yarn/main/wordpress/data-10.31.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/data-10.31.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-ecommerce.git",
+                    "reference": "a988176163442c712e4e253f4be0874131a923b1"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/a988176163442c712e4e253f4be0874131a923b1",
+                    "reference": "a988176163442c712e4e253f4be0874131a923b1",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-installer": "^1.6.5",
+                    "newfold-labs/wp-module-onboarding-data": "^1.2.17"
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "@stable",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "@stable",
+                    "wp-cli/wp-cli-bundle": "@stable"
+                },
+                "time": "2025-09-18T13:12:51+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\ECommerce\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-ecommerce.pot ./languages"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-ecommerce.pot --domain=wp-module-ecommerce --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-ecommerce/issues\",\"POT-Creation-Date\":\"2024-11-18T11:38:47+00:00\"}' --exclude=tests,src,wordpress"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+                        "echo \"open tests/_output/html/index.html\" to view the report"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Beyond",
+                        "email": "team-spartans@newfold.com"
+                    }
+                ],
+                "description": "Brand Agnostic eCommerce Experience",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-ecommerce/tree/dependabot/npm_and_yarn/main/wordpress/data-10.31.0",
+                    "issues": "https://github.com/newfold-labs/wp-module-ecommerce/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-ecommerce",
                 "version": "dev-dependabot/npm_and_yarn/main/wordpress/date-5.30.0",
                 "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/date-5.30.0",
                 "source": {
@@ -1048,22 +1145,22 @@
             },
             {
                 "name": "newfold-labs/wp-module-ecommerce",
-                "version": "dev-feature/quick-add-product-modal-event",
-                "version_normalized": "dev-feature/quick-add-product-modal-event",
+                "version": "dev-dependabot/npm_and_yarn/main/wordpress/element-6.31.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/element-6.31.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-ecommerce.git",
-                    "reference": "48a6b3559811b0ab643c25f8cb27bfe70826d919"
+                    "reference": "39a0d9271034e377dbccb1f38fa736468255fb1c"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/48a6b3559811b0ab643c25f8cb27bfe70826d919",
-                    "reference": "48a6b3559811b0ab643c25f8cb27bfe70826d919",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/39a0d9271034e377dbccb1f38fa736468255fb1c",
+                    "reference": "39a0d9271034e377dbccb1f38fa736468255fb1c",
                     "shasum": ""
                 },
                 "require": {
-                    "newfold-labs/wp-module-installer": "^1.6.4",
-                    "newfold-labs/wp-module-onboarding-data": "^1.2.14"
+                    "newfold-labs/wp-module-installer": "^1.6.5",
+                    "newfold-labs/wp-module-onboarding-data": "^1.2.17"
                 },
                 "require-dev": {
                     "johnpbloch/wordpress": "@stable",
@@ -1073,7 +1170,7 @@
                     "wp-cli/i18n-command": "@stable",
                     "wp-cli/wp-cli-bundle": "@stable"
                 },
-                "time": "2025-09-01T08:38:39+00:00",
+                "time": "2025-09-18T13:13:21+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -1114,7 +1211,104 @@
                         "vendor/bin/wp i18n update-po ./languages/wp-module-ecommerce.pot ./languages"
                     ],
                     "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-ecommerce.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-ecommerce/issues\",\"POT-Creation-Date\":\"2024-11-18T11:38:47+00:00\"}' --exclude=node_modules,tests,src,wordpress"
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-ecommerce.pot --domain=wp-module-ecommerce --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-ecommerce/issues\",\"POT-Creation-Date\":\"2024-11-18T11:38:47+00:00\"}' --exclude=tests,src,wordpress"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+                        "echo \"open tests/_output/html/index.html\" to view the report"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Beyond",
+                        "email": "team-spartans@newfold.com"
+                    }
+                ],
+                "description": "Brand Agnostic eCommerce Experience",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-ecommerce/tree/dependabot/npm_and_yarn/main/wordpress/element-6.31.0",
+                    "issues": "https://github.com/newfold-labs/wp-module-ecommerce/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-ecommerce",
+                "version": "dev-feature/quick-add-product-modal-event",
+                "version_normalized": "dev-feature/quick-add-product-modal-event",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-ecommerce.git",
+                    "reference": "798138838efa34ec31bd0e22c1dd11af9f110800"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/798138838efa34ec31bd0e22c1dd11af9f110800",
+                    "reference": "798138838efa34ec31bd0e22c1dd11af9f110800",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-installer": "^1.6.5",
+                    "newfold-labs/wp-module-onboarding-data": "^1.2.17"
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "@stable",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "@stable",
+                    "wp-cli/wp-cli-bundle": "@stable"
+                },
+                "time": "2025-09-08T15:18:08+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\ECommerce\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-ecommerce.pot ./languages"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-ecommerce.pot --domain=wp-module-ecommerce --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-ecommerce/issues\",\"POT-Creation-Date\":\"2024-11-18T11:38:47+00:00\"}' --exclude=tests,src,wordpress"
                     ],
                     "lint": [
                         "vendor/bin/phpcs --standard=phpcs.xml -s ."
@@ -1150,17 +1344,17 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-ecommerce.git",
-                    "reference": "f382a9e1542fa25b378a703f31d01d5ee8327df1"
+                    "reference": "0da6db53f1495ed6b470ffbb101d77381bdfac11"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/f382a9e1542fa25b378a703f31d01d5ee8327df1",
-                    "reference": "f382a9e1542fa25b378a703f31d01d5ee8327df1",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/0da6db53f1495ed6b470ffbb101d77381bdfac11",
+                    "reference": "0da6db53f1495ed6b470ffbb101d77381bdfac11",
                     "shasum": ""
                 },
                 "require": {
                     "newfold-labs/wp-module-installer": "^1.6.5",
-                    "newfold-labs/wp-module-onboarding-data": "^1.2.16"
+                    "newfold-labs/wp-module-onboarding-data": "^1.2.17"
                 },
                 "require-dev": {
                     "johnpbloch/wordpress": "@stable",
@@ -1170,7 +1364,7 @@
                     "wp-cli/i18n-command": "@stable",
                     "wp-cli/wp-cli-bundle": "@stable"
                 },
-                "time": "2025-09-04T14:27:36+00:00",
+                "time": "2025-09-25T22:41:01+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -1237,7 +1431,7 @@
                 ],
                 "description": "Brand Agnostic eCommerce Experience",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-ecommerce/tree/main",
+                    "source": "https://github.com/newfold-labs/wp-module-ecommerce/tree/1.10.0",
                     "issues": "https://github.com/newfold-labs/wp-module-ecommerce/issues"
                 }
             },
