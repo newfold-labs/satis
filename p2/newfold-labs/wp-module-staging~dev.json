@@ -63,12 +63,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-staging.git",
-                    "reference": "c9f52e76c0ef5961dc63e15e3084686af3cc8d8e"
+                    "reference": "fd42038ae4443ba4b1cdb7cf85c9339fbbf1d332"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-staging/zipball/c9f52e76c0ef5961dc63e15e3084686af3cc8d8e",
-                    "reference": "c9f52e76c0ef5961dc63e15e3084686af3cc8d8e",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-staging/zipball/fd42038ae4443ba4b1cdb7cf85c9339fbbf1d332",
+                    "reference": "fd42038ae4443ba4b1cdb7cf85c9339fbbf1d332",
                     "shasum": ""
                 },
                 "require": {
@@ -79,7 +79,7 @@
                     "newfold-labs/wp-php-standards": "^1.2.5",
                     "wp-cli/i18n-command": "^2.6.6"
                 },
-                "time": "2025-12-12T18:17:22+00:00",
+                "time": "2025-12-15T14:45:14+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -280,6 +280,92 @@
                 "description": "Newfold module for staging functionality in brand plugins",
                 "support": {
                     "source": "https://github.com/newfold-labs/wp-module-staging/tree/fix/PRESS0-3357-onboarding-issue",
+                    "issues": "https://github.com/newfold-labs/wp-module-staging/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-staging",
+                "version": "dev-fix/PRESS7-499-fix-notices-in-link",
+                "version_normalized": "dev-fix/PRESS7-499-fix-notices-in-link",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-staging.git",
+                    "reference": "9de2c9b4e413abd8f7e33f6bc399aae52a46d25a"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-staging/zipball/9de2c9b4e413abd8f7e33f6bc399aae52a46d25a",
+                    "reference": "9de2c9b4e413abd8f7e33f6bc399aae52a46d25a",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-context": "^1.0.2",
+                    "newfold-labs/wp-module-features": "^1.5.1"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^1.2.5",
+                    "wp-cli/i18n-command": "^2.6.6"
+                },
+                "time": "2025-12-15T10:21:09+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Staging\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-staging.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-staging/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}'"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-staging.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-mo",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Evan Mullins",
+                        "homepage": "https://evanmullins.com"
+                    }
+                ],
+                "description": "Newfold module for staging functionality in brand plugins",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-staging/tree/fix/PRESS7-499-fix-notices-in-link",
                     "issues": "https://github.com/newfold-labs/wp-module-staging/issues"
                 }
             },
@@ -680,12 +766,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-staging.git",
-                    "reference": "82b70c4a079ee733104b65ba0556a426ad4ad615"
+                    "reference": "051fffd044c8e8bb0c21efe35b56d2aa27175a34"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-staging/zipball/82b70c4a079ee733104b65ba0556a426ad4ad615",
-                    "reference": "82b70c4a079ee733104b65ba0556a426ad4ad615",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-staging/zipball/051fffd044c8e8bb0c21efe35b56d2aa27175a34",
+                    "reference": "051fffd044c8e8bb0c21efe35b56d2aa27175a34",
                     "shasum": ""
                 },
                 "require": {
@@ -696,7 +782,7 @@
                     "newfold-labs/wp-php-standards": "^1.2.5",
                     "wp-cli/i18n-command": "^2.6.6"
                 },
-                "time": "2025-12-12T18:16:04+00:00",
+                "time": "2025-12-15T14:44:05+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
