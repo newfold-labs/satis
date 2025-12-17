@@ -2743,6 +2743,108 @@
                     "source": "https://github.com/newfold-labs/wp-module-next-steps/tree/1.5.0",
                     "issues": "https://github.com/newfold-labs/wp-module-next-steps/issues"
                 }
+            },
+            {
+                "name": "newfold-labs/wp-module-next-steps",
+                "version": "1.5.1",
+                "version_normalized": "1.5.1.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-next-steps.git",
+                    "reference": "55953e4910d7f0a97a4464d50f3f7b94bea79811"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-next-steps/zipball/55953e4910d7f0a97a4464d50f3f7b94bea79811",
+                    "reference": "55953e4910d7f0a97a4464d50f3f7b94bea79811",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-data": "^2.9.1",
+                    "newfold-labs/wp-module-loader": "^1.0.12"
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "^6.9",
+                    "lucatume/wp-browser": "^3.1",
+                    "newfold-labs/wp-php-standards": "^1.2.5",
+                    "phpunit/phpcov": "^8.2.1",
+                    "phpunit/phpunit": "^9.6",
+                    "wp-cli/i18n-command": "^2.6.6",
+                    "yoast/phpunit-polyfills": "^1.1"
+                },
+                "time": "2025-12-17T21:33:35+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\NextSteps\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "autoload-dev": {
+                    "psr-4": []
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-next-steps.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-next-steps/issues\",\"POT-Creation-Date\":\"2025-06-06T06:30:00+00:00\"}' --exclude=src,tests,wordpress"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-next-steps.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output",
+                        "echo \"open tests/_output/html/index.html to view the report\""
+                    ]
+                },
+                "license": [
+                    "GPL-3.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Evan Mullins",
+                        "homepage": "https://evanmullins.com"
+                    }
+                ],
+                "description": "A Newfold module to manage next steps for a customer in a brand plugin.",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-next-steps/tree/1.5.1",
+                    "issues": "https://github.com/newfold-labs/wp-module-next-steps/issues"
+                }
             }
         ]
     }
