@@ -103,25 +103,26 @@
             },
             {
                 "name": "newfold-labs/wp-module-mcp",
-                "version": "dev-dependabot/composer/main/firebase/php-jwt-7.0.2",
-                "version_normalized": "dev-dependabot/composer/main/firebase/php-jwt-7.0.2",
+                "version": "dev-dependabot/composer/main/wordpress/mcp-adapter-0.4.1",
+                "version_normalized": "dev-dependabot/composer/main/wordpress/mcp-adapter-0.4.1",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-mcp.git",
-                    "reference": "858ceb44928f1a14ef6bbe95db9b4cc05e6b3fcd"
+                    "reference": "c45ded870c8396c902baf47b3d1e220d3e1a2bae"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-mcp/zipball/858ceb44928f1a14ef6bbe95db9b4cc05e6b3fcd",
-                    "reference": "858ceb44928f1a14ef6bbe95db9b4cc05e6b3fcd",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-mcp/zipball/c45ded870c8396c902baf47b3d1e220d3e1a2bae",
+                    "reference": "c45ded870c8396c902baf47b3d1e220d3e1a2bae",
                     "shasum": ""
                 },
                 "require": {
-                    "firebase/php-jwt": "^7.0.2",
+                    "firebase/php-jwt": "^6.10.0",
+                    "newfold-labs/wp-php-standards": "^1.2",
                     "wordpress/abilities-api": "^0.4.0",
-                    "wordpress/mcp-adapter": "^0.3.0"
+                    "wordpress/mcp-adapter": "^0.4.1"
                 },
-                "time": "2025-12-17T14:32:30+00:00",
+                "time": "2025-12-17T15:56:28+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -132,50 +133,12 @@
                         "bootstrap.php"
                     ]
                 },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Micah Wood",
-                        "homepage": "https://wpscholar.com"
-                    }
-                ],
-                "description": "WordPress MCP module for Newfold Labs BLU",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-mcp/tree/dependabot/composer/main/firebase/php-jwt-7.0.2",
-                    "issues": "https://github.com/newfold-labs/wp-module-mcp/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-mcp",
-                "version": "dev-dependabot/composer/main/wordpress/mcp-adapter-0.4.1",
-                "version_normalized": "dev-dependabot/composer/main/wordpress/mcp-adapter-0.4.1",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-mcp.git",
-                    "reference": "1ff401e5744078bc8b2171f383a66ee150c39679"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-mcp/zipball/1ff401e5744078bc8b2171f383a66ee150c39679",
-                    "reference": "1ff401e5744078bc8b2171f383a66ee150c39679",
-                    "shasum": ""
-                },
-                "require": {
-                    "firebase/php-jwt": "^6.10.0",
-                    "wordpress/abilities-api": "^0.4.0",
-                    "wordpress/mcp-adapter": "^0.4.1"
-                },
-                "time": "2025-12-12T19:26:02+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "BLU\\": "includes/"
-                    },
-                    "files": [
-                        "includes/functions.php",
-                        "bootstrap.php"
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
                     ]
                 },
                 "license": [
