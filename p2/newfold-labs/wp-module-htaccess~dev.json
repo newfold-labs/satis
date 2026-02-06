@@ -3,6 +3,86 @@
         "newfold-labs/wp-module-htaccess": [
             {
                 "name": "newfold-labs/wp-module-htaccess",
+                "version": "dev-add/release-prep-workflow",
+                "version_normalized": "dev-add/release-prep-workflow",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-htaccess.git",
+                    "reference": "abf426605d2f9238474efac3c820124fcfe0a88b"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-htaccess/zipball/abf426605d2f9238474efac3c820124fcfe0a88b",
+                    "reference": "abf426605d2f9238474efac3c820124fcfe0a88b",
+                    "shasum": ""
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.6.6",
+                    "wp-cli/wp-cli": "^2.12"
+                },
+                "time": "2026-02-06T14:36:10+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Htaccess\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-hosting.pot --domain=wp-module-hosting --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-hosting/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,scripts,tests,webpack --include=build/*.min.js,includes"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-hosting.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
+                    ]
+                },
+                "license": [
+                    "GPL-3.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "arunshenoy99",
+                        "email": "devarunshenoy99@gmail.com"
+                    }
+                ],
+                "description": "A centralized Newfold module for managing .htaccess files across Newfold brand plugins. It provides a canonical ruleset, validates syntax, prevents duplicate or conflicting directives, maintains backups, and exposes a consumer API for other modules to safely register their own rewrite fragments.",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-htaccess/tree/add/release-prep-workflow",
+                    "issues": "https://github.com/newfold-labs/wp-module-htaccess/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-htaccess",
                 "version": "dev-dependabot/github_actions/main/actions/checkout-6.0.2",
                 "version_normalized": "dev-dependabot/github_actions/main/actions/checkout-6.0.2",
                 "source": {
@@ -79,21 +159,184 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-htaccess.git",
-                    "reference": "87129b591e4332c76d5d701337c51dca6bbb83a5"
+                    "reference": "8773291b87b4062f36c31697cdc82d18797b9b95"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-htaccess/zipball/87129b591e4332c76d5d701337c51dca6bbb83a5",
-                    "reference": "87129b591e4332c76d5d701337c51dca6bbb83a5",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-htaccess/zipball/8773291b87b4062f36c31697cdc82d18797b9b95",
+                    "reference": "8773291b87b4062f36c31697cdc82d18797b9b95",
                     "shasum": ""
                 },
                 "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
                     "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.6.6",
                     "wp-cli/wp-cli": "^2.12"
                 },
-                "time": "2026-01-21T11:32:47+00:00",
+                "time": "2026-02-06T16:41:21+00:00",
                 "default-branch": true,
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Htaccess\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-htaccess.pot --domain=wp-module-htaccess --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-htaccess/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,scripts,tests,webpack,wordpress --include=build/*.min.js,includes"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-htaccess.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
+                    ]
+                },
+                "license": [
+                    "GPL-3.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "arunshenoy99",
+                        "email": "devarunshenoy99@gmail.com"
+                    }
+                ],
+                "description": "A centralized Newfold module for managing .htaccess files across Newfold brand plugins. It provides a canonical ruleset, validates syntax, prevents duplicate or conflicting directives, maintains backups, and exposes a consumer API for other modules to safely register their own rewrite fragments.",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-htaccess/tree/1.0.1",
+                    "issues": "https://github.com/newfold-labs/wp-module-htaccess/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-htaccess",
+                "version": "dev-release/1.0.1",
+                "version_normalized": "dev-release/1.0.1",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-htaccess.git",
+                    "reference": "2182afa2b957f37754a397249b618fed6145c3b8"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-htaccess/zipball/2182afa2b957f37754a397249b618fed6145c3b8",
+                    "reference": "2182afa2b957f37754a397249b618fed6145c3b8",
+                    "shasum": ""
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.6.6",
+                    "wp-cli/wp-cli": "^2.12"
+                },
+                "time": "2026-02-06T16:12:10+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Htaccess\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-htaccess.pot --domain=wp-module-htaccess --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-htaccess/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,scripts,tests,webpack,wordpress --include=build/*.min.js,includes"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-htaccess.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
+                    ]
+                },
+                "license": [
+                    "GPL-3.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "arunshenoy99",
+                        "email": "devarunshenoy99@gmail.com"
+                    }
+                ],
+                "description": "A centralized Newfold module for managing .htaccess files across Newfold brand plugins. It provides a canonical ruleset, validates syntax, prevents duplicate or conflicting directives, maintains backups, and exposes a consumer API for other modules to safely register their own rewrite fragments.",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-htaccess/tree/release/1.0.1",
+                    "issues": "https://github.com/newfold-labs/wp-module-htaccess/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-htaccess",
+                "version": "dev-update/release-workflow",
+                "version_normalized": "dev-update/release-workflow",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-htaccess.git",
+                    "reference": "604c0d3539e3f1976342eb1970d2c0682b517303"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-htaccess/zipball/604c0d3539e3f1976342eb1970d2c0682b517303",
+                    "reference": "604c0d3539e3f1976342eb1970d2c0682b517303",
+                    "shasum": ""
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.6.6",
+                    "wp-cli/wp-cli": "^2.12"
+                },
+                "time": "2026-02-06T15:52:19+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -127,6 +370,12 @@
                     ],
                     "lint": [
                         "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
                     ]
                 },
                 "license": [
@@ -140,7 +389,87 @@
                 ],
                 "description": "A centralized Newfold module for managing .htaccess files across Newfold brand plugins. It provides a canonical ruleset, validates syntax, prevents duplicate or conflicting directives, maintains backups, and exposes a consumer API for other modules to safely register their own rewrite fragments.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-htaccess/tree/main",
+                    "source": "https://github.com/newfold-labs/wp-module-htaccess/tree/update/release-workflow",
+                    "issues": "https://github.com/newfold-labs/wp-module-htaccess/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-htaccess",
+                "version": "dev-update/reusable-workflows-codecoverage-playwright",
+                "version_normalized": "dev-update/reusable-workflows-codecoverage-playwright",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-htaccess.git",
+                    "reference": "90bf1c7b33d21bdcebab662fb59d188473ca196e"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-htaccess/zipball/90bf1c7b33d21bdcebab662fb59d188473ca196e",
+                    "reference": "90bf1c7b33d21bdcebab662fb59d188473ca196e",
+                    "shasum": ""
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.6.6",
+                    "wp-cli/wp-cli": "^2.12"
+                },
+                "time": "2026-02-03T19:31:45+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Htaccess\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-hosting.pot --domain=wp-module-hosting --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-hosting/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,scripts,tests,webpack --include=build/*.min.js,includes"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-hosting.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
+                    ]
+                },
+                "license": [
+                    "GPL-3.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "arunshenoy99",
+                        "email": "devarunshenoy99@gmail.com"
+                    }
+                ],
+                "description": "A centralized Newfold module for managing .htaccess files across Newfold brand plugins. It provides a canonical ruleset, validates syntax, prevents duplicate or conflicting directives, maintains backups, and exposes a consumer API for other modules to safely register their own rewrite fragments.",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-htaccess/tree/update/reusable-workflows-codecoverage-playwright",
                     "issues": "https://github.com/newfold-labs/wp-module-htaccess/issues"
                 }
             }
