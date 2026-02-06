@@ -8,23 +8,24 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
-                    "reference": "4b9c8bab9e478fae32ef585e7437d74f6cbb41b1"
+                    "reference": "0318ab2329b229718b61ca18af75ed817c1a4b0c"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/4b9c8bab9e478fae32ef585e7437d74f6cbb41b1",
-                    "reference": "4b9c8bab9e478fae32ef585e7437d74f6cbb41b1",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/0318ab2329b229718b61ca18af75ed817c1a4b0c",
+                    "reference": "0318ab2329b229718b61ca18af75ed817c1a4b0c",
                     "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-loader": "^1.0"
                 },
                 "require-dev": {
                     "10up/wp_mock": "^0.5.0|^1.0.0",
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-module-loader": "^1.1",
                     "newfold-labs/wp-php-standards": "^1.2.5",
-                    "wp-cli/i18n-command": "^2.6.5"
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.6.6"
                 },
-                "time": "2025-08-21T14:01:52+00:00",
+                "time": "2026-02-06T14:50:12+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -40,7 +41,7 @@
                         "vendor/bin/phpcbf . --standard=phpcs.xml"
                     ],
                     "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-solutions.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-solutions/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests"
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-solutions.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-solutions/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests,wordpress"
                     ],
                     "i18n-po": [
                         "vendor/bin/wp i18n update-po ./languages/wp-module-solutions.pot ./languages"
@@ -64,7 +65,10 @@
                         "vendor/bin/phpcs . --standard=phpcs.xml -s"
                     ],
                     "test": [
-                        "phpunit --bootstrap tests/phpunit/bootstrap.php"
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
                     ]
                 },
                 "license": [
@@ -1347,19 +1351,24 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
-                    "reference": "600dd65f36272491ba301b3b9cac5552c3a928d4"
+                    "reference": "0433d841d90fb43dc528949c34d774d210124581"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/600dd65f36272491ba301b3b9cac5552c3a928d4",
-                    "reference": "600dd65f36272491ba301b3b9cac5552c3a928d4",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/0433d841d90fb43dc528949c34d774d210124581",
+                    "reference": "0433d841d90fb43dc528949c34d774d210124581",
                     "shasum": ""
                 },
                 "require-dev": {
+                    "10up/wp_mock": "^0.5.0|^1.0.0",
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-module-loader": "^1.1",
                     "newfold-labs/wp-php-standards": "^1.2.5",
-                    "wp-cli/i18n-command": "^2.6.5"
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.6.6"
                 },
-                "time": "2025-09-22T18:57:13+00:00",
+                "time": "2026-02-06T15:55:17+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -1376,7 +1385,7 @@
                         "vendor/bin/phpcbf . --standard=phpcs.xml"
                     ],
                     "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-solutions.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-solutions/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests"
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-solutions.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-solutions/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests,wordpress"
                     ],
                     "i18n-po": [
                         "vendor/bin/wp i18n update-po ./languages/wp-module-solutions.pot ./languages"
@@ -1398,6 +1407,12 @@
                     ],
                     "lint": [
                         "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
                     ]
                 },
                 "license": [
@@ -1411,7 +1426,7 @@
                 ],
                 "description": "A WordPress module that adds tracking params",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-link-tracker/tree/1.1.4",
+                    "source": "https://github.com/newfold-labs/wp-module-link-tracker/tree/1.1.5",
                     "issues": "https://github.com/newfold-labs/wp-module-link-tracker/issues"
                 }
             },
@@ -1639,6 +1654,91 @@
             },
             {
                 "name": "newfold-labs/wp-module-link-tracker",
+                "version": "dev-release/1.1.5",
+                "version_normalized": "dev-release/1.1.5",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
+                    "reference": "9acb0142f21c3b72a4c611aca2be00592d0ee3b1"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/9acb0142f21c3b72a4c611aca2be00592d0ee3b1",
+                    "reference": "9acb0142f21c3b72a4c611aca2be00592d0ee3b1",
+                    "shasum": ""
+                },
+                "require-dev": {
+                    "10up/wp_mock": "^0.5.0|^1.0.0",
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-module-loader": "^1.1",
+                    "newfold-labs/wp-php-standards": "^1.2.5",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.6.6"
+                },
+                "time": "2026-02-06T15:43:08+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\LinkTracker\\": "includes/"
+                    },
+                    "files": [
+                        "includes/functions.php",
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-solutions.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-solutions/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests,wordpress"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-solutions.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
+                    ]
+                },
+                "license": [
+                    "GPL-3.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Carlos Rodriguez",
+                        "email": "carlos.rodriguez@newfold.com"
+                    }
+                ],
+                "description": "A WordPress module that adds tracking params",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-link-tracker/tree/release/1.1.5",
+                    "issues": "https://github.com/newfold-labs/wp-module-link-tracker/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-link-tracker",
                 "version": "dev-release/1.2.0",
                 "version_normalized": "dev-release/1.2.0",
                 "source": {
@@ -1782,6 +1882,174 @@
                 "description": "A WordPress module that adds tracking params",
                 "support": {
                     "source": "https://github.com/newfold-labs/wp-module-link-tracker/tree/update/change-logic",
+                    "issues": "https://github.com/newfold-labs/wp-module-link-tracker/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-link-tracker",
+                "version": "dev-update/i18n-command-to-exclude-wp-dir",
+                "version_normalized": "dev-update/i18n-command-to-exclude-wp-dir",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
+                    "reference": "3ad8d4bc00dfe5dc0622da1a0e76b8fff4911b0a"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/3ad8d4bc00dfe5dc0622da1a0e76b8fff4911b0a",
+                    "reference": "3ad8d4bc00dfe5dc0622da1a0e76b8fff4911b0a",
+                    "shasum": ""
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-module-loader": "^1.0",
+                    "newfold-labs/wp-php-standards": "^1.2.5",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.6.6"
+                },
+                "time": "2026-02-05T21:54:57+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\LinkTracker\\": "includes/"
+                    },
+                    "files": [
+                        "includes/functions.php",
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-solutions.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-solutions/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests,wordpress"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-solutions.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
+                    ]
+                },
+                "license": [
+                    "GPL-3.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Carlos Rodriguez",
+                        "email": "carlos.rodriguez@newfold.com"
+                    }
+                ],
+                "description": "A WordPress module that adds tracking params",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-link-tracker/tree/update/i18n-command-to-exclude-wp-dir",
+                    "issues": "https://github.com/newfold-labs/wp-module-link-tracker/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-link-tracker",
+                "version": "dev-update/reusable-workflows-codecoverage-playwright",
+                "version_normalized": "dev-update/reusable-workflows-codecoverage-playwright",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
+                    "reference": "1751d4ebea5ed01997ce660c9078d62ff9ebbf2f"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/1751d4ebea5ed01997ce660c9078d62ff9ebbf2f",
+                    "reference": "1751d4ebea5ed01997ce660c9078d62ff9ebbf2f",
+                    "shasum": ""
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-module-loader": "^1.0",
+                    "newfold-labs/wp-php-standards": "^1.2.5",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.6.6"
+                },
+                "time": "2026-02-03T19:44:40+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\LinkTracker\\": "includes/"
+                    },
+                    "files": [
+                        "includes/functions.php",
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-solutions.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-solutions/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-solutions.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
+                    ]
+                },
+                "license": [
+                    "GPL-3.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Carlos Rodriguez",
+                        "email": "carlos.rodriguez@newfold.com"
+                    }
+                ],
+                "description": "A WordPress module that adds tracking params",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-link-tracker/tree/update/reusable-workflows-codecoverage-playwright",
                     "issues": "https://github.com/newfold-labs/wp-module-link-tracker/issues"
                 }
             },
