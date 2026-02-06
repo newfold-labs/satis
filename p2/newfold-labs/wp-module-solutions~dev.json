@@ -8,12 +8,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-solutions.git",
-                    "reference": "fbf3ae91749a905768a30cd147350ea41ee50b2b"
+                    "reference": "1aa81a08a9942f79f19dcc4976a5f42d38469e19"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/fbf3ae91749a905768a30cd147350ea41ee50b2b",
-                    "reference": "fbf3ae91749a905768a30cd147350ea41ee50b2b",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/1aa81a08a9942f79f19dcc4976a5f42d38469e19",
+                    "reference": "1aa81a08a9942f79f19dcc4976a5f42d38469e19",
                     "shasum": ""
                 },
                 "require": {
@@ -28,7 +28,7 @@
                     "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.6.6"
                 },
-                "time": "2026-02-05T19:35:00+00:00",
+                "time": "2026-02-05T19:39:53+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -92,23 +92,118 @@
                 ],
                 "description": "A Newfold module that handles integration of WordPress Solutions Addon packages (content creator/ service / ecommerce) for BlueHost & HostGator customers",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-solutions/tree/2.9.0",
+                    "source": "https://github.com/newfold-labs/wp-module-solutions/tree/auto-translate/main",
                     "issues": "https://github.com/newfold-labs/wp-module-solutions/issues"
                 }
             },
             {
                 "name": "newfold-labs/wp-module-solutions",
-                "version": "dev-dependabot/composer/main/newfold-labs/wp-module-data-2.9.2",
-                "version_normalized": "dev-dependabot/composer/main/newfold-labs/wp-module-data-2.9.2",
+                "version": "dev-dependabot/composer/main/newfold-labs/wp-module-loader-1.1.0",
+                "version_normalized": "dev-dependabot/composer/main/newfold-labs/wp-module-loader-1.1.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-solutions.git",
-                    "reference": "af384aeed7416068ed1a14466f61e01aa66be547"
+                    "reference": "0d467f89a2cb5fee513d7ed1f805df5becb41d91"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/af384aeed7416068ed1a14466f61e01aa66be547",
-                    "reference": "af384aeed7416068ed1a14466f61e01aa66be547",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/0d467f89a2cb5fee513d7ed1f805df5becb41d91",
+                    "reference": "0d467f89a2cb5fee513d7ed1f805df5becb41d91",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-data": "^2.9.2",
+                    "newfold-labs/wp-module-link-tracker": "^1.1",
+                    "newfold-labs/wp-module-loader": "^1.1.0"
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2.5",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.6.6"
+                },
+                "time": "2026-02-06T07:34:17+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Solutions\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-solutions.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-solutions/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-solutions.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
+                    ]
+                },
+                "license": [
+                    "GPL-3.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "arati bhandare AKA aratidgr8",
+                        "email": "aratidgr8@gmail.com"
+                    }
+                ],
+                "description": "A Newfold module that handles integration of WordPress Solutions Addon packages (content creator/ service / ecommerce) for BlueHost & HostGator customers",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-solutions/tree/dependabot/composer/main/newfold-labs/wp-module-loader-1.1.0",
+                    "issues": "https://github.com/newfold-labs/wp-module-solutions/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-solutions",
+                "version": "dev-dependabot/npm_and_yarn/main/react-svg-16.4.1",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/react-svg-16.4.1",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-solutions.git",
+                    "reference": "2e2e468d29cbde15b3f07ab365abb8ca68d3bd91"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/2e2e468d29cbde15b3f07ab365abb8ca68d3bd91",
+                    "reference": "2e2e468d29cbde15b3f07ab365abb8ca68d3bd91",
                     "shasum": ""
                 },
                 "require": {
@@ -117,10 +212,13 @@
                     "newfold-labs/wp-module-loader": "^1.0.14"
                 },
                 "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
                     "newfold-labs/wp-php-standards": "^1.2.5",
+                    "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.6.6"
                 },
-                "time": "2026-01-09T07:55:54+00:00",
+                "time": "2026-02-06T07:35:06+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -165,6 +263,12 @@
                     ],
                     "lint": [
                         "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
                     ]
                 },
                 "license": [
@@ -176,37 +280,40 @@
                         "email": "aratidgr8@gmail.com"
                     }
                 ],
-                "description": "A Newfold module that handles integration of WordPress Solutions Addon packages (content creator/ service / ecommerce) for BlueHost &amp; HostGator customers",
+                "description": "A Newfold module that handles integration of WordPress Solutions Addon packages (content creator/ service / ecommerce) for BlueHost & HostGator customers",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-solutions/tree/dependabot/composer/main/newfold-labs/wp-module-data-2.9.2",
+                    "source": "https://github.com/newfold-labs/wp-module-solutions/tree/dependabot/npm_and_yarn/main/react-svg-16.4.1",
                     "issues": "https://github.com/newfold-labs/wp-module-solutions/issues"
                 }
             },
             {
                 "name": "newfold-labs/wp-module-solutions",
-                "version": "dev-dependabot/github_actions/main/actions/cache-5.0.2",
-                "version_normalized": "dev-dependabot/github_actions/main/actions/cache-5.0.2",
+                "version": "dev-dependabot/npm_and_yarn/main/webpack-5.105.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/webpack-5.105.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-solutions.git",
-                    "reference": "a9426f09d14ad1e6b54b2980e8cae6cacb5773a9"
+                    "reference": "47a1bb59592bee3037347cbff6738f7689c1acd6"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/a9426f09d14ad1e6b54b2980e8cae6cacb5773a9",
-                    "reference": "a9426f09d14ad1e6b54b2980e8cae6cacb5773a9",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/47a1bb59592bee3037347cbff6738f7689c1acd6",
+                    "reference": "47a1bb59592bee3037347cbff6738f7689c1acd6",
                     "shasum": ""
                 },
                 "require": {
-                    "newfold-labs/wp-module-data": "^2.9.1",
+                    "newfold-labs/wp-module-data": "^2.9.2",
                     "newfold-labs/wp-module-link-tracker": "^1.1",
                     "newfold-labs/wp-module-loader": "^1.0.14"
                 },
                 "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
                     "newfold-labs/wp-php-standards": "^1.2.5",
+                    "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.6.6"
                 },
-                "time": "2026-01-19T08:08:53+00:00",
+                "time": "2026-02-06T07:34:18+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -251,6 +358,12 @@
                     ],
                     "lint": [
                         "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
                     ]
                 },
                 "license": [
@@ -262,37 +375,40 @@
                         "email": "aratidgr8@gmail.com"
                     }
                 ],
-                "description": "A Newfold module that handles integration of WordPress Solutions Addon packages (content creator/ service / ecommerce) for BlueHost &amp; HostGator customers",
+                "description": "A Newfold module that handles integration of WordPress Solutions Addon packages (content creator/ service / ecommerce) for BlueHost & HostGator customers",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-solutions/tree/dependabot/github_actions/main/actions/cache-5.0.2",
+                    "source": "https://github.com/newfold-labs/wp-module-solutions/tree/dependabot/npm_and_yarn/main/webpack-5.105.0",
                     "issues": "https://github.com/newfold-labs/wp-module-solutions/issues"
                 }
             },
             {
                 "name": "newfold-labs/wp-module-solutions",
-                "version": "dev-dependabot/github_actions/main/actions/checkout-6.0.2",
-                "version_normalized": "dev-dependabot/github_actions/main/actions/checkout-6.0.2",
+                "version": "dev-dependabot/npm_and_yarn/main/wordpress/api-fetch-7.39.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/api-fetch-7.39.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-solutions.git",
-                    "reference": "2574caf7dc8ce766444fe4e4f16d6f9f44c0ed85"
+                    "reference": "1bfd69c305665cc3bcd278138bc809d817e086ad"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/2574caf7dc8ce766444fe4e4f16d6f9f44c0ed85",
-                    "reference": "2574caf7dc8ce766444fe4e4f16d6f9f44c0ed85",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/1bfd69c305665cc3bcd278138bc809d817e086ad",
+                    "reference": "1bfd69c305665cc3bcd278138bc809d817e086ad",
                     "shasum": ""
                 },
                 "require": {
-                    "newfold-labs/wp-module-data": "^2.9.1",
+                    "newfold-labs/wp-module-data": "^2.9.2",
                     "newfold-labs/wp-module-link-tracker": "^1.1",
                     "newfold-labs/wp-module-loader": "^1.0.14"
                 },
                 "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
                     "newfold-labs/wp-php-standards": "^1.2.5",
+                    "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.6.6"
                 },
-                "time": "2026-01-23T07:34:05+00:00",
+                "time": "2026-02-06T07:34:53+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -337,6 +453,12 @@
                     ],
                     "lint": [
                         "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
                     ]
                 },
                 "license": [
@@ -348,525 +470,9 @@
                         "email": "aratidgr8@gmail.com"
                     }
                 ],
-                "description": "A Newfold module that handles integration of WordPress Solutions Addon packages (content creator/ service / ecommerce) for BlueHost &amp; HostGator customers",
+                "description": "A Newfold module that handles integration of WordPress Solutions Addon packages (content creator/ service / ecommerce) for BlueHost & HostGator customers",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-solutions/tree/dependabot/github_actions/main/actions/checkout-6.0.2",
-                    "issues": "https://github.com/newfold-labs/wp-module-solutions/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-solutions",
-                "version": "dev-dependabot/github_actions/main/actions/setup-node-6.2.0",
-                "version_normalized": "dev-dependabot/github_actions/main/actions/setup-node-6.2.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-solutions.git",
-                    "reference": "83cecc307b9ba52129dfc3d8eb2d0bb572335276"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/83cecc307b9ba52129dfc3d8eb2d0bb572335276",
-                    "reference": "83cecc307b9ba52129dfc3d8eb2d0bb572335276",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.9.1",
-                    "newfold-labs/wp-module-link-tracker": "^1.1",
-                    "newfold-labs/wp-module-loader": "^1.0.14"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.5",
-                    "wp-cli/i18n-command": "^2.6.6"
-                },
-                "time": "2026-01-15T07:34:02+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Solutions\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf . --standard=phpcs.xml"
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-solutions.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-solutions/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-module-solutions.pot ./languages"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-ci-pre": [
-                        "@i18n-pot",
-                        "@i18n-po"
-                    ],
-                    "i18n-ci-post": [
-                        "@i18n-json",
-                        "@i18n-php"
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "arati bhandare AKA aratidgr8",
-                        "email": "aratidgr8@gmail.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of WordPress Solutions Addon packages (content creator/ service / ecommerce) for BlueHost &amp; HostGator customers",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-solutions/tree/dependabot/github_actions/main/actions/setup-node-6.2.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-solutions/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-solutions",
-                "version": "dev-dependabot/npm_and_yarn/main/react-router-dom-7.12.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/react-router-dom-7.12.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-solutions.git",
-                    "reference": "d35c774be78e7d7aa0a1971a1a748ed8e18c2fca"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/d35c774be78e7d7aa0a1971a1a748ed8e18c2fca",
-                    "reference": "d35c774be78e7d7aa0a1971a1a748ed8e18c2fca",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.9.1",
-                    "newfold-labs/wp-module-link-tracker": "^1.1",
-                    "newfold-labs/wp-module-loader": "^1.0.14"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.5",
-                    "wp-cli/i18n-command": "^2.6.6"
-                },
-                "time": "2026-01-07T21:04:37+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Solutions\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf . --standard=phpcs.xml"
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-solutions.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-solutions/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-module-solutions.pot ./languages"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-ci-pre": [
-                        "@i18n-pot",
-                        "@i18n-po"
-                    ],
-                    "i18n-ci-post": [
-                        "@i18n-json",
-                        "@i18n-php"
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "arati bhandare AKA aratidgr8",
-                        "email": "aratidgr8@gmail.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of WordPress Solutions Addon packages (content creator/ service / ecommerce) for BlueHost &amp; HostGator customers",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-solutions/tree/dependabot/npm_and_yarn/main/react-router-dom-7.12.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-solutions/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-solutions",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/api-fetch-7.38.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/api-fetch-7.38.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-solutions.git",
-                    "reference": "52e6322118ef961fd8b3262cae464bf7e3bbadcd"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/52e6322118ef961fd8b3262cae464bf7e3bbadcd",
-                    "reference": "52e6322118ef961fd8b3262cae464bf7e3bbadcd",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.9.1",
-                    "newfold-labs/wp-module-link-tracker": "^1.1",
-                    "newfold-labs/wp-module-loader": "^1.0.14"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.5",
-                    "wp-cli/i18n-command": "^2.6.6"
-                },
-                "time": "2026-01-19T08:11:47+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Solutions\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf . --standard=phpcs.xml"
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-solutions.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-solutions/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-module-solutions.pot ./languages"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-ci-pre": [
-                        "@i18n-pot",
-                        "@i18n-po"
-                    ],
-                    "i18n-ci-post": [
-                        "@i18n-json",
-                        "@i18n-php"
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "arati bhandare AKA aratidgr8",
-                        "email": "aratidgr8@gmail.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of WordPress Solutions Addon packages (content creator/ service / ecommerce) for BlueHost &amp; HostGator customers",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-solutions/tree/dependabot/npm_and_yarn/main/wordpress/api-fetch-7.38.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-solutions/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-solutions",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/dom-ready-4.38.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/dom-ready-4.38.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-solutions.git",
-                    "reference": "8eceb32df32a0739de9b9548e0c15825f04d7128"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/8eceb32df32a0739de9b9548e0c15825f04d7128",
-                    "reference": "8eceb32df32a0739de9b9548e0c15825f04d7128",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.9.1",
-                    "newfold-labs/wp-module-link-tracker": "^1.1",
-                    "newfold-labs/wp-module-loader": "^1.0.14"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.5",
-                    "wp-cli/i18n-command": "^2.6.6"
-                },
-                "time": "2026-01-19T08:09:36+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Solutions\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf . --standard=phpcs.xml"
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-solutions.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-solutions/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-module-solutions.pot ./languages"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-ci-pre": [
-                        "@i18n-pot",
-                        "@i18n-po"
-                    ],
-                    "i18n-ci-post": [
-                        "@i18n-json",
-                        "@i18n-php"
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "arati bhandare AKA aratidgr8",
-                        "email": "aratidgr8@gmail.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of WordPress Solutions Addon packages (content creator/ service / ecommerce) for BlueHost &amp; HostGator customers",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-solutions/tree/dependabot/npm_and_yarn/main/wordpress/dom-ready-4.38.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-solutions/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-solutions",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/scripts-31.3.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/scripts-31.3.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-solutions.git",
-                    "reference": "02e53e2ea7dfac5b47ffb8a9fe9afcfe4dd6d316"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/02e53e2ea7dfac5b47ffb8a9fe9afcfe4dd6d316",
-                    "reference": "02e53e2ea7dfac5b47ffb8a9fe9afcfe4dd6d316",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.9.1",
-                    "newfold-labs/wp-module-link-tracker": "^1.1",
-                    "newfold-labs/wp-module-loader": "^1.0.14"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.5",
-                    "wp-cli/i18n-command": "^2.6.6"
-                },
-                "time": "2026-01-19T08:10:43+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Solutions\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf . --standard=phpcs.xml"
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-solutions.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-solutions/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-module-solutions.pot ./languages"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-ci-pre": [
-                        "@i18n-pot",
-                        "@i18n-po"
-                    ],
-                    "i18n-ci-post": [
-                        "@i18n-json",
-                        "@i18n-php"
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "arati bhandare AKA aratidgr8",
-                        "email": "aratidgr8@gmail.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of WordPress Solutions Addon packages (content creator/ service / ecommerce) for BlueHost &amp; HostGator customers",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-solutions/tree/dependabot/npm_and_yarn/main/wordpress/scripts-31.3.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-solutions/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-solutions",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/url-4.38.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/url-4.38.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-solutions.git",
-                    "reference": "ea0552508f9b15ac5c53caa93239ae098dde9270"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/ea0552508f9b15ac5c53caa93239ae098dde9270",
-                    "reference": "ea0552508f9b15ac5c53caa93239ae098dde9270",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.9.1",
-                    "newfold-labs/wp-module-link-tracker": "^1.1",
-                    "newfold-labs/wp-module-loader": "^1.0.14"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.5",
-                    "wp-cli/i18n-command": "^2.6.6"
-                },
-                "time": "2026-01-19T08:11:14+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Solutions\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf . --standard=phpcs.xml"
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-solutions.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-solutions/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-module-solutions.pot ./languages"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-ci-pre": [
-                        "@i18n-pot",
-                        "@i18n-po"
-                    ],
-                    "i18n-ci-post": [
-                        "@i18n-json",
-                        "@i18n-php"
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "arati bhandare AKA aratidgr8",
-                        "email": "aratidgr8@gmail.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of WordPress Solutions Addon packages (content creator/ service / ecommerce) for BlueHost &amp; HostGator customers",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-solutions/tree/dependabot/npm_and_yarn/main/wordpress/url-4.38.0",
+                    "source": "https://github.com/newfold-labs/wp-module-solutions/tree/dependabot/npm_and_yarn/main/wordpress/api-fetch-7.39.0",
                     "issues": "https://github.com/newfold-labs/wp-module-solutions/issues"
                 }
             },

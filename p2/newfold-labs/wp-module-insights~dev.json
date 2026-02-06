@@ -3,71 +3,30 @@
         "newfold-labs/wp-module-insights": [
             {
                 "name": "newfold-labs/wp-module-insights",
-                "version": "dev-add/workflows",
-                "version_normalized": "dev-add/workflows",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                    "reference": "d953d9ec041da0651bbc7623494e2821ecb0ce18"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/d953d9ec041da0651bbc7623494e2821ecb0ce18",
-                    "reference": "d953d9ec041da0651bbc7623494e2821ecb0ce18",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.8.6",
-                    "newfold-labs/wp-module-loader": "^1.0.12"
-                },
-                "time": "2025-12-15T19:04:23+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Insights\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "hi@newfold.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of Insights page.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-insights/tree/add/workflows",
-                    "issues": "https://github.com/newfold-labs/wp-module-insights/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-insights",
                 "version": "dev-auto-translate/main",
                 "version_normalized": "dev-auto-translate/main",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                    "reference": "83ee888d819c7d23f9c3e60bc8bdff36ca2c44b5"
+                    "reference": "d0db9b527b286ec80f8f2acc7dc05d046500c8cb"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/83ee888d819c7d23f9c3e60bc8bdff36ca2c44b5",
-                    "reference": "83ee888d819c7d23f9c3e60bc8bdff36ca2c44b5",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/d0db9b527b286ec80f8f2acc7dc05d046500c8cb",
+                    "reference": "d0db9b527b286ec80f8f2acc7dc05d046500c8cb",
                     "shasum": ""
                 },
                 "require": {
                     "newfold-labs/wp-module-data": "^2.9.1",
-                    "newfold-labs/wp-module-loader": "^1.0.12"
+                    "newfold-labs/wp-module-loader": "^1.1.0"
                 },
                 "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.3"
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2.3",
+                    "phpunit/phpcov": "*"
                 },
-                "time": "2026-01-06T15:09:22+00:00",
+                "time": "2026-02-06T18:25:13+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -75,6 +34,14 @@
                     },
                     "files": [
                         "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
                     ]
                 },
                 "license": [
@@ -88,650 +55,7 @@
                 ],
                 "description": "A Newfold module that handles integration of Insights page.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-insights/tree/auto-translate/main",
-                    "issues": "https://github.com/newfold-labs/wp-module-insights/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-insights",
-                "version": "dev-dependabot/composer/main/newfold-labs/wp-module-data-2.9.2",
-                "version_normalized": "dev-dependabot/composer/main/newfold-labs/wp-module-data-2.9.2",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                    "reference": "d5b9dc20985cfe3158ab782aaeecfabf1e8073cd"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/d5b9dc20985cfe3158ab782aaeecfabf1e8073cd",
-                    "reference": "d5b9dc20985cfe3158ab782aaeecfabf1e8073cd",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.9.2",
-                    "newfold-labs/wp-module-loader": "^1.0.12"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.3"
-                },
-                "time": "2026-01-09T04:01:44+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Insights\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "hi@newfold.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of Insights page.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-insights/tree/dependabot/composer/main/newfold-labs/wp-module-data-2.9.2",
-                    "issues": "https://github.com/newfold-labs/wp-module-insights/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-insights",
-                "version": "dev-dependabot/github_actions/main/actions/cache-5.0.2",
-                "version_normalized": "dev-dependabot/github_actions/main/actions/cache-5.0.2",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                    "reference": "0c8f6bac7ab41193b99a32195989ef067a908415"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/0c8f6bac7ab41193b99a32195989ef067a908415",
-                    "reference": "0c8f6bac7ab41193b99a32195989ef067a908415",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.9.1",
-                    "newfold-labs/wp-module-loader": "^1.0.12"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.3"
-                },
-                "time": "2026-01-19T04:08:27+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Insights\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "hi@newfold.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of Insights page.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-insights/tree/dependabot/github_actions/main/actions/cache-5.0.2",
-                    "issues": "https://github.com/newfold-labs/wp-module-insights/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-insights",
-                "version": "dev-dependabot/github_actions/main/actions/checkout-6.0.2",
-                "version_normalized": "dev-dependabot/github_actions/main/actions/checkout-6.0.2",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                    "reference": "604e43a2a464c1ef62358b1a206a9256ef119f32"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/604e43a2a464c1ef62358b1a206a9256ef119f32",
-                    "reference": "604e43a2a464c1ef62358b1a206a9256ef119f32",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.9.1",
-                    "newfold-labs/wp-module-loader": "^1.0.12"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.3"
-                },
-                "time": "2026-01-23T03:45:25+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Insights\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "hi@newfold.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of Insights page.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-insights/tree/dependabot/github_actions/main/actions/checkout-6.0.2",
-                    "issues": "https://github.com/newfold-labs/wp-module-insights/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-insights",
-                "version": "dev-dependabot/npm_and_yarn/main/react-router-dom-7.12.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/react-router-dom-7.12.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                    "reference": "0005ed65cd195cb2eb929abbff7d154d34ea04ea"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/0005ed65cd195cb2eb929abbff7d154d34ea04ea",
-                    "reference": "0005ed65cd195cb2eb929abbff7d154d34ea04ea",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.9.1",
-                    "newfold-labs/wp-module-loader": "^1.0.12"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.3"
-                },
-                "time": "2026-01-08T03:58:11+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Insights\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "hi@newfold.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of Insights page.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-insights/tree/dependabot/npm_and_yarn/main/react-router-dom-7.12.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-insights/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-insights",
-                "version": "dev-dependabot/npm_and_yarn/main/webpack-5.104.1",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/webpack-5.104.1",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                    "reference": "ce536cb17f05e22a290af6c516fcb0e8a0248ffd"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/ce536cb17f05e22a290af6c516fcb0e8a0248ffd",
-                    "reference": "ce536cb17f05e22a290af6c516fcb0e8a0248ffd",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.9.1",
-                    "newfold-labs/wp-module-loader": "^1.0.12"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.3"
-                },
-                "time": "2026-01-07T03:42:26+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Insights\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "hi@newfold.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of Insights page.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-insights/tree/dependabot/npm_and_yarn/main/webpack-5.104.1",
-                    "issues": "https://github.com/newfold-labs/wp-module-insights/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-insights",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/dom-ready-4.38.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/dom-ready-4.38.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                    "reference": "fbbebc9e4ff764053f9bf10b99dd34633c1d0abb"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/fbbebc9e4ff764053f9bf10b99dd34633c1d0abb",
-                    "reference": "fbbebc9e4ff764053f9bf10b99dd34633c1d0abb",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.9.1",
-                    "newfold-labs/wp-module-loader": "^1.0.12"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.3"
-                },
-                "time": "2026-01-19T04:10:39+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Insights\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "hi@newfold.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of Insights page.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-insights/tree/dependabot/npm_and_yarn/main/wordpress/dom-ready-4.38.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-insights/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-insights",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/element-6.38.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/element-6.38.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                    "reference": "ae4c5fc47ee4c06974674fcb21e0cf8f6728bfb6"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/ae4c5fc47ee4c06974674fcb21e0cf8f6728bfb6",
-                    "reference": "ae4c5fc47ee4c06974674fcb21e0cf8f6728bfb6",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.9.1",
-                    "newfold-labs/wp-module-loader": "^1.0.12"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.3"
-                },
-                "time": "2026-01-19T04:10:06+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Insights\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "hi@newfold.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of Insights page.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-insights/tree/dependabot/npm_and_yarn/main/wordpress/element-6.38.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-insights/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-insights",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/scripts-31.3.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/scripts-31.3.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                    "reference": "a70cfe5a21f052f759856d081afaf814e62aadd0"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/a70cfe5a21f052f759856d081afaf814e62aadd0",
-                    "reference": "a70cfe5a21f052f759856d081afaf814e62aadd0",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.9.1",
-                    "newfold-labs/wp-module-loader": "^1.0.12"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.3"
-                },
-                "time": "2026-01-19T04:09:34+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Insights\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "hi@newfold.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of Insights page.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-insights/tree/dependabot/npm_and_yarn/main/wordpress/scripts-31.3.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-insights/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-insights",
-                "version": "dev-docs/add-readme",
-                "version_normalized": "dev-docs/add-readme",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                    "reference": "d77f055e9060632bcbac7048ee1d411114b37560"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/d77f055e9060632bcbac7048ee1d411114b37560",
-                    "reference": "d77f055e9060632bcbac7048ee1d411114b37560",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.8.6",
-                    "newfold-labs/wp-module-loader": "^1.0.12"
-                },
-                "time": "2025-12-15T18:49:14+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Insights\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "hi@newfold.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of Insights page.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-insights/tree/docs/add-readme",
-                    "issues": "https://github.com/newfold-labs/wp-module-insights/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-insights",
-                "version": "dev-feat/group-scans-by-day",
-                "version_normalized": "dev-feat/group-scans-by-day",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                    "reference": "d010f8e6f03b0843bcd16065fa2eb32a23d12638"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/d010f8e6f03b0843bcd16065fa2eb32a23d12638",
-                    "reference": "d010f8e6f03b0843bcd16065fa2eb32a23d12638",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.9.1",
-                    "newfold-labs/wp-module-loader": "^1.0.12"
-                },
-                "time": "2025-12-16T20:42:26+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Insights\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "hi@newfold.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of Insights page.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-insights/tree/feat/group-scans-by-day",
-                    "issues": "https://github.com/newfold-labs/wp-module-insights/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-insights",
-                "version": "dev-feature/insights-page",
-                "version_normalized": "dev-feature/insights-page",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                    "reference": "c11c5bccba19742f429fa362173ba6217c7111b4"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/c11c5bccba19742f429fa362173ba6217c7111b4",
-                    "reference": "c11c5bccba19742f429fa362173ba6217c7111b4",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.8.6",
-                    "newfold-labs/wp-module-loader": "^1.0.12"
-                },
-                "time": "2025-12-15T18:07:20+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Insights\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "hi@newfold.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of Insights page.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-insights/tree/feature/insights-page",
-                    "issues": "https://github.com/newfold-labs/wp-module-insights/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-insights",
-                "version": "dev-fix/get_site_secret",
-                "version_normalized": "dev-fix/get_site_secret",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                    "reference": "2eca480beac97b9a291fd9cf63d9bcace43a8c65"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/2eca480beac97b9a291fd9cf63d9bcace43a8c65",
-                    "reference": "2eca480beac97b9a291fd9cf63d9bcace43a8c65",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.9.1",
-                    "newfold-labs/wp-module-loader": "^1.0.12"
-                },
-                "time": "2025-12-19T16:44:51+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Insights\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "hi@newfold.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of Insights page.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-insights/tree/fix/get_site_secret",
-                    "issues": "https://github.com/newfold-labs/wp-module-insights/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-insights",
-                "version": "dev-fix/phpcs",
-                "version_normalized": "dev-fix/phpcs",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                    "reference": "704317cc0e9b58cec9ce401937eea624968411a6"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/704317cc0e9b58cec9ce401937eea624968411a6",
-                    "reference": "704317cc0e9b58cec9ce401937eea624968411a6",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.9.1",
-                    "newfold-labs/wp-module-loader": "^1.0.12"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.3"
-                },
-                "time": "2026-01-05T21:26:18+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Insights\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "hi@newfold.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of Insights page.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-insights/tree/fix/phpcs",
-                    "issues": "https://github.com/newfold-labs/wp-module-insights/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-insights",
-                "version": "dev-fix/verify-validation-key",
-                "version_normalized": "dev-fix/verify-validation-key",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                    "reference": "f00ff497972c441b11d679078775c5af3cfd55a4"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/f00ff497972c441b11d679078775c5af3cfd55a4",
-                    "reference": "f00ff497972c441b11d679078775c5af3cfd55a4",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.8.6",
-                    "newfold-labs/wp-module-loader": "^1.0.12"
-                },
-                "time": "2025-12-15T10:00:03+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Insights\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "hi@newfold.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of Insights page.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-insights/tree/fix/verify-validation-key",
+                    "source": "https://github.com/newfold-labs/wp-module-insights/tree/1.1.1",
                     "issues": "https://github.com/newfold-labs/wp-module-insights/issues"
                 }
             },
@@ -742,22 +66,25 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                    "reference": "83ee888d819c7d23f9c3e60bc8bdff36ca2c44b5"
+                    "reference": "d0db9b527b286ec80f8f2acc7dc05d046500c8cb"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/83ee888d819c7d23f9c3e60bc8bdff36ca2c44b5",
-                    "reference": "83ee888d819c7d23f9c3e60bc8bdff36ca2c44b5",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/d0db9b527b286ec80f8f2acc7dc05d046500c8cb",
+                    "reference": "d0db9b527b286ec80f8f2acc7dc05d046500c8cb",
                     "shasum": ""
                 },
                 "require": {
                     "newfold-labs/wp-module-data": "^2.9.1",
-                    "newfold-labs/wp-module-loader": "^1.0.12"
+                    "newfold-labs/wp-module-loader": "^1.1.0"
                 },
                 "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.3"
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2.3",
+                    "phpunit/phpcov": "*"
                 },
-                "time": "2026-01-06T15:09:22+00:00",
+                "time": "2026-02-06T18:25:13+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -768,48 +95,12 @@
                         "bootstrap.php"
                     ]
                 },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "hi@newfold.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of Insights page.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-insights/tree/auto-translate/main",
-                    "issues": "https://github.com/newfold-labs/wp-module-insights/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-insights",
-                "version": "dev-release/1.0.1",
-                "version_normalized": "dev-release/1.0.1",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                    "reference": "f245939b33b9bc286e6f86cd4320457d3b526c74"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/f245939b33b9bc286e6f86cd4320457d3b526c74",
-                    "reference": "f245939b33b9bc286e6f86cd4320457d3b526c74",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.9.1",
-                    "newfold-labs/wp-module-loader": "^1.0.12"
-                },
-                "time": "2025-12-17T14:52:13+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Insights\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
+                "scripts": {
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
                     ]
                 },
                 "license": [
@@ -823,54 +114,7 @@
                 ],
                 "description": "A Newfold module that handles integration of Insights page.",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-insights/tree/release/1.0.1",
-                    "issues": "https://github.com/newfold-labs/wp-module-insights/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-insights",
-                "version": "dev-release/1.1.0",
-                "version_normalized": "dev-release/1.1.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                    "reference": "adc32120694b0327444de0264e140ab3e41b029a"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/adc32120694b0327444de0264e140ab3e41b029a",
-                    "reference": "adc32120694b0327444de0264e140ab3e41b029a",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.9.1",
-                    "newfold-labs/wp-module-loader": "^1.0.12"
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.3"
-                },
-                "time": "2026-01-05T22:04:24+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Insights\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "hi@newfold.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of Insights page.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-insights/tree/release/1.1.0",
+                    "source": "https://github.com/newfold-labs/wp-module-insights/tree/1.1.1",
                     "issues": "https://github.com/newfold-labs/wp-module-insights/issues"
                 }
             }
