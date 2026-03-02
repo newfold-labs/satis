@@ -371,6 +371,99 @@
             },
             {
                 "name": "newfold-labs/wp-module-migration",
+                "version": "dev-auto-translate/main",
+                "version_normalized": "dev-auto-translate/main",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-migration.git",
+                    "reference": "5d8f9390dccdf37069b3ba39e975b8422f363f3a"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-migration/zipball/5d8f9390dccdf37069b3ba39e975b8422f363f3a",
+                    "reference": "5d8f9390dccdf37069b3ba39e975b8422f363f3a",
+                    "shasum": ""
+                },
+                "require": {
+                    "instawp/connect-helpers": "^1.0.8",
+                    "newfold-labs/wp-module-loader": "^1.1.0"
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "6.9.1",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.6.6"
+                },
+                "time": "2026-02-18T15:20:34+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Migration\\": "includes/"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-migration.pot ./languages"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-migration.pot --domain=wp-module-migration --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-migration/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests,wordpress"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+                        "echo \"open tests/_output/html/index.html\" to view the report"
+                    ]
+                },
+                "authors": [
+                    {
+                        "name": "Beyond",
+                        "email": "team-spartans@newfold.com"
+                    }
+                ],
+                "description": "Initiates the migration process",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-migration/tree/auto-translate/main",
+                    "issues": "https://github.com/newfold-labs/wp-module-migration/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-migration",
                 "version": "dev-code_restructure",
                 "version_normalized": "dev-code_restructure",
                 "source": {
@@ -610,99 +703,6 @@
             },
             {
                 "name": "newfold-labs/wp-module-migration",
-                "version": "dev-dependabot/github_actions/main/shivammathur/setup-php-3aeeb0366058fd8efb58f4d53b5717a49bcb5226",
-                "version_normalized": "dev-dependabot/github_actions/main/shivammathur/setup-php-3aeeb0366058fd8efb58f4d53b5717a49bcb5226",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-migration.git",
-                    "reference": "0e1e4c3a0329c20da34e4e199cf4df588ad19a25"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-migration/zipball/0e1e4c3a0329c20da34e4e199cf4df588ad19a25",
-                    "reference": "0e1e4c3a0329c20da34e4e199cf4df588ad19a25",
-                    "shasum": ""
-                },
-                "require": {
-                    "instawp/connect-helpers": "^1.0.8",
-                    "newfold-labs/wp-module-loader": "^1.1.0"
-                },
-                "require-dev": {
-                    "johnpbloch/wordpress": "6.9.1",
-                    "lucatume/wp-browser": "*",
-                    "newfold-labs/wp-php-standards": "^1.2",
-                    "phpunit/phpcov": "*",
-                    "wp-cli/i18n-command": "^2.6.6"
-                },
-                "time": "2026-02-17T14:05:02+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Migration\\": "includes/"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "fix": [
-                        "vendor/bin/phpcbf --standard=phpcs.xml ."
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-ci-pre": [
-                        "@i18n-pot",
-                        "@i18n-po"
-                    ],
-                    "i18n-ci-post": [
-                        "@i18n-json",
-                        "@i18n-php"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-module-migration.pot ./languages"
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-migration.pot --domain=wp-module-migration --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-migration/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests,wordpress"
-                    ],
-                    "lint": [
-                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
-                    ],
-                    "test": [
-                        "codecept run wpunit"
-                    ],
-                    "test-coverage": [
-                        "codecept run wpunit --coverage wpunit.cov",
-                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
-                        "echo \"open tests/_output/html/index.html\" to view the report"
-                    ]
-                },
-                "authors": [
-                    {
-                        "name": "Beyond",
-                        "email": "team-spartans@newfold.com"
-                    }
-                ],
-                "description": "Initiates the migration process",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-migration/tree/dependabot/github_actions/main/shivammathur/setup-php-3aeeb0366058fd8efb58f4d53b5717a49bcb5226",
-                    "issues": "https://github.com/newfold-labs/wp-module-migration/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-migration",
                 "version": "dev-enhance/PRESS7-499-SSO-Redirect-to-Migration-Onboarding-URL-by-Brand",
                 "version_normalized": "dev-enhance/PRESS7-499-SSO-Redirect-to-Migration-Onboarding-URL-by-Brand",
                 "source": {
@@ -856,12 +856,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-migration.git",
-                    "reference": "c8a3ed9a6cd81568f5f3d6a7da1ea085755902a6"
+                    "reference": "b0b202514eaa36f3e4e83924d6572db8d2331164"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-migration/zipball/c8a3ed9a6cd81568f5f3d6a7da1ea085755902a6",
-                    "reference": "c8a3ed9a6cd81568f5f3d6a7da1ea085755902a6",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-migration/zipball/b0b202514eaa36f3e4e83924d6572db8d2331164",
+                    "reference": "b0b202514eaa36f3e4e83924d6572db8d2331164",
                     "shasum": ""
                 },
                 "require": {
@@ -875,7 +875,7 @@
                     "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.6.6"
                 },
-                "time": "2026-02-11T07:18:57+00:00",
+                "time": "2026-02-18T15:19:13+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -939,7 +939,7 @@
                 ],
                 "description": "Initiates the migration process",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-migration/tree/1.7.1",
+                    "source": "https://github.com/newfold-labs/wp-module-migration/tree/main",
                     "issues": "https://github.com/newfold-labs/wp-module-migration/issues"
                 }
             },
