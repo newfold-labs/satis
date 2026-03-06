@@ -3,17 +3,17 @@
         "newfold-labs/wp-module-runtime": [
             {
                 "name": "newfold-labs/wp-module-runtime",
-                "version": "dev-main",
-                "version_normalized": "dev-main",
+                "version": "dev-dependabot/npm_and_yarn/main/wordpress/env-11.1.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/env-11.1.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-runtime.git",
-                    "reference": "88f10367f38e31d1b9724830d4692099e148728a"
+                    "reference": "b6c7a4c8cb2db31f617ec82ee651ccf16338fb38"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-runtime/zipball/88f10367f38e31d1b9724830d4692099e148728a",
-                    "reference": "88f10367f38e31d1b9724830d4692099e148728a",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-runtime/zipball/b6c7a4c8cb2db31f617ec82ee651ccf16338fb38",
+                    "reference": "b6c7a4c8cb2db31f617ec82ee651ccf16338fb38",
                     "shasum": ""
                 },
                 "require-dev": {
@@ -25,7 +25,70 @@
                     "wp-cli/i18n-command": "@stable",
                     "wp-cli/wp-cli-bundle": "@stable"
                 },
-                "time": "2026-02-19T13:49:53+00:00",
+                "time": "2026-03-06T16:45:49+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Runtime\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Beyond",
+                        "email": "team-spartans@newfold.com"
+                    }
+                ],
+                "description": "Runtime for Newfold WP modules and plugins",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-runtime/tree/dependabot/npm_and_yarn/main/wordpress/env-11.1.0",
+                    "issues": "https://github.com/newfold-labs/wp-module-runtime/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-runtime",
+                "version": "dev-main",
+                "version_normalized": "dev-main",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-runtime.git",
+                    "reference": "6b839e7e3396aec2be5910a32211d7fc033cec92"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-runtime/zipball/6b839e7e3396aec2be5910a32211d7fc033cec92",
+                    "reference": "6b839e7e3396aec2be5910a32211d7fc033cec92",
+                    "shasum": ""
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-module-loader": "^1.1",
+                    "newfold-labs/wp-php-standards": "@stable",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "@stable",
+                    "wp-cli/wp-cli-bundle": "@stable"
+                },
+                "time": "2026-03-06T16:40:29+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
