@@ -3,6 +3,98 @@
         "newfold-labs/wp-module-editor-chat": [
             {
                 "name": "newfold-labs/wp-module-editor-chat",
+                "version": "dev-add/docs",
+                "version_normalized": "dev-add/docs",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-editor-chat.git",
+                    "reference": "c8be5c6b4e9a92e3163fa2e3ae05a7bea05e81dc"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-editor-chat/zipball/c8be5c6b4e9a92e3163fa2e3ae05a7bea05e81dc",
+                    "reference": "c8be5c6b4e9a92e3163fa2e3ae05a7bea05e81dc",
+                    "shasum": ""
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2.5",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.6.3"
+                },
+                "time": "2026-03-18T19:01:46+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\EditorChat\\": "includes/"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "lint": [
+                        "vendor/bin/phpcs . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
+                    ],
+                    "clean": [
+                        "vendor/bin/phpcbf . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/nfd-wonder-blocks.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-patterns/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,src,wordpress --domain=nfd-wonder-blocks"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/nfd-wonder-blocks.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "find ./languages -name \"*.json\" -exec rm {} \\; && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+                        "echo \"open tests/_output/html/index.html\" to view the report"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Hristina Conjic",
+                        "email": "hristina.conjic@newfold.com"
+                    }
+                ],
+                "description": "Site Editor AI Chat",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-editor-chat/tree/add/docs",
+                    "issues": "https://github.com/newfold-labs/wp-module-editor-chat/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-editor-chat",
                 "version": "dev-add/handle-patch-and-rewrite-modes",
                 "version_normalized": "dev-add/handle-patch-and-rewrite-modes",
                 "source": {
@@ -97,12 +189,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-editor-chat.git",
-                    "reference": "f1090d183766e170b4000250fc475ffb5510a074"
+                    "reference": "f27f31e723c9e0dc68ad8f367706f223f24897a1"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-editor-chat/zipball/f1090d183766e170b4000250fc475ffb5510a074",
-                    "reference": "f1090d183766e170b4000250fc475ffb5510a074",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-editor-chat/zipball/f27f31e723c9e0dc68ad8f367706f223f24897a1",
+                    "reference": "f27f31e723c9e0dc68ad8f367706f223f24897a1",
                     "shasum": ""
                 },
                 "require-dev": {
@@ -112,7 +204,7 @@
                     "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.6.3"
                 },
-                "time": "2026-03-05T19:34:04+00:00",
+                "time": "2026-03-13T16:42:46+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -189,12 +281,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-editor-chat.git",
-                    "reference": "472f6a29e5bd791147803d830d70a11539971d03"
+                    "reference": "7d65c890003b165e42cbbac8dd29e9cbb68ce8d7"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-editor-chat/zipball/472f6a29e5bd791147803d830d70a11539971d03",
-                    "reference": "472f6a29e5bd791147803d830d70a11539971d03",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-editor-chat/zipball/7d65c890003b165e42cbbac8dd29e9cbb68ce8d7",
+                    "reference": "7d65c890003b165e42cbbac8dd29e9cbb68ce8d7",
                     "shasum": ""
                 },
                 "require-dev": {
@@ -202,9 +294,9 @@
                     "lucatume/wp-browser": "*",
                     "newfold-labs/wp-php-standards": "^1.2.5",
                     "phpunit/phpcov": "*",
-                    "wp-cli/i18n-command": "^2.6.3"
+                    "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-03-03T15:06:22+00:00",
+                "time": "2026-03-24T19:05:38+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -276,17 +368,17 @@
             },
             {
                 "name": "newfold-labs/wp-module-editor-chat",
-                "version": "dev-dependabot/github_actions/main/actions/setup-node-6.3.0",
-                "version_normalized": "dev-dependabot/github_actions/main/actions/setup-node-6.3.0",
+                "version": "dev-dependabot/npm_and_yarn/main/lucide-react-1.6.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/lucide-react-1.6.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-editor-chat.git",
-                    "reference": "ea32c98e4ccb11dde94a319544c54ed68a46513c"
+                    "reference": "906f8fde6c27bba10d6c4a889e4bfb6cb58c58ea"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-editor-chat/zipball/ea32c98e4ccb11dde94a319544c54ed68a46513c",
-                    "reference": "ea32c98e4ccb11dde94a319544c54ed68a46513c",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-editor-chat/zipball/906f8fde6c27bba10d6c4a889e4bfb6cb58c58ea",
+                    "reference": "906f8fde6c27bba10d6c4a889e4bfb6cb58c58ea",
                     "shasum": ""
                 },
                 "require-dev": {
@@ -294,9 +386,9 @@
                     "lucatume/wp-browser": "*",
                     "newfold-labs/wp-php-standards": "^1.2.5",
                     "phpunit/phpcov": "*",
-                    "wp-cli/i18n-command": "^2.6.3"
+                    "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-03-04T14:25:56+00:00",
+                "time": "2026-03-25T14:27:05+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -362,467 +454,7 @@
                 ],
                 "description": "Site Editor AI Chat",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-editor-chat/tree/dependabot/github_actions/main/actions/setup-node-6.3.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-editor-chat/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-editor-chat",
-                "version": "dev-dependabot/npm_and_yarn/main/lucide-react-0.577.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/lucide-react-0.577.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-editor-chat.git",
-                    "reference": "e84e3883a7c7c65757de4c89e1a19e326b8229ce"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-editor-chat/zipball/e84e3883a7c7c65757de4c89e1a19e326b8229ce",
-                    "reference": "e84e3883a7c7c65757de4c89e1a19e326b8229ce",
-                    "shasum": ""
-                },
-                "require-dev": {
-                    "johnpbloch/wordpress": "@stable",
-                    "lucatume/wp-browser": "*",
-                    "newfold-labs/wp-php-standards": "^1.2.5",
-                    "phpunit/phpcov": "*",
-                    "wp-cli/i18n-command": "^2.6.3"
-                },
-                "time": "2026-03-04T14:26:54+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\EditorChat\\": "includes/"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "lint": [
-                        "vendor/bin/phpcs . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "clean": [
-                        "vendor/bin/phpcbf . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/nfd-wonder-blocks.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-patterns/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,src,wordpress --domain=nfd-wonder-blocks"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/nfd-wonder-blocks.pot ./languages"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-json": [
-                        "find ./languages -name \"*.json\" -exec rm {} \\; && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-ci-pre": [
-                        "@i18n-pot",
-                        "@i18n-po"
-                    ],
-                    "i18n-ci-post": [
-                        "@i18n-json",
-                        "@i18n-php"
-                    ],
-                    "test": [
-                        "codecept run wpunit"
-                    ],
-                    "test-coverage": [
-                        "codecept run wpunit --coverage wpunit.cov",
-                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
-                        "echo \"open tests/_output/html/index.html\" to view the report"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Hristina Conjic",
-                        "email": "hristina.conjic@newfold.com"
-                    }
-                ],
-                "description": "Site Editor AI Chat",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-editor-chat/tree/dependabot/npm_and_yarn/main/lucide-react-0.577.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-editor-chat/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-editor-chat",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/eslint-plugin-24.3.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/eslint-plugin-24.3.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-editor-chat.git",
-                    "reference": "6d7c1ffa833d5109c185903558f9fd9cd7b4ac64"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-editor-chat/zipball/6d7c1ffa833d5109c185903558f9fd9cd7b4ac64",
-                    "reference": "6d7c1ffa833d5109c185903558f9fd9cd7b4ac64",
-                    "shasum": ""
-                },
-                "require-dev": {
-                    "johnpbloch/wordpress": "@stable",
-                    "lucatume/wp-browser": "*",
-                    "newfold-labs/wp-php-standards": "^1.2.5",
-                    "phpunit/phpcov": "*",
-                    "wp-cli/i18n-command": "^2.6.3"
-                },
-                "time": "2026-03-04T14:26:42+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\EditorChat\\": "includes/"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "lint": [
-                        "vendor/bin/phpcs . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "clean": [
-                        "vendor/bin/phpcbf . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/nfd-wonder-blocks.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-patterns/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,src,wordpress --domain=nfd-wonder-blocks"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/nfd-wonder-blocks.pot ./languages"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-json": [
-                        "find ./languages -name \"*.json\" -exec rm {} \\; && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-ci-pre": [
-                        "@i18n-pot",
-                        "@i18n-po"
-                    ],
-                    "i18n-ci-post": [
-                        "@i18n-json",
-                        "@i18n-php"
-                    ],
-                    "test": [
-                        "codecept run wpunit"
-                    ],
-                    "test-coverage": [
-                        "codecept run wpunit --coverage wpunit.cov",
-                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
-                        "echo \"open tests/_output/html/index.html\" to view the report"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Hristina Conjic",
-                        "email": "hristina.conjic@newfold.com"
-                    }
-                ],
-                "description": "Site Editor AI Chat",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-editor-chat/tree/dependabot/npm_and_yarn/main/wordpress/eslint-plugin-24.3.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-editor-chat/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-editor-chat",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/interface-9.26.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/interface-9.26.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-editor-chat.git",
-                    "reference": "357807f09a9ac706bd8a1737fe32d4ecfb2ba34b"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-editor-chat/zipball/357807f09a9ac706bd8a1737fe32d4ecfb2ba34b",
-                    "reference": "357807f09a9ac706bd8a1737fe32d4ecfb2ba34b",
-                    "shasum": ""
-                },
-                "require-dev": {
-                    "johnpbloch/wordpress": "@stable",
-                    "lucatume/wp-browser": "*",
-                    "newfold-labs/wp-php-standards": "^1.2.5",
-                    "phpunit/phpcov": "*",
-                    "wp-cli/i18n-command": "^2.6.3"
-                },
-                "time": "2026-03-04T14:28:07+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\EditorChat\\": "includes/"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "lint": [
-                        "vendor/bin/phpcs . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "clean": [
-                        "vendor/bin/phpcbf . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/nfd-wonder-blocks.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-patterns/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,src,wordpress --domain=nfd-wonder-blocks"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/nfd-wonder-blocks.pot ./languages"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-json": [
-                        "find ./languages -name \"*.json\" -exec rm {} \\; && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-ci-pre": [
-                        "@i18n-pot",
-                        "@i18n-po"
-                    ],
-                    "i18n-ci-post": [
-                        "@i18n-json",
-                        "@i18n-php"
-                    ],
-                    "test": [
-                        "codecept run wpunit"
-                    ],
-                    "test-coverage": [
-                        "codecept run wpunit --coverage wpunit.cov",
-                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
-                        "echo \"open tests/_output/html/index.html\" to view the report"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Hristina Conjic",
-                        "email": "hristina.conjic@newfold.com"
-                    }
-                ],
-                "description": "Site Editor AI Chat",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-editor-chat/tree/dependabot/npm_and_yarn/main/wordpress/interface-9.26.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-editor-chat/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-editor-chat",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/prettier-config-4.41.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/prettier-config-4.41.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-editor-chat.git",
-                    "reference": "12b6bdc9322de454d4ffa13bced4812867009136"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-editor-chat/zipball/12b6bdc9322de454d4ffa13bced4812867009136",
-                    "reference": "12b6bdc9322de454d4ffa13bced4812867009136",
-                    "shasum": ""
-                },
-                "require-dev": {
-                    "johnpbloch/wordpress": "@stable",
-                    "lucatume/wp-browser": "*",
-                    "newfold-labs/wp-php-standards": "^1.2.5",
-                    "phpunit/phpcov": "*",
-                    "wp-cli/i18n-command": "^2.6.3"
-                },
-                "time": "2026-03-04T14:27:27+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\EditorChat\\": "includes/"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "lint": [
-                        "vendor/bin/phpcs . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "clean": [
-                        "vendor/bin/phpcbf . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/nfd-wonder-blocks.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-patterns/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,src,wordpress --domain=nfd-wonder-blocks"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/nfd-wonder-blocks.pot ./languages"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-json": [
-                        "find ./languages -name \"*.json\" -exec rm {} \\; && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-ci-pre": [
-                        "@i18n-pot",
-                        "@i18n-po"
-                    ],
-                    "i18n-ci-post": [
-                        "@i18n-json",
-                        "@i18n-php"
-                    ],
-                    "test": [
-                        "codecept run wpunit"
-                    ],
-                    "test-coverage": [
-                        "codecept run wpunit --coverage wpunit.cov",
-                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
-                        "echo \"open tests/_output/html/index.html\" to view the report"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Hristina Conjic",
-                        "email": "hristina.conjic@newfold.com"
-                    }
-                ],
-                "description": "Site Editor AI Chat",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-editor-chat/tree/dependabot/npm_and_yarn/main/wordpress/prettier-config-4.41.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-editor-chat/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-editor-chat",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/scripts-31.6.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/scripts-31.6.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-editor-chat.git",
-                    "reference": "db833594705c5880a966a23c1c0404b40da478be"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-editor-chat/zipball/db833594705c5880a966a23c1c0404b40da478be",
-                    "reference": "db833594705c5880a966a23c1c0404b40da478be",
-                    "shasum": ""
-                },
-                "require-dev": {
-                    "johnpbloch/wordpress": "@stable",
-                    "lucatume/wp-browser": "*",
-                    "newfold-labs/wp-php-standards": "^1.2.5",
-                    "phpunit/phpcov": "*",
-                    "wp-cli/i18n-command": "^2.6.3"
-                },
-                "time": "2026-03-04T14:28:50+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\EditorChat\\": "includes/"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "lint": [
-                        "vendor/bin/phpcs . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "clean": [
-                        "vendor/bin/phpcbf . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/nfd-wonder-blocks.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-patterns/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,src,wordpress --domain=nfd-wonder-blocks"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/nfd-wonder-blocks.pot ./languages"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-json": [
-                        "find ./languages -name \"*.json\" -exec rm {} \\; && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-ci-pre": [
-                        "@i18n-pot",
-                        "@i18n-po"
-                    ],
-                    "i18n-ci-post": [
-                        "@i18n-json",
-                        "@i18n-php"
-                    ],
-                    "test": [
-                        "codecept run wpunit"
-                    ],
-                    "test-coverage": [
-                        "codecept run wpunit --coverage wpunit.cov",
-                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
-                        "echo \"open tests/_output/html/index.html\" to view the report"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Hristina Conjic",
-                        "email": "hristina.conjic@newfold.com"
-                    }
-                ],
-                "description": "Site Editor AI Chat",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-editor-chat/tree/dependabot/npm_and_yarn/main/wordpress/scripts-31.6.0",
+                    "source": "https://github.com/newfold-labs/wp-module-editor-chat/tree/dependabot/npm_and_yarn/main/lucide-react-1.6.0",
                     "issues": "https://github.com/newfold-labs/wp-module-editor-chat/issues"
                 }
             },
@@ -1195,12 +827,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-editor-chat.git",
-                    "reference": "472f6a29e5bd791147803d830d70a11539971d03"
+                    "reference": "7d65c890003b165e42cbbac8dd29e9cbb68ce8d7"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-editor-chat/zipball/472f6a29e5bd791147803d830d70a11539971d03",
-                    "reference": "472f6a29e5bd791147803d830d70a11539971d03",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-editor-chat/zipball/7d65c890003b165e42cbbac8dd29e9cbb68ce8d7",
+                    "reference": "7d65c890003b165e42cbbac8dd29e9cbb68ce8d7",
                     "shasum": ""
                 },
                 "require-dev": {
@@ -1208,9 +840,9 @@
                     "lucatume/wp-browser": "*",
                     "newfold-labs/wp-php-standards": "^1.2.5",
                     "phpunit/phpcov": "*",
-                    "wp-cli/i18n-command": "^2.6.3"
+                    "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-03-03T15:06:22+00:00",
+                "time": "2026-03-24T19:05:38+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
