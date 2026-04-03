@@ -305,12 +305,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-patterns.git",
-                    "reference": "f161b9e84ff340c2965dc86418b9fe914ef980ee"
+                    "reference": "2d154e7d0caef10e6eba4ab92526b38012171abe"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/f161b9e84ff340c2965dc86418b9fe914ef980ee",
-                    "reference": "f161b9e84ff340c2965dc86418b9fe914ef980ee",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/2d154e7d0caef10e6eba4ab92526b38012171abe",
+                    "reference": "2d154e7d0caef10e6eba4ab92526b38012171abe",
                     "shasum": ""
                 },
                 "require": {
@@ -323,9 +323,9 @@
                     "lucatume/wp-browser": "*",
                     "newfold-labs/wp-php-standards": "^1.2.5",
                     "phpunit/phpcov": "*",
-                    "wp-cli/i18n-command": "^2.6.6"
+                    "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-03-24T18:57:47+00:00",
+                "time": "2026-04-03T17:45:53+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -348,14 +348,11 @@
                     "i18n-po": [
                         "vendor/bin/wp i18n update-po ./languages/nfd-wonder-blocks.pot ./languages"
                     ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
                     "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
+                        "vendor/bin/wp i18n make-php ./languages  --pretty-print"
                     ],
                     "i18n-json": [
-                        "find ./languages -name \"*.json\" -exec rm {} \\; && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                        "find ./languages -name \"*.json\" -exec rm {} \\; && vendor/bin/wp i18n make-json ./languages --pretty-print"
                     ],
                     "i18n": [
                         "@i18n-pot",
@@ -391,7 +388,7 @@
                 ],
                 "description": "WordPress Cloud Patterns",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-patterns/tree/auto-translate/main",
+                    "source": "https://github.com/newfold-labs/wp-module-patterns/tree/2.12.2",
                     "issues": "https://github.com/newfold-labs/wp-module-patterns/issues"
                 }
             },
@@ -1229,17 +1226,17 @@
             },
             {
                 "name": "newfold-labs/wp-module-patterns",
-                "version": "dev-main",
-                "version_normalized": "dev-main",
+                "version": "dev-fix/i18n-composer-command",
+                "version_normalized": "dev-fix/i18n-composer-command",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-patterns.git",
-                    "reference": "9d228320be05da0e4acf4b176503619bf887c998"
+                    "reference": "5a92f5d55ab1797c548289fbf75e05f948ff646b"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/9d228320be05da0e4acf4b176503619bf887c998",
-                    "reference": "9d228320be05da0e4acf4b176503619bf887c998",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/5a92f5d55ab1797c548289fbf75e05f948ff646b",
+                    "reference": "5a92f5d55ab1797c548289fbf75e05f948ff646b",
                     "shasum": ""
                 },
                 "require": {
@@ -1254,7 +1251,101 @@
                     "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-03-24T18:56:32+00:00",
+                "time": "2026-04-03T17:42:23+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Patterns\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "lint": [
+                        "vendor/bin/phpcs . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
+                    ],
+                    "clean": [
+                        "vendor/bin/phpcbf . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/nfd-wonder-blocks.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-patterns/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,src,wordpress --domain=nfd-wonder-blocks"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/nfd-wonder-blocks.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages  --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+                        "echo \"open tests/_output/html/index.html\" to view the report"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Hristina Conjic",
+                        "email": "hristina.conjic@newfold.com"
+                    }
+                ],
+                "description": "WordPress Cloud Patterns",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-patterns/tree/fix/i18n-composer-command",
+                    "issues": "https://github.com/newfold-labs/wp-module-patterns/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-patterns",
+                "version": "dev-main",
+                "version_normalized": "dev-main",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-patterns.git",
+                    "reference": "2d154e7d0caef10e6eba4ab92526b38012171abe"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/2d154e7d0caef10e6eba4ab92526b38012171abe",
+                    "reference": "2d154e7d0caef10e6eba4ab92526b38012171abe",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-data": "^2.9.3",
+                    "newfold-labs/wp-module-features": "^1.5",
+                    "newfold-labs/wp-module-installer": "^1.7"
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2.5",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-04-03T17:45:53+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -1278,14 +1369,11 @@
                     "i18n-po": [
                         "vendor/bin/wp i18n update-po ./languages/nfd-wonder-blocks.pot ./languages"
                     ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
                     "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
+                        "vendor/bin/wp i18n make-php ./languages  --pretty-print"
                     ],
                     "i18n-json": [
-                        "find ./languages -name \"*.json\" -exec rm {} \\; && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                        "find ./languages -name \"*.json\" -exec rm {} \\; && vendor/bin/wp i18n make-json ./languages --pretty-print"
                     ],
                     "i18n": [
                         "@i18n-pot",
