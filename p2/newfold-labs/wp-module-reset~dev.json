@@ -255,6 +255,89 @@
             },
             {
                 "name": "newfold-labs/wp-module-reset",
+                "version": "dev-fix/i18n-composer-command",
+                "version_normalized": "dev-fix/i18n-composer-command",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-reset.git",
+                    "reference": "e16a9eba3072123c8de073a729132f142fe1d90f"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-reset/zipball/e16a9eba3072123c8de073a729132f142fe1d90f",
+                    "reference": "e16a9eba3072123c8de073a729132f142fe1d90f",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-features": "^1.5"
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2.5",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.6.6",
+                    "yoast/phpunit-polyfills": "^2.0.5"
+                },
+                "time": "2026-04-03T17:43:09+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Reset\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-reset.pot --domain=wp-module-reset --exclude=tests,vendor,node_modules,wordpress"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-reset.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge ./tests/_output/ --clover ./tests/_output/coverage.xml"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "description": "Factory Reset module for Newfold WordPress plugins",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-reset/tree/fix/i18n-composer-command",
+                    "issues": "https://github.com/newfold-labs/wp-module-reset/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-reset",
                 "version": "dev-main",
                 "version_normalized": "dev-main",
                 "source": {
