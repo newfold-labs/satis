@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.TOKEN }}"}}'
+  COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.NEWFOLD_ACCESS_TOKEN }}"}}'
 
 # Disable permissions for all available scopes by default.
 # Any needed permissions should be configured at the job level.
@@ -38,6 +38,8 @@ jobs:
           php-version: '8.1'
           coverage: none
           tools: composer, cs2pr
+        env:
+          GITHUB_TOKEN: ${{ secrets.NEWFOLD_ACCESS_TOKEN }}
 
       - name: PHP version
         run: php --version
@@ -67,7 +69,7 @@ jobs:
           path: ./dist
 
       - name: Run Build
-        run: composer run build
+        run: composer run satis:build
 
       - name: List files
         run: ls -lah ./dist
