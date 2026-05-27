@@ -14,7 +14,7 @@ env:
   VENDOR: ${{ github.event.client_payload.vendor }}
   PACKAGE: ${{ github.event.client_payload.package }}
   VERSION: ${{ github.event.client_payload.version }}
-  COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.TOKEN }}"}}'
+  COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.NEWFOLD_ACCESS_TOKEN }}"}}'
 
 # Disable permissions for all available scopes by default.
 # Any needed permissions should be configured at the job level.
@@ -39,6 +39,8 @@ jobs:
           php-version: '8.1'
           coverage: none
           tools: composer, cs2pr
+        env:
+          GITHUB_TOKEN: ${{ secrets.NEWFOLD_ACCESS_TOKEN }}
 
       - name: PHP version
         run: php --version
