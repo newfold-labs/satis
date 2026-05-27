@@ -15,10 +15,18 @@ concurrency:
 env:
   COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.TOKEN }}"}}'
 
+# Disable permissions for all available scopes by default.
+# Any needed permissions should be configured at the job level.
+permissions: {}
+
 jobs:
   satisBuild:
     name: Satis Build
     runs-on: ubuntu-latest
+    permissions:
+      actions: write # Required for actions/cache to restore and save caches.
+      contents: write # Required to push commits to the gh-pages branch via ad-m/github-push-action.
+    timeout-minutes: 30
     steps:
 
       - name: Checkout

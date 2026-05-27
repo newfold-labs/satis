@@ -16,10 +16,18 @@ env:
   VERSION: ${{ github.event.client_payload.version }}
   COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.TOKEN }}"}}'
 
+# Disable permissions for all available scopes by default.
+# Any needed permissions should be configured at the job level.
+permissions: {}
+
 jobs:
   satis-build:
     name: Satis Build
     runs-on: ubuntu-latest
+    permissions:
+      actions: write # Required by actions/cache to restore and save caches.
+      contents: write # Required to push commits to the gh-pages branch via ad-m/github-push-action and to create a repository_dispatch event via peter-evans/repository-dispatch.
+    timeout-minutes: 30
     steps:
 
       - name: Checkout
