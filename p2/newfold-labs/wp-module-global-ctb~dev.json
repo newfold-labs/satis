@@ -3,17 +3,17 @@
         "newfold-labs/wp-module-global-ctb": [
             {
                 "name": "newfold-labs/wp-module-global-ctb",
-                "version": "dev-main",
-                "version_normalized": "dev-main",
+                "version": "dev-add/scoped-workflow-permissions",
+                "version_normalized": "dev-add/scoped-workflow-permissions",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-global-ctb.git",
-                    "reference": "8eae6f7658b1af5ebe7434c047c42674bf21fa74"
+                    "reference": "92f24e17ba8b8bc49b4cfb5a96a828cddb2510ce"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-global-ctb/zipball/8eae6f7658b1af5ebe7434c047c42674bf21fa74",
-                    "reference": "8eae6f7658b1af5ebe7434c047c42674bf21fa74",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-global-ctb/zipball/92f24e17ba8b8bc49b4cfb5a96a828cddb2510ce",
+                    "reference": "92f24e17ba8b8bc49b4cfb5a96a828cddb2510ce",
                     "shasum": ""
                 },
                 "require-dev": {
@@ -22,7 +22,69 @@
                     "newfold-labs/wp-php-standards": "^1.2",
                     "phpunit/phpcov": "*"
                 },
-                "time": "2026-04-17T18:23:28+00:00",
+                "time": "2026-05-14T21:27:57+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\GlobalCTB\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+                        "echo \"open tests/_output/html/index.html\" to view the report"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Evan Mullins",
+                        "homepage": "https://evanmullins.com"
+                    }
+                ],
+                "description": "Newfold module for 'Click to Buy' functionality in brand plugins",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-global-ctb/tree/add/scoped-workflow-permissions",
+                    "issues": "https://github.com/newfold-labs/wp-module-global-ctb/issues"
+                }
+            },
+            {
+                "name": "newfold-labs/wp-module-global-ctb",
+                "version": "dev-main",
+                "version_normalized": "dev-main",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-global-ctb.git",
+                    "reference": "82b83170be026dcba401a81441052a9c739970d6"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-global-ctb/zipball/82b83170be026dcba401a81441052a9c739970d6",
+                    "reference": "82b83170be026dcba401a81441052a9c739970d6",
+                    "shasum": ""
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "*"
+                },
+                "time": "2026-05-21T16:00:50+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -60,7 +122,7 @@
                 ],
                 "description": "Newfold module for 'Click to Buy' functionality in brand plugins",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-global-ctb/tree/1.3.5",
+                    "source": "https://github.com/newfold-labs/wp-module-global-ctb/tree/main",
                     "issues": "https://github.com/newfold-labs/wp-module-global-ctb/issues"
                 }
             }

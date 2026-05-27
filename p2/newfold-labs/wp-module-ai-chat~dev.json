@@ -267,291 +267,24 @@
             },
             {
                 "name": "newfold-labs/wp-module-ai-chat",
-                "version": "dev-dependabot/github_actions/main/actions/cache-5.0.5",
-                "version_normalized": "dev-dependabot/github_actions/main/actions/cache-5.0.5",
+                "version": "dev-add/test-workflow",
+                "version_normalized": "dev-add/test-workflow",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-ai-chat.git",
-                    "reference": "87a742997c7dc49b48db41079fbf91f51bd3f49e"
+                    "reference": "88215bef40634da4f698e52aa5bc800b4ecf0037"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/87a742997c7dc49b48db41079fbf91f51bd3f49e",
-                    "reference": "87a742997c7dc49b48db41079fbf91f51bd3f49e",
-                    "shasum": ""
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.5",
-                    "wp-cli/i18n-command": "^2.7.0"
-                },
-                "time": "2026-04-14T14:38:16+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\AIChat\\": "includes/"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "lint": [
-                        "vendor/bin/phpcs . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "clean": [
-                        "vendor/bin/phpcbf . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/nfd-ai-chat.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-ai-chat/issues\",\"POT-Creation-Date\":\"2026-01-20T10:00:00+00:00\"}' --exclude=tests,src,wordpress --domain=nfd-ai-chat"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/nfd-ai-chat.pot ./languages"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-json": [
-                        "find ./languages -name \"*.json\" -exec rm {} \\; && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-ci-pre": [
-                        "@i18n-pot",
-                        "@i18n-po"
-                    ],
-                    "i18n-ci-post": [
-                        "@i18n-json",
-                        "@i18n-php"
-                    ],
-                    "test": [
-                        "codecept run wpunit"
-                    ],
-                    "test-coverage": [
-                        "codecept run wpunit --coverage wpunit.cov",
-                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
-                        "echo \"open tests/_output/html/index.html\" to view the report"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "developer@newfold.com"
-                    }
-                ],
-                "description": "AI Chat module for WordPress",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/dependabot/github_actions/main/actions/cache-5.0.5",
-                    "issues": "https://github.com/newfold-labs/wp-module-ai-chat/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-ai-chat",
-                "version": "dev-dependabot/github_actions/main/actions/setup-node-6.4.0",
-                "version_normalized": "dev-dependabot/github_actions/main/actions/setup-node-6.4.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-ai-chat.git",
-                    "reference": "1e25e36b88e1d330f42dc68e220c6e8deed4d3f5"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/1e25e36b88e1d330f42dc68e220c6e8deed4d3f5",
-                    "reference": "1e25e36b88e1d330f42dc68e220c6e8deed4d3f5",
-                    "shasum": ""
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.5",
-                    "wp-cli/i18n-command": "^2.7.0"
-                },
-                "time": "2026-04-20T17:07:27+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\AIChat\\": "includes/"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "lint": [
-                        "vendor/bin/phpcs . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "clean": [
-                        "vendor/bin/phpcbf . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/nfd-ai-chat.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-ai-chat/issues\",\"POT-Creation-Date\":\"2026-01-20T10:00:00+00:00\"}' --exclude=tests,src,wordpress --domain=nfd-ai-chat"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/nfd-ai-chat.pot ./languages"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-json": [
-                        "find ./languages -name \"*.json\" -exec rm {} \\; && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-ci-pre": [
-                        "@i18n-pot",
-                        "@i18n-po"
-                    ],
-                    "i18n-ci-post": [
-                        "@i18n-json",
-                        "@i18n-php"
-                    ],
-                    "test": [
-                        "codecept run wpunit"
-                    ],
-                    "test-coverage": [
-                        "codecept run wpunit --coverage wpunit.cov",
-                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
-                        "echo \"open tests/_output/html/index.html\" to view the report"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "developer@newfold.com"
-                    }
-                ],
-                "description": "AI Chat module for WordPress",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/dependabot/github_actions/main/actions/setup-node-6.4.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-ai-chat/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-ai-chat",
-                "version": "dev-dependabot/npm_and_yarn/main/eslint-10.1.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/eslint-10.1.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-ai-chat.git",
-                    "reference": "311f9f0d49bcd0e662ae13d4900c1419e3d0a44b"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/311f9f0d49bcd0e662ae13d4900c1419e3d0a44b",
-                    "reference": "311f9f0d49bcd0e662ae13d4900c1419e3d0a44b",
-                    "shasum": ""
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.5",
-                    "wp-cli/i18n-command": "^2.7.0"
-                },
-                "time": "2026-03-26T14:37:55+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\AIChat\\": "includes/"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "lint": [
-                        "vendor/bin/phpcs . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "clean": [
-                        "vendor/bin/phpcbf . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/nfd-ai-chat.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-ai-chat/issues\",\"POT-Creation-Date\":\"2026-01-20T10:00:00+00:00\"}' --exclude=tests,src,wordpress --domain=nfd-ai-chat"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/nfd-ai-chat.pot ./languages"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-json": [
-                        "find ./languages -name \"*.json\" -exec rm {} \\; && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-ci-pre": [
-                        "@i18n-pot",
-                        "@i18n-po"
-                    ],
-                    "i18n-ci-post": [
-                        "@i18n-json",
-                        "@i18n-php"
-                    ],
-                    "test": [
-                        "codecept run wpunit"
-                    ],
-                    "test-coverage": [
-                        "codecept run wpunit --coverage wpunit.cov",
-                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
-                        "echo \"open tests/_output/html/index.html\" to view the report"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "developer@newfold.com"
-                    }
-                ],
-                "description": "AI Chat module for WordPress",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/dependabot/npm_and_yarn/main/eslint-10.1.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-ai-chat/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-ai-chat",
-                "version": "dev-dependabot/npm_and_yarn/main/eslint-10.3.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/eslint-10.3.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-ai-chat.git",
-                    "reference": "b16764f1077f23528378d980b94b06165f224775"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/b16764f1077f23528378d980b94b06165f224775",
-                    "reference": "b16764f1077f23528378d980b94b06165f224775",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/88215bef40634da4f698e52aa5bc800b4ecf0037",
+                    "reference": "88215bef40634da4f698e52aa5bc800b4ecf0037",
                     "shasum": ""
                 },
                 "require-dev": {
                     "newfold-labs/wp-php-standards": "^1.2.6",
                     "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-05-13T17:26:27+00:00",
+                "time": "2026-05-21T16:12:09+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -614,30 +347,30 @@
                 ],
                 "description": "AI Chat module for WordPress",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/dependabot/npm_and_yarn/main/eslint-10.3.0",
+                    "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/add/test-workflow",
                     "issues": "https://github.com/newfold-labs/wp-module-ai-chat/issues"
                 }
             },
             {
                 "name": "newfold-labs/wp-module-ai-chat",
-                "version": "dev-dependabot/npm_and_yarn/main/eslint-10.4.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/eslint-10.4.0",
+                "version": "dev-dependabot/npm_and_yarn/main/dompurify-3.4.7",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/dompurify-3.4.7",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-ai-chat.git",
-                    "reference": "4c59290f2894d8625c2dbfeb3a58cdef719f2465"
+                    "reference": "d40383663754e80a1655c15d506b5d3feae33e16"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/4c59290f2894d8625c2dbfeb3a58cdef719f2465",
-                    "reference": "4c59290f2894d8625c2dbfeb3a58cdef719f2465",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/d40383663754e80a1655c15d506b5d3feae33e16",
+                    "reference": "d40383663754e80a1655c15d506b5d3feae33e16",
                     "shasum": ""
                 },
                 "require-dev": {
                     "newfold-labs/wp-php-standards": "^1.2.6",
                     "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-05-15T14:47:51+00:00",
+                "time": "2026-05-27T17:26:09+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -700,182 +433,7 @@
                 ],
                 "description": "AI Chat module for WordPress",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/dependabot/npm_and_yarn/main/eslint-10.4.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-ai-chat/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-ai-chat",
-                "version": "dev-dependabot/npm_and_yarn/main/lucide-react-1.16.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/lucide-react-1.16.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-ai-chat.git",
-                    "reference": "da97ecb8b127827457d646941ea915c86f5f0ae3"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/da97ecb8b127827457d646941ea915c86f5f0ae3",
-                    "reference": "da97ecb8b127827457d646941ea915c86f5f0ae3",
-                    "shasum": ""
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.6",
-                    "wp-cli/i18n-command": "^2.7.0"
-                },
-                "time": "2026-05-15T14:47:23+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\AIChat\\": "includes/"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "lint": [
-                        "vendor/bin/phpcs . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "clean": [
-                        "vendor/bin/phpcbf . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/nfd-ai-chat.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-ai-chat/issues\",\"POT-Creation-Date\":\"2026-01-20T10:00:00+00:00\"}' --exclude=tests,src,wordpress --domain=nfd-ai-chat"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/nfd-ai-chat.pot ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-ci-pre": [
-                        "@i18n-pot",
-                        "@i18n-po"
-                    ],
-                    "i18n-ci-post": [
-                        "@i18n-json",
-                        "@i18n-php"
-                    ],
-                    "test": [
-                        "codecept run wpunit"
-                    ],
-                    "test-coverage": [
-                        "codecept run wpunit --coverage wpunit.cov",
-                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
-                        "echo \"open tests/_output/html/index.html\" to view the report"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "developer@newfold.com"
-                    }
-                ],
-                "description": "AI Chat module for WordPress",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/dependabot/npm_and_yarn/main/lucide-react-1.16.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-ai-chat/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-ai-chat",
-                "version": "dev-dependabot/npm_and_yarn/main/lucide-react-1.7.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/lucide-react-1.7.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-ai-chat.git",
-                    "reference": "93fbbe14a34a154b410ba9c857602d3243127c87"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/93fbbe14a34a154b410ba9c857602d3243127c87",
-                    "reference": "93fbbe14a34a154b410ba9c857602d3243127c87",
-                    "shasum": ""
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.5",
-                    "wp-cli/i18n-command": "^2.7.0"
-                },
-                "time": "2026-03-26T14:38:14+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\AIChat\\": "includes/"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "lint": [
-                        "vendor/bin/phpcs . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "clean": [
-                        "vendor/bin/phpcbf . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/nfd-ai-chat.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-ai-chat/issues\",\"POT-Creation-Date\":\"2026-01-20T10:00:00+00:00\"}' --exclude=tests,src,wordpress --domain=nfd-ai-chat"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/nfd-ai-chat.pot ./languages"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-json": [
-                        "find ./languages -name \"*.json\" -exec rm {} \\; && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-ci-pre": [
-                        "@i18n-pot",
-                        "@i18n-po"
-                    ],
-                    "i18n-ci-post": [
-                        "@i18n-json",
-                        "@i18n-php"
-                    ],
-                    "test": [
-                        "codecept run wpunit"
-                    ],
-                    "test-coverage": [
-                        "codecept run wpunit --coverage wpunit.cov",
-                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
-                        "echo \"open tests/_output/html/index.html\" to view the report"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "developer@newfold.com"
-                    }
-                ],
-                "description": "AI Chat module for WordPress",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/dependabot/npm_and_yarn/main/lucide-react-1.7.0",
+                    "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/dependabot/npm_and_yarn/main/dompurify-3.4.7",
                     "issues": "https://github.com/newfold-labs/wp-module-ai-chat/issues"
                 }
             },
@@ -970,113 +528,24 @@
             },
             {
                 "name": "newfold-labs/wp-module-ai-chat",
-                "version": "dev-dependabot/npm_and_yarn/main/openai-6.33.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/openai-6.33.0",
+                "version": "dev-dependabot/npm_and_yarn/main/openai-6.39.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/openai-6.39.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-ai-chat.git",
-                    "reference": "14030b249140e121cf6fd89c1e6d5a1380c0b194"
+                    "reference": "b98d2308a678a6fbe47aa301f89c0b3821c6406f"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/14030b249140e121cf6fd89c1e6d5a1380c0b194",
-                    "reference": "14030b249140e121cf6fd89c1e6d5a1380c0b194",
-                    "shasum": ""
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.5",
-                    "wp-cli/i18n-command": "^2.7.0"
-                },
-                "time": "2026-03-26T14:38:24+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\AIChat\\": "includes/"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "lint": [
-                        "vendor/bin/phpcs . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "clean": [
-                        "vendor/bin/phpcbf . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/nfd-ai-chat.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-ai-chat/issues\",\"POT-Creation-Date\":\"2026-01-20T10:00:00+00:00\"}' --exclude=tests,src,wordpress --domain=nfd-ai-chat"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/nfd-ai-chat.pot ./languages"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-json": [
-                        "find ./languages -name \"*.json\" -exec rm {} \\; && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-ci-pre": [
-                        "@i18n-pot",
-                        "@i18n-po"
-                    ],
-                    "i18n-ci-post": [
-                        "@i18n-json",
-                        "@i18n-php"
-                    ],
-                    "test": [
-                        "codecept run wpunit"
-                    ],
-                    "test-coverage": [
-                        "codecept run wpunit --coverage wpunit.cov",
-                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
-                        "echo \"open tests/_output/html/index.html\" to view the report"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "developer@newfold.com"
-                    }
-                ],
-                "description": "AI Chat module for WordPress",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/dependabot/npm_and_yarn/main/openai-6.33.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-ai-chat/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-ai-chat",
-                "version": "dev-dependabot/npm_and_yarn/main/openai-6.37.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/openai-6.37.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-ai-chat.git",
-                    "reference": "3fd9c88b93bd66d0b24d206a7849eaeb54fb2abd"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/3fd9c88b93bd66d0b24d206a7849eaeb54fb2abd",
-                    "reference": "3fd9c88b93bd66d0b24d206a7849eaeb54fb2abd",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/b98d2308a678a6fbe47aa301f89c0b3821c6406f",
+                    "reference": "b98d2308a678a6fbe47aa301f89c0b3821c6406f",
                     "shasum": ""
                 },
                 "require-dev": {
                     "newfold-labs/wp-php-standards": "^1.2.6",
                     "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-05-13T17:25:58+00:00",
+                "time": "2026-05-22T14:40:11+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -1139,119 +608,30 @@
                 ],
                 "description": "AI Chat module for WordPress",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/dependabot/npm_and_yarn/main/openai-6.37.0",
+                    "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/dependabot/npm_and_yarn/main/openai-6.39.0",
                     "issues": "https://github.com/newfold-labs/wp-module-ai-chat/issues"
                 }
             },
             {
                 "name": "newfold-labs/wp-module-ai-chat",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/eslint-plugin-24.5.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/eslint-plugin-24.5.0",
+                "version": "dev-dependabot/npm_and_yarn/main/wordpress/eslint-plugin-25.3.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/eslint-plugin-25.3.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-ai-chat.git",
-                    "reference": "e939b7b9ce1f1306a30fa6233ddd756079dd58f8"
+                    "reference": "08cb91c37d5fafbceb839791e4eaa3a901ee10d0"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/e939b7b9ce1f1306a30fa6233ddd756079dd58f8",
-                    "reference": "e939b7b9ce1f1306a30fa6233ddd756079dd58f8",
-                    "shasum": ""
-                },
-                "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.5",
-                    "wp-cli/i18n-command": "^2.7.0"
-                },
-                "time": "2026-04-01T18:43:03+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\AIChat\\": "includes/"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "lint": [
-                        "vendor/bin/phpcs . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "clean": [
-                        "vendor/bin/phpcbf . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/nfd-ai-chat.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-ai-chat/issues\",\"POT-Creation-Date\":\"2026-01-20T10:00:00+00:00\"}' --exclude=tests,src,wordpress --domain=nfd-ai-chat"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/nfd-ai-chat.pot ./languages"
-                    ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
-                    ],
-                    "i18n-json": [
-                        "find ./languages -name \"*.json\" -exec rm {} \\; && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                    ],
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-ci-pre": [
-                        "@i18n-pot",
-                        "@i18n-po"
-                    ],
-                    "i18n-ci-post": [
-                        "@i18n-json",
-                        "@i18n-php"
-                    ],
-                    "test": [
-                        "codecept run wpunit"
-                    ],
-                    "test-coverage": [
-                        "codecept run wpunit --coverage wpunit.cov",
-                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
-                        "echo \"open tests/_output/html/index.html\" to view the report"
-                    ]
-                },
-                "license": [
-                    "GPL-2.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "developer@newfold.com"
-                    }
-                ],
-                "description": "AI Chat module for WordPress",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/dependabot/npm_and_yarn/main/wordpress/eslint-plugin-24.5.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-ai-chat/issues"
-                }
-            },
-            {
-                "name": "newfold-labs/wp-module-ai-chat",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/eslint-plugin-25.2.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/eslint-plugin-25.2.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-ai-chat.git",
-                    "reference": "f6f79432cca9e45f6273d239c00726e2261da922"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/f6f79432cca9e45f6273d239c00726e2261da922",
-                    "reference": "f6f79432cca9e45f6273d239c00726e2261da922",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/08cb91c37d5fafbceb839791e4eaa3a901ee10d0",
+                    "reference": "08cb91c37d5fafbceb839791e4eaa3a901ee10d0",
                     "shasum": ""
                 },
                 "require-dev": {
                     "newfold-labs/wp-php-standards": "^1.2.6",
                     "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-05-15T14:47:11+00:00",
+                "time": "2026-05-27T17:25:20+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -1314,30 +694,30 @@
                 ],
                 "description": "AI Chat module for WordPress",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/dependabot/npm_and_yarn/main/wordpress/eslint-plugin-25.2.0",
+                    "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/dependabot/npm_and_yarn/main/wordpress/eslint-plugin-25.3.0",
                     "issues": "https://github.com/newfold-labs/wp-module-ai-chat/issues"
                 }
             },
             {
                 "name": "newfold-labs/wp-module-ai-chat",
-                "version": "dev-enhance/PRESS0-4322",
-                "version_normalized": "dev-enhance/PRESS0-4322",
+                "version": "dev-dependabot/npm_and_yarn/main/wordpress/prettier-config-4.47.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/prettier-config-4.47.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-ai-chat.git",
-                    "reference": "744f310178b6b17f7c8ffaa5caad4650e83d7a77"
+                    "reference": "27cc3ab730afe07f0113513aa2ddb38812495c61"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/744f310178b6b17f7c8ffaa5caad4650e83d7a77",
-                    "reference": "744f310178b6b17f7c8ffaa5caad4650e83d7a77",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/27cc3ab730afe07f0113513aa2ddb38812495c61",
+                    "reference": "27cc3ab730afe07f0113513aa2ddb38812495c61",
                     "shasum": ""
                 },
                 "require-dev": {
                     "newfold-labs/wp-php-standards": "^1.2.6",
                     "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-05-18T15:21:05+00:00",
+                "time": "2026-05-27T17:24:44+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -1400,30 +780,30 @@
                 ],
                 "description": "AI Chat module for WordPress",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/enhance/PRESS0-4322",
+                    "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/dependabot/npm_and_yarn/main/wordpress/prettier-config-4.47.0",
                     "issues": "https://github.com/newfold-labs/wp-module-ai-chat/issues"
                 }
             },
             {
                 "name": "newfold-labs/wp-module-ai-chat",
-                "version": "dev-enhance/group-tool-executions",
-                "version_normalized": "dev-enhance/group-tool-executions",
+                "version": "dev-enhance/PRESS0-4510",
+                "version_normalized": "dev-enhance/PRESS0-4510",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-ai-chat.git",
-                    "reference": "6ed98346dfa13a67683558df867ca6fc99d9f113"
+                    "reference": "52ffebc98b49715eee33311ac36fc4622d38850d"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/6ed98346dfa13a67683558df867ca6fc99d9f113",
-                    "reference": "6ed98346dfa13a67683558df867ca6fc99d9f113",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/52ffebc98b49715eee33311ac36fc4622d38850d",
+                    "reference": "52ffebc98b49715eee33311ac36fc4622d38850d",
                     "shasum": ""
                 },
                 "require-dev": {
-                    "newfold-labs/wp-php-standards": "^1.2.5",
+                    "newfold-labs/wp-php-standards": "^1.2.6",
                     "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-04-13T14:13:54+00:00",
+                "time": "2026-05-25T21:32:06+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -1446,14 +826,11 @@
                     "i18n-po": [
                         "vendor/bin/wp i18n update-po ./languages/nfd-ai-chat.pot ./languages"
                     ],
-                    "i18n-mo": [
-                        "vendor/bin/wp i18n make-mo ./languages"
-                    ],
                     "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages"
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
                     ],
                     "i18n-json": [
-                        "find ./languages -name \"*.json\" -exec rm {} \\; && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
                     ],
                     "i18n": [
                         "@i18n-pot",
@@ -1489,7 +866,7 @@
                 ],
                 "description": "AI Chat module for WordPress",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/enhance/group-tool-executions",
+                    "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/enhance/PRESS0-4510",
                     "issues": "https://github.com/newfold-labs/wp-module-ai-chat/issues"
                 }
             },
@@ -1586,19 +963,19 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-ai-chat.git",
-                    "reference": "d837f59e1f2df37937cb64b0bcf97348378fb98f"
+                    "reference": "5c0e2e3e7ff27cd30e28f370dd9e2f29d3bf382a"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/d837f59e1f2df37937cb64b0bcf97348378fb98f",
-                    "reference": "d837f59e1f2df37937cb64b0bcf97348378fb98f",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/5c0e2e3e7ff27cd30e28f370dd9e2f29d3bf382a",
+                    "reference": "5c0e2e3e7ff27cd30e28f370dd9e2f29d3bf382a",
                     "shasum": ""
                 },
                 "require-dev": {
                     "newfold-labs/wp-php-standards": "^1.2.6",
                     "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-05-18T10:26:00+00:00",
+                "time": "2026-05-27T06:44:23+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -1662,7 +1039,7 @@
                 ],
                 "description": "AI Chat module for WordPress",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/1.1.0",
+                    "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/1.1.3",
                     "issues": "https://github.com/newfold-labs/wp-module-ai-chat/issues"
                 }
             },
