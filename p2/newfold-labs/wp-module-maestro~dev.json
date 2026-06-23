@@ -7,7 +7,7 @@
                 "version_normalized": "dev-PRESS10-97",
                 "source": {
                     "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-maestro.git",
+                    "url": "git@github.com:newfold-labs/wp-module-maestro.git",
                     "reference": "cf57da33ea1e084cd802808d3986be45435288d7"
                 },
                 "dist": {
@@ -61,11 +61,7 @@
                         "email": "micah.wood@newfold.com"
                     }
                 ],
-                "description": "Maestro Newfold module for WordPress",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-maestro/tree/PRESS10-97",
-                    "issues": "https://github.com/newfold-labs/wp-module-maestro/issues"
-                }
+                "description": "Maestro Newfold module for WordPress"
             },
             {
                 "name": "newfold-labs/wp-module-maestro",
@@ -73,13 +69,13 @@
                 "version_normalized": "dev-add/scoped-workflow-permissions",
                 "source": {
                     "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-maestro.git",
-                    "reference": "b5f77e8a6065f9cf91e9e9fe0b2f497b6f6fc072"
+                    "url": "git@github.com:newfold-labs/wp-module-maestro.git",
+                    "reference": "21a9e6c6542952fbd11668509470034b2eef86af"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/b5f77e8a6065f9cf91e9e9fe0b2f497b6f6fc072",
-                    "reference": "b5f77e8a6065f9cf91e9e9fe0b2f497b6f6fc072",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/21a9e6c6542952fbd11668509470034b2eef86af",
+                    "reference": "21a9e6c6542952fbd11668509470034b2eef86af",
                     "shasum": ""
                 },
                 "require": {
@@ -92,7 +88,7 @@
                     "newfold-labs/wp-php-standards": "@stable",
                     "phpunit/phpcov": "*"
                 },
-                "time": "2026-05-14T21:26:45+00:00",
+                "time": "2026-06-23T03:25:45+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -127,11 +123,69 @@
                         "email": "micah.wood@newfold.com"
                     }
                 ],
-                "description": "Maestro Newfold module for WordPress",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-maestro/tree/add/scoped-workflow-permissions",
-                    "issues": "https://github.com/newfold-labs/wp-module-maestro/issues"
-                }
+                "description": "Maestro Newfold module for WordPress"
+            },
+            {
+                "name": "newfold-labs/wp-module-maestro",
+                "version": "dev-chore/ai-code-review-central-workflow",
+                "version_normalized": "dev-chore/ai-code-review-central-workflow",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:newfold-labs/wp-module-maestro.git",
+                    "reference": "9edb7cebf7f90d0e473b30a49d2de9415b5576b9"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/9edb7cebf7f90d0e473b30a49d2de9415b5576b9",
+                    "reference": "9edb7cebf7f90d0e473b30a49d2de9415b5576b9",
+                    "shasum": ""
+                },
+                "require": {
+                    "firebase/php-jwt": "^5.0",
+                    "newfold-labs/wp-module-loader": "^1.0.10"
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "@stable",
+                    "phpunit/phpcov": "*"
+                },
+                "time": "2026-06-15T16:08:04+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Maestro\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+                        "echo \"open tests/_output/html/index.html\" to view the report"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Micah Wood",
+                        "email": "micah.wood@newfold.com"
+                    }
+                ],
+                "description": "Maestro Newfold module for WordPress"
             },
             {
                 "name": "newfold-labs/wp-module-maestro",
@@ -139,7 +193,7 @@
                 "version_normalized": "dev-dependabot/composer/main/firebase/php-jwt-6.11.1",
                 "source": {
                     "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-maestro.git",
+                    "url": "git@github.com:newfold-labs/wp-module-maestro.git",
                     "reference": "d6ac16e6b8beacbd69aa84b95db369b53259923a"
                 },
                 "dist": {
@@ -182,11 +236,7 @@
                         "email": "micah.wood@newfold.com"
                     }
                 ],
-                "description": "Maestro Newfold module for WordPress",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-maestro/tree/dependabot/composer/main/firebase/php-jwt-6.11.1",
-                    "issues": "https://github.com/newfold-labs/wp-module-maestro/issues"
-                }
+                "description": "Maestro Newfold module for WordPress"
             },
             {
                 "name": "newfold-labs/wp-module-maestro",
@@ -194,7 +244,7 @@
                 "version_normalized": "dev-dependabot/composer/main/johnpbloch/wordpress-6.9.0",
                 "source": {
                     "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-maestro.git",
+                    "url": "git@github.com:newfold-labs/wp-module-maestro.git",
                     "reference": "016d3e3db0751614a651ed6198236fa2e8af63e1"
                 },
                 "dist": {
@@ -248,11 +298,7 @@
                         "email": "micah.wood@newfold.com"
                     }
                 ],
-                "description": "Maestro Newfold module for WordPress",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-maestro/tree/dependabot/composer/main/johnpbloch/wordpress-6.9.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-maestro/issues"
-                }
+                "description": "Maestro Newfold module for WordPress"
             },
             {
                 "name": "newfold-labs/wp-module-maestro",
@@ -260,7 +306,7 @@
                 "version_normalized": "dev-dependabot/composer/main/newfold-labs/wp-module-loader-1.0.14",
                 "source": {
                     "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-maestro.git",
+                    "url": "git@github.com:newfold-labs/wp-module-maestro.git",
                     "reference": "d42476cc9d40bb3d8476831d573818afdc6a5110"
                 },
                 "dist": {
@@ -314,11 +360,7 @@
                         "email": "micah.wood@newfold.com"
                     }
                 ],
-                "description": "Maestro Newfold module for WordPress",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-maestro/tree/dependabot/composer/main/newfold-labs/wp-module-loader-1.0.14",
-                    "issues": "https://github.com/newfold-labs/wp-module-maestro/issues"
-                }
+                "description": "Maestro Newfold module for WordPress"
             },
             {
                 "name": "newfold-labs/wp-module-maestro",
@@ -326,7 +368,7 @@
                 "version_normalized": "dev-dependabot/github_actions/main/actions/cache-4.3.0",
                 "source": {
                     "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-maestro.git",
+                    "url": "git@github.com:newfold-labs/wp-module-maestro.git",
                     "reference": "31273e233040c476e2ca8ee67d62016106e18d57"
                 },
                 "dist": {
@@ -380,11 +422,7 @@
                         "email": "micah.wood@newfold.com"
                     }
                 ],
-                "description": "Maestro Newfold module for WordPress",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-maestro/tree/dependabot/github_actions/main/actions/cache-4.3.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-maestro/issues"
-                }
+                "description": "Maestro Newfold module for WordPress"
             },
             {
                 "name": "newfold-labs/wp-module-maestro",
@@ -392,7 +430,7 @@
                 "version_normalized": "dev-dependabot/github_actions/main/actions/checkout-5.0.0",
                 "source": {
                     "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-maestro.git",
+                    "url": "git@github.com:newfold-labs/wp-module-maestro.git",
                     "reference": "d89a23a2bf764e366d474298496d815ad7aa27db"
                 },
                 "dist": {
@@ -446,11 +484,7 @@
                         "email": "micah.wood@newfold.com"
                     }
                 ],
-                "description": "Maestro Newfold module for WordPress",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-maestro/tree/dependabot/github_actions/main/actions/checkout-5.0.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-maestro/issues"
-                }
+                "description": "Maestro Newfold module for WordPress"
             },
             {
                 "name": "newfold-labs/wp-module-maestro",
@@ -458,7 +492,7 @@
                 "version_normalized": "dev-dependabot/github_actions/main/peter-evans/repository-dispatch-4.0.0",
                 "source": {
                     "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-maestro.git",
+                    "url": "git@github.com:newfold-labs/wp-module-maestro.git",
                     "reference": "b78154723d1adb4cb603155dd603b62eb091960c"
                 },
                 "dist": {
@@ -512,11 +546,7 @@
                         "email": "micah.wood@newfold.com"
                     }
                 ],
-                "description": "Maestro Newfold module for WordPress",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-maestro/tree/dependabot/github_actions/main/peter-evans/repository-dispatch-4.0.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-maestro/issues"
-                }
+                "description": "Maestro Newfold module for WordPress"
             },
             {
                 "name": "newfold-labs/wp-module-maestro",
@@ -524,7 +554,7 @@
                 "version_normalized": "dev-dependabot/github_actions/main/shivammathur/setup-php-2.35.5",
                 "source": {
                     "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-maestro.git",
+                    "url": "git@github.com:newfold-labs/wp-module-maestro.git",
                     "reference": "bc75ae93ccfbc9f754d1df4fdb8fb6656d100911"
                 },
                 "dist": {
@@ -578,11 +608,7 @@
                         "email": "micah.wood@newfold.com"
                     }
                 ],
-                "description": "Maestro Newfold module for WordPress",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-maestro/tree/dependabot/github_actions/main/shivammathur/setup-php-2.35.5",
-                    "issues": "https://github.com/newfold-labs/wp-module-maestro/issues"
-                }
+                "description": "Maestro Newfold module for WordPress"
             },
             {
                 "name": "newfold-labs/wp-module-maestro",
@@ -590,7 +616,7 @@
                 "version_normalized": "dev-dependabot/github_actions/main/stefanzweifel/git-auto-commit-action-7.0.0",
                 "source": {
                     "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-maestro.git",
+                    "url": "git@github.com:newfold-labs/wp-module-maestro.git",
                     "reference": "89a1edb2f42ffa3186b4e786611871cb677e20e6"
                 },
                 "dist": {
@@ -644,11 +670,7 @@
                         "email": "micah.wood@newfold.com"
                     }
                 ],
-                "description": "Maestro Newfold module for WordPress",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-maestro/tree/dependabot/github_actions/main/stefanzweifel/git-auto-commit-action-7.0.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-maestro/issues"
-                }
+                "description": "Maestro Newfold module for WordPress"
             },
             {
                 "name": "newfold-labs/wp-module-maestro",
@@ -656,7 +678,7 @@
                 "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/env-10.36.0",
                 "source": {
                     "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-maestro.git",
+                    "url": "git@github.com:newfold-labs/wp-module-maestro.git",
                     "reference": "4554e5da610a72c8268a80f6a3354993debc2911"
                 },
                 "dist": {
@@ -710,11 +732,7 @@
                         "email": "micah.wood@newfold.com"
                     }
                 ],
-                "description": "Maestro Newfold module for WordPress",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-maestro/tree/dependabot/npm_and_yarn/main/wordpress/env-10.36.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-maestro/issues"
-                }
+                "description": "Maestro Newfold module for WordPress"
             },
             {
                 "name": "newfold-labs/wp-module-maestro",
@@ -722,7 +740,7 @@
                 "version_normalized": "dev-fix-sso",
                 "source": {
                     "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-maestro.git",
+                    "url": "git@github.com:newfold-labs/wp-module-maestro.git",
                     "reference": "09298221e36b63353a72c86a2fbd15194edf438f"
                 },
                 "dist": {
@@ -765,11 +783,7 @@
                         "email": "micah.wood@newfold.com"
                     }
                 ],
-                "description": "Maestro Newfold module for WordPress",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-maestro/tree/fix-sso",
-                    "issues": "https://github.com/newfold-labs/wp-module-maestro/issues"
-                }
+                "description": "Maestro Newfold module for WordPress"
             },
             {
                 "name": "newfold-labs/wp-module-maestro",
@@ -777,7 +791,7 @@
                 "version_normalized": "dev-main",
                 "source": {
                     "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-maestro.git",
+                    "url": "git@github.com:newfold-labs/wp-module-maestro.git",
                     "reference": "ebc54abc7490503b6890846c5b74198ec474427c"
                 },
                 "dist": {
@@ -832,11 +846,7 @@
                         "email": "micah.wood@newfold.com"
                     }
                 ],
-                "description": "Maestro Newfold module for WordPress",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-maestro/tree/main",
-                    "issues": "https://github.com/newfold-labs/wp-module-maestro/issues"
-                }
+                "description": "Maestro Newfold module for WordPress"
             }
         ]
     }
