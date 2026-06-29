@@ -15,6 +15,10 @@ env:
   PACKAGE: ${{ github.event.client_payload.package }}
   VERSION: ${{ github.event.client_payload.version }}
   COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.NEWFOLD_ACCESS_TOKEN }}"}}'
+  # Serialize GitHub API requests during the satis build. The default of 12
+  # concurrent requests trips GitHub's secondary (anti-scraping) rate limit on
+  # the commits endpoint, causing intermittent HTTP 429 build failures.
+  COMPOSER_MAX_PARALLEL_HTTP: 1
 
 # Disable permissions for all available scopes by default.
 # Any needed permissions should be configured at the job level.
