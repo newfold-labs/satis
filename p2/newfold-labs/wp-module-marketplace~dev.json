@@ -7,7 +7,7 @@
                 "version_normalized": "dev-add/scoped-workflow-permissions",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-marketplace.git",
+                    "url": "https://github.com/newfold-labs/wp-module-marketplace.git",
                     "reference": "8d5445a168c44b6b0cb802b2034211702c3381ff"
                 },
                 "dist": {
@@ -99,7 +99,7 @@
                 "version_normalized": "dev-auto-translate/main",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-marketplace.git",
+                    "url": "https://github.com/newfold-labs/wp-module-marketplace.git",
                     "reference": "7cbc084d89a3b27dd62b154ada1b667cfe96377a"
                 },
                 "dist": {
@@ -187,11 +187,103 @@
             },
             {
                 "name": "newfold-labs/wp-module-marketplace",
+                "version": "dev-dependabot/github_actions/main/actions/cache-6.1.0",
+                "version_normalized": "dev-dependabot/github_actions/main/actions/cache-6.1.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-marketplace.git",
+                    "reference": "f4eac31e58e07b51560eb23d66d3030ec30fb986"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-marketplace/zipball/f4eac31e58e07b51560eb23d66d3030ec30fb986",
+                    "reference": "f4eac31e58e07b51560eb23d66d3030ec30fb986",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-data": "^2.9.4"
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-06-29T07:32:41+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Marketplace\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-marketplace.pot ./languages"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-marketplace.pot --domain=wp-module-marketplace --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-marketplace/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,wordpress"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+                        "echo \"open tests/_output/html/index.html\" to view the report"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Micah Wood",
+                        "email": "micah@wpscholar.com"
+                    },
+                    {
+                        "name": "Evan Mullins",
+                        "email": "evanrm@gmail.com"
+                    }
+                ],
+                "description": "A module for rendering product data and interacting with the Hiive marketplace API."
+            },
+            {
+                "name": "newfold-labs/wp-module-marketplace",
                 "version": "dev-dependabot/github_actions/main/actions/checkout-7.0.0",
                 "version_normalized": "dev-dependabot/github_actions/main/actions/checkout-7.0.0",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-marketplace.git",
+                    "url": "https://github.com/newfold-labs/wp-module-marketplace.git",
                     "reference": "494d5931aed8b23c13755eca1edb3e9feb79a6ca"
                 },
                 "dist": {
@@ -283,7 +375,7 @@
                 "version_normalized": "dev-dependabot/github_actions/main/shivammathur/setup-php-2.37.2",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-marketplace.git",
+                    "url": "https://github.com/newfold-labs/wp-module-marketplace.git",
                     "reference": "411287742723713002c8176d872166a2095470cc"
                 },
                 "dist": {
@@ -375,7 +467,7 @@
                 "version_normalized": "dev-dependabot/npm_and_yarn/main/uuid-14.0.1",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-marketplace.git",
+                    "url": "https://github.com/newfold-labs/wp-module-marketplace.git",
                     "reference": "26e2090b47d73e1cc34854d46a565097cf8c8fe8"
                 },
                 "dist": {
@@ -463,17 +555,17 @@
             },
             {
                 "name": "newfold-labs/wp-module-marketplace",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/env-11.8.1",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/env-11.8.1",
+                "version": "dev-dependabot/npm_and_yarn/main/wordpress/env-11.9.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/env-11.9.0",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-marketplace.git",
-                    "reference": "5170e508fddc205725dc6bef0a1f551b5549e431"
+                    "url": "https://github.com/newfold-labs/wp-module-marketplace.git",
+                    "reference": "e9cce8e3625ed26c2ae8a8e1ab2528a6f0325787"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-marketplace/zipball/5170e508fddc205725dc6bef0a1f551b5549e431",
-                    "reference": "5170e508fddc205725dc6bef0a1f551b5549e431",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-marketplace/zipball/e9cce8e3625ed26c2ae8a8e1ab2528a6f0325787",
+                    "reference": "e9cce8e3625ed26c2ae8a8e1ab2528a6f0325787",
                     "shasum": ""
                 },
                 "require": {
@@ -486,7 +578,7 @@
                     "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-06-17T07:33:30+00:00",
+                "time": "2026-06-25T07:33:27+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -559,7 +651,7 @@
                 "version_normalized": "dev-main",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-marketplace.git",
+                    "url": "https://github.com/newfold-labs/wp-module-marketplace.git",
                     "reference": "7cbc084d89a3b27dd62b154ada1b667cfe96377a"
                 },
                 "dist": {

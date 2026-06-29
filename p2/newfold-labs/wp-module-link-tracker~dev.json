@@ -7,7 +7,7 @@
                 "version_normalized": "dev-add/docs",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
                     "reference": "3555af7541bc6876861b3608e9e011944ee7bdc0"
                 },
                 "dist": {
@@ -88,7 +88,7 @@
                 "version_normalized": "dev-add/phpunit",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
                     "reference": "0318ab2329b229718b61ca18af75ed817c1a4b0c"
                 },
                 "dist": {
@@ -169,7 +169,7 @@
                 "version_normalized": "dev-add/scoped-workflow-permissions",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
                     "reference": "d7675151ab992855569984e4a590f74d01f55230"
                 },
                 "dist": {
@@ -247,7 +247,7 @@
                 "version_normalized": "dev-chore/ai-code-review-central-workflow",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
                     "reference": "24cab3a8ba88d98e1a69c716c3ca424f03743bcc"
                 },
                 "dist": {
@@ -321,11 +321,89 @@
             },
             {
                 "name": "newfold-labs/wp-module-link-tracker",
+                "version": "dev-dependabot/github_actions/main/actions/cache-6.1.0",
+                "version_normalized": "dev-dependabot/github_actions/main/actions/cache-6.1.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
+                    "reference": "1dfbaac930e13ea983b5511c493af7c56f3ddf26"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/1dfbaac930e13ea983b5511c493af7c56f3ddf26",
+                    "reference": "1dfbaac930e13ea983b5511c493af7c56f3ddf26",
+                    "shasum": ""
+                },
+                "require-dev": {
+                    "10up/wp_mock": "^0.5.0|^1.0.0",
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-module-loader": "^1.1",
+                    "newfold-labs/wp-php-standards": "^1.2.6",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-06-29T02:33:27+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\LinkTracker\\": "includes/"
+                    },
+                    "files": [
+                        "includes/functions.php",
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-solutions.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-solutions/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests,wordpress"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-solutions.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
+                    ]
+                },
+                "license": [
+                    "GPL-3.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Carlos Rodriguez",
+                        "email": "carlos.rodriguez@newfold.com"
+                    }
+                ],
+                "description": "A WordPress module that adds tracking params"
+            },
+            {
+                "name": "newfold-labs/wp-module-link-tracker",
                 "version": "dev-dependabot/github_actions/main/actions/checkout-7.0.0",
                 "version_normalized": "dev-dependabot/github_actions/main/actions/checkout-7.0.0",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
                     "reference": "f6362063c40566020655b62afa5d41a229a6c092"
                 },
                 "dist": {
@@ -403,7 +481,7 @@
                 "version_normalized": "dev-dependabot/github_actions/main/shivammathur/setup-php-2.37.2",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
                     "reference": "5e277fa9156812ddf2cff74df962e55e20ba7170"
                 },
                 "dist": {
@@ -477,17 +555,17 @@
             },
             {
                 "name": "newfold-labs/wp-module-link-tracker",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/env-11.8.1",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/env-11.8.1",
+                "version": "dev-dependabot/npm_and_yarn/main/wordpress/env-11.9.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/env-11.9.0",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
-                    "reference": "f2782b3efbfd3f682583770725dc301ba08cdd06"
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
+                    "reference": "2141aeedb670eeb07d3bff995fd7d0c619793de9"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/f2782b3efbfd3f682583770725dc301ba08cdd06",
-                    "reference": "f2782b3efbfd3f682583770725dc301ba08cdd06",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/2141aeedb670eeb07d3bff995fd7d0c619793de9",
+                    "reference": "2141aeedb670eeb07d3bff995fd7d0c619793de9",
                     "shasum": ""
                 },
                 "require-dev": {
@@ -499,7 +577,7 @@
                     "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-06-17T02:33:36+00:00",
+                "time": "2026-06-25T02:35:20+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -555,17 +633,17 @@
             },
             {
                 "name": "newfold-labs/wp-module-link-tracker",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/scripts-32.4.1",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/scripts-32.4.1",
+                "version": "dev-dependabot/npm_and_yarn/main/wordpress/scripts-32.5.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/scripts-32.5.0",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
-                    "reference": "6aa0e02d7a0b4b5e003d5a3fd19c62f853505991"
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
+                    "reference": "0faca2dd9d28bd8139bf6969a155e013ecda99cd"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/6aa0e02d7a0b4b5e003d5a3fd19c62f853505991",
-                    "reference": "6aa0e02d7a0b4b5e003d5a3fd19c62f853505991",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/0faca2dd9d28bd8139bf6969a155e013ecda99cd",
+                    "reference": "0faca2dd9d28bd8139bf6969a155e013ecda99cd",
                     "shasum": ""
                 },
                 "require-dev": {
@@ -577,7 +655,7 @@
                     "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-06-17T02:34:27+00:00",
+                "time": "2026-06-25T02:34:15+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -633,17 +711,17 @@
             },
             {
                 "name": "newfold-labs/wp-module-link-tracker",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/url-4.48.1",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/url-4.48.1",
+                "version": "dev-dependabot/npm_and_yarn/main/wordpress/url-4.49.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/url-4.49.0",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
-                    "reference": "b6c52802b097d32a0bef5ffd16bd708ef780f67d"
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
+                    "reference": "27a3dce75f741966060e07922517c162761cadf2"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/b6c52802b097d32a0bef5ffd16bd708ef780f67d",
-                    "reference": "b6c52802b097d32a0bef5ffd16bd708ef780f67d",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/27a3dce75f741966060e07922517c162761cadf2",
+                    "reference": "27a3dce75f741966060e07922517c162761cadf2",
                     "shasum": ""
                 },
                 "require-dev": {
@@ -655,7 +733,7 @@
                     "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-06-17T02:34:48+00:00",
+                "time": "2026-06-25T02:34:48+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -715,7 +793,7 @@
                 "version_normalized": "dev-develop",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
                     "reference": "b84ce8310917754f196aa63f3102e7c45c3d10a5"
                 },
                 "dist": {
@@ -785,7 +863,7 @@
                 "version_normalized": "dev-fix/PRESS10-239",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
                     "reference": "f2bf684af578192c07c8a7ab504d3f55175c2953"
                 },
                 "dist": {
@@ -855,7 +933,7 @@
                 "version_normalized": "dev-fix/brand-name",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
                     "reference": "b2d357e06d37c05a73ecffcbf188b965bf7382b6"
                 },
                 "dist": {
@@ -925,7 +1003,7 @@
                 "version_normalized": "dev-fix/fragment-url",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
                     "reference": "8909cd87a626c217eb870f4d5a2e94715b532397"
                 },
                 "dist": {
@@ -995,7 +1073,7 @@
                 "version_normalized": "dev-fix/i18n-composer-command",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
                     "reference": "a94dc427ff5f45cbdf4927208db8efa2f1cbe147"
                 },
                 "dist": {
@@ -1073,7 +1151,7 @@
                 "version_normalized": "dev-fix/js-relative-link",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
                     "reference": "e5cd7dc22d3fa859fc1b235840c54b2120841a59"
                 },
                 "dist": {
@@ -1143,7 +1221,7 @@
                 "version_normalized": "dev-fix/php-frament",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
                     "reference": "c5344b099ceeb4160ec01015df61e082ec7975c3"
                 },
                 "dist": {
@@ -1213,7 +1291,7 @@
                 "version_normalized": "dev-fix/preserve-fragments",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
                     "reference": "85ea7ea63c80540fa6e6c3e79d0e28c651af5f00"
                 },
                 "dist": {
@@ -1283,7 +1361,7 @@
                 "version_normalized": "dev-fix/remove-output-library",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
                     "reference": "91672f325fad0916092f08a67b69699a637aa436"
                 },
                 "dist": {
@@ -1353,7 +1431,7 @@
                 "version_normalized": "dev-main",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
                     "reference": "06ddbba0310f1d01922ba59572e773800214231a"
                 },
                 "dist": {
@@ -1432,7 +1510,7 @@
                 "version_normalized": "dev-release/1.1.2",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
                     "reference": "f6fb5663d4c5bc7397adfb8a0a360be228453fe6"
                 },
                 "dist": {
@@ -1502,7 +1580,7 @@
                 "version_normalized": "dev-release/1.1.3",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
                     "reference": "2dd3e8c0c0bd3e1b18a350d4bb042280a2e57c60"
                 },
                 "dist": {
@@ -1572,7 +1650,7 @@
                 "version_normalized": "dev-release/1.1.4",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
                     "reference": "942b887797063dfdc3f1a5aec3619ead91f960cc"
                 },
                 "dist": {
@@ -1642,7 +1720,7 @@
                 "version_normalized": "dev-release/1.1.5",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
                     "reference": "9acb0142f21c3b72a4c611aca2be00592d0ee3b1"
                 },
                 "dist": {
@@ -1723,7 +1801,7 @@
                 "version_normalized": "dev-release/1.2.0",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
                     "reference": "60a208ee26ad2e873999128b98b6803328ef4f27"
                 },
                 "dist": {
@@ -1793,7 +1871,7 @@
                 "version_normalized": "dev-update/change-logic",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
                     "reference": "013ae89d7d42a56d2064a388dce694091f2f886a"
                 },
                 "dist": {
@@ -1863,7 +1941,7 @@
                 "version_normalized": "dev-update/i18n-command-to-exclude-wp-dir",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
                     "reference": "3ad8d4bc00dfe5dc0622da1a0e76b8fff4911b0a"
                 },
                 "dist": {
@@ -1943,7 +2021,7 @@
                 "version_normalized": "dev-update/reusable-workflows-codecoverage-playwright",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
                     "reference": "1751d4ebea5ed01997ce660c9078d62ff9ebbf2f"
                 },
                 "dist": {
@@ -2023,7 +2101,7 @@
                 "version_normalized": "dev-update/swap-default-and-provided-params",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-link-tracker.git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
                     "reference": "dd8ecf6c624711221e913b747799b8baff3608b7"
                 },
                 "dist": {

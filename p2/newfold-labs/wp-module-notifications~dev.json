@@ -7,7 +7,7 @@
                 "version_normalized": "dev-add/scoped-workflow-permissions",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-notifications.git",
+                    "url": "https://github.com/newfold-labs/wp-module-notifications.git",
                     "reference": "b2ab18a126ca3b6aae3fc90c7b4b103dd50c8dd1"
                 },
                 "dist": {
@@ -98,7 +98,7 @@
                 "version_normalized": "dev-auto-translate/main",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-notifications.git",
+                    "url": "https://github.com/newfold-labs/wp-module-notifications.git",
                     "reference": "3c2436ae2aa34f5231323126e389503095eeccf2"
                 },
                 "dist": {
@@ -189,7 +189,7 @@
                 "version_normalized": "dev-dependabot/composer/composer-7f9e676466",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-notifications.git",
+                    "url": "https://github.com/newfold-labs/wp-module-notifications.git",
                     "reference": "f7b2d91baa1ba9ef3e383e2052282cf41e643d2f"
                 },
                 "dist": {
@@ -276,11 +276,102 @@
             },
             {
                 "name": "newfold-labs/wp-module-notifications",
+                "version": "dev-dependabot/github_actions/main/actions/cache-6.1.0",
+                "version_normalized": "dev-dependabot/github_actions/main/actions/cache-6.1.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-notifications.git",
+                    "reference": "1a7f62d07a384d7daa1d2bbb8fbf1dd48bf87e6b"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-notifications/zipball/1a7f62d07a384d7daa1d2bbb8fbf1dd48bf87e6b",
+                    "reference": "1a7f62d07a384d7daa1d2bbb8fbf1dd48bf87e6b",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-data": "^2.9.4",
+                    "wp-forge/collection": "^1.0",
+                    "wp-forge/helpers": "^2.0",
+                    "wpscholar/url": "^1.2"
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-06-26T20:02:55+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Notifications\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-notifications.pot ./languages"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-notifications.pot --domain=wp-module-notifications --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-notifications/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+                        "echo \"open tests/_output/html/index.html\" to view the report"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Micah Wood",
+                        "email": "micah@wpscholar.com"
+                    }
+                ],
+                "description": "A module for managing Newfold in-site notifications."
+            },
+            {
+                "name": "newfold-labs/wp-module-notifications",
                 "version": "dev-dependabot/github_actions/main/actions/checkout-7.0.0",
                 "version_normalized": "dev-dependabot/github_actions/main/actions/checkout-7.0.0",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-notifications.git",
+                    "url": "https://github.com/newfold-labs/wp-module-notifications.git",
                     "reference": "459e8e7715c00b0fe0dc25162913f31e95903cc3"
                 },
                 "dist": {
@@ -371,7 +462,7 @@
                 "version_normalized": "dev-dependabot/github_actions/main/shivammathur/setup-php-2.37.2",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-notifications.git",
+                    "url": "https://github.com/newfold-labs/wp-module-notifications.git",
                     "reference": "dc0daba32ab715b0b07f4753c83ca812966c723c"
                 },
                 "dist": {
@@ -458,17 +549,17 @@
             },
             {
                 "name": "newfold-labs/wp-module-notifications",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/env-11.8.1",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/env-11.8.1",
+                "version": "dev-dependabot/npm_and_yarn/main/wordpress/env-11.9.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/env-11.9.0",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-notifications.git",
-                    "reference": "a5a6eaf7d16fb18afa86c12b1d31e5c5857873dc"
+                    "url": "https://github.com/newfold-labs/wp-module-notifications.git",
+                    "reference": "3ab2328fd7210c4510bf4596d69b9840e78aef56"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-notifications/zipball/a5a6eaf7d16fb18afa86c12b1d31e5c5857873dc",
-                    "reference": "a5a6eaf7d16fb18afa86c12b1d31e5c5857873dc",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-notifications/zipball/3ab2328fd7210c4510bf4596d69b9840e78aef56",
+                    "reference": "3ab2328fd7210c4510bf4596d69b9840e78aef56",
                     "shasum": ""
                 },
                 "require": {
@@ -484,7 +575,7 @@
                     "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-06-16T20:05:21+00:00",
+                "time": "2026-06-24T20:04:31+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -553,7 +644,7 @@
                 "version_normalized": "dev-dependabot/npm_and_yarn/npm_and_yarn-6ec3e26c6e",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-notifications.git",
+                    "url": "https://github.com/newfold-labs/wp-module-notifications.git",
                     "reference": "28f19b0a3021cfe831c2ed108c227fd67a6136f0"
                 },
                 "dist": {
@@ -644,7 +735,7 @@
                 "version_normalized": "dev-main",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-notifications.git",
+                    "url": "https://github.com/newfold-labs/wp-module-notifications.git",
                     "reference": "d4697620fad2b408b9c8fc65d81fa6a7450908e9"
                 },
                 "dist": {

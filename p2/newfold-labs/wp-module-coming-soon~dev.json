@@ -7,7 +7,7 @@
                 "version_normalized": "dev-add/scoped-workflow-permissions",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-coming-soon.git",
+                    "url": "https://github.com/newfold-labs/wp-module-coming-soon.git",
                     "reference": "f4b46e50e3c695a3fd2d6d634f551e69e60ea25a"
                 },
                 "dist": {
@@ -96,7 +96,7 @@
                 "version_normalized": "dev-auto-translate/main",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-coming-soon.git",
+                    "url": "https://github.com/newfold-labs/wp-module-coming-soon.git",
                     "reference": "6e61cdb98bf640033e92d61b41d250cca3ad6bbb"
                 },
                 "dist": {
@@ -181,11 +181,100 @@
             },
             {
                 "name": "newfold-labs/wp-module-coming-soon",
+                "version": "dev-dependabot/github_actions/main/actions/cache-6.1.0",
+                "version_normalized": "dev-dependabot/github_actions/main/actions/cache-6.1.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-coming-soon.git",
+                    "reference": "d30708b91c6e86d0d2e85a9184d8d8350b22edb1"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-coming-soon/zipball/d30708b91c6e86d0d2e85a9184d8d8350b22edb1",
+                    "reference": "d30708b91c6e86d0d2e85a9184d8d8350b22edb1",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-data": "^2.9.4",
+                    "wp-forge/wp-upgrade-handler": "^1.0"
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2.6",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-06-29T12:12:41+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\ComingSoon\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-coming-soon.pot ./languages"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-coming-soon.pot --domain=wp-module-coming-soon --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-coming-soon/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=wordpress,assets,tests,src"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+                        "echo \"open tests/_output/html/index.html\" to view the report"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Evan Mullins",
+                        "homepage": "https://evanmullins.com"
+                    }
+                ],
+                "description": "Coming Soon module for WordPress sites."
+            },
+            {
+                "name": "newfold-labs/wp-module-coming-soon",
                 "version": "dev-dependabot/github_actions/main/actions/checkout-7.0.0",
                 "version_normalized": "dev-dependabot/github_actions/main/actions/checkout-7.0.0",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-coming-soon.git",
+                    "url": "https://github.com/newfold-labs/wp-module-coming-soon.git",
                     "reference": "f6e660cd46361a096bea22419a4dc95918e20964"
                 },
                 "dist": {
@@ -274,7 +363,7 @@
                 "version_normalized": "dev-dependabot/github_actions/main/shivammathur/setup-php-2.37.2",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-coming-soon.git",
+                    "url": "https://github.com/newfold-labs/wp-module-coming-soon.git",
                     "reference": "0e93b46d12f08ce949ac4e8612e20d34a26928a5"
                 },
                 "dist": {
@@ -363,7 +452,7 @@
                 "version_normalized": "dev-dependabot/npm_and_yarn/main/concurrently-10.0.0",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-coming-soon.git",
+                    "url": "https://github.com/newfold-labs/wp-module-coming-soon.git",
                     "reference": "575b0e5314441804c975504971a8ca054d903874"
                 },
                 "dist": {
@@ -452,7 +541,7 @@
                 "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/eslint-plugin-25.3.0",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-coming-soon.git",
+                    "url": "https://github.com/newfold-labs/wp-module-coming-soon.git",
                     "reference": "2baaeff3ac7ea23fd2089240df017fc0bb33238e"
                 },
                 "dist": {
@@ -541,7 +630,7 @@
                 "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/icons-13.2.0",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-coming-soon.git",
+                    "url": "https://github.com/newfold-labs/wp-module-coming-soon.git",
                     "reference": "ef8ac1204464f22a7f7233d788ce7b20b7b54294"
                 },
                 "dist": {
@@ -630,7 +719,7 @@
                 "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/prettier-config-4.47.0",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-coming-soon.git",
+                    "url": "https://github.com/newfold-labs/wp-module-coming-soon.git",
                     "reference": "7f82ecebd0e632eeb199e98d3f2a46ae4f5b23d8"
                 },
                 "dist": {
@@ -719,7 +808,7 @@
                 "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/scripts-32.3.0",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-coming-soon.git",
+                    "url": "https://github.com/newfold-labs/wp-module-coming-soon.git",
                     "reference": "68d128ecc6ad2788934e44a653655dd658a6cd13"
                 },
                 "dist": {
@@ -808,7 +897,7 @@
                 "version_normalized": "dev-main",
                 "source": {
                     "type": "git",
-                    "url": "git@github.com:newfold-labs/wp-module-coming-soon.git",
+                    "url": "https://github.com/newfold-labs/wp-module-coming-soon.git",
                     "reference": "6e61cdb98bf640033e92d61b41d250cca3ad6bbb"
                 },
                 "dist": {
