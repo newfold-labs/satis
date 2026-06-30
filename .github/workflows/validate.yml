@@ -1,0 +1,53 @@
+name: Validate
+
+# Gate pull requests so that invalid JSON or broken Composer metadata cannot be
+# merged. The Satis build only runs after a change lands on `main` (on push) or
+# via the release webhook, so a malformed satis.json would otherwise not surface
+# until it breaks the next build. Validating on pull_request catches it first.
+#
+# Intentionally NOT filtered by `paths`: this job is meant to be a required
+# status check in branch protection, and a required check with a path filter is
+# never reported on PRs that don't touch those paths, which blocks them from
+# merging. The checks are cheap, so we run them on every PR instead.
+on:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+# Disable permissions for all available scopes by default.
+# Any needed permissions should be configured at the job level.
+permissions: {}
+
+jobs:
+  validate:
+    name: Validate configuration
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read # Required to check out the repository.
+    timeout-minutes: 10
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Validate satis.json is valid JSON
+        # `jq empty` parses the file and fails on any syntax error (e.g. the
+        # trailing comma that broke the webhook build). `composer validate`
+        # below only checks composer.json, not satis.json, so this is the step
+        # that actually guards the Satis config.
+        run: jq empty satis.json
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@7c071dfe9dc99bdf297fa79cb49ea005b9fcadbc # v2.37.1
+        with:
+          php-version: '8.1'
+          coverage: none
+          tools: composer
+
+      - name: Validate Composer files
+        # Mirrors the `composer validate` step in the build workflows, run here
+        # as a pull request gate so issues are caught before merge.
+        run: composer validate
