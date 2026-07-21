@@ -81144,6 +81144,100 @@
                     "issues": "https://github.com/newfold-labs/wp-module-mcp/issues"
                 }
             },
+            "1.7.5": {
+                "name": "newfold-labs/wp-module-mcp",
+                "version": "1.7.5",
+                "version_normalized": "1.7.5.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-mcp.git",
+                    "reference": "0c1af4c74af89bf7e001c2a63d9774942583c206"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-mcp/zipball/0c1af4c74af89bf7e001c2a63d9774942583c206",
+                    "reference": "0c1af4c74af89bf7e001c2a63d9774942583c206",
+                    "shasum": ""
+                },
+                "require": {
+                    "firebase/php-jwt": "^6.10.0",
+                    "smalot/pdfparser": "^2.0",
+                    "wordpress/abilities-api": "^0.4.0",
+                    "wordpress/mcp-adapter": "^0.5.0"
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-07-21T20:48:43+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "BLU\\": "includes/"
+                    },
+                    "files": [
+                        "includes/functions.php",
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-mcp.pot ./languages"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-mcp.pot --domain=wp-module-mcp --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-mcp/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Micah Wood",
+                        "homepage": "https://wpscholar.com"
+                    }
+                ],
+                "description": "WordPress MCP module for Newfold Labs BLU",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-mcp/tree/1.7.5",
+                    "issues": "https://github.com/newfold-labs/wp-module-mcp/issues"
+                }
+            },
             "dev-add/docs": {
                 "name": "newfold-labs/wp-module-mcp",
                 "version": "dev-add/docs",
@@ -81490,6 +81584,100 @@
                     "issues": "https://github.com/newfold-labs/wp-module-mcp/issues"
                 }
             },
+            "dev-chore/PRESS0-4497": {
+                "name": "newfold-labs/wp-module-mcp",
+                "version": "dev-chore/PRESS0-4497",
+                "version_normalized": "dev-chore/PRESS0-4497",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-mcp.git",
+                    "reference": "7a7550fe2061ef1eabc8181906c4985db6280780"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-mcp/zipball/7a7550fe2061ef1eabc8181906c4985db6280780",
+                    "reference": "7a7550fe2061ef1eabc8181906c4985db6280780",
+                    "shasum": ""
+                },
+                "require": {
+                    "firebase/php-jwt": "^6.10.0",
+                    "smalot/pdfparser": "^2.0",
+                    "wordpress/abilities-api": "^0.4.0",
+                    "wordpress/mcp-adapter": "^0.5.0"
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-07-20T06:15:46+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "BLU\\": "includes/"
+                    },
+                    "files": [
+                        "includes/functions.php",
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-mcp.pot ./languages"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-mcp.pot --domain=wp-module-mcp --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-mcp/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Micah Wood",
+                        "homepage": "https://wpscholar.com"
+                    }
+                ],
+                "description": "WordPress MCP module for Newfold Labs BLU",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-mcp/tree/chore/PRESS0-4497",
+                    "issues": "https://github.com/newfold-labs/wp-module-mcp/issues"
+                }
+            },
             "dev-chore/ai-review-smoke-test": {
                 "name": "newfold-labs/wp-module-mcp",
                 "version": "dev-chore/ai-review-smoke-test",
@@ -81771,6 +81959,100 @@
                     "issues": "https://github.com/newfold-labs/wp-module-mcp/issues"
                 }
             },
+            "dev-dependabot/npm_and_yarn/main/npm-7dae1bc6c6": {
+                "name": "newfold-labs/wp-module-mcp",
+                "version": "dev-dependabot/npm_and_yarn/main/npm-7dae1bc6c6",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/npm-7dae1bc6c6",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-mcp.git",
+                    "reference": "871339333ac42aaec22dde190e8b8dc81804d6c7"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-mcp/zipball/871339333ac42aaec22dde190e8b8dc81804d6c7",
+                    "reference": "871339333ac42aaec22dde190e8b8dc81804d6c7",
+                    "shasum": ""
+                },
+                "require": {
+                    "firebase/php-jwt": "^6.10.0",
+                    "smalot/pdfparser": "^2.0",
+                    "wordpress/abilities-api": "^0.4.0",
+                    "wordpress/mcp-adapter": "^0.5.0"
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-07-21T20:56:38+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "BLU\\": "includes/"
+                    },
+                    "files": [
+                        "includes/functions.php",
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-mcp.pot ./languages"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-mcp.pot --domain=wp-module-mcp --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-mcp/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Micah Wood",
+                        "homepage": "https://wpscholar.com"
+                    }
+                ],
+                "description": "WordPress MCP module for Newfold Labs BLU",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-mcp/tree/dependabot/npm_and_yarn/main/npm-7dae1bc6c6",
+                    "issues": "https://github.com/newfold-labs/wp-module-mcp/issues"
+                }
+            },
             "dev-dev/PRESS0/3397": {
                 "name": "newfold-labs/wp-module-mcp",
                 "version": "dev-dev/PRESS0/3397",
@@ -81926,19 +82208,19 @@
                     "issues": "https://github.com/newfold-labs/wp-module-mcp/issues"
                 }
             },
-            "dev-dev/PRESS0/4808": {
+            "dev-dev/PRESS0/4645": {
                 "name": "newfold-labs/wp-module-mcp",
-                "version": "dev-dev/PRESS0/4808",
-                "version_normalized": "dev-dev/PRESS0/4808",
+                "version": "dev-dev/PRESS0/4645",
+                "version_normalized": "dev-dev/PRESS0/4645",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-mcp.git",
-                    "reference": "657be2203f1e08e8064ed100056292c8b9df8f75"
+                    "reference": "2da1d7f768d5dfcd0b8fc441372befc432267ffd"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-mcp/zipball/657be2203f1e08e8064ed100056292c8b9df8f75",
-                    "reference": "657be2203f1e08e8064ed100056292c8b9df8f75",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-mcp/zipball/2da1d7f768d5dfcd0b8fc441372befc432267ffd",
+                    "reference": "2da1d7f768d5dfcd0b8fc441372befc432267ffd",
                     "shasum": ""
                 },
                 "require": {
@@ -81953,7 +82235,101 @@
                     "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-07-10T08:59:24+00:00",
+                "time": "2026-07-21T13:10:45+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "BLU\\": "includes/"
+                    },
+                    "files": [
+                        "includes/functions.php",
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-mcp.pot ./languages"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-mcp.pot --domain=wp-module-mcp --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-mcp/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Micah Wood",
+                        "homepage": "https://wpscholar.com"
+                    }
+                ],
+                "description": "WordPress MCP module for Newfold Labs BLU",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-mcp/tree/dev/PRESS0/4645",
+                    "issues": "https://github.com/newfold-labs/wp-module-mcp/issues"
+                }
+            },
+            "dev-dev/PRESS0/4808": {
+                "name": "newfold-labs/wp-module-mcp",
+                "version": "dev-dev/PRESS0/4808",
+                "version_normalized": "dev-dev/PRESS0/4808",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-mcp.git",
+                    "reference": "a5197f872fcf4c31cd98c33de887eeaa25d6058b"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-mcp/zipball/a5197f872fcf4c31cd98c33de887eeaa25d6058b",
+                    "reference": "a5197f872fcf4c31cd98c33de887eeaa25d6058b",
+                    "shasum": ""
+                },
+                "require": {
+                    "firebase/php-jwt": "^6.10.0",
+                    "smalot/pdfparser": "^2.0",
+                    "wordpress/abilities-api": "^0.4.0",
+                    "wordpress/mcp-adapter": "^0.5.0"
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-07-15T08:15:58+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -82484,19 +82860,19 @@
                     "issues": "https://github.com/newfold-labs/wp-module-mcp/issues"
                 }
             },
-            "dev-improvements/abilities-optimization": {
+            "dev-improvements/PRESS0-4809": {
                 "name": "newfold-labs/wp-module-mcp",
-                "version": "dev-improvements/abilities-optimization",
-                "version_normalized": "dev-improvements/abilities-optimization",
+                "version": "dev-improvements/PRESS0-4809",
+                "version_normalized": "dev-improvements/PRESS0-4809",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-mcp.git",
-                    "reference": "15cfefa714bf3ffc5ea24a60b893e73ee0716a7f"
+                    "reference": "60613037ec953700420cc65f51a359feebfe8adf"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-mcp/zipball/15cfefa714bf3ffc5ea24a60b893e73ee0716a7f",
-                    "reference": "15cfefa714bf3ffc5ea24a60b893e73ee0716a7f",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-mcp/zipball/60613037ec953700420cc65f51a359feebfe8adf",
+                    "reference": "60613037ec953700420cc65f51a359feebfe8adf",
                     "shasum": ""
                 },
                 "require": {
@@ -82511,7 +82887,100 @@
                     "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-07-10T09:22:47+00:00",
+                "time": "2026-07-16T08:17:27+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "BLU\\": "includes/"
+                    },
+                    "files": [
+                        "includes/functions.php",
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-mcp.pot ./languages"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-mcp.pot --domain=wp-module-mcp --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-mcp/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Micah Wood",
+                        "homepage": "https://wpscholar.com"
+                    }
+                ],
+                "description": "WordPress MCP module for Newfold Labs BLU",
+                "support": {
+                    "source": "https://github.com/newfold-labs/wp-module-mcp/tree/improvements/PRESS0-4809",
+                    "issues": "https://github.com/newfold-labs/wp-module-mcp/issues"
+                }
+            },
+            "dev-improvements/abilities-optimization": {
+                "name": "newfold-labs/wp-module-mcp",
+                "version": "dev-improvements/abilities-optimization",
+                "version_normalized": "dev-improvements/abilities-optimization",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-mcp.git",
+                    "reference": "74bba4ab1d9a18e7e81802659cfe5355d3ce0492"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-mcp/zipball/74bba4ab1d9a18e7e81802659cfe5355d3ce0492",
+                    "reference": "74bba4ab1d9a18e7e81802659cfe5355d3ce0492",
+                    "shasum": ""
+                },
+                "require": {
+                    "firebase/php-jwt": "^6.10.0",
+                    "wordpress/abilities-api": "^0.4.0",
+                    "wordpress/mcp-adapter": "^0.5.0"
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-07-20T10:06:41+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -82584,12 +83053,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-mcp.git",
-                    "reference": "cbcb6aacf131a7474e42b1960197b4b2a81c0167"
+                    "reference": "0c1af4c74af89bf7e001c2a63d9774942583c206"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-mcp/zipball/cbcb6aacf131a7474e42b1960197b4b2a81c0167",
-                    "reference": "cbcb6aacf131a7474e42b1960197b4b2a81c0167",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-mcp/zipball/0c1af4c74af89bf7e001c2a63d9774942583c206",
+                    "reference": "0c1af4c74af89bf7e001c2a63d9774942583c206",
                     "shasum": ""
                 },
                 "require": {
@@ -82605,7 +83074,7 @@
                     "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-07-10T18:31:58+00:00",
+                "time": "2026-07-21T20:48:43+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -82668,7 +83137,7 @@
                 ],
                 "description": "WordPress MCP module for Newfold Labs BLU",
                 "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-mcp/tree/1.7.4",
+                    "source": "https://github.com/newfold-labs/wp-module-mcp/tree/1.7.5",
                     "issues": "https://github.com/newfold-labs/wp-module-mcp/issues"
                 }
             },
