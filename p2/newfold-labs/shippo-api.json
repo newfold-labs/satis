@@ -66,6 +66,72 @@
                     "source": "https://github.com/newfold-labs/shippo-api/tree/1.0.0",
                     "issues": "https://github.com/newfold-labs/shippo-api/issues"
                 }
+            },
+            {
+                "name": "newfold-labs/shippo-api",
+                "version": "1.0.1",
+                "version_normalized": "1.0.1.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/shippo-api.git",
+                    "reference": "f5460977b5208e43d496f84f530fc6d750a6a010"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/shippo-api/zipball/f5460977b5208e43d496f84f530fc6d750a6a010",
+                    "reference": "f5460977b5208e43d496f84f530fc6d750a6a010",
+                    "shasum": ""
+                },
+                "require": {
+                    "guzzlehttp/guzzle": "^7.0",
+                    "php": "^8.0",
+                    "psr/http-client": "^1.0",
+                    "psr/http-message": "^1.0|^2.0"
+                },
+                "require-dev": {
+                    "phpstan/phpstan": "^1.10",
+                    "phpunit/phpunit": "^9.5",
+                    "squizlabs/php_codesniffer": "^3.7"
+                },
+                "time": "2026-07-24T08:38:38+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "Bluehost\\ShippoAPI\\": "src/"
+                    }
+                },
+                "autoload-dev": {
+                    "psr-4": {
+                        "Bluehost\\ShippoAPI\\Tests\\": "tests/"
+                    }
+                },
+                "scripts": {
+                    "test": [
+                        "phpunit"
+                    ],
+                    "test:coverage": [
+                        "phpunit --coverage-text"
+                    ],
+                    "analyse": [
+                        "phpstan analyse -c phpstan.neon"
+                    ],
+                    "lint": [
+                        "phpcs --warning-severity=0"
+                    ],
+                    "ci": [
+                        "@lint",
+                        "@analyse",
+                        "@test:coverage"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "description": "Modern PHP client for the Shippo REST API",
+                "support": {
+                    "source": "https://github.com/newfold-labs/shippo-api/tree/1.0.1",
+                    "issues": "https://github.com/newfold-labs/shippo-api/issues"
+                }
             }
         ]
     }
