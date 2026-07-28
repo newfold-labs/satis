@@ -85,11 +85,7 @@
                         "email": "micah@bluehost.com"
                     }
                 ],
-                "description": "Single sign-on functionality for Newfold WordPress sites.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-sso/tree/add/scoped-workflow-permissions",
-                    "issues": "https://github.com/newfold-labs/wp-module-sso/issues"
-                }
+                "description": "Single sign-on functionality for Newfold WordPress sites."
             },
             {
                 "name": "newfold-labs/wp-module-sso",
@@ -175,11 +171,93 @@
                         "email": "micah@bluehost.com"
                     }
                 ],
-                "description": "Single sign-on functionality for Newfold WordPress sites.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-sso/tree/auto-translate/main",
-                    "issues": "https://github.com/newfold-labs/wp-module-sso/issues"
-                }
+                "description": "Single sign-on functionality for Newfold WordPress sites."
+            },
+            {
+                "name": "newfold-labs/wp-module-sso",
+                "version": "dev-dependabot/composer/main/newfold-labs/wp-module-data-gte-2.9.6",
+                "version_normalized": "dev-dependabot/composer/main/newfold-labs/wp-module-data-gte-2.9.6",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-sso.git",
+                    "reference": "2439a815f3c049af1d7eb51865da0faa8e732074"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-sso/zipball/2439a815f3c049af1d7eb51865da0faa8e732074",
+                    "reference": "2439a815f3c049af1d7eb51865da0faa8e732074",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-data": ">=2.9.6"
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-07-24T00:16:31+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\SSO\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-sso.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-sso/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests,wordpress"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-sso.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Micah Wood",
+                        "email": "micah@bluehost.com"
+                    }
+                ],
+                "description": "Single sign-on functionality for Newfold WordPress sites."
             },
             {
                 "name": "newfold-labs/wp-module-sso",
@@ -265,11 +343,7 @@
                         "email": "micah@bluehost.com"
                     }
                 ],
-                "description": "Single sign-on functionality for Newfold WordPress sites.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-sso/tree/dependabot/github_actions/main/actions/checkout-7.0.1",
-                    "issues": "https://github.com/newfold-labs/wp-module-sso/issues"
-                }
+                "description": "Single sign-on functionality for Newfold WordPress sites."
             },
             {
                 "name": "newfold-labs/wp-module-sso",
@@ -356,11 +430,7 @@
                         "email": "micah@bluehost.com"
                     }
                 ],
-                "description": "Single sign-on functionality for Newfold WordPress sites.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-sso/tree/auto-translate/main",
-                    "issues": "https://github.com/newfold-labs/wp-module-sso/issues"
-                }
+                "description": "Single sign-on functionality for Newfold WordPress sites."
             },
             {
                 "name": "newfold-labs/wp-module-sso",
@@ -429,11 +499,7 @@
                         "email": "micah@bluehost.com"
                     }
                 ],
-                "description": "Single sign-on functionality for Newfold WordPress sites.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-sso/tree/press11-176",
-                    "issues": "https://github.com/newfold-labs/wp-module-sso/issues"
-                }
+                "description": "Single sign-on functionality for Newfold WordPress sites."
             },
             {
                 "name": "newfold-labs/wp-module-sso",
@@ -475,11 +541,7 @@
                         "email": "micah@bluehost.com"
                     }
                 ],
-                "description": "Single sign-on functionality for Newfold WordPress sites.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-sso/tree/update/increase-timeframe",
-                    "issues": "https://github.com/newfold-labs/wp-module-sso/issues"
-                }
+                "description": "Single sign-on functionality for Newfold WordPress sites."
             },
             {
                 "name": "newfold-labs/wp-module-sso",
@@ -552,11 +614,7 @@
                         "email": "micah@bluehost.com"
                     }
                 ],
-                "description": "Single sign-on functionality for Newfold WordPress sites.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-sso/tree/workflow/PRESS11-144",
-                    "issues": "https://github.com/newfold-labs/wp-module-sso/issues"
-                }
+                "description": "Single sign-on functionality for Newfold WordPress sites."
             }
         ]
     }

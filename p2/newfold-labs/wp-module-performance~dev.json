@@ -102,11 +102,7 @@
                         "homepage": "https://wpscholar.com"
                     }
                 ],
-                "description": "A module for managing caching functionality.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-performance/tree/3.7.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-performance/issues"
-                }
+                "description": "A module for managing caching functionality."
             },
             {
                 "name": "newfold-labs/wp-module-performance",
@@ -209,11 +205,7 @@
                         "homepage": "https://wpscholar.com"
                     }
                 ],
-                "description": "A module for managing caching functionality.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-performance/tree/add/scoped-workflow-permissions",
-                    "issues": "https://github.com/newfold-labs/wp-module-performance/issues"
-                }
+                "description": "A module for managing caching functionality."
             },
             {
                 "name": "newfold-labs/wp-module-performance",
@@ -316,11 +308,7 @@
                         "homepage": "https://wpscholar.com"
                     }
                 ],
-                "description": "A module for managing caching functionality.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-performance/tree/auto-translate/main",
-                    "issues": "https://github.com/newfold-labs/wp-module-performance/issues"
-                }
+                "description": "A module for managing caching functionality."
             },
             {
                 "name": "newfold-labs/wp-module-performance",
@@ -405,11 +393,316 @@
                         "email": "micah@wpscholar.com"
                     }
                 ],
-                "description": "A module for managing caching functionality.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-performance/tree/2.7.10",
-                    "issues": "https://github.com/newfold-labs/wp-module-performance/issues"
-                }
+                "description": "A module for managing caching functionality."
+            },
+            {
+                "name": "newfold-labs/wp-module-performance",
+                "version": "dev-dependabot/composer/main/newfold-labs/wp-module-data-2.9.6",
+                "version_normalized": "dev-dependabot/composer/main/newfold-labs/wp-module-data-2.9.6",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-performance.git",
+                    "reference": "f86ff6dc41b31f554f73c2ca2520a1df1ea798a0"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-performance/zipball/f86ff6dc41b31f554f73c2ca2520a1df1ea798a0",
+                    "reference": "f86ff6dc41b31f554f73c2ca2520a1df1ea798a0",
+                    "shasum": ""
+                },
+                "require": {
+                    "colinmollenhour/credis": "^1.14",
+                    "newfold-labs/wp-module-context": "^1.0",
+                    "newfold-labs/wp-module-data": "^2.9",
+                    "newfold-labs/wp-module-features": "^1.5",
+                    "newfold-labs/wp-module-htaccess": "^1.0",
+                    "newfold-labs/wp-module-installer": "^1.7",
+                    "predis/predis": "2.4.1",
+                    "wp-cli/wp-config-transformer": "^1.4",
+                    "wp-forge/collection": "^1.0",
+                    "wp-forge/wp-htaccess-manager": "^1.0",
+                    "wpscholar/url": "^1.2"
+                },
+                "require-dev": {
+                    "10up/wp_mock": "^0.5.0|^1.0.0",
+                    "johnpbloch/wordpress": "6.9.4",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7",
+                    "wp-cli/wp-cli-bundle": "^2.8.1|^2.12"
+                },
+                "time": "2026-07-27T00:33:25+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Performance\\": "includes"
+                    },
+                    "files": [
+                        "includes/PerformanceFeature.php",
+                        "includes/functions.php",
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "cs-fix": [
+                        "phpcbf --standard=phpcs.xml ."
+                    ],
+                    "cs-lint": [
+                        "phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp --allow-root i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-performance.pot ./languages"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-performance.pot --domain=wp-module-performance --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-performance/issues\",\"POT-Creation-Date\":null}' --exclude=src,tests,assets,wordpress --include=includes/*,build/*.min.js"
+                    ],
+                    "test": [
+                        "phpunit --bootstrap tests/phpunit/bootstrap.php",
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+                        "echo \"open tests/_output/html/index.html\" to view the report"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Micah Wood",
+                        "homepage": "https://wpscholar.com"
+                    }
+                ],
+                "description": "A module for managing caching functionality."
+            },
+            {
+                "name": "newfold-labs/wp-module-performance",
+                "version": "dev-dependabot/github_actions/main/actions/checkout-7.0.1",
+                "version_normalized": "dev-dependabot/github_actions/main/actions/checkout-7.0.1",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-performance.git",
+                    "reference": "c34de768964433d5cc168060873240a4ceea9479"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-performance/zipball/c34de768964433d5cc168060873240a4ceea9479",
+                    "reference": "c34de768964433d5cc168060873240a4ceea9479",
+                    "shasum": ""
+                },
+                "require": {
+                    "colinmollenhour/credis": "^1.14",
+                    "newfold-labs/wp-module-context": "^1.0",
+                    "newfold-labs/wp-module-data": "^2.9",
+                    "newfold-labs/wp-module-features": "^1.5",
+                    "newfold-labs/wp-module-htaccess": "^1.0",
+                    "newfold-labs/wp-module-installer": "^1.7",
+                    "predis/predis": "2.4.1",
+                    "wp-cli/wp-config-transformer": "^1.4",
+                    "wp-forge/collection": "^1.0",
+                    "wp-forge/wp-htaccess-manager": "^1.0",
+                    "wpscholar/url": "^1.2"
+                },
+                "require-dev": {
+                    "10up/wp_mock": "^0.5.0|^1.0.0",
+                    "johnpbloch/wordpress": "6.9.4",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7",
+                    "wp-cli/wp-cli-bundle": "^2.8.1|^2.12"
+                },
+                "time": "2026-07-27T00:33:15+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Performance\\": "includes"
+                    },
+                    "files": [
+                        "includes/PerformanceFeature.php",
+                        "includes/functions.php",
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "cs-fix": [
+                        "phpcbf --standard=phpcs.xml ."
+                    ],
+                    "cs-lint": [
+                        "phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp --allow-root i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-performance.pot ./languages"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-performance.pot --domain=wp-module-performance --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-performance/issues\",\"POT-Creation-Date\":null}' --exclude=src,tests,assets,wordpress --include=includes/*,build/*.min.js"
+                    ],
+                    "test": [
+                        "phpunit --bootstrap tests/phpunit/bootstrap.php",
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+                        "echo \"open tests/_output/html/index.html\" to view the report"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Micah Wood",
+                        "homepage": "https://wpscholar.com"
+                    }
+                ],
+                "description": "A module for managing caching functionality."
+            },
+            {
+                "name": "newfold-labs/wp-module-performance",
+                "version": "dev-dependabot/npm_and_yarn/main/chalk-6.0.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/chalk-6.0.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-performance.git",
+                    "reference": "3a1b021cef74c6fc1183e1ab60bb0947fd01dd31"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-performance/zipball/3a1b021cef74c6fc1183e1ab60bb0947fd01dd31",
+                    "reference": "3a1b021cef74c6fc1183e1ab60bb0947fd01dd31",
+                    "shasum": ""
+                },
+                "require": {
+                    "colinmollenhour/credis": "^1.14",
+                    "newfold-labs/wp-module-context": "^1.0",
+                    "newfold-labs/wp-module-data": "^2.9",
+                    "newfold-labs/wp-module-features": "^1.5",
+                    "newfold-labs/wp-module-htaccess": "^1.0",
+                    "newfold-labs/wp-module-installer": "^1.7",
+                    "predis/predis": "2.4.1",
+                    "wp-cli/wp-config-transformer": "^1.4",
+                    "wp-forge/collection": "^1.0",
+                    "wp-forge/wp-htaccess-manager": "^1.0",
+                    "wpscholar/url": "^1.2"
+                },
+                "require-dev": {
+                    "10up/wp_mock": "^0.5.0|^1.0.0",
+                    "johnpbloch/wordpress": "6.9.4",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7",
+                    "wp-cli/wp-cli-bundle": "^2.8.1|^2.12"
+                },
+                "time": "2026-07-27T00:33:41+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Performance\\": "includes"
+                    },
+                    "files": [
+                        "includes/PerformanceFeature.php",
+                        "includes/functions.php",
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "cs-fix": [
+                        "phpcbf --standard=phpcs.xml ."
+                    ],
+                    "cs-lint": [
+                        "phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp --allow-root i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-performance.pot ./languages"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-performance.pot --domain=wp-module-performance --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-performance/issues\",\"POT-Creation-Date\":null}' --exclude=src,tests,assets,wordpress --include=includes/*,build/*.min.js"
+                    ],
+                    "test": [
+                        "phpunit --bootstrap tests/phpunit/bootstrap.php",
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+                        "echo \"open tests/_output/html/index.html\" to view the report"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Micah Wood",
+                        "homepage": "https://wpscholar.com"
+                    }
+                ],
+                "description": "A module for managing caching functionality."
             },
             {
                 "name": "newfold-labs/wp-module-performance",
@@ -512,11 +805,110 @@
                         "homepage": "https://wpscholar.com"
                     }
                 ],
-                "description": "A module for managing caching functionality.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-performance/tree/dependabot/npm_and_yarn/main/html-react-parser-6.1.5",
-                    "issues": "https://github.com/newfold-labs/wp-module-performance/issues"
-                }
+                "description": "A module for managing caching functionality."
+            },
+            {
+                "name": "newfold-labs/wp-module-performance",
+                "version": "dev-dependabot/npm_and_yarn/main/postcss-8.5.23",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/postcss-8.5.23",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-performance.git",
+                    "reference": "5c726a8a4cd137675c4c50fc295785a90066f435"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-performance/zipball/5c726a8a4cd137675c4c50fc295785a90066f435",
+                    "reference": "5c726a8a4cd137675c4c50fc295785a90066f435",
+                    "shasum": ""
+                },
+                "require": {
+                    "colinmollenhour/credis": "^1.14",
+                    "newfold-labs/wp-module-context": "^1.0",
+                    "newfold-labs/wp-module-data": "^2.9",
+                    "newfold-labs/wp-module-features": "^1.5",
+                    "newfold-labs/wp-module-htaccess": "^1.0",
+                    "newfold-labs/wp-module-installer": "^1.7",
+                    "predis/predis": "2.4.1",
+                    "wp-cli/wp-config-transformer": "^1.4",
+                    "wp-forge/collection": "^1.0",
+                    "wp-forge/wp-htaccess-manager": "^1.0",
+                    "wpscholar/url": "^1.2"
+                },
+                "require-dev": {
+                    "10up/wp_mock": "^0.5.0|^1.0.0",
+                    "johnpbloch/wordpress": "6.9.4",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7",
+                    "wp-cli/wp-cli-bundle": "^2.8.1|^2.12"
+                },
+                "time": "2026-07-27T00:33:32+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Performance\\": "includes"
+                    },
+                    "files": [
+                        "includes/PerformanceFeature.php",
+                        "includes/functions.php",
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "cs-fix": [
+                        "phpcbf --standard=phpcs.xml ."
+                    ],
+                    "cs-lint": [
+                        "phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp --allow-root i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-performance.pot ./languages"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-performance.pot --domain=wp-module-performance --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-performance/issues\",\"POT-Creation-Date\":null}' --exclude=src,tests,assets,wordpress --include=includes/*,build/*.min.js"
+                    ],
+                    "test": [
+                        "phpunit --bootstrap tests/phpunit/bootstrap.php",
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+                        "echo \"open tests/_output/html/index.html\" to view the report"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Micah Wood",
+                        "homepage": "https://wpscholar.com"
+                    }
+                ],
+                "description": "A module for managing caching functionality."
             },
             {
                 "name": "newfold-labs/wp-module-performance",
@@ -619,11 +1011,7 @@
                         "homepage": "https://wpscholar.com"
                     }
                 ],
-                "description": "A module for managing caching functionality.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-performance/tree/dependabot/npm_and_yarn/main/wordpress/env-11.11.0",
-                    "issues": "https://github.com/newfold-labs/wp-module-performance/issues"
-                }
+                "description": "A module for managing caching functionality."
             },
             {
                 "name": "newfold-labs/wp-module-performance",
@@ -726,11 +1114,92 @@
                         "homepage": "https://wpscholar.com"
                     }
                 ],
-                "description": "A module for managing caching functionality.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-performance/tree/enhance/PRESS0-4696",
-                    "issues": "https://github.com/newfold-labs/wp-module-performance/issues"
-                }
+                "description": "A module for managing caching functionality."
+            },
+            {
+                "name": "newfold-labs/wp-module-performance",
+                "version": "dev-gh-pages",
+                "version_normalized": "dev-gh-pages",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-performance.git",
+                    "reference": "540d6b6165e63aa8802a659d877b6290fe3b09b3"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-performance/zipball/540d6b6165e63aa8802a659d877b6290fe3b09b3",
+                    "reference": "540d6b6165e63aa8802a659d877b6290fe3b09b3",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-context": "^1.0",
+                    "newfold-labs/wp-module-features": "^1.5",
+                    "newfold-labs/wp-module-installer": "^1.6",
+                    "wp-forge/collection": "^1.0",
+                    "wp-forge/wp-htaccess-manager": "^1.0",
+                    "wpscholar/url": "^1.2"
+                },
+                "require-dev": {
+                    "10up/wp_mock": "^1.1",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "wp-cli/i18n-command": "^2.6",
+                    "wp-cli/wp-cli-bundle": "^2.12"
+                },
+                "time": "2026-07-27T00:35:44+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Performance\\": "includes"
+                    },
+                    "files": [
+                        "includes/PerformanceFeature.php",
+                        "includes/functions.php",
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "test": [
+                        "phpunit --bootstrap tests/phpunit/bootstrap.php"
+                    ],
+                    "cs-fix": [
+                        "phpcbf --standard=phpcs.xml ."
+                    ],
+                    "cs-lint": [
+                        "phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-performance.pot --domain=wp-module-performance --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-performance/issues\",\"POT-Creation-Date\":null}' --exclude=src,tests,vendor,assets --include=build/*.min.js"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-performance.pot ./languages"
+                    ],
+                    "i18n-mo": [
+                        "vendor/bin/wp i18n make-mo ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp --allow-root i18n make-php ./languages"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-mo",
+                        "@i18n-json",
+                        "@i18n-php"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Micah Wood",
+                        "homepage": "https://wpscholar.com"
+                    }
+                ],
+                "description": "A module for managing caching functionality."
             },
             {
                 "name": "newfold-labs/wp-module-performance",
@@ -815,11 +1284,7 @@
                         "email": "micah@wpscholar.com"
                     }
                 ],
-                "description": "A module for managing caching functionality.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-performance/tree/jetpack-boost-refactoring",
-                    "issues": "https://github.com/newfold-labs/wp-module-performance/issues"
-                }
+                "description": "A module for managing caching functionality."
             },
             {
                 "name": "newfold-labs/wp-module-performance",
@@ -923,11 +1388,7 @@
                         "homepage": "https://wpscholar.com"
                     }
                 ],
-                "description": "A module for managing caching functionality.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-performance/tree/3.8.2",
-                    "issues": "https://github.com/newfold-labs/wp-module-performance/issues"
-                }
+                "description": "A module for managing caching functionality."
             },
             {
                 "name": "newfold-labs/wp-module-performance",
@@ -1012,11 +1473,7 @@
                         "email": "micah@wpscholar.com"
                     }
                 ],
-                "description": "A module for managing caching functionality.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-performance/tree/2.7.10",
-                    "issues": "https://github.com/newfold-labs/wp-module-performance/issues"
-                }
+                "description": "A module for managing caching functionality."
             },
             {
                 "name": "newfold-labs/wp-module-performance",
@@ -1117,11 +1574,7 @@
                         "homepage": "https://wpscholar.com"
                     }
                 ],
-                "description": "A module for managing caching functionality.",
-                "support": {
-                    "source": "https://github.com/newfold-labs/wp-module-performance/tree/remove-cache-level-header/PRESS0-3019",
-                    "issues": "https://github.com/newfold-labs/wp-module-performance/issues"
-                }
+                "description": "A module for managing caching functionality."
             }
         ]
     }
