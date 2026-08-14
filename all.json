@@ -9054,6 +9054,88 @@
                 ],
                 "description": "AI Chat module for WordPress"
             },
+            "1.1.10": {
+                "name": "newfold-labs/wp-module-ai-chat",
+                "version": "1.1.10",
+                "version_normalized": "1.1.10.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-ai-chat.git",
+                    "reference": "0f5ceefca669ef20b863af5c3f3c47e6c8263f7c"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/0f5ceefca669ef20b863af5c3f3c47e6c8263f7c",
+                    "reference": "0f5ceefca669ef20b863af5c3f3c47e6c8263f7c",
+                    "shasum": ""
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^1.2.6",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-08-14T07:16:49+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\AIChat\\": "includes/"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "lint": [
+                        "vendor/bin/phpcs . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
+                    ],
+                    "clean": [
+                        "vendor/bin/phpcbf . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/nfd-ai-chat.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-ai-chat/issues\",\"POT-Creation-Date\":\"2026-01-20T10:00:00+00:00\"}' --exclude=tests,src,wordpress --domain=nfd-ai-chat"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/nfd-ai-chat.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+                        "echo \"open tests/_output/html/index.html\" to view the report"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Newfold Digital",
+                        "email": "developer@newfold.com"
+                    }
+                ],
+                "description": "AI Chat module for WordPress"
+            },
             "1.1.2": {
                 "name": "newfold-labs/wp-module-ai-chat",
                 "version": "1.1.2",
@@ -10297,19 +10379,19 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-ai-chat.git",
-                    "reference": "40723d9f21cef04cb278c39b634fae7cf961f38e"
+                    "reference": "af3c4b2ffe73da282f8c9c7d4491f5deb3c8ddd8"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/40723d9f21cef04cb278c39b634fae7cf961f38e",
-                    "reference": "40723d9f21cef04cb278c39b634fae7cf961f38e",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/af3c4b2ffe73da282f8c9c7d4491f5deb3c8ddd8",
+                    "reference": "af3c4b2ffe73da282f8c9c7d4491f5deb3c8ddd8",
                     "shasum": ""
                 },
                 "require-dev": {
                     "newfold-labs/wp-php-standards": "^1.2.6",
                     "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-08-10T20:29:34+00:00",
+                "time": "2026-08-13T20:46:28+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -10707,19 +10789,19 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-ai-chat.git",
-                    "reference": "eef7e6c52f5f648c8cdafa663b48c3647c3a7a66"
+                    "reference": "0f5ceefca669ef20b863af5c3f3c47e6c8263f7c"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/eef7e6c52f5f648c8cdafa663b48c3647c3a7a66",
-                    "reference": "eef7e6c52f5f648c8cdafa663b48c3647c3a7a66",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/0f5ceefca669ef20b863af5c3f3c47e6c8263f7c",
+                    "reference": "0f5ceefca669ef20b863af5c3f3c47e6c8263f7c",
                     "shasum": ""
                 },
                 "require-dev": {
                     "newfold-labs/wp-php-standards": "^1.2.6",
                     "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-08-10T22:42:25+00:00",
+                "time": "2026-08-14T07:16:49+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
