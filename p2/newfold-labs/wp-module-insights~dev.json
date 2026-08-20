@@ -143,16 +143,16 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                    "reference": "2884acbd385852f38fab2add8cca1ba04f9132e0"
+                    "reference": "656ee7933486ea188989dac247df3198090c1eae"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/2884acbd385852f38fab2add8cca1ba04f9132e0",
-                    "reference": "2884acbd385852f38fab2add8cca1ba04f9132e0",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/656ee7933486ea188989dac247df3198090c1eae",
+                    "reference": "656ee7933486ea188989dac247df3198090c1eae",
                     "shasum": ""
                 },
                 "require": {
-                    "newfold-labs/wp-module-data": "^2.9.4",
+                    "newfold-labs/wp-module-data": "^2.9.7",
                     "newfold-labs/wp-module-loader": "^1.1.0"
                 },
                 "require-dev": {
@@ -162,412 +162,7 @@
                     "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-07-31T23:00:18+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Insights\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-ci-pre": [
-                        "@i18n-pot",
-                        "@i18n-po"
-                    ],
-                    "i18n-ci-post": [
-                        "@i18n-json",
-                        "@i18n-php"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-module-insights.pot ./languages"
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-insights.pot --domain=wp-module-insights --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-insights/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,build,vendor,wordpress,node_modules"
-                    ],
-                    "test": [
-                        "codecept run wpunit"
-                    ],
-                    "test-coverage": [
-                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "hi@newfold.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of Insights page."
-            },
-            {
-                "name": "newfold-labs/wp-module-insights",
-                "version": "dev-dependabot/npm_and_yarn/main/webpack-5.109.2",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/webpack-5.109.2",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                    "reference": "7abb8b19e8519340de946797c2ac45ddd49dcb79"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/7abb8b19e8519340de946797c2ac45ddd49dcb79",
-                    "reference": "7abb8b19e8519340de946797c2ac45ddd49dcb79",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.9.6",
-                    "newfold-labs/wp-module-loader": "^1.1.0"
-                },
-                "require-dev": {
-                    "johnpbloch/wordpress": "@stable",
-                    "lucatume/wp-browser": "*",
-                    "newfold-labs/wp-php-standards": "^1.2.6",
-                    "phpunit/phpcov": "*",
-                    "wp-cli/i18n-command": "^2.7.0"
-                },
-                "time": "2026-08-03T03:45:43+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Insights\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-ci-pre": [
-                        "@i18n-pot",
-                        "@i18n-po"
-                    ],
-                    "i18n-ci-post": [
-                        "@i18n-json",
-                        "@i18n-php"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-module-insights.pot ./languages"
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-insights.pot --domain=wp-module-insights --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-insights/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,build,vendor,wordpress,node_modules"
-                    ],
-                    "test": [
-                        "codecept run wpunit"
-                    ],
-                    "test-coverage": [
-                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "hi@newfold.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of Insights page."
-            },
-            {
-                "name": "newfold-labs/wp-module-insights",
-                "version": "dev-dependabot/npm_and_yarn/main/webpack-cli-7.2.2",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/webpack-cli-7.2.2",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                    "reference": "f09175aa4ffe2262b4f5c08b623e9cf0c66d8943"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/f09175aa4ffe2262b4f5c08b623e9cf0c66d8943",
-                    "reference": "f09175aa4ffe2262b4f5c08b623e9cf0c66d8943",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.9.6",
-                    "newfold-labs/wp-module-loader": "^1.1.0"
-                },
-                "require-dev": {
-                    "johnpbloch/wordpress": "@stable",
-                    "lucatume/wp-browser": "*",
-                    "newfold-labs/wp-php-standards": "^1.2.6",
-                    "phpunit/phpcov": "*",
-                    "wp-cli/i18n-command": "^2.7.0"
-                },
-                "time": "2026-08-03T03:44:57+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Insights\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-ci-pre": [
-                        "@i18n-pot",
-                        "@i18n-po"
-                    ],
-                    "i18n-ci-post": [
-                        "@i18n-json",
-                        "@i18n-php"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-module-insights.pot ./languages"
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-insights.pot --domain=wp-module-insights --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-insights/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,build,vendor,wordpress,node_modules"
-                    ],
-                    "test": [
-                        "codecept run wpunit"
-                    ],
-                    "test-coverage": [
-                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "hi@newfold.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of Insights page."
-            },
-            {
-                "name": "newfold-labs/wp-module-insights",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/dom-ready-4.52.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/dom-ready-4.52.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                    "reference": "15a645a76517e13db793589dd2b34611a54fdc85"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/15a645a76517e13db793589dd2b34611a54fdc85",
-                    "reference": "15a645a76517e13db793589dd2b34611a54fdc85",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.9.6",
-                    "newfold-labs/wp-module-loader": "^1.1.0"
-                },
-                "require-dev": {
-                    "johnpbloch/wordpress": "@stable",
-                    "lucatume/wp-browser": "*",
-                    "newfold-labs/wp-php-standards": "^1.2.6",
-                    "phpunit/phpcov": "*",
-                    "wp-cli/i18n-command": "^2.7.0"
-                },
-                "time": "2026-08-03T03:46:30+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Insights\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-ci-pre": [
-                        "@i18n-pot",
-                        "@i18n-po"
-                    ],
-                    "i18n-ci-post": [
-                        "@i18n-json",
-                        "@i18n-php"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-module-insights.pot ./languages"
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-insights.pot --domain=wp-module-insights --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-insights/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,build,vendor,wordpress,node_modules"
-                    ],
-                    "test": [
-                        "codecept run wpunit"
-                    ],
-                    "test-coverage": [
-                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "hi@newfold.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of Insights page."
-            },
-            {
-                "name": "newfold-labs/wp-module-insights",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/i18n-6.25.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/i18n-6.25.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                    "reference": "b33630c71bb05116083f1313fb3fb707f66ecb79"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/b33630c71bb05116083f1313fb3fb707f66ecb79",
-                    "reference": "b33630c71bb05116083f1313fb3fb707f66ecb79",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.9.6",
-                    "newfold-labs/wp-module-loader": "^1.1.0"
-                },
-                "require-dev": {
-                    "johnpbloch/wordpress": "@stable",
-                    "lucatume/wp-browser": "*",
-                    "newfold-labs/wp-php-standards": "^1.2.6",
-                    "phpunit/phpcov": "*",
-                    "wp-cli/i18n-command": "^2.7.0"
-                },
-                "time": "2026-08-03T03:44:48+00:00",
-                "type": "library",
-                "autoload": {
-                    "psr-4": {
-                        "NewfoldLabs\\WP\\Module\\Insights\\": "includes"
-                    },
-                    "files": [
-                        "bootstrap.php"
-                    ]
-                },
-                "scripts": {
-                    "i18n": [
-                        "@i18n-pot",
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
-                    ],
-                    "i18n-ci-pre": [
-                        "@i18n-pot",
-                        "@i18n-po"
-                    ],
-                    "i18n-ci-post": [
-                        "@i18n-json",
-                        "@i18n-php"
-                    ],
-                    "i18n-json": [
-                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
-                    ],
-                    "i18n-php": [
-                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
-                    ],
-                    "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-module-insights.pot ./languages"
-                    ],
-                    "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-insights.pot --domain=wp-module-insights --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-insights/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,build,vendor,wordpress,node_modules"
-                    ],
-                    "test": [
-                        "codecept run wpunit"
-                    ],
-                    "test-coverage": [
-                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
-                    ]
-                },
-                "license": [
-                    "GPL-3.0-or-later"
-                ],
-                "authors": [
-                    {
-                        "name": "Newfold Digital",
-                        "email": "hi@newfold.com"
-                    }
-                ],
-                "description": "A Newfold module that handles integration of Insights page."
-            },
-            {
-                "name": "newfold-labs/wp-module-insights",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/url-4.52.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/url-4.52.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                    "reference": "4cc493a6ee4ce951120a82920365a2549d82657e"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/4cc493a6ee4ce951120a82920365a2549d82657e",
-                    "reference": "4cc493a6ee4ce951120a82920365a2549d82657e",
-                    "shasum": ""
-                },
-                "require": {
-                    "newfold-labs/wp-module-data": "^2.9.6",
-                    "newfold-labs/wp-module-loader": "^1.1.0"
-                },
-                "require-dev": {
-                    "johnpbloch/wordpress": "@stable",
-                    "lucatume/wp-browser": "*",
-                    "newfold-labs/wp-php-standards": "^1.2.6",
-                    "phpunit/phpcov": "*",
-                    "wp-cli/i18n-command": "^2.7.0"
-                },
-                "time": "2026-08-03T03:45:32+00:00",
+                "time": "2026-08-19T20:26:27+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -629,16 +224,16 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                    "reference": "aec32426b21ab9d3391b148bef7e54f3c81b09b2"
+                    "reference": "b4a6a58ecaed5bb68f1ee2b56591317ca0ba62d9"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/aec32426b21ab9d3391b148bef7e54f3c81b09b2",
-                    "reference": "aec32426b21ab9d3391b148bef7e54f3c81b09b2",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/b4a6a58ecaed5bb68f1ee2b56591317ca0ba62d9",
+                    "reference": "b4a6a58ecaed5bb68f1ee2b56591317ca0ba62d9",
                     "shasum": ""
                 },
                 "require": {
-                    "newfold-labs/wp-module-data": "^2.9.6",
+                    "newfold-labs/wp-module-data": "^2.9.7",
                     "newfold-labs/wp-module-loader": "^1.1.0"
                 },
                 "require-dev": {
@@ -648,7 +243,7 @@
                     "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-07-31T22:58:42+00:00",
+                "time": "2026-08-19T20:24:37+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
