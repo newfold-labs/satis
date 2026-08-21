@@ -277,17 +277,17 @@
             },
             {
                 "name": "newfold-labs/wp-module-survey",
-                "version": "dev-dependabot/npm_and_yarn/main/react-toastify-11.1.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/react-toastify-11.1.0",
+                "version": "dev-dependabot/npm_and_yarn/main/cypress-15.20.1",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/cypress-15.20.1",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-survey.git",
-                    "reference": "c5a6dc3bb47bc02777d156940164b64b2fa2e5ed"
+                    "reference": "06fac37afb1e3c0550c754712dee4bf4c60fba31"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-survey/zipball/c5a6dc3bb47bc02777d156940164b64b2fa2e5ed",
-                    "reference": "c5a6dc3bb47bc02777d156940164b64b2fa2e5ed",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-survey/zipball/06fac37afb1e3c0550c754712dee4bf4c60fba31",
+                    "reference": "06fac37afb1e3c0550c754712dee4bf4c60fba31",
                     "shasum": ""
                 },
                 "require-dev": {
@@ -298,7 +298,241 @@
                     "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-08-19T21:38:25+00:00",
+                "time": "2026-08-21T06:13:25+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Survey\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print --extensions=jsx"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-survey.pot ./languages"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-survey.pot --domain=wp-module-survey --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-survey/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,build,vendor,wordpress,node_modules"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "arunshenoy99",
+                        "email": "devarunshenoy99@gmail.com"
+                    }
+                ],
+                "description": "A Newfold module to collect customer satisfaction feedback via surveys in the WordPress admin dashboard."
+            },
+            {
+                "name": "newfold-labs/wp-module-survey",
+                "version": "dev-dependabot/npm_and_yarn/main/react-toastify-11.1.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/react-toastify-11.1.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-survey.git",
+                    "reference": "4b5eb306c73b4337eae2a8141d62c6db0152fa36"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-survey/zipball/4b5eb306c73b4337eae2a8141d62c6db0152fa36",
+                    "reference": "4b5eb306c73b4337eae2a8141d62c6db0152fa36",
+                    "shasum": ""
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-module-loader": "^1.1",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-08-21T06:13:24+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Survey\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print --extensions=jsx"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-survey.pot ./languages"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-survey.pot --domain=wp-module-survey --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-survey/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,build,vendor,wordpress,node_modules"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "arunshenoy99",
+                        "email": "devarunshenoy99@gmail.com"
+                    }
+                ],
+                "description": "A Newfold module to collect customer satisfaction feedback via surveys in the WordPress admin dashboard."
+            },
+            {
+                "name": "newfold-labs/wp-module-survey",
+                "version": "dev-dependabot/npm_and_yarn/main/wordpress/base-styles-12.1.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/base-styles-12.1.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-survey.git",
+                    "reference": "15f60d38d5afe0ac0c5e97f6f0d18e3896f01aed"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-survey/zipball/15f60d38d5afe0ac0c5e97f6f0d18e3896f01aed",
+                    "reference": "15f60d38d5afe0ac0c5e97f6f0d18e3896f01aed",
+                    "shasum": ""
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-module-loader": "^1.1",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-08-21T06:13:44+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Survey\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print --extensions=jsx"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-survey.pot ./languages"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-survey.pot --domain=wp-module-survey --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-survey/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,build,vendor,wordpress,node_modules"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "arunshenoy99",
+                        "email": "devarunshenoy99@gmail.com"
+                    }
+                ],
+                "description": "A Newfold module to collect customer satisfaction feedback via surveys in the WordPress admin dashboard."
+            },
+            {
+                "name": "newfold-labs/wp-module-survey",
+                "version": "dev-dependabot/npm_and_yarn/main/wordpress/icons-15.4.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/icons-15.4.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-survey.git",
+                    "reference": "3592bd6341c9b547de82eee08298dac55d49b654"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-survey/zipball/3592bd6341c9b547de82eee08298dac55d49b654",
+                    "reference": "3592bd6341c9b547de82eee08298dac55d49b654",
+                    "shasum": ""
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-module-loader": "^1.1",
+                    "newfold-labs/wp-php-standards": "^1.2",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-08-21T06:13:48+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -622,12 +856,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-survey.git",
-                    "reference": "fccd0d3e5bfd82ca9a0e4b33a2d09e73472f84c2"
+                    "reference": "66da32bb9f9b0294c8e9a292ea7125701c3570d9"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-survey/zipball/fccd0d3e5bfd82ca9a0e4b33a2d09e73472f84c2",
-                    "reference": "fccd0d3e5bfd82ca9a0e4b33a2d09e73472f84c2",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-survey/zipball/66da32bb9f9b0294c8e9a292ea7125701c3570d9",
+                    "reference": "66da32bb9f9b0294c8e9a292ea7125701c3570d9",
                     "shasum": ""
                 },
                 "require-dev": {
@@ -638,7 +872,7 @@
                     "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-08-19T21:36:28+00:00",
+                "time": "2026-08-21T06:11:18+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {

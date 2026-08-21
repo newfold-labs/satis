@@ -256,6 +256,72 @@
             },
             {
                 "name": "newfold-labs/wp-module-activation",
+                "version": "dev-dependabot/composer/main/newfold-labs/wp-php-standards-2.0.0",
+                "version_normalized": "dev-dependabot/composer/main/newfold-labs/wp-php-standards-2.0.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-activation.git",
+                    "reference": "26378d466bf7d30cde710a4c3cfab74a1d4a39c5"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-activation/zipball/26378d466bf7d30cde710a4c3cfab74a1d4a39c5",
+                    "reference": "26378d466bf7d30cde710a4c3cfab74a1d4a39c5",
+                    "shasum": ""
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^2.0",
+                    "phpunit/phpcov": "*"
+                },
+                "time": "2026-08-20T20:43:52+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Activation\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+                        "echo \"open tests/_output/html/index.html\" to view the report"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Micah Wood",
+                        "email": "micah@wpscholar.com"
+                    },
+                    {
+                        "name": "Evan Mullins",
+                        "email": "evanrm@gmail.com"
+                    },
+                    {
+                        "name": "Al Ani",
+                        "email": "hey@alani.dev"
+                    }
+                ],
+                "description": "A Module for handling WordPress brand plugins activations"
+            },
+            {
+                "name": "newfold-labs/wp-module-activation",
                 "version": "dev-fix/PRESS10-12",
                 "version_normalized": "dev-fix/PRESS10-12",
                 "source": {
