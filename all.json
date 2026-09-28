@@ -65364,6 +65364,92 @@
                 ],
                 "description": "A WordPress module that adds tracking params"
             },
+            "1.1.7": {
+                "name": "newfold-labs/wp-module-link-tracker",
+                "version": "1.1.7",
+                "version_normalized": "1.1.7.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
+                    "reference": "9a88b783bc7665b7b6affb24705780fbbe762793"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/9a88b783bc7665b7b6affb24705780fbbe762793",
+                    "reference": "9a88b783bc7665b7b6affb24705780fbbe762793",
+                    "shasum": ""
+                },
+                "require-dev": {
+                    "10up/wp_mock": "^1.1.1",
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-module-loader": "^1.1",
+                    "newfold-labs/wp-php-standards": "^2.0",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-09-28T19:03:08+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\LinkTracker\\": "includes/"
+                    },
+                    "files": [
+                        "includes/functions.php",
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-link-tracker.pot --domain=wp-module-link-tracker --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-link-tracker/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests,wordpress"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-link-tracker.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
+                    ]
+                },
+                "license": [
+                    "GPL-3.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Carlos Rodriguez",
+                        "email": "carlos.rodriguez@newfold.com"
+                    }
+                ],
+                "description": "A WordPress module that adds tracking params"
+            },
             "dev-add/docs": {
                 "name": "newfold-labs/wp-module-link-tracker",
                 "version": "dev-add/docs",
@@ -65533,12 +65619,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
-                    "reference": "d7675151ab992855569984e4a590f74d01f55230"
+                    "reference": "8b132517672d2890d78ecb0620a5f328e4eb6fac"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/d7675151ab992855569984e4a590f74d01f55230",
-                    "reference": "d7675151ab992855569984e4a590f74d01f55230",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/8b132517672d2890d78ecb0620a5f328e4eb6fac",
+                    "reference": "8b132517672d2890d78ecb0620a5f328e4eb6fac",
                     "shasum": ""
                 },
                 "require-dev": {
@@ -65550,7 +65636,7 @@
                     "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-05-14T21:26:34+00:00",
+                "time": "2026-09-28T18:06:10+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -65582,6 +65668,92 @@
                         "@i18n-po",
                         "@i18n-php",
                         "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
+                    ]
+                },
+                "license": [
+                    "GPL-3.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Carlos Rodriguez",
+                        "email": "carlos.rodriguez@newfold.com"
+                    }
+                ],
+                "description": "A WordPress module that adds tracking params"
+            },
+            "dev-auto-translate/main": {
+                "name": "newfold-labs/wp-module-link-tracker",
+                "version": "dev-auto-translate/main",
+                "version_normalized": "dev-auto-translate/main",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
+                    "reference": "9a88b783bc7665b7b6affb24705780fbbe762793"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/9a88b783bc7665b7b6affb24705780fbbe762793",
+                    "reference": "9a88b783bc7665b7b6affb24705780fbbe762793",
+                    "shasum": ""
+                },
+                "require-dev": {
+                    "10up/wp_mock": "^1.1.1",
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-module-loader": "^1.1",
+                    "newfold-labs/wp-php-standards": "^2.0",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-09-28T19:03:08+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\LinkTracker\\": "includes/"
+                    },
+                    "files": [
+                        "includes/functions.php",
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-link-tracker.pot --domain=wp-module-link-tracker --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-link-tracker/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests,wordpress"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-link-tracker.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
                     ],
                     "lint": [
                         "vendor/bin/phpcs . --standard=phpcs.xml -s"
@@ -65908,6 +66080,92 @@
                 ],
                 "description": "A WordPress module that adds tracking params"
             },
+            "dev-fix/PRESS0-5098": {
+                "name": "newfold-labs/wp-module-link-tracker",
+                "version": "dev-fix/PRESS0-5098",
+                "version_normalized": "dev-fix/PRESS0-5098",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
+                    "reference": "5c77873b9fbab501d472479739505018eaf6108e"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/5c77873b9fbab501d472479739505018eaf6108e",
+                    "reference": "5c77873b9fbab501d472479739505018eaf6108e",
+                    "shasum": ""
+                },
+                "require-dev": {
+                    "10up/wp_mock": "^1.1.1",
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-module-loader": "^1.1",
+                    "newfold-labs/wp-php-standards": "^2.0",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-09-07T13:10:40+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\LinkTracker\\": "includes/"
+                    },
+                    "files": [
+                        "includes/functions.php",
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-link-tracker.pot --domain=wp-module-link-tracker --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-link-tracker/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests,wordpress"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-link-tracker.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
+                    ]
+                },
+                "license": [
+                    "GPL-3.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Carlos Rodriguez",
+                        "email": "carlos.rodriguez@newfold.com"
+                    }
+                ],
+                "description": "A WordPress module that adds tracking params"
+            },
             "dev-fix/PRESS10-239": {
                 "name": "newfold-labs/wp-module-link-tracker",
                 "version": "dev-fix/PRESS10-239",
@@ -66196,6 +66454,92 @@
                 ],
                 "description": "A WordPress module that adds tracking params"
             },
+            "dev-fix/i18n-ci-scripts": {
+                "name": "newfold-labs/wp-module-link-tracker",
+                "version": "dev-fix/i18n-ci-scripts",
+                "version_normalized": "dev-fix/i18n-ci-scripts",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
+                    "reference": "4643db192ebbb924975cefcded449d6255125dcd"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/4643db192ebbb924975cefcded449d6255125dcd",
+                    "reference": "4643db192ebbb924975cefcded449d6255125dcd",
+                    "shasum": ""
+                },
+                "require-dev": {
+                    "10up/wp_mock": "^1.1.1",
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-module-loader": "^1.1",
+                    "newfold-labs/wp-php-standards": "^2.0.0",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-09-02T16:27:12+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\LinkTracker\\": "includes/"
+                    },
+                    "files": [
+                        "includes/functions.php",
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-link-tracker.pot --domain=wp-module-link-tracker --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-link-tracker/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests,wordpress"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-link-tracker.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
+                    ]
+                },
+                "license": [
+                    "GPL-3.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Carlos Rodriguez",
+                        "email": "carlos.rodriguez@newfold.com"
+                    }
+                ],
+                "description": "A WordPress module that adds tracking params"
+            },
             "dev-fix/i18n-composer-command": {
                 "name": "newfold-labs/wp-module-link-tracker",
                 "version": "dev-fix/i18n-composer-command",
@@ -66221,6 +66565,84 @@
                     "wp-cli/i18n-command": "^2.7.0"
                 },
                 "time": "2026-04-03T17:41:50+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\LinkTracker\\": "includes/"
+                    },
+                    "files": [
+                        "includes/functions.php",
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-solutions.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-solutions/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests,wordpress"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-solutions.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
+                    ]
+                },
+                "license": [
+                    "GPL-3.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Carlos Rodriguez",
+                        "email": "carlos.rodriguez@newfold.com"
+                    }
+                ],
+                "description": "A WordPress module that adds tracking params"
+            },
+            "dev-fix/i18n-workflows": {
+                "name": "newfold-labs/wp-module-link-tracker",
+                "version": "dev-fix/i18n-workflows",
+                "version_normalized": "dev-fix/i18n-workflows",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
+                    "reference": "d5a34354a1ed27650389a5f1adbfc2bc233a4e96"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/d5a34354a1ed27650389a5f1adbfc2bc233a4e96",
+                    "reference": "d5a34354a1ed27650389a5f1adbfc2bc233a4e96",
+                    "shasum": ""
+                },
+                "require-dev": {
+                    "10up/wp_mock": "^1.1.1",
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-module-loader": "^1.1",
+                    "newfold-labs/wp-php-standards": "^2.0.0",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-09-01T20:59:34+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -66561,12 +66983,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
-                    "reference": "f49b8adf1fd2f599c11007d0883c5e1564990316"
+                    "reference": "9a88b783bc7665b7b6affb24705780fbbe762793"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/f49b8adf1fd2f599c11007d0883c5e1564990316",
-                    "reference": "f49b8adf1fd2f599c11007d0883c5e1564990316",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/9a88b783bc7665b7b6affb24705780fbbe762793",
+                    "reference": "9a88b783bc7665b7b6affb24705780fbbe762793",
                     "shasum": ""
                 },
                 "require-dev": {
@@ -66574,11 +66996,11 @@
                     "johnpbloch/wordpress": "@stable",
                     "lucatume/wp-browser": "*",
                     "newfold-labs/wp-module-loader": "^1.1",
-                    "newfold-labs/wp-php-standards": "^1.2.6",
+                    "newfold-labs/wp-php-standards": "^2.0",
                     "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-08-20T23:13:30+00:00",
+                "time": "2026-09-28T19:03:08+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -66595,10 +67017,10 @@
                         "vendor/bin/phpcbf . --standard=phpcs.xml"
                     ],
                     "i18n-pot": [
-                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-solutions.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-solutions/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests,wordpress"
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-link-tracker.pot --domain=wp-module-link-tracker --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-link-tracker/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests,wordpress"
                     ],
                     "i18n-po": [
-                        "vendor/bin/wp i18n update-po ./languages/wp-module-solutions.pot ./languages"
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-link-tracker.pot ./languages"
                     ],
                     "i18n-php": [
                         "vendor/bin/wp i18n make-php ./languages --pretty-print"
@@ -66611,6 +67033,14 @@
                         "@i18n-po",
                         "@i18n-php",
                         "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
                     ],
                     "lint": [
                         "vendor/bin/phpcs . --standard=phpcs.xml -s"
@@ -66980,6 +67410,92 @@
                         "@i18n-po",
                         "@i18n-php",
                         "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov && phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output && echo \"open tests/_output/html/index.html to view the report\""
+                    ]
+                },
+                "license": [
+                    "GPL-3.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Carlos Rodriguez",
+                        "email": "carlos.rodriguez@newfold.com"
+                    }
+                ],
+                "description": "A WordPress module that adds tracking params"
+            },
+            "dev-release/1.1.7": {
+                "name": "newfold-labs/wp-module-link-tracker",
+                "version": "dev-release/1.1.7",
+                "version_normalized": "dev-release/1.1.7",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
+                    "reference": "51ccb9def68048cd3c3be843bb28a3e6f1ee3cc9"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/51ccb9def68048cd3c3be843bb28a3e6f1ee3cc9",
+                    "reference": "51ccb9def68048cd3c3be843bb28a3e6f1ee3cc9",
+                    "shasum": ""
+                },
+                "require-dev": {
+                    "10up/wp_mock": "^1.1.1",
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-module-loader": "^1.1",
+                    "newfold-labs/wp-php-standards": "^2.0",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-09-28T18:13:13+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\LinkTracker\\": "includes/"
+                    },
+                    "files": [
+                        "includes/functions.php",
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-link-tracker.pot --domain=wp-module-link-tracker --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-link-tracker/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests,wordpress"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-link-tracker.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
                     ],
                     "lint": [
                         "vendor/bin/phpcs . --standard=phpcs.xml -s"
