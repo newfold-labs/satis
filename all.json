@@ -4346,6 +4346,85 @@
                 ],
                 "description": "Newfold module for Adam (Ads and More) cross-sell content in brand plugins"
             },
+            "1.1.0": {
+                "name": "newfold-labs/wp-module-adam",
+                "version": "1.1.0",
+                "version_normalized": "1.1.0.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-adam.git",
+                    "reference": "2fb5fe0f17799cf83de11fed4632c03fae701027"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-adam/zipball/2fb5fe0f17799cf83de11fed4632c03fae701027",
+                    "reference": "2fb5fe0f17799cf83de11fed4632c03fae701027",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-context": "^1.0.2",
+                    "newfold-labs/wp-module-data": "^2.0",
+                    "newfold-labs/wp-module-features": "^1.5.1"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^2.0",
+                    "wp-cli/i18n-command": "^2.7"
+                },
+                "time": "2026-10-01T16:17:13+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Adam\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-adam.pot --domain=wp-module-adam --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-adam/issues\",\"POT-Creation-Date\":\"2025-02-17T00:00:00+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-adam.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Arun Shenoy",
+                        "email": "devarunshenoy99@gmail.com"
+                    }
+                ],
+                "description": "Newfold module for Adam (Ads and More) cross-sell content in brand plugins"
+            },
             "dev-add/docs": {
                 "name": "newfold-labs/wp-module-adam",
                 "version": "dev-add/docs",
@@ -5140,19 +5219,19 @@
                 ],
                 "description": "Newfold module for Adam (Ads and More) cross-sell content in brand plugins"
             },
-            "dev-main": {
+            "dev-fix/playwright-esm-js": {
                 "name": "newfold-labs/wp-module-adam",
-                "version": "dev-main",
-                "version_normalized": "dev-main",
+                "version": "dev-fix/playwright-esm-js",
+                "version_normalized": "dev-fix/playwright-esm-js",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-adam.git",
-                    "reference": "f813bc073ce675d9f0377f55d91d6bf6f32169da"
+                    "reference": "d0da880bd499984067a38936aa27c25b83a4c630"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-adam/zipball/f813bc073ce675d9f0377f55d91d6bf6f32169da",
-                    "reference": "f813bc073ce675d9f0377f55d91d6bf6f32169da",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-adam/zipball/d0da880bd499984067a38936aa27c25b83a4c630",
+                    "reference": "d0da880bd499984067a38936aa27c25b83a4c630",
                     "shasum": ""
                 },
                 "require": {
@@ -5164,7 +5243,86 @@
                     "newfold-labs/wp-php-standards": "^2.0",
                     "wp-cli/i18n-command": "^2.7"
                 },
-                "time": "2026-09-15T09:31:18+00:00",
+                "time": "2026-09-24T22:13:02+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Adam\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-adam.pot --domain=wp-module-adam --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-adam/issues\",\"POT-Creation-Date\":\"2025-02-17T00:00:00+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-adam.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Arun Shenoy",
+                        "email": "devarunshenoy99@gmail.com"
+                    }
+                ],
+                "description": "Newfold module for Adam (Ads and More) cross-sell content in brand plugins"
+            },
+            "dev-main": {
+                "name": "newfold-labs/wp-module-adam",
+                "version": "dev-main",
+                "version_normalized": "dev-main",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-adam.git",
+                    "reference": "2fb5fe0f17799cf83de11fed4632c03fae701027"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-adam/zipball/2fb5fe0f17799cf83de11fed4632c03fae701027",
+                    "reference": "2fb5fe0f17799cf83de11fed4632c03fae701027",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-context": "^1.0.2",
+                    "newfold-labs/wp-module-data": "^2.0",
+                    "newfold-labs/wp-module-features": "^1.5.1"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^2.0",
+                    "wp-cli/i18n-command": "^2.7"
+                },
+                "time": "2026-10-01T16:17:13+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -5245,6 +5403,85 @@
                     "wp-cli/i18n-command": "^2.7"
                 },
                 "time": "2026-09-15T09:29:47+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Adam\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf . --standard=phpcs.xml"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-adam.pot --domain=wp-module-adam --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-adam/issues\",\"POT-Creation-Date\":\"2025-02-17T00:00:00+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-adam.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Arun Shenoy",
+                        "email": "devarunshenoy99@gmail.com"
+                    }
+                ],
+                "description": "Newfold module for Adam (Ads and More) cross-sell content in brand plugins"
+            },
+            "dev-release/1.1.0": {
+                "name": "newfold-labs/wp-module-adam",
+                "version": "dev-release/1.1.0",
+                "version_normalized": "dev-release/1.1.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-adam.git",
+                    "reference": "cacdd54ed717f00c418f722113d657c861f079fa"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-adam/zipball/cacdd54ed717f00c418f722113d657c861f079fa",
+                    "reference": "cacdd54ed717f00c418f722113d657c861f079fa",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-context": "^1.0.2",
+                    "newfold-labs/wp-module-data": "^2.0",
+                    "newfold-labs/wp-module-features": "^1.5.1"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^2.0",
+                    "wp-cli/i18n-command": "^2.7"
+                },
+                "time": "2026-10-01T14:00:14+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
