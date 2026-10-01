@@ -119,17 +119,17 @@
             },
             {
                 "name": "newfold-labs/wp-module-loader",
-                "version": "dev-chore/ai-code-review-central-workflow",
-                "version_normalized": "dev-chore/ai-code-review-central-workflow",
+                "version": "dev-auto-translate/main",
+                "version_normalized": "dev-auto-translate/main",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-loader.git",
-                    "reference": "1ab469a9fa574a458a66dbbb4cd1b00e14ba952e"
+                    "reference": "9bbe65c52b90bea454a8885b4dbcc45781805861"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-loader/zipball/1ab469a9fa574a458a66dbbb4cd1b00e14ba952e",
-                    "reference": "1ab469a9fa574a458a66dbbb4cd1b00e14ba952e",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-loader/zipball/9bbe65c52b90bea454a8885b4dbcc45781805861",
+                    "reference": "9bbe65c52b90bea454a8885b4dbcc45781805861",
                     "shasum": ""
                 },
                 "require": {
@@ -141,9 +141,10 @@
                 "require-dev": {
                     "johnpbloch/wordpress": "6.9.1",
                     "lucatume/wp-browser": "*",
-                    "phpunit/phpcov": "*"
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-06-15T16:07:46+00:00",
+                "time": "2026-09-02T18:37:21+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -155,6 +156,32 @@
                     ]
                 },
                 "scripts": {
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-loader.pot --domain=wp-module-loader --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-loader/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-loader.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
                     "test": [
                         "codecept run wpunit"
                     ],
@@ -177,17 +204,17 @@
             },
             {
                 "name": "newfold-labs/wp-module-loader",
-                "version": "dev-enhance/PRESS0-4266",
-                "version_normalized": "dev-enhance/PRESS0-4266",
+                "version": "dev-chore/ai-code-review-central-workflow",
+                "version_normalized": "dev-chore/ai-code-review-central-workflow",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-loader.git",
-                    "reference": "1ac9026d92465cb721c2a3bf42c7aa150a0a21b1"
+                    "reference": "ccba20b89e645415b9957de0ca81557331d1aee0"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-loader/zipball/1ac9026d92465cb721c2a3bf42c7aa150a0a21b1",
-                    "reference": "1ac9026d92465cb721c2a3bf42c7aa150a0a21b1",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-loader/zipball/ccba20b89e645415b9957de0ca81557331d1aee0",
+                    "reference": "ccba20b89e645415b9957de0ca81557331d1aee0",
                     "shasum": ""
                 },
                 "require": {
@@ -201,7 +228,7 @@
                     "lucatume/wp-browser": "*",
                     "phpunit/phpcov": "*"
                 },
-                "time": "2026-08-18T06:17:19+00:00",
+                "time": "2026-09-01T20:01:47+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -240,12 +267,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-loader.git",
-                    "reference": "88b98477197a8dce0aa006c53817b4ad945b5bfd"
+                    "reference": "9bbe65c52b90bea454a8885b4dbcc45781805861"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-loader/zipball/88b98477197a8dce0aa006c53817b4ad945b5bfd",
-                    "reference": "88b98477197a8dce0aa006c53817b4ad945b5bfd",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-loader/zipball/9bbe65c52b90bea454a8885b4dbcc45781805861",
+                    "reference": "9bbe65c52b90bea454a8885b4dbcc45781805861",
                     "shasum": ""
                 },
                 "require": {
@@ -257,9 +284,10 @@
                 "require-dev": {
                     "johnpbloch/wordpress": "6.9.1",
                     "lucatume/wp-browser": "*",
-                    "phpunit/phpcov": "*"
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-07-31T14:23:21+00:00",
+                "time": "2026-09-02T18:37:21+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -272,6 +300,32 @@
                     ]
                 },
                 "scripts": {
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-loader.pot --domain=wp-module-loader --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-loader/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-loader.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
                     "test": [
                         "codecept run wpunit"
                     ],

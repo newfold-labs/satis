@@ -103,6 +103,83 @@
             },
             {
                 "name": "newfold-labs/wp-module-tasks",
+                "version": "dev-auto-translate/main",
+                "version_normalized": "dev-auto-translate/main",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-tasks.git",
+                    "reference": "53640ef686fbe122b399f0016821da0b821720ac"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-tasks/zipball/53640ef686fbe122b399f0016821da0b821720ac",
+                    "reference": "53640ef686fbe122b399f0016821da0b821720ac",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-loader": "^1.0.12"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "@stable",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-09-02T18:44:59+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Tasks\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-tasks.pot --domain=wp-module-tasks --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-tasks/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-tasks.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Amartya Gaur",
+                        "email": "amartya.gaur@newfold.com"
+                    }
+                ],
+                "description": "A task system for wordpress, can be used for periodic and one-off tasks"
+            },
+            {
+                "name": "newfold-labs/wp-module-tasks",
                 "version": "dev-chore/ai-code-review-central-workflow",
                 "version_normalized": "dev-chore/ai-code-review-central-workflow",
                 "source": {
@@ -153,26 +230,27 @@
             },
             {
                 "name": "newfold-labs/wp-module-tasks",
-                "version": "dev-dependabot/composer/main/newfold-labs/wp-module-loader-1.0.12",
-                "version_normalized": "dev-dependabot/composer/main/newfold-labs/wp-module-loader-1.0.12",
+                "version": "dev-dependabot/composer/main/newfold-labs/wp-module-loader-1.1.0",
+                "version_normalized": "dev-dependabot/composer/main/newfold-labs/wp-module-loader-1.1.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-tasks.git",
-                    "reference": "7474c7734e052b9399021366a724fbe55c3c2cdf"
+                    "reference": "1c38c0077a332463306641e9759bbce91784f971"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-tasks/zipball/7474c7734e052b9399021366a724fbe55c3c2cdf",
-                    "reference": "7474c7734e052b9399021366a724fbe55c3c2cdf",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-tasks/zipball/1c38c0077a332463306641e9759bbce91784f971",
+                    "reference": "1c38c0077a332463306641e9759bbce91784f971",
                     "shasum": ""
                 },
                 "require": {
-                    "newfold-labs/wp-module-loader": "^1.0.12"
+                    "newfold-labs/wp-module-loader": "^1.1.0"
                 },
                 "require-dev": {
-                    "newfold-labs/wp-php-standards": "@stable"
+                    "newfold-labs/wp-php-standards": "@stable",
+                    "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2025-01-23T03:08:47+00:00",
+                "time": "2026-09-03T02:13:31+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -188,6 +266,32 @@
                     ],
                     "lint": [
                         "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-tasks.pot --domain=wp-module-tasks --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-tasks/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-tasks.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
                     ]
                 },
                 "license": [
@@ -203,26 +307,27 @@
             },
             {
                 "name": "newfold-labs/wp-module-tasks",
-                "version": "dev-dependabot/composer/main/newfold-labs/wp-php-standards-1.2.5",
-                "version_normalized": "dev-dependabot/composer/main/newfold-labs/wp-php-standards-1.2.5",
+                "version": "dev-dependabot/github_actions/main/actions/cache-6.1.0",
+                "version_normalized": "dev-dependabot/github_actions/main/actions/cache-6.1.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-tasks.git",
-                    "reference": "ba61c5019be90a93825599ae83a50454d471e8c1"
+                    "reference": "410056cb26e2b83a98f770fee3ee8982fe313ee5"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-tasks/zipball/ba61c5019be90a93825599ae83a50454d471e8c1",
-                    "reference": "ba61c5019be90a93825599ae83a50454d471e8c1",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-tasks/zipball/410056cb26e2b83a98f770fee3ee8982fe313ee5",
+                    "reference": "410056cb26e2b83a98f770fee3ee8982fe313ee5",
                     "shasum": ""
                 },
                 "require": {
-                    "newfold-labs/wp-module-loader": "^1.0.11"
+                    "newfold-labs/wp-module-loader": "^1.0.12"
                 },
                 "require-dev": {
-                    "newfold-labs/wp-php-standards": "@stable"
+                    "newfold-labs/wp-php-standards": "@stable",
+                    "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2025-03-20T02:50:37+00:00",
+                "time": "2026-09-03T02:13:00+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -238,6 +343,186 @@
                     ],
                     "lint": [
                         "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-tasks.pot --domain=wp-module-tasks --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-tasks/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-tasks.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Amartya Gaur",
+                        "email": "amartya.gaur@newfold.com"
+                    }
+                ],
+                "description": "A task system for wordpress, can be used for periodic and one-off tasks"
+            },
+            {
+                "name": "newfold-labs/wp-module-tasks",
+                "version": "dev-dependabot/github_actions/main/actions/checkout-7.0.1",
+                "version_normalized": "dev-dependabot/github_actions/main/actions/checkout-7.0.1",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-tasks.git",
+                    "reference": "94c0d3f41e97e3c36dbf7f8e11e63f1c8e47b7c1"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-tasks/zipball/94c0d3f41e97e3c36dbf7f8e11e63f1c8e47b7c1",
+                    "reference": "94c0d3f41e97e3c36dbf7f8e11e63f1c8e47b7c1",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-loader": "^1.0.12"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "@stable",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-09-03T02:13:05+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Tasks\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-tasks.pot --domain=wp-module-tasks --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-tasks/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-tasks.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Amartya Gaur",
+                        "email": "amartya.gaur@newfold.com"
+                    }
+                ],
+                "description": "A task system for wordpress, can be used for periodic and one-off tasks"
+            },
+            {
+                "name": "newfold-labs/wp-module-tasks",
+                "version": "dev-dependabot/github_actions/main/peter-evans/repository-dispatch-4.0.1",
+                "version_normalized": "dev-dependabot/github_actions/main/peter-evans/repository-dispatch-4.0.1",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-tasks.git",
+                    "reference": "1950ea86e9d5bfb04de6f9cde6b43404a17777b7"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-tasks/zipball/1950ea86e9d5bfb04de6f9cde6b43404a17777b7",
+                    "reference": "1950ea86e9d5bfb04de6f9cde6b43404a17777b7",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-loader": "^1.0.12"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "@stable",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-09-03T02:12:46+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Tasks\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-tasks.pot --domain=wp-module-tasks --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-tasks/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-tasks.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
                     ]
                 },
                 "license": [
@@ -403,17 +688,171 @@
             },
             {
                 "name": "newfold-labs/wp-module-tasks",
-                "version": "dev-main",
-                "version_normalized": "dev-main",
+                "version": "dev-fix/PRESS0-5098",
+                "version_normalized": "dev-fix/PRESS0-5098",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-tasks.git",
-                    "reference": "68b7d64100c3940905a1c6b70a0f848c8a18b864"
+                    "reference": "496fe82591e62f5f071e262c9f901b2833050d1b"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-tasks/zipball/68b7d64100c3940905a1c6b70a0f848c8a18b864",
-                    "reference": "68b7d64100c3940905a1c6b70a0f848c8a18b864",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-tasks/zipball/496fe82591e62f5f071e262c9f901b2833050d1b",
+                    "reference": "496fe82591e62f5f071e262c9f901b2833050d1b",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-loader": "^1.0.12"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "^2.0",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-09-07T13:10:46+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Tasks\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-tasks.pot --domain=wp-module-tasks --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-tasks/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-tasks.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Amartya Gaur",
+                        "email": "amartya.gaur@newfold.com"
+                    }
+                ],
+                "description": "A task system for wordpress, can be used for periodic and one-off tasks"
+            },
+            {
+                "name": "newfold-labs/wp-module-tasks",
+                "version": "dev-fix/bootstrap-i18n",
+                "version_normalized": "dev-fix/bootstrap-i18n",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-tasks.git",
+                    "reference": "3369de205042f4fec7a596a317a33ae09afab48b"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-tasks/zipball/3369de205042f4fec7a596a317a33ae09afab48b",
+                    "reference": "3369de205042f4fec7a596a317a33ae09afab48b",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-loader": "^1.0.12"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "@stable",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-09-02T17:39:00+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Tasks\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-tasks.pot --domain=wp-module-tasks --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-tasks/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-tasks.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Amartya Gaur",
+                        "email": "amartya.gaur@newfold.com"
+                    }
+                ],
+                "description": "A task system for wordpress, can be used for periodic and one-off tasks"
+            },
+            {
+                "name": "newfold-labs/wp-module-tasks",
+                "version": "dev-fix/i18n-workflows",
+                "version_normalized": "dev-fix/i18n-workflows",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-tasks.git",
+                    "reference": "a609974afa70db0c9263a539886721cd7540af48"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-tasks/zipball/a609974afa70db0c9263a539886721cd7540af48",
+                    "reference": "a609974afa70db0c9263a539886721cd7540af48",
                     "shasum": ""
                 },
                 "require": {
@@ -422,7 +861,58 @@
                 "require-dev": {
                     "newfold-labs/wp-php-standards": "@stable"
                 },
-                "time": "2026-07-23T14:03:40+00:00",
+                "time": "2026-09-02T14:25:22+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Tasks\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Amartya Gaur",
+                        "email": "amartya.gaur@newfold.com"
+                    }
+                ],
+                "description": "A task system for wordpress, can be used for periodic and one-off tasks"
+            },
+            {
+                "name": "newfold-labs/wp-module-tasks",
+                "version": "dev-main",
+                "version_normalized": "dev-main",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-tasks.git",
+                    "reference": "23a2b3ff419b851e17f1743030ccd5d02b251f79"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-tasks/zipball/23a2b3ff419b851e17f1743030ccd5d02b251f79",
+                    "reference": "23a2b3ff419b851e17f1743030ccd5d02b251f79",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-loader": "^1.0.12"
+                },
+                "require-dev": {
+                    "newfold-labs/wp-php-standards": "@stable",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-09-03T06:23:22+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -439,6 +929,32 @@
                     ],
                     "lint": [
                         "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-tasks.pot --domain=wp-module-tasks --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-tasks/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-tasks.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
                     ]
                 },
                 "license": [

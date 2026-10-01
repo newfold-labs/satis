@@ -244,12 +244,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-reset.git",
-                    "reference": "f858871bcafcf97d976c3c6a61e19e7968d4924f"
+                    "reference": "2ec2f80ed90f984a4bdd664d084281ac2cb7d278"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-reset/zipball/f858871bcafcf97d976c3c6a61e19e7968d4924f",
-                    "reference": "f858871bcafcf97d976c3c6a61e19e7968d4924f",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-reset/zipball/2ec2f80ed90f984a4bdd664d084281ac2cb7d278",
+                    "reference": "2ec2f80ed90f984a4bdd664d084281ac2cb7d278",
                     "shasum": ""
                 },
                 "require": {
@@ -263,7 +263,7 @@
                     "wp-cli/i18n-command": "^2.6.6",
                     "yoast/phpunit-polyfills": "^2.0.5"
                 },
-                "time": "2026-07-31T14:28:24+00:00",
+                "time": "2026-09-08T14:58:25+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -296,9 +296,84 @@
                         "@i18n-po"
                     ],
                     "i18n-ci-post": [
+                        "@i18n-php"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge ./tests/_output/ --clover ./tests/_output/coverage.xml"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "description": "Factory Reset module for Newfold WordPress plugins"
+            },
+            {
+                "name": "newfold-labs/wp-module-reset",
+                "version": "dev-fix/PRESS0-5098",
+                "version_normalized": "dev-fix/PRESS0-5098",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-reset.git",
+                    "reference": "77d7f9543269dd14381ea40d0d5bbdff753384ce"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-reset/zipball/77d7f9543269dd14381ea40d0d5bbdff753384ce",
+                    "reference": "77d7f9543269dd14381ea40d0d5bbdff753384ce",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-features": "^1.5"
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^2.0",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.6.6",
+                    "yoast/phpunit-polyfills": "^2.0.5"
+                },
+                "time": "2026-09-07T13:10:43+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Reset\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-reset.pot --domain=wp-module-reset --exclude=tests,vendor,node_modules,wordpress"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-reset.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
                         "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
+                        "@i18n-php"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-php"
                     ],
                     "lint": [
                         "vendor/bin/phpcs --standard=phpcs.xml -s ."
@@ -378,6 +453,83 @@
                         "@i18n-po",
                         "@i18n-php",
                         "@i18n-json"
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge ./tests/_output/ --clover ./tests/_output/coverage.xml"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "description": "Factory Reset module for Newfold WordPress plugins"
+            },
+            {
+                "name": "newfold-labs/wp-module-reset",
+                "version": "dev-fix/i18n-ci-scripts",
+                "version_normalized": "dev-fix/i18n-ci-scripts",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-reset.git",
+                    "reference": "f3c594092468c0fb276e453bdd0e313871dc9630"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-reset/zipball/f3c594092468c0fb276e453bdd0e313871dc9630",
+                    "reference": "f3c594092468c0fb276e453bdd0e313871dc9630",
+                    "shasum": ""
+                },
+                "require": {
+                    "newfold-labs/wp-module-features": "^1.5"
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^1.2.5",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.6.6",
+                    "yoast/phpunit-polyfills": "^2.0.5"
+                },
+                "time": "2026-09-02T16:27:17+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Reset\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-reset.pot --domain=wp-module-reset --exclude=tests,vendor,node_modules,wordpress"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-reset.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-php"
                     ],
                     "lint": [
                         "vendor/bin/phpcs --standard=phpcs.xml -s ."
@@ -481,12 +633,12 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-reset.git",
-                    "reference": "43aae6f4a8cfc4c84ec218cb3a338233a58034bd"
+                    "reference": "b0ae1965bb1004daf20e0c3dc400870fa74e81f6"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-reset/zipball/43aae6f4a8cfc4c84ec218cb3a338233a58034bd",
-                    "reference": "43aae6f4a8cfc4c84ec218cb3a338233a58034bd",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-reset/zipball/b0ae1965bb1004daf20e0c3dc400870fa74e81f6",
+                    "reference": "b0ae1965bb1004daf20e0c3dc400870fa74e81f6",
                     "shasum": ""
                 },
                 "require": {
@@ -495,12 +647,12 @@
                 "require-dev": {
                     "johnpbloch/wordpress": "@stable",
                     "lucatume/wp-browser": "*",
-                    "newfold-labs/wp-php-standards": "^1.2.5",
+                    "newfold-labs/wp-php-standards": "^2.0",
                     "phpunit/phpcov": "*",
                     "wp-cli/i18n-command": "^2.6.6",
                     "yoast/phpunit-polyfills": "^2.0.5"
                 },
-                "time": "2026-07-31T14:26:04+00:00",
+                "time": "2026-09-08T14:56:15+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -534,9 +686,7 @@
                         "@i18n-po"
                     ],
                     "i18n-ci-post": [
-                        "@i18n-po",
-                        "@i18n-php",
-                        "@i18n-json"
+                        "@i18n-php"
                     ],
                     "lint": [
                         "vendor/bin/phpcs --standard=phpcs.xml -s ."

@@ -127,17 +127,17 @@
             },
             {
                 "name": "newfold-labs/wp-module-maestro",
-                "version": "dev-chore/ai-code-review-central-workflow",
-                "version_normalized": "dev-chore/ai-code-review-central-workflow",
+                "version": "dev-auto-translate/main",
+                "version_normalized": "dev-auto-translate/main",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-maestro.git",
-                    "reference": "9edb7cebf7f90d0e473b30a49d2de9415b5576b9"
+                    "reference": "d642b5ac84b20b49fc70c34c1d1cc189def0d1d3"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/9edb7cebf7f90d0e473b30a49d2de9415b5576b9",
-                    "reference": "9edb7cebf7f90d0e473b30a49d2de9415b5576b9",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/d642b5ac84b20b49fc70c34c1d1cc189def0d1d3",
+                    "reference": "d642b5ac84b20b49fc70c34c1d1cc189def0d1d3",
                     "shasum": ""
                 },
                 "require": {
@@ -148,9 +148,10 @@
                     "johnpbloch/wordpress": "@stable",
                     "lucatume/wp-browser": "*",
                     "newfold-labs/wp-php-standards": "@stable",
-                    "phpunit/phpcov": "*"
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2026-06-15T16:08:04+00:00",
+                "time": "2026-09-02T18:46:21+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -166,6 +167,32 @@
                     ],
                     "lint": [
                         "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-maestro.pot --domain=wp-module-maestro --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-maestro/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-maestro.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
                     ],
                     "test": [
                         "codecept run wpunit"
@@ -240,17 +267,17 @@
             },
             {
                 "name": "newfold-labs/wp-module-maestro",
-                "version": "dev-dependabot/composer/main/johnpbloch/wordpress-6.9.0",
-                "version_normalized": "dev-dependabot/composer/main/johnpbloch/wordpress-6.9.0",
+                "version": "dev-dependabot/composer/main/johnpbloch/wordpress-7.1.1",
+                "version_normalized": "dev-dependabot/composer/main/johnpbloch/wordpress-7.1.1",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-maestro.git",
-                    "reference": "016d3e3db0751614a651ed6198236fa2e8af63e1"
+                    "reference": "088a8ab2869bf075c8c0ad056b266d059370ac99"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/016d3e3db0751614a651ed6198236fa2e8af63e1",
-                    "reference": "016d3e3db0751614a651ed6198236fa2e8af63e1",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/088a8ab2869bf075c8c0ad056b266d059370ac99",
+                    "reference": "088a8ab2869bf075c8c0ad056b266d059370ac99",
                     "shasum": ""
                 },
                 "require": {
@@ -261,9 +288,10 @@
                     "johnpbloch/wordpress": "@stable",
                     "lucatume/wp-browser": "*",
                     "newfold-labs/wp-php-standards": "@stable",
-                    "phpunit/phpcov": "*"
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2025-12-03T09:19:25+00:00",
+                "time": "2026-09-21T09:53:19+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -279,6 +307,32 @@
                     ],
                     "lint": [
                         "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-maestro.pot --domain=wp-module-maestro --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-maestro/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-maestro.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
                     ],
                     "test": [
                         "codecept run wpunit"
@@ -302,30 +356,31 @@
             },
             {
                 "name": "newfold-labs/wp-module-maestro",
-                "version": "dev-dependabot/composer/main/newfold-labs/wp-module-loader-1.0.14",
-                "version_normalized": "dev-dependabot/composer/main/newfold-labs/wp-module-loader-1.0.14",
+                "version": "dev-dependabot/composer/main/newfold-labs/wp-module-loader-1.1.0",
+                "version_normalized": "dev-dependabot/composer/main/newfold-labs/wp-module-loader-1.1.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-maestro.git",
-                    "reference": "d42476cc9d40bb3d8476831d573818afdc6a5110"
+                    "reference": "48670ac444e58c5d4f2e9b01d88ee61ae9294afe"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/d42476cc9d40bb3d8476831d573818afdc6a5110",
-                    "reference": "d42476cc9d40bb3d8476831d573818afdc6a5110",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/48670ac444e58c5d4f2e9b01d88ee61ae9294afe",
+                    "reference": "48670ac444e58c5d4f2e9b01d88ee61ae9294afe",
                     "shasum": ""
                 },
                 "require": {
                     "firebase/php-jwt": "^5.0",
-                    "newfold-labs/wp-module-loader": "^1.0.14"
+                    "newfold-labs/wp-module-loader": "^1.1.0"
                 },
                 "require-dev": {
                     "johnpbloch/wordpress": "@stable",
                     "lucatume/wp-browser": "*",
                     "newfold-labs/wp-php-standards": "@stable",
-                    "phpunit/phpcov": "*"
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2025-12-03T09:19:30+00:00",
+                "time": "2026-09-03T09:53:53+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -341,6 +396,32 @@
                     ],
                     "lint": [
                         "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-maestro.pot --domain=wp-module-maestro --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-maestro/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-maestro.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
                     ],
                     "test": [
                         "codecept run wpunit"
@@ -364,17 +445,17 @@
             },
             {
                 "name": "newfold-labs/wp-module-maestro",
-                "version": "dev-dependabot/github_actions/main/actions/cache-4.3.0",
-                "version_normalized": "dev-dependabot/github_actions/main/actions/cache-4.3.0",
+                "version": "dev-dependabot/github_actions/main/actions/checkout-7.0.1",
+                "version_normalized": "dev-dependabot/github_actions/main/actions/checkout-7.0.1",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-maestro.git",
-                    "reference": "31273e233040c476e2ca8ee67d62016106e18d57"
+                    "reference": "42c723909f7343717bca8c3e7c2cf08b89b84a42"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/31273e233040c476e2ca8ee67d62016106e18d57",
-                    "reference": "31273e233040c476e2ca8ee67d62016106e18d57",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/42c723909f7343717bca8c3e7c2cf08b89b84a42",
+                    "reference": "42c723909f7343717bca8c3e7c2cf08b89b84a42",
                     "shasum": ""
                 },
                 "require": {
@@ -385,9 +466,10 @@
                     "johnpbloch/wordpress": "@stable",
                     "lucatume/wp-browser": "*",
                     "newfold-labs/wp-php-standards": "@stable",
-                    "phpunit/phpcov": "*"
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2025-09-25T09:16:39+00:00",
+                "time": "2026-09-03T09:53:42+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -403,6 +485,32 @@
                     ],
                     "lint": [
                         "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-maestro.pot --domain=wp-module-maestro --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-maestro/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-maestro.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
                     ],
                     "test": [
                         "codecept run wpunit"
@@ -426,17 +534,17 @@
             },
             {
                 "name": "newfold-labs/wp-module-maestro",
-                "version": "dev-dependabot/github_actions/main/actions/checkout-5.0.0",
-                "version_normalized": "dev-dependabot/github_actions/main/actions/checkout-5.0.0",
+                "version": "dev-dependabot/github_actions/main/mshick/add-pr-comment-3.12.0",
+                "version_normalized": "dev-dependabot/github_actions/main/mshick/add-pr-comment-3.12.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-maestro.git",
-                    "reference": "d89a23a2bf764e366d474298496d815ad7aa27db"
+                    "reference": "76878fb7e590d107ab9eb7b593ceebef09ea1b82"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/d89a23a2bf764e366d474298496d815ad7aa27db",
-                    "reference": "d89a23a2bf764e366d474298496d815ad7aa27db",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/76878fb7e590d107ab9eb7b593ceebef09ea1b82",
+                    "reference": "76878fb7e590d107ab9eb7b593ceebef09ea1b82",
                     "shasum": ""
                 },
                 "require": {
@@ -447,9 +555,10 @@
                     "johnpbloch/wordpress": "@stable",
                     "lucatume/wp-browser": "*",
                     "newfold-labs/wp-php-standards": "@stable",
-                    "phpunit/phpcov": "*"
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2025-08-12T15:48:45+00:00",
+                "time": "2026-09-03T09:53:53+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -465,6 +574,32 @@
                     ],
                     "lint": [
                         "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-maestro.pot --domain=wp-module-maestro --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-maestro/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-maestro.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
                     ],
                     "test": [
                         "codecept run wpunit"
@@ -488,17 +623,17 @@
             },
             {
                 "name": "newfold-labs/wp-module-maestro",
-                "version": "dev-dependabot/github_actions/main/peter-evans/repository-dispatch-4.0.0",
-                "version_normalized": "dev-dependabot/github_actions/main/peter-evans/repository-dispatch-4.0.0",
+                "version": "dev-dependabot/github_actions/main/peter-evans/repository-dispatch-4.0.1",
+                "version_normalized": "dev-dependabot/github_actions/main/peter-evans/repository-dispatch-4.0.1",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-maestro.git",
-                    "reference": "b78154723d1adb4cb603155dd603b62eb091960c"
+                    "reference": "3a31c5040b34b0afd868dc345e3d775c025be5d3"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/b78154723d1adb4cb603155dd603b62eb091960c",
-                    "reference": "b78154723d1adb4cb603155dd603b62eb091960c",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/3a31c5040b34b0afd868dc345e3d775c025be5d3",
+                    "reference": "3a31c5040b34b0afd868dc345e3d775c025be5d3",
                     "shasum": ""
                 },
                 "require": {
@@ -509,9 +644,10 @@
                     "johnpbloch/wordpress": "@stable",
                     "lucatume/wp-browser": "*",
                     "newfold-labs/wp-php-standards": "@stable",
-                    "phpunit/phpcov": "*"
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2025-10-02T09:14:23+00:00",
+                "time": "2026-09-03T09:53:46+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -527,6 +663,32 @@
                     ],
                     "lint": [
                         "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-maestro.pot --domain=wp-module-maestro --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-maestro/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-maestro.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
                     ],
                     "test": [
                         "codecept run wpunit"
@@ -550,17 +712,17 @@
             },
             {
                 "name": "newfold-labs/wp-module-maestro",
-                "version": "dev-dependabot/github_actions/main/shivammathur/setup-php-2.35.5",
-                "version_normalized": "dev-dependabot/github_actions/main/shivammathur/setup-php-2.35.5",
+                "version": "dev-dependabot/github_actions/main/shivammathur/setup-php-2.37.2",
+                "version_normalized": "dev-dependabot/github_actions/main/shivammathur/setup-php-2.37.2",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-maestro.git",
-                    "reference": "bc75ae93ccfbc9f754d1df4fdb8fb6656d100911"
+                    "reference": "10be9690929769bc10dafbab1428d36b616591ed"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/bc75ae93ccfbc9f754d1df4fdb8fb6656d100911",
-                    "reference": "bc75ae93ccfbc9f754d1df4fdb8fb6656d100911",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/10be9690929769bc10dafbab1428d36b616591ed",
+                    "reference": "10be9690929769bc10dafbab1428d36b616591ed",
                     "shasum": ""
                 },
                 "require": {
@@ -571,9 +733,10 @@
                     "johnpbloch/wordpress": "@stable",
                     "lucatume/wp-browser": "*",
                     "newfold-labs/wp-php-standards": "@stable",
-                    "phpunit/phpcov": "*"
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2025-09-19T09:15:05+00:00",
+                "time": "2026-09-03T09:54:04+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -589,6 +752,32 @@
                     ],
                     "lint": [
                         "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-maestro.pot --domain=wp-module-maestro --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-maestro/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-maestro.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
                     ],
                     "test": [
                         "codecept run wpunit"
@@ -612,17 +801,17 @@
             },
             {
                 "name": "newfold-labs/wp-module-maestro",
-                "version": "dev-dependabot/github_actions/main/stefanzweifel/git-auto-commit-action-7.0.0",
-                "version_normalized": "dev-dependabot/github_actions/main/stefanzweifel/git-auto-commit-action-7.0.0",
+                "version": "dev-dependabot/github_actions/main/stefanzweifel/git-auto-commit-action-7.2.0",
+                "version_normalized": "dev-dependabot/github_actions/main/stefanzweifel/git-auto-commit-action-7.2.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-maestro.git",
-                    "reference": "89a1edb2f42ffa3186b4e786611871cb677e20e6"
+                    "reference": "38106b8858c2f481ab5d7db9c94ad279749fa118"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/89a1edb2f42ffa3186b4e786611871cb677e20e6",
-                    "reference": "89a1edb2f42ffa3186b4e786611871cb677e20e6",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/38106b8858c2f481ab5d7db9c94ad279749fa118",
+                    "reference": "38106b8858c2f481ab5d7db9c94ad279749fa118",
                     "shasum": ""
                 },
                 "require": {
@@ -633,9 +822,10 @@
                     "johnpbloch/wordpress": "@stable",
                     "lucatume/wp-browser": "*",
                     "newfold-labs/wp-php-standards": "@stable",
-                    "phpunit/phpcov": "*"
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2025-10-13T09:32:40+00:00",
+                "time": "2026-09-03T09:54:00+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -651,6 +841,32 @@
                     ],
                     "lint": [
                         "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-maestro.pot --domain=wp-module-maestro --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-maestro/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-maestro.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
                     ],
                     "test": [
                         "codecept run wpunit"
@@ -674,17 +890,17 @@
             },
             {
                 "name": "newfold-labs/wp-module-maestro",
-                "version": "dev-dependabot/npm_and_yarn/main/wordpress/env-10.36.0",
-                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/env-10.36.0",
+                "version": "dev-dependabot/npm_and_yarn/main/wordpress/env-11.16.0",
+                "version_normalized": "dev-dependabot/npm_and_yarn/main/wordpress/env-11.16.0",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-maestro.git",
-                    "reference": "4554e5da610a72c8268a80f6a3354993debc2911"
+                    "reference": "833c885e2d96f3f83ae9db7663c984be16e8baaf"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/4554e5da610a72c8268a80f6a3354993debc2911",
-                    "reference": "4554e5da610a72c8268a80f6a3354993debc2911",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/833c885e2d96f3f83ae9db7663c984be16e8baaf",
+                    "reference": "833c885e2d96f3f83ae9db7663c984be16e8baaf",
                     "shasum": ""
                 },
                 "require": {
@@ -695,9 +911,10 @@
                     "johnpbloch/wordpress": "@stable",
                     "lucatume/wp-browser": "*",
                     "newfold-labs/wp-php-standards": "@stable",
-                    "phpunit/phpcov": "*"
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2025-11-27T09:17:47+00:00",
+                "time": "2026-09-28T09:53:50+00:00",
                 "type": "library",
                 "autoload": {
                     "psr-4": {
@@ -713,6 +930,32 @@
                     ],
                     "lint": [
                         "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-maestro.pot --domain=wp-module-maestro --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-maestro/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-maestro.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
                     ],
                     "test": [
                         "codecept run wpunit"
@@ -787,17 +1030,106 @@
             },
             {
                 "name": "newfold-labs/wp-module-maestro",
+                "version": "dev-fix/PRESS0-5098",
+                "version_normalized": "dev-fix/PRESS0-5098",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/newfold-labs/wp-module-maestro.git",
+                    "reference": "4086f3a3e373680984e972a9c37d05be532eff46"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/4086f3a3e373680984e972a9c37d05be532eff46",
+                    "reference": "4086f3a3e373680984e972a9c37d05be532eff46",
+                    "shasum": ""
+                },
+                "require": {
+                    "firebase/php-jwt": "^5.0",
+                    "newfold-labs/wp-module-loader": "^1.0.10"
+                },
+                "require-dev": {
+                    "johnpbloch/wordpress": "@stable",
+                    "lucatume/wp-browser": "*",
+                    "newfold-labs/wp-php-standards": "^2.0",
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
+                },
+                "time": "2026-09-07T13:10:40+00:00",
+                "type": "library",
+                "autoload": {
+                    "psr-4": {
+                        "NewfoldLabs\\WP\\Module\\Maestro\\": "includes"
+                    },
+                    "files": [
+                        "bootstrap.php"
+                    ]
+                },
+                "scripts": {
+                    "fix": [
+                        "vendor/bin/phpcbf --standard=phpcs.xml ."
+                    ],
+                    "lint": [
+                        "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-maestro.pot --domain=wp-module-maestro --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-maestro/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-maestro.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
+                    ],
+                    "test": [
+                        "codecept run wpunit"
+                    ],
+                    "test-coverage": [
+                        "codecept run wpunit --coverage wpunit.cov",
+                        "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+                        "echo \"open tests/_output/html/index.html\" to view the report"
+                    ]
+                },
+                "license": [
+                    "GPL-2.0-or-later"
+                ],
+                "authors": [
+                    {
+                        "name": "Micah Wood",
+                        "email": "micah.wood@newfold.com"
+                    }
+                ],
+                "description": "Maestro Newfold module for WordPress"
+            },
+            {
+                "name": "newfold-labs/wp-module-maestro",
                 "version": "dev-main",
                 "version_normalized": "dev-main",
                 "source": {
                     "type": "git",
                     "url": "https://github.com/newfold-labs/wp-module-maestro.git",
-                    "reference": "ebc54abc7490503b6890846c5b74198ec474427c"
+                    "reference": "3dd661342130f720f2b73b697aed3ae0f8a7783d"
                 },
                 "dist": {
                     "type": "zip",
-                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/ebc54abc7490503b6890846c5b74198ec474427c",
-                    "reference": "ebc54abc7490503b6890846c5b74198ec474427c",
+                    "url": "https://api.github.com/repos/newfold-labs/wp-module-maestro/zipball/3dd661342130f720f2b73b697aed3ae0f8a7783d",
+                    "reference": "3dd661342130f720f2b73b697aed3ae0f8a7783d",
                     "shasum": ""
                 },
                 "require": {
@@ -808,9 +1140,10 @@
                     "johnpbloch/wordpress": "@stable",
                     "lucatume/wp-browser": "*",
                     "newfold-labs/wp-php-standards": "@stable",
-                    "phpunit/phpcov": "*"
+                    "phpunit/phpcov": "*",
+                    "wp-cli/i18n-command": "^2.7.0"
                 },
-                "time": "2025-08-11T12:21:22+00:00",
+                "time": "2026-09-02T18:44:31+00:00",
                 "default-branch": true,
                 "type": "library",
                 "autoload": {
@@ -827,6 +1160,32 @@
                     ],
                     "lint": [
                         "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                    ],
+                    "i18n-pot": [
+                        "vendor/bin/wp i18n make-pot . ./languages/wp-module-maestro.pot --domain=wp-module-maestro --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-maestro/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=tests,vendor,wordpress,node_modules"
+                    ],
+                    "i18n-po": [
+                        "vendor/bin/wp i18n update-po ./languages/wp-module-maestro.pot ./languages"
+                    ],
+                    "i18n-php": [
+                        "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    ],
+                    "i18n-json": [
+                        "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    ],
+                    "i18n": [
+                        "@i18n-pot",
+                        "@i18n-po",
+                        "@i18n-php",
+                        "@i18n-json"
+                    ],
+                    "i18n-ci-pre": [
+                        "@i18n-pot",
+                        "@i18n-po"
+                    ],
+                    "i18n-ci-post": [
+                        "@i18n-json",
+                        "@i18n-php"
                     ],
                     "test": [
                         "codecept run wpunit"
